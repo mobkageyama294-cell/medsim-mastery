@@ -1,9 +1,10 @@
-import { useState, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
 // Tipagem para garantir que o código não quebre
 interface ClinicalCase {
   id: string;
   title: string;
+  specialty: string;
   correctDiagnosis: string;
   baseVitals: { bp: string; hr: number; ox: number };
   labResults: Record<string, string>;
@@ -11,6 +12,8 @@ interface ClinicalCase {
 }
 
 export const useSimulation = () => {
+  const [cases, setCases] = useState<ClinicalCase[]>([]);
+  const [loading, setLoading] = useState(true);
   const [state, setState] = useState({
     isFinished: false,
     studentLevel: "Internato",
@@ -19,17 +22,34 @@ export const useSimulation = () => {
     costEffectiveness: 100,
     physicalExamDone: false,
     examsRequested: [] as string[],
-    messages: [{ role: 'system', content: 'Paciente aguardando atendimento...' }],
-    currentCase: {
-      id: "1",
-      title: "Caso de Emergência",
-      correctDiagnosis: "Dissecação Aórtica",
-      baseVitals: { bp: "160/90", hr: 95, ox: 96 },
-      labResults: { "ECG": "Ritmo Sinusal, sem supra de ST", "Troponina": "Negativa" },
-      unnecessaryExams: ["Tomografia de Abdome", "Resonância Magnética"]
-    } as ClinicalCase,
+    messages: [{ role: 'system', content: 'Carregando casos clínicos...' }],
+    currentCase: null as ClinicalCase | null,
     diagnosisAttempt: ""
   });
+
+  // EFEITO PARA BUSCAR OS DADOS DO JSON
+  useEffect(() => {
+    fetch('/src/data/cases.json')
+      .then(res => res.json())
+      .then((data: ClinicalCase[]) => {
+        setCases(data);
+        if (data.length > 0) {
+          setState(prev => ({
+            ...prev,
+            currentCase: data[0], // Começa pelo primeiro caso da lista
+            messages: [{ role: 'system', content: `Paciente aguardando atendimento para o caso: ${data[0].title}` }]
+          }));
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Erro ao carregar casos:", err);
+        setLoading(false);
+      });
+  }, []);
+
+  // O restante das funções (handleExam, handleDiagnosis) continua abaixo...
+
 
   const [vitalSigns, setVitalSigns] = useState(state.currentCase.baseVitals);
 
