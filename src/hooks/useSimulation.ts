@@ -48,6 +48,17 @@ export const useSimulation = () => {
       });
   }, []);
 
+  // 1. Estado inicial seguro para os sinais vitais
+  const [vitalSigns, setVitalSigns] = useState({ bp: "0/0", hr: 0, ox: 0 });
+
+  // 2. Atualiza os sinais vitais assim que o caso clínico carregar
+  useEffect(() => {
+    if (state.currentCase) {
+      setVitalSigns(state.currentCase.baseVitals);
+    }
+  }, [state.currentCase]);
+
+  // Daqui para baixo você mantém as funções handleExam, handleDiagnosis, etc.
   // O restante das funções (handleExam, handleDiagnosis) continua abaixo...
 
 
