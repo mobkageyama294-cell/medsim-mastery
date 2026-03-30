@@ -1,0 +1,15 @@
+[
+  {
+    "id": "5",
+    "title": "Dor Abdominal em Fossa Ilíaca Direita",
+    "specialty": "Cirurgia Geral",
+    "correctDiagnosis": "Apendicite Aguda",
+    "baseVitals": { "bp": "120/80", "hr": 105, "ox": 98 },
+    "labResults": { 
+      "Hemograma": "Leucocitose com desvio à esquerda", 
+      "Sinal de Blumberg": "Positivo no exame físico",
+      "Ultrassom": "Apêndice não compressível > 6mm" 
+    },
+    "unnecessaryExams": ["Colonoscopia", "Enema Opaco"]
+  }
+]
