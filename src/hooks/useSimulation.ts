@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
-// Tipagem para garantir que o código não quebre
 interface ClinicalCase {
   id: string;
   title: string;
@@ -27,7 +26,9 @@ export const useSimulation = () => {
     diagnosisAttempt: ""
   });
 
-  // EFEITO PARA BUSCAR OS DADOS DO JSON
+  const [vitalSigns, setVitalSigns] = useState({ bp: "0/0", hr: 0, ox: 0 });
+
+  // Busca os casos no JSON
   useEffect(() => {
     fetch('/src/data/cases.json')
       .then(res => res.json())
@@ -36,9 +37,10 @@ export const useSimulation = () => {
         if (data.length > 0) {
           setState(prev => ({
             ...prev,
-            currentCase: data[0], // Começa pelo primeiro caso da lista
+            currentCase: data[0],
             messages: [{ role: 'system', content: `Paciente aguardando atendimento para o caso: ${data[0].title}` }]
           }));
+          setVitalSigns(data[0].baseVitals);
         }
         setLoading(false);
       })
@@ -48,80 +50,49 @@ export const useSimulation = () => {
       });
   }, []);
 
-  // 1. Estado inicial seguro para os sinais vitais
-  const [vitalSigns, setVitalSigns] = useState({ bp: "0/0", hr: 0, ox: 0 });
-
-  // 2. Atualiza os sinais vitais assim que o caso clínico carregar
-  useEffect(() => {
-    if (state.currentCase) {
-      setVitalSigns(state.currentCase.baseVitals);
-    }
-  }, [state.currentCase]);
-
-  // Daqui para baixo você mantém as funções handleExam, handleDiagnosis, etc.
-  // O restante das funções (handleExam, handleDiagnosis) continua abaixo...
-
-
-  const [vitalSigns, setVitalSigns] = useState(state.currentCase.baseVitals);
-
-  // 1. Efeito de flutuação dos sinais vitais (Realismo)
+  // Funções de simulação
   const fluctuateVitals = useCallback(() => {
+    if (!state.currentCase) return;
     setVitalSigns(prev => ({
       ...prev,
       hr: prev.hr + (Math.random() > 0.5 ? 1 : -1),
       ox: Math.min(100, prev.ox + (Math.random() > 0.5 ? 0.1 : -0.1))
     }));
-  }, []);
+  }, [state.currentCase]);
 
-  // 2. Lógica de Solicitação de Exames (Punição de Custo)
-  const requestExam = (exam: string) => {
-    const isUnnecessary = state.currentCase.unnecessaryExams.includes(exam);
-    
+  const handleExam = (exam: string) => {
+    if (!state.currentCase) return;
+    const result = state.currentCase.labResults[exam] || "Resultado pendente";
     setState(prev => ({
       ...prev,
       examsRequested: [...prev.examsRequested, exam],
-      costEffectiveness: isUnnecessary ? prev.costEffectiveness - 15 : prev.costEffectiveness,
-      reasoningScore: isUnnecessary ? prev.reasoningScore - 5 : prev.reasoningScore,
-      messages: [...prev.messages, { role: 'assistant', content: `Resultado de ${exam}: ${prev.currentCase.labResults[exam] || 'Normal.'}` }]
+      messages: [...prev.messages, { role: 'assistant', content: `Resultado do exame ${exam}: ${result}` }]
     }));
   };
 
-  // 3. Lógica de Finalização e Score Final
   const submitDiagnosis = (diagnosis: string) => {
-    const isCorrect = diagnosis.toLowerCase().includes(state.currentCase.correctDiagnosis.toLowerCase());
-    
-    // Cálculo final baseado na saúde do paciente e acerto
-    const finalScore = isCorrect ? state.reasoningScore : state.reasoningScore - 40;
-    
-    setState(prev => ({
-      ...prev,
-      isFinished: true,
-      reasoningScore: Math.max(0, finalScore),
-      diagnosisAttempt: diagnosis
-    }));
+    setState(prev => ({ ...prev, isFinished: true, diagnosisAttempt: diagnosis }));
   };
 
-  const sendMessage = (text: string) => {
-    // Aqui você integraria com a API da OpenAI via Lovable
-    setState(prev => ({
-      ...prev,
-      messages: [...prev.messages, { role: 'user', content: text }]
-    }));
-  };
-
-  const resetSimulation = (caseId: number) => {
-    // Lógica para reiniciar
-    window.location.reload(); 
+  const resetSimulation = () => {
+    if (cases.length > 0) {
+      setState(prev => ({
+        ...prev,
+        isFinished: false,
+        examsRequested: [],
+        currentCase: cases[0],
+        messages: [{ role: 'system', content: `Novo atendimento iniciado: ${cases[0].title}` }]
+      }));
+      setVitalSigns(cases[0].baseVitals);
+    }
   };
 
   return {
     state,
     vitalSigns,
-    isLoading: false,
+    isLoading: loading,
     fluctuateVitals,
-    sendMessage,
-    performPhysicalExam: () => setState(p => ({ ...p, physicalExamDone: true })),
-    requestExam,
+    handleExam,
     submitDiagnosis,
     resetSimulation
   };
