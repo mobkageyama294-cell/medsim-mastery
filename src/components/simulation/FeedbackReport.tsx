@@ -1,130 +1,86 @@
 import { motion } from 'framer-motion';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
-import { RotateCcw, Award, TrendingUp, Shield, Heart, DollarSign } from 'lucide-react';
-import { SimulationState } from '@/hooks/useSimulation';
+import { CheckCircle2, XCircle, Activity, DollarSign, Brain, RefreshCcw, Share2 } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
-interface FeedbackReportProps {
-  state: SimulationState;
-  onRestart: () => void;
-}
-
-export default function FeedbackReport({ state, onRestart }: FeedbackReportProps) {
-  const isCorrectDiagnosis = state.diagnosisAttempt && (
-    state.currentCase.correctDiagnosis.toLowerCase().includes(state.diagnosisAttempt.toLowerCase()) ||
-    state.diagnosisAttempt.toLowerCase().includes('infarto') ||
-    state.diagnosisAttempt.toLowerCase().includes('iam') ||
-    state.diagnosisAttempt.toLowerCase().includes('hemorragia')
-  );
-
-  const precision = isCorrectDiagnosis ? 90 : 30;
-  const empathy = Math.min(100, 50 + state.messages.filter(m => m.role === 'user').length * 5);
-  const safety = state.patientHealth;
-  const cost = state.costEffectiveness;
-  const overall = Math.round((precision + empathy + safety + cost) / 4);
-
-  const data = [
-    { subject: 'Precisão Diagnóstica', value: precision },
-    { subject: 'Empatia', value: empathy },
-    { subject: 'Custo-Efetividade', value: cost },
-    { subject: 'Segurança do Paciente', value: safety },
-  ];
-
-  const metrics = [
-    { icon: TrendingUp, label: 'Precisão Diagnóstica', value: precision, color: 'text-primary' },
-    { icon: Heart, label: 'Empatia', value: empathy, color: 'text-accent' },
-    { icon: DollarSign, label: 'Custo-Efetividade', value: cost, color: 'text-warning' },
-    { icon: Shield, label: 'Segurança', value: safety, color: 'text-success' },
-  ];
+export default function FeedbackReport({ state, onRestart }: { state: any, onRestart: () => void }) {
+  const isCorrect = state.diagnosisAttempt.toLowerCase().includes(state.currentCase.correctDiagnosis.toLowerCase());
 
   return (
-    <motion.div
+    <motion.div 
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      className="min-h-screen flex items-center justify-center p-4"
+      className="max-w-4xl mx-auto p-4 space-y-6"
     >
-      <div className="glass-card glow-primary p-8 w-full max-w-3xl space-y-8">
-        <div className="text-center space-y-2">
-          <div className="w-16 h-16 mx-auto rounded-2xl bg-primary/20 flex items-center justify-center mb-4">
-            <Award className="w-8 h-8 text-primary" />
+      <Card className="border-t-4 border-t-primary shadow-xl">
+        <CardHeader className="text-center">
+          <div className="flex justify-center mb-4">
+            {isCorrect ? 
+              <CheckCircle2 className="w-16 h-16 text-green-500" /> : 
+              <XCircle className="w-16 h-16 text-red-500" />
+            }
           </div>
-          <h2 className="text-2xl font-bold text-gradient-primary">Relatório de Desempenho</h2>
-          <p className="text-sm text-muted-foreground">{state.currentCase.title}</p>
-        </div>
+          <CardTitle className="text-3xl font-bold">
+            {isCorrect ? "Diagnóstico Correto!" : "Diagnóstico Incorreto"}
+          </CardTitle>
+          <p className="text-muted-foreground">Caso: {state.currentCase.title}</p>
+        </CardHeader>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="flex items-center justify-center">
-            <ResponsiveContainer width="100%" height={280}>
-              <RadarChart data={data}>
-                <PolarGrid stroke="hsl(217 33% 18%)" />
-                <PolarAngleAxis
-                  dataKey="subject"
-                  tick={{ fill: 'hsl(215 20% 55%)', fontSize: 11 }}
-                />
-                <PolarRadiusAxis
-                  angle={90}
-                  domain={[0, 100]}
-                  tick={{ fill: 'hsl(215 20% 55%)', fontSize: 10 }}
-                />
-                <Radar
-                  name="Desempenho"
-                  dataKey="value"
-                  stroke="hsl(199 89% 48%)"
-                  fill="hsl(199 89% 48%)"
-                  fillOpacity={0.2}
-                  strokeWidth={2}
-                />
-              </RadarChart>
-            </ResponsiveContainer>
+        <CardContent className="space-y-8">
+          {/* Grid de Métricas Principais */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <MetricCard 
+              icon={<Brain className="text-blue-500" />} 
+              label="Raciocínio Clínico" 
+              value={`${state.reasoningScore}%`} 
+            />
+            <MetricCard 
+              icon={<Activity className="text-red-500" />} 
+              label="Segurança do Paciente" 
+              value={`${state.patientHealth}%`} 
+            />
+            <MetricCard 
+              icon={<DollarSign className="text-green-500" />} 
+              label="Custo-Efetividade" 
+              value={`${state.costEffectiveness}%`} 
+            />
           </div>
 
-          <div className="space-y-3">
-            {metrics.map((m) => (
-              <div key={m.label} className="flex items-center gap-3 p-3 rounded-lg bg-muted/30 border border-border/50">
-                <m.icon className={`w-5 h-5 ${m.color}`} />
-                <div className="flex-1">
-                  <p className="text-xs text-muted-foreground">{m.label}</p>
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
-                      <motion.div
-                        className="h-full rounded-full bg-primary"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${m.value}%` }}
-                        transition={{ duration: 1, delay: 0.3 }}
-                      />
-                    </div>
-                    <span className="text-sm font-mono font-semibold">{m.value}%</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            <div className="p-4 rounded-lg bg-primary/5 border border-primary/20 text-center">
-              <p className="text-xs text-muted-foreground mb-1">Pontuação Geral</p>
-              <p className="text-3xl font-bold text-gradient-primary">{overall}%</p>
+          {/* Explicação Clínica - Onde está o valor educacional */}
+          <div className="bg-muted p-6 rounded-lg border">
+            <h3 className="text-lg font-semibold mb-3">Discussão do Caso</h3>
+            <p className="text-sm leading-relaxed mb-4">
+              O diagnóstico final era <strong>{state.currentCase.correctDiagnosis}</strong>. 
+              {isCorrect 
+                ? " Você identificou corretamente os sinais de alerta e conduziu a investigação de forma assertiva."
+                : " Você não identificou os sinais chaves. Lembre-se que em casos assim, a prioridade é descartar emergências fatais."}
+            </p>
+            <div className="text-xs text-muted-foreground">
+              <strong>Exames Solicitados:</strong> {state.examsRequested.join(', ') || 'Nenhum'}
             </div>
           </div>
-        </div>
 
-        <div className="space-y-3">
-          <div className="p-4 rounded-lg bg-muted/30 border border-border/50">
-            <p className="text-xs text-muted-foreground mb-1">Seu Diagnóstico</p>
-            <p className="text-sm font-medium">{state.diagnosisAttempt || 'Não informado'}</p>
+          {/* Botões de Ação */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <Button onClick={onRestart} variant="outline" className="flex gap-2">
+              <RefreshCcw className="w-4 h-4" /> Tentar Outro Caso
+            </Button>
+            <Button className="flex gap-2 bg-primary">
+              <Share2 className="w-4 h-4" /> Compartilhar Desempenho
+            </Button>
           </div>
-          <div className={`p-4 rounded-lg border ${isCorrectDiagnosis ? 'bg-success/5 border-success/20' : 'bg-destructive/5 border-destructive/20'}`}>
-            <p className="text-xs text-muted-foreground mb-1">Diagnóstico Correto</p>
-            <p className="text-sm font-medium">{state.currentCase.correctDiagnosis}</p>
-          </div>
-        </div>
-
-        <button
-          onClick={onRestart}
-          className="w-full flex items-center justify-center gap-2 p-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-all"
-        >
-          <RotateCcw className="w-4 h-4" />
-          Iniciar Novo Caso
-        </button>
-      </div>
+        </CardContent>
+      </Card>
     </motion.div>
+  );
+}
+
+function MetricCard({ icon, label, value }: { icon: any, label: string, value: string }) {
+  return (
+    <div className="flex flex-col items-center p-4 bg-background border rounded-xl shadow-sm">
+      <div className="p-2 bg-muted rounded-full mb-2">{icon}</div>
+      <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">{label}</span>
+      <span className="text-2xl font-bold">{value}</span>
+    </div>
   );
 }
