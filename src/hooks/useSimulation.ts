@@ -1,5 +1,6 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { ClinicalCase, CLINICAL_CASES } from '@/data/clinicalCases';
+import { supabase } from '@/integrations/supabase/client';
 
 export interface ChatMessage {
   id: string;
