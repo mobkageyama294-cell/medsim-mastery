@@ -28,7 +28,15 @@ export default function Index() {
   if (state.isFinished) {
     return <FeedbackReport state={state} onRestart={() => resetSimulation(1)} />;
   }
-
+// Trava de segurança para esperar o JSON carregar
+  if (!state.currentCase) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-slate-50">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
+        <p className="text-slate-600 font-medium">Preparando prontuário do paciente...</p>
+      </div>
+    );
+  }
   const availableExams = Object.keys(state.currentCase.labResults);
 
   return (
