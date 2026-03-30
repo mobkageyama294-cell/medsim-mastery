@@ -1,262 +1,97 @@
-import { useState, useCallback, useRef } from 'react';
-import { ClinicalCase, CLINICAL_CASES } from '@/data/clinicalCases';
-import { supabase } from '@/integrations/supabase/client';
+import { useState, useCallback } from 'react';
 
-export interface ChatMessage {
+// Tipagem para garantir que o código não quebre
+interface ClinicalCase {
   id: string;
-  role: 'user' | 'patient' | 'system';
-  content: string;
-  timestamp: Date;
+  title: string;
+  correctDiagnosis: string;
+  baseVitals: { bp: string; hr: number; ox: number };
+  labResults: Record<string, string>;
+  unnecessaryExams: string[];
 }
 
-export interface SimulationState {
-  currentCase: ClinicalCase;
-  studentLevel: string;
-  reasoningScore: number;
-  patientHealth: number;
-  costEffectiveness: number;
-  messages: ChatMessage[];
-  examsRequested: string[];
-  physicalExamDone: boolean;
-  isFinished: boolean;
-  diagnosisAttempt: string | null;
-  actionsLog: string[];
-}
-
-const generateId = () => Math.random().toString(36).substring(2, 9);
-
-export function useSimulation() {
-  const [state, setState] = useState<SimulationState>(() => ({
-    currentCase: CLINICAL_CASES[0],
-    studentLevel: 'Residente R1',
-    reasoningScore: 100,
-    patientHealth: 85,
-    costEffectiveness: 100,
-    messages: [
-      {
-        id: generateId(),
-        role: 'system',
-        content: `Caso iniciado: **${CLINICAL_CASES[0].title}**. O paciente ${CLINICAL_CASES[0].patientName}, ${CLINICAL_CASES[0].patientAge} anos, ${CLINICAL_CASES[0].patientSex === 'M' ? 'masculino' : 'feminino'}, acaba de chegar à emergência. Inicie a anamnese.`,
-        timestamp: new Date(),
-      },
-      {
-        id: generateId(),
-        role: 'patient',
-        content: CLINICAL_CASES[0].chiefComplaint,
-        timestamp: new Date(),
-      },
-    ],
-    examsRequested: [],
-    physicalExamDone: false,
+export const useSimulation = () => {
+  const [state, setState] = useState({
     isFinished: false,
-    diagnosisAttempt: null,
-    actionsLog: [],
-  }));
+    studentLevel: "Internato",
+    reasoningScore: 100,
+    patientHealth: 100,
+    costEffectiveness: 100,
+    physicalExamDone: false,
+    examsRequested: [] as string[],
+    messages: [{ role: 'system', content: 'Paciente aguardando atendimento...' }],
+    currentCase: {
+      id: "1",
+      title: "Caso de Emergência",
+      correctDiagnosis: "Dissecação Aórtica",
+      baseVitals: { bp: "160/90", hr: 95, ox: 96 },
+      labResults: { "ECG": "Ritmo Sinusal, sem supra de ST", "Troponina": "Negativa" },
+      unnecessaryExams: ["Tomografia de Abdome", "Resonância Magnética"]
+    } as ClinicalCase,
+    diagnosisAttempt: ""
+  });
 
-  const stateRef = useRef(state);
-  stateRef.current = state;
+  const [vitalSigns, setVitalSigns] = useState(state.currentCase.baseVitals);
 
-  const [vitalSigns, setVitalSigns] = useState(CLINICAL_CASES[0].vitalSigns);
-
-  // Simulate vital sign fluctuations
+  // 1. Efeito de flutuação dos sinais vitais (Realismo)
   const fluctuateVitals = useCallback(() => {
-    setState(prev => {
-      const base = prev.currentCase.vitalSigns;
-      const healthFactor = prev.patientHealth / 100;
-      setVitalSigns({
-        pa: base.pa,
-        fc: Math.round(base.fc + (Math.random() - 0.5) * 8 + (1 - healthFactor) * 15),
-        sao2: Math.max(85, Math.min(100, Math.round(base.sao2 + (Math.random() - 0.5) * 2 - (1 - healthFactor) * 5))),
-        temp: +(base.temp + (Math.random() - 0.5) * 0.3).toFixed(1),
-        fr: Math.round(base.fr + (Math.random() - 0.5) * 3 + (1 - healthFactor) * 4),
-      });
-      return prev;
-    });
+    setVitalSigns(prev => ({
+      ...prev,
+      hr: prev.hr + (Math.random() > 0.5 ? 1 : -1),
+      ox: Math.min(100, prev.ox + (Math.random() > 0.5 ? 0.1 : -0.1))
+    }));
   }, []);
 
-  const [isLoading, setIsLoading] = useState(false);
-
-  const sendMessage = useCallback(async (content: string) => {
-    const userMsg: ChatMessage = {
-      id: generateId(),
-      role: 'user',
-      content,
-      timestamp: new Date(),
-    };
-
+  // 2. Lógica de Solicitação de Exames (Punição de Custo)
+  const requestExam = (exam: string) => {
+    const isUnnecessary = state.currentCase.unnecessaryExams.includes(exam);
+    
     setState(prev => ({
       ...prev,
-      messages: [...prev.messages, userMsg],
+      examsRequested: [...prev.examsRequested, exam],
+      costEffectiveness: isUnnecessary ? prev.costEffectiveness - 15 : prev.costEffectiveness,
+      reasoningScore: isUnnecessary ? prev.reasoningScore - 5 : prev.reasoningScore,
+      messages: [...prev.messages, { role: 'assistant', content: `Resultado de ${exam}: ${prev.currentCase.labResults[exam] || 'Normal.'}` }]
     }));
+  };
 
-    setIsLoading(true);
+  // 3. Lógica de Finalização e Score Final
+  const submitDiagnosis = (diagnosis: string) => {
+    const isCorrect = diagnosis.toLowerCase().includes(state.currentCase.correctDiagnosis.toLowerCase());
+    
+    // Cálculo final baseado na saúde do paciente e acerto
+    const finalScore = isCorrect ? state.reasoningScore : state.reasoningScore - 40;
+    
+    setState(prev => ({
+      ...prev,
+      isFinished: true,
+      reasoningScore: Math.max(0, finalScore),
+      diagnosisAttempt: diagnosis
+    }));
+  };
 
-    try {
-      const currentState = stateRef.current;
-      const chatMessages = [...currentState.messages, userMsg]
-        .filter(m => m.role !== 'system')
-        .map(m => ({ role: m.role, content: m.content }));
+  const sendMessage = (text: string) => {
+    // Aqui você integraria com a API da OpenAI via Lovable
+    setState(prev => ({
+      ...prev,
+      messages: [...prev.messages, { role: 'user', content: text }]
+    }));
+  };
 
-      const { data, error } = await supabase.functions.invoke('patient-chat', {
-        body: {
-          messages: chatMessages,
-          caseContext: {
-            patientName: currentState.currentCase.patientName,
-            patientAge: currentState.currentCase.patientAge,
-            patientSex: currentState.currentCase.patientSex,
-            chiefComplaint: currentState.currentCase.chiefComplaint,
-            history: currentState.currentCase.history,
-            patientPersonality: currentState.currentCase.patientPersonality,
-            vitalSigns: currentState.currentCase.vitalSigns,
-          },
-        },
-      });
-
-      if (error) throw error;
-
-      const patientMsg: ChatMessage = {
-        id: generateId(),
-        role: 'patient',
-        content: data.content || '...não consigo falar agora...',
-        timestamp: new Date(),
-      };
-
-      setState(prev => ({
-        ...prev,
-        messages: [...prev.messages, patientMsg],
-        reasoningScore: Math.min(100, prev.reasoningScore + 2),
-      }));
-    } catch (err) {
-      console.error('AI error:', err);
-      // Fallback to simple response
-      const patientMsg: ChatMessage = {
-        id: generateId(),
-        role: 'patient',
-        content: '...a dor está muito forte... me dê um momento...',
-        timestamp: new Date(),
-      };
-      setState(prev => ({
-        ...prev,
-        messages: [...prev.messages, patientMsg],
-      }));
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
-
-  const performPhysicalExam = useCallback(() => {
-    setState(prev => {
-      if (prev.physicalExamDone) return prev;
-      const examEntries = Object.entries(prev.currentCase.physicalExam);
-      const examText = examEntries.map(([area, finding]) => `**${area}:** ${finding}`).join('\n\n');
-      
-      return {
-        ...prev,
-        physicalExamDone: true,
-        reasoningScore: Math.min(100, prev.reasoningScore + 5),
-        actionsLog: [...prev.actionsLog, 'Exame físico realizado'],
-        messages: [
-          ...prev.messages,
-          {
-            id: generateId(),
-            role: 'system',
-            content: `📋 **Exame Físico Completo:**\n\n${examText}`,
-            timestamp: new Date(),
-          },
-        ],
-      };
-    });
-  }, []);
-
-  const requestExam = useCallback((examName: string) => {
-    setState(prev => {
-      if (prev.examsRequested.includes(examName)) return prev;
-      
-      const result = prev.currentCase.labResults[examName];
-      const isUnnecessary = prev.currentCase.unnecessaryExams.includes(examName);
-      
-      const costPenalty = isUnnecessary ? 15 : 0;
-      const healthPenalty = isUnnecessary ? 3 : 0;
-      
-      const sysMsg: ChatMessage = {
-        id: generateId(),
-        role: 'system',
-        content: result
-          ? `🔬 **Resultado — ${examName}:**\n\n${result}`
-          : isUnnecessary
-          ? `⚠️ **${examName}** — Exame não indicado para este quadro clínico. Custo-efetividade penalizada.`
-          : `🔬 **${examName}:** Resultado dentro da normalidade.`,
-        timestamp: new Date(),
-      };
-
-      return {
-        ...prev,
-        examsRequested: [...prev.examsRequested, examName],
-        costEffectiveness: Math.max(0, prev.costEffectiveness - costPenalty),
-        patientHealth: Math.max(0, prev.patientHealth - healthPenalty),
-        reasoningScore: isUnnecessary ? Math.max(0, prev.reasoningScore - 8) : Math.min(100, prev.reasoningScore + 3),
-        actionsLog: [...prev.actionsLog, `Exame solicitado: ${examName}`],
-        messages: [...prev.messages, sysMsg],
-      };
-    });
-  }, []);
-
-  const submitDiagnosis = useCallback((diagnosis: string) => {
-    setState(prev => {
-      const correct = prev.currentCase.correctDiagnosis.toLowerCase();
-      const attempt = diagnosis.toLowerCase();
-      const isCorrect = correct.includes(attempt) || attempt.includes('infarto') || attempt.includes('iam');
-      
-      return {
-        ...prev,
-        isFinished: true,
-        diagnosisAttempt: diagnosis,
-        reasoningScore: isCorrect ? Math.min(100, prev.reasoningScore + 15) : Math.max(0, prev.reasoningScore - 20),
-        patientHealth: isCorrect ? prev.patientHealth : Math.max(0, prev.patientHealth - 20),
-      };
-    });
-  }, []);
-
-  const resetSimulation = useCallback((caseIndex = 0) => {
-    const newCase = CLINICAL_CASES[caseIndex % CLINICAL_CASES.length];
-    setState({
-      currentCase: newCase,
-      studentLevel: 'Residente R1',
-      reasoningScore: 100,
-      patientHealth: 85,
-      costEffectiveness: 100,
-      messages: [
-        {
-          id: generateId(),
-          role: 'system',
-          content: `Caso iniciado: **${newCase.title}**. O paciente ${newCase.patientName}, ${newCase.patientAge} anos, ${newCase.patientSex === 'M' ? 'masculino' : 'feminino'}, acaba de chegar à emergência. Inicie a anamnese.`,
-          timestamp: new Date(),
-        },
-        {
-          id: generateId(),
-          role: 'patient',
-          content: newCase.chiefComplaint,
-          timestamp: new Date(),
-        },
-      ],
-      examsRequested: [],
-      physicalExamDone: false,
-      isFinished: false,
-      diagnosisAttempt: null,
-      actionsLog: [],
-    });
-    setVitalSigns(newCase.vitalSigns);
-  }, []);
+  const resetSimulation = (caseId: number) => {
+    // Lógica para reiniciar
+    window.location.reload(); 
+  };
 
   return {
     state,
     vitalSigns,
-    isLoading,
+    isLoading: false,
     fluctuateVitals,
     sendMessage,
-    performPhysicalExam,
+    performPhysicalExam: () => setState(p => ({ ...p, physicalExamDone: true })),
     requestExam,
     submitDiagnosis,
-    resetSimulation,
+    resetSimulation
   };
-}
+};
