@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Dor Torácica Súbita",
+    "specialty": "Cardiologia",
+    "correctDiagnosis": "Dissecação Aórtica",
+    "baseVitals": { "bp": "185/105", "hr": 102, "ox": 95 },
+    "labResults": { 
+      "ECG": "Ritmo sinusal, sem supra de ST", 
+      "Raio-X": "Alargamento de mediastino" 
+    },
+    "unnecessaryExams": ["Troponina", "Cintilografia"]
+  },
+  {
+    "id": "2",
+    "title": "Cefaleia e Rigidez de Nuca",
+    "specialty": "Infectologia",
+    "correctDiagnosis": "Meningite Bacteriana",
+    "baseVitals": { "bp": "110/70", "hr": 115, "ox": 96 },
+    "labResults": { 
+      "Líquor": "Turvo, hipoglicorraquia e pleocitose", 
+      "Gram": "Coccos gram-positivos"
+    },
+    "unnecessaryExams": ["Tomografia de Abdome", "Ecodoppler"]
+  }
+]
