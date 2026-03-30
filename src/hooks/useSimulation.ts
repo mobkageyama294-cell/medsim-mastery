@@ -1,5 +1,6 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { ClinicalCase, CLINICAL_CASES } from '@/data/clinicalCases';
+import { supabase } from '@/integrations/supabase/client';
 
 export interface ChatMessage {
   id: string;
@@ -52,6 +53,9 @@ export function useSimulation() {
     actionsLog: [],
   }));
 
+  const stateRef = useRef(state);
+  stateRef.current = state;
+
   const [vitalSigns, setVitalSigns] = useState(CLINICAL_CASES[0].vitalSigns);
 
   // Simulate vital sign fluctuations
@@ -70,7 +74,9 @@ export function useSimulation() {
     });
   }, []);
 
-  const sendMessage = useCallback((content: string) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const sendMessage = useCallback(async (content: string) => {
     const userMsg: ChatMessage = {
       id: generateId(),
       role: 'user',
@@ -78,30 +84,64 @@ export function useSimulation() {
       timestamp: new Date(),
     };
 
-    // Simulate patient response
-    const responses = [
-      'Sim, doutor(a)... a dor começou de repente...',
-      'Não, nunca tive isso antes...',
-      'Estou com muito medo... o que está acontecendo comigo?',
-      'A dor está muito forte... não consigo ficar deitado...',
-      'Minha família tem problema de coração, sim...',
-      'Tomo remédio pra pressão, mas às vezes esqueço...',
-      'Fumei a vida toda... uns 2 maços por dia...',
-      'A dor irradia pro braço esquerdo... e pro queixo também...',
-    ];
-
-    const patientMsg: ChatMessage = {
-      id: generateId(),
-      role: 'patient',
-      content: responses[Math.floor(Math.random() * responses.length)],
-      timestamp: new Date(),
-    };
-
     setState(prev => ({
       ...prev,
-      messages: [...prev.messages, userMsg, patientMsg],
-      reasoningScore: Math.min(100, prev.reasoningScore + 2),
+      messages: [...prev.messages, userMsg],
     }));
+
+    setIsLoading(true);
+
+    try {
+      const currentState = stateRef.current;
+      const chatMessages = [...currentState.messages, userMsg]
+        .filter(m => m.role !== 'system')
+        .map(m => ({ role: m.role, content: m.content }));
+
+      const { data, error } = await supabase.functions.invoke('patient-chat', {
+        body: {
+          messages: chatMessages,
+          caseContext: {
+            patientName: currentState.currentCase.patientName,
+            patientAge: currentState.currentCase.patientAge,
+            patientSex: currentState.currentCase.patientSex,
+            chiefComplaint: currentState.currentCase.chiefComplaint,
+            history: currentState.currentCase.history,
+            patientPersonality: currentState.currentCase.patientPersonality,
+            vitalSigns: currentState.currentCase.vitalSigns,
+          },
+        },
+      });
+
+      if (error) throw error;
+
+      const patientMsg: ChatMessage = {
+        id: generateId(),
+        role: 'patient',
+        content: data.content || '...não consigo falar agora...',
+        timestamp: new Date(),
+      };
+
+      setState(prev => ({
+        ...prev,
+        messages: [...prev.messages, patientMsg],
+        reasoningScore: Math.min(100, prev.reasoningScore + 2),
+      }));
+    } catch (err) {
+      console.error('AI error:', err);
+      // Fallback to simple response
+      const patientMsg: ChatMessage = {
+        id: generateId(),
+        role: 'patient',
+        content: '...a dor está muito forte... me dê um momento...',
+        timestamp: new Date(),
+      };
+      setState(prev => ({
+        ...prev,
+        messages: [...prev.messages, patientMsg],
+      }));
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
 
   const performPhysicalExam = useCallback(() => {
@@ -211,6 +251,7 @@ export function useSimulation() {
   return {
     state,
     vitalSigns,
+    isLoading,
     fluctuateVitals,
     sendMessage,
     performPhysicalExam,

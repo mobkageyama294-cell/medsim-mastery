@@ -7,9 +7,10 @@ import ReactMarkdown from 'react-markdown';
 interface ChatInterfaceProps {
   messages: ChatMessage[];
   onSendMessage: (content: string) => void;
+  isLoading?: boolean;
 }
 
-export default function ChatInterface({ messages, onSendMessage }: ChatInterfaceProps) {
+export default function ChatInterface({ messages, onSendMessage, isLoading }: ChatInterfaceProps) {
   const [input, setInput] = useState('');
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -70,6 +71,24 @@ export default function ChatInterface({ messages, onSendMessage }: ChatInterface
               </div>
             </motion.div>
           ))}
+          {isLoading && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex gap-2 justify-start"
+            >
+              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 bg-accent/20">
+                <User className="w-3.5 h-3.5 text-accent" />
+              </div>
+              <div className="p-3 rounded-xl rounded-bl-md bg-muted/50 border border-border/50">
+                <div className="flex gap-1">
+                  <span className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                  <span className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                  <span className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                </div>
+              </div>
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
 

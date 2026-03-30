@@ -11,6 +11,7 @@ export default function Index() {
   const {
     state,
     vitalSigns,
+    isLoading,
     fluctuateVitals,
     sendMessage,
     performPhysicalExam,
@@ -57,7 +58,7 @@ export default function Index() {
           transition={{ delay: 0.2 }}
           className="lg:col-span-8 h-[500px] lg:h-[600px]"
         >
-          <ChatInterface messages={state.messages} onSendMessage={sendMessage} />
+          <ChatInterface messages={state.messages} onSendMessage={sendMessage} isLoading={isLoading} />
         </motion.div>
       </div>
 
