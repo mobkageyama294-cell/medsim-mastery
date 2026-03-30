@@ -53,6 +53,9 @@ export function useSimulation() {
     actionsLog: [],
   }));
 
+  const stateRef = useRef(state);
+  stateRef.current = state;
+
   const [vitalSigns, setVitalSigns] = useState(CLINICAL_CASES[0].vitalSigns);
 
   // Simulate vital sign fluctuations
@@ -248,6 +251,7 @@ export function useSimulation() {
   return {
     state,
     vitalSigns,
+    isLoading,
     fluctuateVitals,
     sendMessage,
     performPhysicalExam,
