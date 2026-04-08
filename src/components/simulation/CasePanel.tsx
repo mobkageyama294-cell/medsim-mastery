@@ -62,8 +62,8 @@ export default function CasePanel({ clinicalCase, vitalSigns }: CasePanelProps) 
         </div>
         <div className="grid grid-cols-2 gap-2">
           <VitalSign icon={Heart} label="PA" value={vitalSigns.pa} unit="mmHg" alert={parseInt(vitalSigns.pa) > 140} />
-          <VitalSign icon={Activity} label="FC" value={vitalSigns.fc} unit="bpm" alert={vitalSigns.fc > 100} />
-          <VitalSign icon={Droplets} label="SaO₂" value={vitalSigns.sao2} unit="%" alert={vitalSigns.sao2 < 95} />
+          <VitalSign icon={Activity} label="FC" value={Math.round(vitalSigns.fc)} unit="bpm" alert={vitalSigns.fc > 100} />
+          <VitalSign icon={Droplets} label="SaO₂" value={Math.round(vitalSigns.sao2 * 10) / 10} unit="%" alert={vitalSigns.sao2 < 95} />
           <VitalSign icon={Thermometer} label="Temp" value={vitalSigns.temp} unit="°C" />
           <VitalSign icon={Wind} label="FR" value={vitalSigns.fr} unit="irpm" alert={vitalSigns.fr > 20} />
         </div>
