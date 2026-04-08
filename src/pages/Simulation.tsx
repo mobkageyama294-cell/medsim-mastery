@@ -48,6 +48,8 @@ export default function Simulation() {
         patient_health: state.patientHealth,
         cost_effectiveness: state.costEffectiveness,
         is_correct: !!isCorrect,
+      }).then(({ error }) => {
+        if (error) console.error('Failed to save case history:', error);
       });
     }
   }, [state.isFinished]);
