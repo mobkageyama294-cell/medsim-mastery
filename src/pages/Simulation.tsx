@@ -24,7 +24,7 @@ export default function Simulation() {
     performPhysicalExam,
     requestExam,
     submitDiagnosis,
-    resetSimulation,
+    _resetSimulation,
   } = useSimulation(caseId);
 
   useEffect(() => {

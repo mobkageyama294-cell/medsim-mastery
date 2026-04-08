@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Stethoscope, Brain, Heart, Clock, Trophy, LogOut, ChevronRight, Shield } from 'lucide-react';
-import { CLINICAL_CASES, ClinicalCase } from '@/data/clinicalCases';
+import { CLINICAL_CASES } from '@/data/clinicalCases';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 
