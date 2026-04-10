@@ -201,8 +201,9 @@ export const useSimulation = (caseId?: string) => {
         "Ausculta": "Sopro tubário e estertores crepitantes em base direita",
         "Raio-X de Tórax": "Consolidação alveolar com broncogramas aéreos em lobo inferior direito"
       },
+      
       unnecessaryExams: ["Espirometria", "Ecocardiograma", "Troponina"]
-    }
+    },
   return {
     state,
     vitalSigns,
