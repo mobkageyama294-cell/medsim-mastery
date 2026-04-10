@@ -1,6 +1,8 @@
 export interface ClinicalCase {
   id: string;
   title: string;
+  organ: string;
+  specialty: string;
   difficulty: 'Iniciante' | 'Intermediário' | 'Avançado';
   chiefComplaint: string;
   patientName: string;
@@ -26,6 +28,8 @@ export const CLINICAL_CASES: ClinicalCase[] = [
   {
     id: 'case-001',
     title: 'Dor Torácica Aguda',
+    organ: 'Coração',
+    specialty: 'Cardiologia',
     difficulty: 'Intermediário',
     chiefComplaint: 'Dor no peito há 2 horas, com irradiação para o braço esquerdo.',
     patientName: 'Carlos Alberto',
@@ -63,6 +67,8 @@ export const CLINICAL_CASES: ClinicalCase[] = [
   {
     id: 'case-002',
     title: 'Cefaleia Súbita Intensa',
+    organ: 'Cérebro',
+    specialty: 'Neurologia',
     difficulty: 'Avançado',
     chiefComplaint: 'Dor de cabeça fortíssima que começou de repente, "a pior da minha vida".',
     patientName: 'Maria Souza',

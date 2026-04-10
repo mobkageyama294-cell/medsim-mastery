@@ -10,31 +10,31 @@ export default function FeedbackReport({ state, onRestart }: { state: any, onRes
       animate={{ opacity: 1, scale: 1 }}
       className="max-w-4xl mx-auto p-4 space-y-6"
     >
-      <div className="bg-white dark:bg-slate-900 rounded-xl border-t-4 border-t-blue-600 shadow-xl overflow-hidden">
-        <div className="p-6 text-center border-b">
+      <div className="glass-card glow-primary overflow-hidden">
+        <div className="p-6 text-center border-b border-border/50">
           <div className="flex justify-center mb-4">
             {isCorrect ? 
-              <CheckCircle2 className="w-16 h-16 text-green-500" /> : 
-              <XCircle className="w-16 h-16 text-red-500" />
+              <CheckCircle2 className="w-16 h-16 text-success" /> : 
+              <XCircle className="w-16 h-16 text-destructive" />
             }
           </div>
-          <h2 className="text-3xl font-bold">
+          <h2 className="text-3xl font-bold text-foreground">
             {isCorrect ? "Diagnóstico Correto!" : "Diagnóstico Incorreto"}
           </h2>
-          <p className="text-slate-500">Caso: {state.currentCase.title}</p>
+          <p className="text-muted-foreground mt-1">Caso: {state.currentCase.title}</p>
         </div>
 
         <div className="p-6 space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <MetricCard icon={<Brain className="text-blue-500" />} label="Raciocínio" value={`${state.reasoningScore}%`} />
-            <MetricCard icon={<Activity className="text-red-500" />} label="Segurança" value={`${state.patientHealth}%`} />
-            <MetricCard icon={<DollarSign className="text-green-500" />} label="Eficiência" value={`${state.costEffectiveness}%`} />
+            <MetricCard icon={<Brain className="text-primary" />} label="Raciocínio" value={`${state.reasoningScore}%`} />
+            <MetricCard icon={<Activity className="text-destructive" />} label="Segurança" value={`${state.patientHealth}%`} />
+            <MetricCard icon={<DollarSign className="text-success" />} label="Eficiência" value={`${state.costEffectiveness}%`} />
           </div>
 
-          <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-lg border">
-            <h3 className="text-lg font-semibold mb-3">Discussão do Caso</h3>
-            <p className="text-sm leading-relaxed mb-4">
-              O diagnóstico final era <strong>{state.currentCase.correctDiagnosis}</strong>. 
+          <div className="bg-secondary/50 p-6 rounded-lg border border-border/50">
+            <h3 className="text-lg font-semibold mb-3 text-foreground">Discussão do Caso</h3>
+            <p className="text-sm leading-relaxed mb-4 text-muted-foreground">
+              O diagnóstico final era <strong className="text-foreground">{state.currentCase.correctDiagnosis}</strong>. 
               {isCorrect 
                 ? " Você identificou corretamente os sinais de alerta."
                 : " Você não identificou os sinais chaves. Estude mais este tema."}
@@ -44,11 +44,11 @@ export default function FeedbackReport({ state, onRestart }: { state: any, onRes
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <button 
               onClick={onRestart}
-              className="flex items-center justify-center gap-2 px-6 py-2 border rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+              className="flex items-center justify-center gap-2 px-6 py-2 border border-border rounded-lg hover:bg-muted/50 text-foreground transition-colors"
             >
               <RefreshCcw className="w-4 h-4" /> Tentar Outro
             </button>
-            <button className="flex items-center justify-center gap-2 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-lg">
+            <button className="flex items-center justify-center gap-2 px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/80 transition-colors shadow-lg">
               <Share2 className="w-4 h-4" /> Compartilhar
             </button>
           </div>
@@ -60,10 +60,10 @@ export default function FeedbackReport({ state, onRestart }: { state: any, onRes
 
 function MetricCard({ icon, label, value }: { icon: any, label: string, value: string }) {
   return (
-    <div className="flex flex-col items-center p-4 bg-white dark:bg-slate-900 border rounded-xl shadow-sm">
-      <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded-full mb-2">{icon}</div>
-      <span className="text-xs text-slate-400 font-medium uppercase tracking-wider">{label}</span>
-      <span className="text-2xl font-bold">{value}</span>
+    <div className="flex flex-col items-center p-4 glass-card">
+      <div className="p-2 bg-muted rounded-full mb-2">{icon}</div>
+      <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">{label}</span>
+      <span className="text-2xl font-bold text-foreground">{value}</span>
     </div>
   );
 }
