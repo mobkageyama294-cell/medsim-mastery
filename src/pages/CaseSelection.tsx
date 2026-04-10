@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Stethoscope, Brain, Heart, Clock, Trophy, LogOut, ChevronRight, Shield } from 'lucide-react';
+import { Stethoscope, Brain, Heart, Clock, Trophy, LogOut, ChevronRight, Shield, Activity } from 'lucide-react';
 import { CLINICAL_CASES } from '@/data/clinicalCases';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
@@ -38,7 +38,7 @@ export default function CaseSelection() {
     return best;
   };
 
-  const difficultyConfig = {
+  const difficultyConfig: Record<string, { color: string; icon: typeof Shield }> = {
     Iniciante: { color: 'bg-success/20 text-success border-success/30', icon: Shield },
     Intermediário: { color: 'bg-warning/20 text-warning border-warning/30', icon: Brain },
     Avançado: { color: 'bg-destructive/20 text-destructive border-destructive/30', icon: Heart },
@@ -50,7 +50,7 @@ export default function CaseSelection() {
   };
 
   return (
-    <div className="min-h-screen p-4 md:p-8 max-w-6xl mx-auto">
+    <div className="min-h-screen p-4 md:p-8 max-w-5xl mx-auto">
       <motion.header
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -75,7 +75,6 @@ export default function CaseSelection() {
           </div>
           <div className="text-right hidden sm:block">
             <p className="text-xs font-medium text-foreground">{user?.user_metadata?.full_name || user?.email}</p>
-            <p className="text-[10px] text-muted-foreground">{user?.email}</p>
           </div>
           <button
             onClick={handleLogout}
@@ -87,7 +86,7 @@ export default function CaseSelection() {
         </div>
       </motion.header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="space-y-3">
         {CLINICAL_CASES.map((c, i) => {
           const status = getCaseStatus(c.id);
           const diff = difficultyConfig[c.difficulty];
@@ -96,50 +95,38 @@ export default function CaseSelection() {
           return (
             <motion.button
               key={c.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.08 }}
               onClick={() => navigate(`/simulation/${c.id}`)}
-              className="glass-card p-5 text-left hover:glow-primary hover:border-primary/30 transition-all group"
+              className="glass-card w-full p-4 text-left hover:glow-primary hover:border-primary/30 transition-all group flex items-center gap-4"
             >
-              <div className="flex items-start justify-between mb-3">
-                <div className="flex items-center gap-2">
-                  <DiffIcon className="w-4 h-4 text-muted-foreground" />
+              <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+                <Activity className="w-6 h-6 text-primary" />
+              </div>
+
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                    {c.organ} — {c.specialty}
+                  </h3>
                   <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium border ${diff.color}`}>
                     {c.difficulty}
                   </span>
                 </div>
+                <p className="text-xs text-muted-foreground line-clamp-1">
+                  {c.patientName}, {c.patientAge}a, {c.patientSex === 'M' ? '♂' : '♀'} — "{c.chiefComplaint}"
+                </p>
+              </div>
+
+              <div className="shrink-0 flex items-center gap-3">
                 {status && (
                   <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${status.is_correct ? 'bg-success/20 text-success' : 'bg-destructive/20 text-destructive'}`}>
                     {status.is_correct ? '✓ Acertou' : '✗ Errou'}
                   </span>
                 )}
-              </div>
-
-              <h3 className="text-sm font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                {c.title}
-              </h3>
-
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-[10px] text-muted-foreground">
-                  {c.patientName}, {c.patientAge}a, {c.patientSex === 'M' ? '♂' : '♀'}
-                </span>
-              </div>
-
-              <p className="text-xs text-muted-foreground italic mb-4 line-clamp-2">
-                "{c.chiefComplaint}"
-              </p>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3 text-[10px] text-muted-foreground">
-                  <span className="flex items-center gap-1">
-                    <Clock className="w-3 h-3" /> ~15min
-                  </span>
-                  {status && (
-                    <span className="flex items-center gap-1">
-                      <Brain className="w-3 h-3" /> {status.reasoning_score}%
-                    </span>
-                  )}
+                <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
+                  <Clock className="w-3 h-3" /> ~15min
                 </div>
                 <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
               </div>
