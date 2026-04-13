@@ -5,54 +5,73 @@
     "specialty": "Cardiologia",
     "correctDiagnosis": "Arritmia Cardíaca Súbita",
     "description": "Mulher de 37 anos com início súbito de palpitações após uma doença semelhante à gripe.",
-    "baseVitals": { "bp": "110/70", "hr": 145, "ox": 96 },
+    "baseVitals": { "bp": "110/70", "hr": 155, "ox": 96 },
     "labResults": { 
-      "ECG": "Taquicardia Supraventricular", 
-      "Troponina": "Normal",
-      "Ecocardiograma": "Fração de ejeção preservada" 
+      "ECG": "Taquicardia Supraventricular paroxística", 
+      "Troponina": "Normal (0.01 ng/mL)",
+      "Histórico": "Paciente relata quadro viral há 10 dias." 
     },
-    "unnecessaryExams": ["D-Dímero", "Raio-X de Tórax"]
+    "unnecessaryExams": ["D-Dímero", "Endoscopia"]
   },
   {
     "id": "cardio_002",
     "title": "Insuficiência Cardíaca Congestiva",
     "specialty": "Cardiologia",
     "correctDiagnosis": "Insuficiência Cardíaca Congestiva",
-    "description": "Dispneia, edema em membros inferiores e astenia. Fígado aumentado e borda romba.",
-    "baseVitals": { "bp": "140/95", "hr": 92, "ox": 89 },
+    "description": "Dispneia, edema em membros inferiores e astenia. Fígado aumentado, superfície lisa e borda romba.",
+    "baseVitals": { "bp": "150/95", "hr": 98, "ox": 88 },
     "labResults": { 
-      "BNP": "Elevado (1200 pg/mL)", 
-      "Raio-X de Tórax": "Congestão hilária e aumento da área cardíaca",
-      "Exame Físico": "Presença de B3 e estase jugular" 
+      "BNP": "Elevado (1500 pg/mL)", 
+      "Raio-X de Tórax": "Infiltração hilar bilateral (Asa de Borboleta) e cardiomegalia",
+      "Exame Físico": "Estase jugular a 45º e presença de B3" 
     },
-    "unnecessaryExams": ["D-Dímero", "Endoscopia"]
+    "unnecessaryExams": ["Colonoscopia"]
+  },
+  {
+    "id": "cardio_006",
+    "title": "Doença de Chagas (Fase Cardíaca)",
+    "specialty": "Cardiologia",
+    "correctDiagnosis": "Doença de Chagas",
+    "description": "Evolução lenta com arritmias, insuficiência cardíaca e cardiomegalia em paciente de zona rural.",
+    "baseVitals": { "bp": "100/60", "hr": 52, "ox": 95 },
+    "labResults": { 
+      "ECG": "Bloqueio de Ramo Direito e Bloqueio Divisional Antero-superior Esquerdo", 
+      "Sorologia": "Positiva para Trypanosoma cruzi",
+      "Raio-X": "Aumento global da área cardíaca" 
+    },
+    "unnecessaryExams": ["Cintilografia Óssea"]
   },
   {
     "id": "resp_001",
     "title": "Pneumotórax Espontâneo",
     "specialty": "Pneumologia",
     "correctDiagnosis": "Pneumotórax Espontâneo",
-    "description": "Dor torácica súbita em punhalada com dispneia em paciente jovem e saudável.",
-    "baseVitals": { "bp": "120/80", "hr": 105, "ox": 91 },
+    "description": "Dor torácica súbita em punhalada com dispneia, sem febre, em paciente jovem e longilíneo.",
+    "baseVitals": { "bp": "115/75", "hr": 110, "ox": 90 },
     "labResults": { 
-      "Raio-X de Tórax": "Ausência de trama vascular em periferia de pulmão direito", 
-      "Ausculta": "Murmúrio vesicular ausente à direita",
-      "Percussão": "Hipertimpanismo" 
+      "Raio-X de Tórax": "Linha de pneumotórax visível à direita com colapso pulmonar parcial", 
+      "Ausculta": "Abolição do murmúrio vesicular no ápice direito",
+      "Percussão": "Timpanismo aumentado à direita" 
     },
-    "unnecessaryExams": ["Troponina", "Esvaziamento Gástrico"]
+    "unnecessaryExams": ["Troponina", "Glicemia"]
   },
   {
-    "id": "dig_001",
-    "title": "Apendicite Aguda",
-    "specialty": "Cirurgia Geral",
-    "correctDiagnosis": "Apendicite Aguda",
-    "description": "Dor periumbilical que migrou para o quadrante inferior direito (Fossa Ilíaca Direita).",
-    "baseVitals": { "bp": "125/85", "hr": 102, "ox": 98 },
+    "id": "resp_002",
+    "title": "Pneumonia Lobar",
+    "specialty": "Pneumologia",
+    "correctDiagnosis": "Pneumonia Lobar",
+    "description": "Tosse, febre, dor torácica. Exame físico com macicez à percussão.",
+    "baseVitals": { "bp": "120/80", "hr": 105, "ox": 93 },
     "labResults": { 
-      "Sinal de Blumberg": "Positivo", 
-      "Hemograma": "Leucocitose com desvio à esquerda",
-      "Ultrassom": "Apêndice não compressível com 8mm de diâmetro" 
+      "Raio-X de Tórax": "Consolidação lobar em base esquerda", 
+      "Ausculta": "Estertores crepitantes e aumento do Frêmito Toraco-vocal (FTV)",
+      "Hemograma": "Leucocitose com desvio à esquerda" 
     },
-    "unnecessaryExams": ["Colonoscopia", "ECG"]
-  }
-]
+    "unnecessaryExams": ["Ecocardiograma"]
+  },
+  {
+    "id": "resp_003",
+    "title": "Tuberculose Pulmonar",
+    "specialty": "Infectologia",
+    "correctDiagnosis": "Tuberculose Pulmonar",
+    "description": "Febre vespertina, tosse, emagrecimento e sudorese noturna
