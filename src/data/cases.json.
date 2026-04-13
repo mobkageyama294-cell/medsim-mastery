@@ -1,26 +1,58 @@
 [
   {
-    "id": "1",
-    "title": "Dor Torácica Súbita",
+    "id": "cardio_001",
+    "title": "Arritmia Cardíaca Súbita",
     "specialty": "Cardiologia",
-    "correctDiagnosis": "Dissecação Aórtica",
-    "baseVitals": { "bp": "185/105", "hr": 102, "ox": 95 },
+    "correctDiagnosis": "Arritmia Cardíaca Súbita",
+    "description": "Mulher de 37 anos com início súbito de palpitações após uma doença semelhante à gripe.",
+    "baseVitals": { "bp": "110/70", "hr": 145, "ox": 96 },
     "labResults": { 
-      "ECG": "Ritmo sinusal, sem supra de ST", 
-      "Raio-X": "Alargamento de mediastino" 
+      "ECG": "Taquicardia Supraventricular", 
+      "Troponina": "Normal",
+      "Ecocardiograma": "Fração de ejeção preservada" 
     },
-    "unnecessaryExams": ["Troponina", "Cintilografia"]
+    "unnecessaryExams": ["D-Dímero", "Raio-X de Tórax"]
   },
   {
-    "id": "2",
-    "title": "Cefaleia e Rigidez de Nuca",
-    "specialty": "Infectologia",
-    "correctDiagnosis": "Meningite Bacteriana",
-    "baseVitals": { "bp": "110/70", "hr": 115, "ox": 96 },
+    "id": "cardio_002",
+    "title": "Insuficiência Cardíaca Congestiva",
+    "specialty": "Cardiologia",
+    "correctDiagnosis": "Insuficiência Cardíaca Congestiva",
+    "description": "Dispneia, edema em membros inferiores e astenia. Fígado aumentado e borda romba.",
+    "baseVitals": { "bp": "140/95", "hr": 92, "ox": 89 },
     "labResults": { 
-      "Líquor": "Turvo, hipoglicorraquia e pleocitose", 
-      "Gram": "Coccos gram-positivos"
+      "BNP": "Elevado (1200 pg/mL)", 
+      "Raio-X de Tórax": "Congestão hilária e aumento da área cardíaca",
+      "Exame Físico": "Presença de B3 e estase jugular" 
     },
-    "unnecessaryExams": ["Tomografia de Abdome", "Ecodoppler"]
+    "unnecessaryExams": ["D-Dímero", "Endoscopia"]
+  },
+  {
+    "id": "resp_001",
+    "title": "Pneumotórax Espontâneo",
+    "specialty": "Pneumologia",
+    "correctDiagnosis": "Pneumotórax Espontâneo",
+    "description": "Dor torácica súbita em punhalada com dispneia em paciente jovem e saudável.",
+    "baseVitals": { "bp": "120/80", "hr": 105, "ox": 91 },
+    "labResults": { 
+      "Raio-X de Tórax": "Ausência de trama vascular em periferia de pulmão direito", 
+      "Ausculta": "Murmúrio vesicular ausente à direita",
+      "Percussão": "Hipertimpanismo" 
+    },
+    "unnecessaryExams": ["Troponina", "Esvaziamento Gástrico"]
+  },
+  {
+    "id": "dig_001",
+    "title": "Apendicite Aguda",
+    "specialty": "Cirurgia Geral",
+    "correctDiagnosis": "Apendicite Aguda",
+    "description": "Dor periumbilical que migrou para o quadrante inferior direito (Fossa Ilíaca Direita).",
+    "baseVitals": { "bp": "125/85", "hr": 102, "ox": 98 },
+    "labResults": { 
+      "Sinal de Blumberg": "Positivo", 
+      "Hemograma": "Leucocitose com desvio à esquerda",
+      "Ultrassom": "Apêndice não compressível com 8mm de diâmetro" 
+    },
+    "unnecessaryExams": ["Colonoscopia", "ECG"]
   }
 ]
