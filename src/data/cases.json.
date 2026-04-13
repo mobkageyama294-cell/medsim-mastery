@@ -4,74 +4,136 @@
     "title": "Arritmia Cardíaca Súbita",
     "specialty": "Cardiologia",
     "correctDiagnosis": "Arritmia Cardíaca Súbita",
-    "description": "Mulher de 37 anos com início súbito de palpitações após uma doença semelhante à gripe.",
+    "description": "Mulher de 37 anos com início súbito de palpitações após quadro viral.",
     "baseVitals": { "bp": "110/70", "hr": 155, "ox": 96 },
-    "labResults": { 
-      "ECG": "Taquicardia Supraventricular paroxística", 
-      "Troponina": "Normal (0.01 ng/mL)",
-      "Histórico": "Paciente relata quadro viral há 10 dias." 
-    },
-    "unnecessaryExams": ["D-Dímero", "Endoscopia"]
+    "labResults": { "ECG": "Taquicardia Supraventricular", "Troponina": "Normal" },
+    "unnecessaryExams": ["Endoscopia"]
   },
   {
     "id": "cardio_002",
     "title": "Insuficiência Cardíaca Congestiva",
     "specialty": "Cardiologia",
     "correctDiagnosis": "Insuficiência Cardíaca Congestiva",
-    "description": "Dispneia, edema em membros inferiores e astenia. Fígado aumentado, superfície lisa e borda romba.",
+    "description": "Dispneia, edema em MMII e hepatomegalia de borda romba.",
     "baseVitals": { "bp": "150/95", "hr": 98, "ox": 88 },
-    "labResults": { 
-      "BNP": "Elevado (1500 pg/mL)", 
-      "Raio-X de Tórax": "Infiltração hilar bilateral (Asa de Borboleta) e cardiomegalia",
-      "Exame Físico": "Estase jugular a 45º e presença de B3" 
-    },
+    "labResults": { "Raio-X": "Congestão hilária e cardiomegalia", "BNP": "1500 pg/mL" },
     "unnecessaryExams": ["Colonoscopia"]
   },
   {
+    "id": "cardio_003",
+    "title": "Dissecação Aórtica Aguda",
+    "specialty": "Cardiologia",
+    "correctDiagnosis": "Dissecação Aórtica Aguda",
+    "description": "Dor torácica intensa, súbita, com irradiação para o dorso.",
+    "baseVitals": { "bp": "190/110", "hr": 110, "ox": 94 },
+    "labResults": { "Angio-TC": "Presença de flap de dissecação em aorta ascendente", "Pulsos": "Assimetria de pulsos entre braço direito e esquerdo" },
+    "unnecessaryExams": ["Glicemia"]
+  },
+  {
+    "id": "cardio_004",
+    "title": "Endocardite Infecciosa",
+    "specialty": "Cardiologia",
+    "correctDiagnosis": "Endocardite Infecciosa",
+    "description": "Febre prolongada associada a novo sopro cardíaco em idoso.",
+    "baseVitals": { "bp": "110/60", "hr": 105, "ox": 95 },
+    "labResults": { "Eco": "Vegetação em valva mitral", "Hemocultura": "Positiva para S. aureus" },
+    "unnecessaryExams": ["Raio-X de Pelve"]
+  },
+  {
+    "id": "cardio_005",
+    "title": "Hipotensão Ortostática",
+    "specialty": "Clínica Médica",
+    "correctDiagnosis": "Hipotensão Ortostática",
+    "description": "Paciente relata tontura e síncope sempre ao se levantar rapidamente.",
+    "baseVitals": { "bp": "120/80", "hr": 75, "ox": 98 },
+    "labResults": { "Teste Ortostático": "Queda de 25mmHg na PAS após 3 min em pé", "ECG": "Normal" },
+    "unnecessaryExams": ["Troponina"]
+  },
+  {
     "id": "cardio_006",
-    "title": "Doença de Chagas (Fase Cardíaca)",
+    "title": "Doença de Chagas (Crônica)",
     "specialty": "Cardiologia",
     "correctDiagnosis": "Doença de Chagas",
-    "description": "Evolução lenta com arritmias, insuficiência cardíaca e cardiomegalia em paciente de zona rural.",
-    "baseVitals": { "bp": "100/60", "hr": 52, "ox": 95 },
-    "labResults": { 
-      "ECG": "Bloqueio de Ramo Direito e Bloqueio Divisional Antero-superior Esquerdo", 
-      "Sorologia": "Positiva para Trypanosoma cruzi",
-      "Raio-X": "Aumento global da área cardíaca" 
-    },
-    "unnecessaryExams": ["Cintilografia Óssea"]
+    "description": "Cardiomegalia e arritmias em paciente vindo de área endêmica.",
+    "baseVitals": { "bp": "100/65", "hr": 52, "ox": 96 },
+    "labResults": { "Sorologia": "Positiva para Chagas", "ECG": "BRD + BDAS" },
+    "unnecessaryExams": ["TC de Crânio"]
   },
   {
     "id": "resp_001",
     "title": "Pneumotórax Espontâneo",
     "specialty": "Pneumologia",
     "correctDiagnosis": "Pneumotórax Espontâneo",
-    "description": "Dor torácica súbita em punhalada com dispneia, sem febre, em paciente jovem e longilíneo.",
-    "baseVitals": { "bp": "115/75", "hr": 110, "ox": 90 },
-    "labResults": { 
-      "Raio-X de Tórax": "Linha de pneumotórax visível à direita com colapso pulmonar parcial", 
-      "Ausculta": "Abolição do murmúrio vesicular no ápice direito",
-      "Percussão": "Timpanismo aumentado à direita" 
-    },
-    "unnecessaryExams": ["Troponina", "Glicemia"]
+    "description": "Dor em punhalada e dispneia súbita em jovem longilíneo.",
+    "baseVitals": { "bp": "118/76", "hr": 108, "ox": 90 },
+    "labResults": { "Raio-X": "Colapso pulmonar à direita", "Ausculta": "MV abolido" },
+    "unnecessaryExams": ["Troponina"]
   },
   {
     "id": "resp_002",
     "title": "Pneumonia Lobar",
-    "specialty": "Pneumologia",
+    "specialty": "Infectologia",
     "correctDiagnosis": "Pneumonia Lobar",
-    "description": "Tosse, febre, dor torácica. Exame físico com macicez à percussão.",
-    "baseVitals": { "bp": "120/80", "hr": 105, "ox": 93 },
-    "labResults": { 
-      "Raio-X de Tórax": "Consolidação lobar em base esquerda", 
-      "Ausculta": "Estertores crepitantes e aumento do Frêmito Toraco-vocal (FTV)",
-      "Hemograma": "Leucocitose com desvio à esquerda" 
-    },
-    "unnecessaryExams": ["Ecocardiograma"]
+    "description": "Tosse, febre e macicez à percussão pulmonar.",
+    "baseVitals": { "bp": "120/80", "hr": 102, "ox": 92 },
+    "labResults": { "Raio-X": "Consolidação lobar", "Hemograma": "Leucocitose" },
+    "unnecessaryExams": ["EAS"]
   },
   {
     "id": "resp_003",
     "title": "Tuberculose Pulmonar",
     "specialty": "Infectologia",
     "correctDiagnosis": "Tuberculose Pulmonar",
-    "description": "Febre vespertina, tosse, emagrecimento e sudorese noturna
+    "description": "Tosse crônica, emagrecimento e sudorese noturna.",
+    "baseVitals": { "bp": "110/70", "hr": 85, "ox": 97 },
+    "labResults": { "BAAR": "Positivo no escarro", "Raio-X": "Cavitação em ápice" },
+    "unnecessaryExams": ["ECG"]
+  },
+  {
+    "id": "resp_004",
+    "title": "Asma Brônquica",
+    "specialty": "Pneumologia",
+    "correctDiagnosis": "Asma Brônquica",
+    "description": "Sibilos e dispneia com piora no período noturno.",
+    "baseVitals": { "bp": "125/80", "hr": 110, "ox": 93 },
+    "labResults": { "Espirometria": "Distúrbio obstrutivo reversível", "Ausculta": "Sibilos difusos" },
+    "unnecessaryExams": ["TC de Abdome"]
+  },
+  {
+    "id": "resp_005",
+    "title": "DPOC",
+    "specialty": "Pneumologia",
+    "correctDiagnosis": "DPOC",
+    "description": "Dispneia progressiva e tosse em paciente tabagista crônico.",
+    "baseVitals": { "bp": "135/85", "hr": 92, "ox": 88 },
+    "labResults": { "Raio-X": "Hiperinsuflação e retificação diafragmática", "Histórico": "Carga tabágica 40 anos/maço" },
+    "unnecessaryExams": ["Amilase"]
+  },
+  {
+    "id": "dig_001",
+    "title": "Apendicite Aguda",
+    "specialty": "Cirurgia Geral",
+    "correctDiagnosis": "Apendicite Aguda",
+    "description": "Dor que migrou do umbigo para a fossa ilíaca direita.",
+    "baseVitals": { "bp": "120/80", "hr": 104, "ox": 99 },
+    "labResults": { "Sinal de Blumberg": "Positivo", "USG": "Apêndice > 7mm" },
+    "unnecessaryExams": ["Troponina"]
+  },
+  {
+    "id": "dig_002",
+    "title": "Megaesôfago Chagásico",
+    "specialty": "Gastroenterologia",
+    "correctDiagnosis": "Megaesôfago Chagásico",
+    "description": "Disfagia de condução e regurgitação de alimentos.",
+    "baseVitals": { "bp": "115/75", "hr": 80, "ox": 98 },
+    "labResults": { "Esofagograma": "Sinal do bico de pássaro", "Sorologia": "Chagas Positiva" },
+    "unnecessaryExams": ["Raio-X de Tórax"]
+  },
+  {
+    "id": "dig_003",
+    "title": "Cirrose Hepática",
+    "specialty": "Gastroenterologia",
+    "correctDiagnosis": "Cirrose Hepática",
+    "description": "Icterícia, ascite e fígado de consistência nodular.",
+    "baseVitals": { "bp": "100/60", "hr": 90, "ox": 96 },
+    "labResults": {
