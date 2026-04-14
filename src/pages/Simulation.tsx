@@ -76,6 +76,7 @@ export default function Simulation() {
           reasoningScore={state.reasoningScore}
           patientHealth={state.patientHealth}
           costEffectiveness={state.costEffectiveness}
+          empathyScore={state.empathyScore}
         />
       </motion.div>
 
