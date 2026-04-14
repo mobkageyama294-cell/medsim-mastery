@@ -1,100 +1,159 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
+import { CLINICAL_CASES, ClinicalCase } from '@/data/clinicalCases';
+import { supabase } from '@/integrations/supabase/client';
 
-export interface ClinicalCase {
-  id: string;
-  title: string;
-  specialty: string;
-  correctDiagnosis: string;
-  description: string;
-  baseVitals: { bp: string; hr: number; ox: number };
-  labResults: Record<string, string>;
-  unnecessaryExams: string[];
+export type { ClinicalCase } from '@/data/clinicalCases';
+
+export interface ChatMessage {
+  role: 'system' | 'user' | 'patient' | 'assistant';
+  content: string;
 }
 
-export const useSimulation = () => {
-  const [cases, setCases] = useState<ClinicalCase[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [state, setState] = useState({
-    isFinished: false,
-    studentLevel: "Internato",
-    reasoningScore: 100,
-    patientHealth: 100,
-    costEffectiveness: 100,
-    physicalExamDone: false,
-    examsRequested: [] as string[],
-    messages: [{ role: 'system' as const, content: 'Carregando prontuários...' }],
-    currentCase: null as ClinicalCase | null,
-    diagnosisAttempt: ""
+export interface SimulationState {
+  isFinished: boolean;
+  studentLevel: string;
+  reasoningScore: number;
+  patientHealth: number;
+  costEffectiveness: number;
+  physicalExamDone: boolean;
+  examsRequested: string[];
+  messages: ChatMessage[];
+  currentCase: ClinicalCase | null;
+  diagnosisAttempt: string;
+}
+
+const initialState: SimulationState = {
+  isFinished: false,
+  studentLevel: 'Internato',
+  reasoningScore: 100,
+  patientHealth: 100,
+  costEffectiveness: 100,
+  physicalExamDone: false,
+  examsRequested: [],
+  messages: [],
+  currentCase: null,
+  diagnosisAttempt: '',
+};
+
+export const useSimulation = (initialCaseId?: string) => {
+  const cases = CLINICAL_CASES;
+
+  const findCase = (id: string) => cases.find(c => c.id === id) || null;
+
+  const buildWelcome = (c: ClinicalCase): ChatMessage => ({
+    role: 'system',
+    content: `Novo paciente: ${c.patientName}, ${c.patientAge}a, ${c.patientSex === 'M' ? '♂' : '♀'}. Queixa: "${c.chiefComplaint}". Conduza a anamnese.`,
   });
 
-  const [vitalSigns, setVitalSigns] = useState({ bp: "0/0", hr: 0, ox: 0 });
+  const getInitialState = (): SimulationState => {
+    const c = initialCaseId ? findCase(initialCaseId) : null;
+    return {
+      ...initialState,
+      currentCase: c,
+      messages: c ? [buildWelcome(c)] : [],
+    };
+  };
 
-  // FUNÇÃO QUE LÊ O ARQUIVO JSON
-  useEffect(() => {
-    fetch('/src/data/cases.json')
-      .then(res => res.json())
-      .then((data: ClinicalCase[]) => {
-        setCases(data);
-        if (data.length > 0) {
-          setState(prev => ({
-            ...prev,
-            currentCase: data[0],
-            messages: [{ role: 'system', content: `Paciente aguardando: ${data[0].title}. O que deseja fazer?` }]
-          }));
-          setVitalSigns(data[0].baseVitals);
-        }
-        setIsLoading(false);
-      })
-      .catch(err => {
-        console.error("Erro ao ler cases.json:", err);
-        setIsLoading(false);
-      });
+  const [state, setState] = useState<SimulationState>(getInitialState);
+  const [vitalSigns, setVitalSigns] = useState(
+    state.currentCase?.vitalSigns || { pa: '0/0', fc: 0, sao2: 0, temp: 36, fr: 16 }
+  );
+  const [isLoading, setIsLoading] = useState(false);
+
+  const loadCase = useCallback((id: string) => {
+    const c = findCase(id);
+    if (!c) return;
+    setState({
+      ...initialState,
+      currentCase: c,
+      messages: [buildWelcome(c)],
+    });
+    setVitalSigns(c.vitalSigns);
   }, []);
 
   const fluctuateVitals = useCallback(() => {
     if (!state.currentCase) return;
     setVitalSigns(prev => ({
       ...prev,
-      hr: prev.hr + (Math.random() > 0.5 ? 1 : -1),
-      ox: Math.min(100, prev.ox + (Math.random() > 0.5 ? 0.1 : -0.1))
+      fc: prev.fc + (Math.random() > 0.5 ? 1 : -1),
+      sao2: Math.min(100, prev.sao2 + (Math.random() > 0.5 ? 0.1 : -0.1)),
     }));
   }, [state.currentCase]);
 
-  const handleExam = (exam: string) => {
+  const sendMessage = useCallback(async (text: string) => {
     if (!state.currentCase) return;
-    const result = state.currentCase.labResults[exam] || "Resultado normal.";
+
+    const userMsg: ChatMessage = { role: 'user', content: text };
+    setState(prev => ({ ...prev, messages: [...prev.messages, userMsg] }));
+    setIsLoading(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('patient-chat', {
+        body: {
+          messages: [...state.messages, userMsg],
+          caseContext: state.currentCase,
+        },
+      });
+
+      const reply: ChatMessage = {
+        role: 'patient',
+        content: error ? 'Desculpe, não consegui entender...' : data.content,
+      };
+      setState(prev => ({ ...prev, messages: [...prev.messages, reply] }));
+    } catch {
+      setState(prev => ({
+        ...prev,
+        messages: [...prev.messages, { role: 'system' as const, content: 'Erro de conexão com o paciente.' }],
+      }));
+    } finally {
+      setIsLoading(false);
+    }
+  }, [state.messages, state.currentCase]);
+
+  const performPhysicalExam = useCallback(() => {
+    if (!state.currentCase || state.physicalExamDone) return;
+    const examText = Object.entries(state.currentCase.physicalExam)
+      .map(([k, v]) => `**${k}:** ${v}`)
+      .join('\n');
+    const msg: ChatMessage = { role: 'system', content: `📋 **Exame Físico Realizado:**\n${examText}` };
+    setState(prev => ({
+      ...prev,
+      physicalExamDone: true,
+      reasoningScore: Math.max(0, prev.reasoningScore + 5),
+      messages: [...prev.messages, msg],
+    }));
+  }, [state.currentCase, state.physicalExamDone]);
+
+  const requestExam = useCallback((exam: string) => {
+    if (!state.currentCase) return;
+    const isUnnecessary = state.currentCase.unnecessaryExams.includes(exam);
+    const result = state.currentCase.labResults[exam] || 'Resultado dentro dos parâmetros normais.';
+    const msg: ChatMessage = {
+      role: 'system',
+      content: `🔬 **${exam}:** ${result}`,
+    };
     setState(prev => ({
       ...prev,
       examsRequested: [...prev.examsRequested, exam],
-      messages: [...prev.messages, { role: 'assistant', content: `Exame: ${exam}. Resultado: ${result}` }]
+      costEffectiveness: isUnnecessary ? Math.max(0, prev.costEffectiveness - 10) : prev.costEffectiveness,
+      messages: [...prev.messages, msg],
     }));
-  };
+  }, [state.currentCase]);
 
-  const submitDiagnosis = (diagnosis: string) => {
+  const submitDiagnosis = useCallback((diagnosis: string) => {
     setState(prev => ({ ...prev, isFinished: true, diagnosisAttempt: diagnosis }));
-  };
-
-  const nextCase = (index: number) => {
-    if (cases[index]) {
-      setState(prev => ({
-        ...prev,
-        isFinished: false,
-        examsRequested: [],
-        currentCase: cases[index],
-        messages: [{ role: 'system', content: `Novo caso iniciado: ${cases[index].title}` }]
-      }));
-      setVitalSigns(cases[index].baseVitals);
-    }
-  };
+  }, []);
 
   return {
     state,
-    cases, // Exportando a lista completa para o componente de seleção
+    cases,
     vitalSigns,
     isLoading,
+    loadCase,
     fluctuateVitals,
-    handleExam,
+    sendMessage,
+    performPhysicalExam,
+    requestExam,
     submitDiagnosis,
-    nextCase
   };
 };

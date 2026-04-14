@@ -31,7 +31,6 @@ export default function Simulation() {
     return () => clearInterval(interval);
   }, [fluctuateVitals]);
 
-  // Save result when finished
   useEffect(() => {
     if (state.isFinished && user && state.currentCase) {
       const isCorrect = state.diagnosisAttempt
@@ -55,12 +54,7 @@ export default function Simulation() {
   }, [state.isFinished]);
 
   if (state.isFinished) {
-    return (
-      <FeedbackReport
-        state={state}
-        onRestart={() => navigate('/')}
-      />
-    );
+    return <FeedbackReport state={state} onRestart={() => navigate('/')} />;
   }
 
   if (!state.currentCase) {
