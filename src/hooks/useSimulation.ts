@@ -9,12 +9,28 @@ export interface ChatMessage {
   content: string;
 }
 
+export interface EmpathyFactors {
+  tom: number;
+  acolhimento: number;
+  perguntasAbertas: number;
+  escutaAtiva: number;
+  linguagemAcessivel: number;
+}
+
+export interface EmpathyData {
+  score: number;
+  factors: EmpathyFactors;
+  feedback: string;
+}
+
 export interface SimulationState {
   isFinished: boolean;
   studentLevel: string;
   reasoningScore: number;
   patientHealth: number;
   costEffectiveness: number;
+  empathyScore: number;
+  empathyHistory: EmpathyData[];
   physicalExamDone: boolean;
   examsRequested: string[];
   messages: ChatMessage[];
@@ -28,6 +44,8 @@ const initialState: SimulationState = {
   reasoningScore: 100,
   patientHealth: 100,
   costEffectiveness: 100,
+  empathyScore: 50,
+  empathyHistory: [],
   physicalExamDone: false,
   examsRequested: [],
   messages: [],
@@ -95,11 +113,33 @@ export const useSimulation = (initialCaseId?: string) => {
         },
       });
 
-      const reply: ChatMessage = {
-        role: 'patient',
-        content: error ? 'Desculpe, não consegui entender...' : data.content,
-      };
-      setState(prev => ({ ...prev, messages: [...prev.messages, reply] }));
+      if (error) {
+        setState(prev => ({
+          ...prev,
+          messages: [...prev.messages, { role: 'system' as const, content: 'Erro de conexão com o paciente.' }],
+        }));
+      } else {
+        const reply: ChatMessage = { role: 'patient', content: data.content };
+        
+        // Process empathy data if available
+        if (data.empathy) {
+          const empathyData = data.empathy as EmpathyData;
+          setState(prev => {
+            const newHistory = [...prev.empathyHistory, empathyData];
+            const avgScore = Math.round(
+              newHistory.reduce((sum, e) => sum + e.score, 0) / newHistory.length * 10
+            );
+            return {
+              ...prev,
+              messages: [...prev.messages, reply],
+              empathyScore: Math.min(100, avgScore),
+              empathyHistory: newHistory,
+            };
+          });
+        } else {
+          setState(prev => ({ ...prev, messages: [...prev.messages, reply] }));
+        }
+      }
     } catch {
       setState(prev => ({
         ...prev,

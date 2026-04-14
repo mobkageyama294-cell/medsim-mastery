@@ -1,8 +1,29 @@
 import { motion } from 'framer-motion';
-import { CheckCircle2, XCircle, Activity, DollarSign, Brain, RefreshCcw, Share2 } from 'lucide-react';
+import { CheckCircle2, XCircle, Activity, DollarSign, Brain, RefreshCcw, Share2, HandHeart, MessageCircle, Ear, BookOpen, Heart } from 'lucide-react';
+import type { EmpathyData } from '@/hooks/useSimulation';
 
 export default function FeedbackReport({ state, onRestart }: { state: any, onRestart: () => void }) {
   const isCorrect = state.diagnosisAttempt?.toLowerCase().includes(state.currentCase.correctDiagnosis.toLowerCase());
+  const empathyHistory: EmpathyData[] = state.empathyHistory || [];
+  const hasEmpathy = empathyHistory.length > 0;
+
+  const avgFactors = hasEmpathy ? {
+    tom: Math.round(empathyHistory.reduce((s: number, e: EmpathyData) => s + e.factors.tom, 0) / empathyHistory.length * 10),
+    acolhimento: Math.round(empathyHistory.reduce((s: number, e: EmpathyData) => s + e.factors.acolhimento, 0) / empathyHistory.length * 10),
+    perguntasAbertas: Math.round(empathyHistory.reduce((s: number, e: EmpathyData) => s + e.factors.perguntasAbertas, 0) / empathyHistory.length * 10),
+    escutaAtiva: Math.round(empathyHistory.reduce((s: number, e: EmpathyData) => s + e.factors.escutaAtiva, 0) / empathyHistory.length * 10),
+    linguagemAcessivel: Math.round(empathyHistory.reduce((s: number, e: EmpathyData) => s + e.factors.linguagemAcessivel, 0) / empathyHistory.length * 10),
+  } : null;
+
+  const lastFeedback = hasEmpathy ? empathyHistory[empathyHistory.length - 1].feedback : null;
+
+  const empathyFactorItems = avgFactors ? [
+    { label: 'Tom de Voz', value: avgFactors.tom, icon: MessageCircle },
+    { label: 'Acolhimento', value: avgFactors.acolhimento, icon: Heart },
+    { label: 'Perguntas Abertas', value: avgFactors.perguntasAbertas, icon: BookOpen },
+    { label: 'Escuta Ativa', value: avgFactors.escutaAtiva, icon: Ear },
+    { label: 'Linguagem Acessível', value: avgFactors.linguagemAcessivel, icon: MessageCircle },
+  ] : [];
 
   return (
     <motion.div 
@@ -25,11 +46,42 @@ export default function FeedbackReport({ state, onRestart }: { state: any, onRes
         </div>
 
         <div className="p-6 space-y-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <MetricCard icon={<Brain className="text-primary" />} label="Raciocínio" value={`${state.reasoningScore}%`} />
             <MetricCard icon={<Activity className="text-destructive" />} label="Segurança" value={`${state.patientHealth}%`} />
             <MetricCard icon={<DollarSign className="text-success" />} label="Eficiência" value={`${state.costEffectiveness}%`} />
+            <MetricCard icon={<HandHeart className="text-accent" />} label="Empatia" value={`${state.empathyScore}%`} />
           </div>
+
+          {/* Empathy Breakdown */}
+          {avgFactors && (
+            <div className="glass-card p-5 space-y-4">
+              <div className="flex items-center gap-2 mb-2">
+                <HandHeart className="w-5 h-5 text-accent" />
+                <h3 className="text-sm font-semibold text-foreground">Análise de Empatia</h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
+                {empathyFactorItems.map(item => (
+                  <div key={item.label} className="flex flex-col items-center p-3 rounded-lg bg-muted/30 border border-border/50">
+                    <item.icon className="w-4 h-4 text-accent mb-1" />
+                    <span className="text-[10px] text-muted-foreground text-center font-medium uppercase tracking-wider">{item.label}</span>
+                    <div className="w-full h-1.5 bg-muted rounded-full mt-2 overflow-hidden">
+                      <div 
+                        className={`h-full rounded-full ${item.value > 60 ? 'bg-success' : item.value > 30 ? 'bg-warning' : 'bg-destructive'}`}
+                        style={{ width: `${item.value}%` }}
+                      />
+                    </div>
+                    <span className="text-xs font-mono font-bold mt-1">{item.value}%</span>
+                  </div>
+                ))}
+              </div>
+              {lastFeedback && (
+                <div className="p-3 rounded-lg bg-accent/10 border border-accent/20">
+                  <p className="text-xs text-accent font-medium">💬 {lastFeedback}</p>
+                </div>
+              )}
+            </div>
+          )}
 
           <div className="bg-secondary/50 p-6 rounded-lg border border-border/50">
             <h3 className="text-lg font-semibold mb-3 text-foreground">Discussão do Caso</h3>

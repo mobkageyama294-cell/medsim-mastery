@@ -1,4 +1,4 @@
-import { GraduationCap, Brain, HeartPulse, DollarSign } from 'lucide-react';
+import { GraduationCap, Brain, HeartPulse, DollarSign, HandHeart } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface DashboardHeaderProps {
@@ -6,6 +6,7 @@ interface DashboardHeaderProps {
   reasoningScore: number;
   patientHealth: number;
   costEffectiveness: number;
+  empathyScore?: number;
 }
 
 function HealthBar({ value, label, icon: Icon, color }: { value: number; label: string; icon: any; color: string }) {
@@ -34,7 +35,7 @@ function HealthBar({ value, label, icon: Icon, color }: { value: number; label: 
   );
 }
 
-export default function DashboardHeader({ studentLevel, reasoningScore, patientHealth, costEffectiveness }: DashboardHeaderProps) {
+export default function DashboardHeader({ studentLevel, reasoningScore, patientHealth, costEffectiveness, empathyScore = 50 }: DashboardHeaderProps) {
   return (
     <header className="glass-card glow-primary p-4">
       <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
@@ -53,10 +54,11 @@ export default function DashboardHeader({ studentLevel, reasoningScore, patientH
           <span className="text-sm font-medium text-primary">{studentLevel}</span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 flex-1 max-w-2xl">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 flex-1 max-w-3xl">
           <HealthBar value={reasoningScore} label="Raciocínio" icon={Brain} color="bg-primary/20 text-primary" />
-          <HealthBar value={patientHealth} label="Saúde do Paciente" icon={HeartPulse} color="bg-success/20 text-success" />
-          <HealthBar value={costEffectiveness} label="Custo-Efetividade" icon={DollarSign} color="bg-warning/20 text-warning" />
+          <HealthBar value={patientHealth} label="Saúde" icon={HeartPulse} color="bg-success/20 text-success" />
+          <HealthBar value={costEffectiveness} label="Custo" icon={DollarSign} color="bg-warning/20 text-warning" />
+          <HealthBar value={empathyScore} label="Empatia" icon={HandHeart} color="bg-accent/20 text-accent" />
         </div>
       </div>
     </header>
