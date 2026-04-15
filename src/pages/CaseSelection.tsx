@@ -66,75 +66,7 @@ export default function CaseSelection() {
   };
 
   return (
-    <div className="min-h-screen flex">
-      {/* Sidebar */}
-      <aside className="w-72 shrink-0 border-r border-border/50 bg-muted/20 p-4 hidden md:flex flex-col">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
-            <Stethoscope className="w-5 h-5 text-primary" />
-          </div>
-          <div>
-            <h1 className="text-lg font-bold text-gradient-primary">MedSim Pro</h1>
-            <p className="text-[10px] text-muted-foreground">Casos Clínicos</p>
-          </div>
-        </div>
-
-        <div className="flex-1 overflow-y-auto space-y-1">
-          {loading ? (
-            Array.from({ length: 6 }).map((_, i) => (
-              <Skeleton key={i} className="h-12 w-full rounded-lg" />
-            ))
-          ) : error ? (
-            <Alert variant="destructive">
-              <AlertCircle className="h-4 w-4" />
-              <AlertDescription className="text-xs">{error}</AlertDescription>
-            </Alert>
-          ) : (
-            cases.map((c) => {
-              const status = getCaseStatus(c.id);
-              return (
-                <button
-                  key={c.id}
-                  onClick={() => navigate(`/simulation/${c.id}`)}
-                  className="w-full text-left p-3 rounded-lg hover:bg-primary/10 hover:border-primary/30 border border-transparent transition-all group flex items-center gap-3"
-                >
-                  <div className="w-8 h-8 shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Activity className="w-4 h-4 text-primary" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs font-medium text-foreground group-hover:text-primary transition-colors truncate">
-                      {c.title}
-                    </p>
-                    <p className="text-[10px] text-muted-foreground truncate">{c.specialty}</p>
-                  </div>
-                  {status && (
-                    <span className={`w-2 h-2 rounded-full shrink-0 ${status.is_correct ? 'bg-success' : 'bg-destructive'}`} />
-                  )}
-                </button>
-              );
-            })
-          )}
-        </div>
-
-        <div className="pt-4 border-t border-border/50 mt-4">
-          <div className="flex items-center gap-2 mb-3 px-2">
-            <Trophy className="w-4 h-4 text-primary" />
-            <span className="text-xs font-medium text-primary">
-              {history.filter(h => h.is_correct).length}/{cases.length} concluídos
-            </span>
-          </div>
-          <button
-            onClick={handleLogout}
-            className="w-full flex items-center gap-2 p-2 rounded-lg hover:bg-muted/50 transition-colors text-muted-foreground text-xs"
-          >
-            <LogOut className="w-4 h-4" />
-            Sair
-          </button>
-        </div>
-      </aside>
-
-      {/* Main content */}
-      <main className="flex-1 p-4 md:p-8 max-w-4xl">
+    <div className="min-h-screen p-4 md:p-8 max-w-5xl mx-auto">
         <motion.header
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -215,7 +147,6 @@ export default function CaseSelection() {
             })}
           </div>
         )}
-      </main>
     </div>
   );
 }
