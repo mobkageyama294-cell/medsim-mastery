@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Stethoscope, Brain, Heart, Clock, Trophy, LogOut, ChevronRight, Shield, Activity } from 'lucide-react';
-import { CLINICAL_CASES } from '@/data/clinicalCases';
+import { Stethoscope, Brain, Heart, Clock, Trophy, LogOut, ChevronRight, Shield, Activity, AlertCircle } from 'lucide-react';
+import { ClinicalCase, fetchClinicalCases } from '@/data/clinicalCases';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 interface CaseHistoryItem {
   case_id: string;
@@ -17,6 +19,21 @@ export default function CaseSelection() {
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
   const [history, setHistory] = useState<CaseHistoryItem[]>([]);
+  const [cases, setCases] = useState<ClinicalCase[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetchClinicalCases()
+      .then((data) => {
+        setCases(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError('Erro ao carregar banco de dados do GitHub');
+        setLoading(false);
+      });
+  }, []);
 
   useEffect(() => {
     if (user) {
@@ -34,8 +51,7 @@ export default function CaseSelection() {
   const getCaseStatus = (caseId: string) => {
     const attempts = history.filter(h => h.case_id === caseId);
     if (attempts.length === 0) return null;
-    const best = attempts.reduce((a, b) => (a.reasoning_score > b.reasoning_score ? a : b));
-    return best;
+    return attempts.reduce((a, b) => (a.reasoning_score > b.reasoning_score ? a : b));
   };
 
   const difficultyConfig: Record<string, { color: string; icon: typeof Shield }> = {
@@ -50,90 +66,156 @@ export default function CaseSelection() {
   };
 
   return (
-    <div className="min-h-screen p-4 md:p-8 max-w-5xl mx-auto">
-      <motion.header
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="glass-card glow-primary p-4 mb-8 flex items-center justify-between"
-      >
-        <div className="flex items-center gap-3">
+    <div className="min-h-screen flex">
+      {/* Sidebar */}
+      <aside className="w-72 shrink-0 border-r border-border/50 bg-muted/20 p-4 hidden md:flex flex-col">
+        <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
             <Stethoscope className="w-5 h-5 text-primary" />
           </div>
           <div>
             <h1 className="text-lg font-bold text-gradient-primary">MedSim Pro</h1>
-            <p className="text-xs text-muted-foreground">Selecione um caso clínico</p>
+            <p className="text-[10px] text-muted-foreground">Casos Clínicos</p>
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary/10 border border-primary/20">
+        <div className="flex-1 overflow-y-auto space-y-1">
+          {loading ? (
+            Array.from({ length: 6 }).map((_, i) => (
+              <Skeleton key={i} className="h-12 w-full rounded-lg" />
+            ))
+          ) : error ? (
+            <Alert variant="destructive">
+              <AlertCircle className="h-4 w-4" />
+              <AlertDescription className="text-xs">{error}</AlertDescription>
+            </Alert>
+          ) : (
+            cases.map((c) => {
+              const status = getCaseStatus(c.id);
+              return (
+                <button
+                  key={c.id}
+                  onClick={() => navigate(`/simulation/${c.id}`)}
+                  className="w-full text-left p-3 rounded-lg hover:bg-primary/10 hover:border-primary/30 border border-transparent transition-all group flex items-center gap-3"
+                >
+                  <div className="w-8 h-8 shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <Activity className="w-4 h-4 text-primary" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-medium text-foreground group-hover:text-primary transition-colors truncate">
+                      {c.title}
+                    </p>
+                    <p className="text-[10px] text-muted-foreground truncate">{c.specialty}</p>
+                  </div>
+                  {status && (
+                    <span className={`w-2 h-2 rounded-full shrink-0 ${status.is_correct ? 'bg-success' : 'bg-destructive'}`} />
+                  )}
+                </button>
+              );
+            })
+          )}
+        </div>
+
+        <div className="pt-4 border-t border-border/50 mt-4">
+          <div className="flex items-center gap-2 mb-3 px-2">
             <Trophy className="w-4 h-4 text-primary" />
             <span className="text-xs font-medium text-primary">
-              {history.filter(h => h.is_correct).length}/{CLINICAL_CASES.length} concluídos
+              {history.filter(h => h.is_correct).length}/{cases.length} concluídos
             </span>
-          </div>
-          <div className="text-right hidden sm:block">
-            <p className="text-xs font-medium text-foreground">{user?.user_metadata?.full_name || user?.email}</p>
           </div>
           <button
             onClick={handleLogout}
-            className="p-2 rounded-lg hover:bg-muted/50 transition-colors"
-            title="Sair"
+            className="w-full flex items-center gap-2 p-2 rounded-lg hover:bg-muted/50 transition-colors text-muted-foreground text-xs"
           >
-            <LogOut className="w-4 h-4 text-muted-foreground" />
+            <LogOut className="w-4 h-4" />
+            Sair
           </button>
         </div>
-      </motion.header>
+      </aside>
 
-      <div className="space-y-3">
-        {CLINICAL_CASES.map((c, i) => {
-          const status = getCaseStatus(c.id);
-          const diff = difficultyConfig[c.difficulty];
-          const DiffIcon = diff.icon;
+      {/* Main content */}
+      <main className="flex-1 p-4 md:p-8 max-w-4xl">
+        <motion.header
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="glass-card glow-primary p-4 mb-8 flex items-center justify-between"
+        >
+          <div>
+            <h2 className="text-lg font-bold text-foreground">Selecione um Caso Clínico</h2>
+            <p className="text-xs text-muted-foreground">
+              {loading ? 'Acessando Banco de Dados de Casos...' : `${cases.length} casos disponíveis`}
+            </p>
+          </div>
+          <div className="flex items-center gap-3 md:hidden">
+            <button onClick={handleLogout} className="p-2 rounded-lg hover:bg-muted/50">
+              <LogOut className="w-4 h-4 text-muted-foreground" />
+            </button>
+          </div>
+        </motion.header>
 
-          return (
-            <motion.button
-              key={c.id}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: i * 0.08 }}
-              onClick={() => navigate(`/simulation/${c.id}`)}
-              className="glass-card w-full p-4 text-left hover:glow-primary hover:border-primary/30 transition-all group flex items-center gap-4"
-            >
-              <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                <Activity className="w-6 h-6 text-primary" />
-              </div>
+        {error && (
+          <Alert variant="destructive" className="mb-6">
+            <AlertCircle className="h-4 w-4" />
+            <AlertDescription>{error}</AlertDescription>
+          </Alert>
+        )}
 
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-1">
-                  <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {c.organ} — {c.specialty}
-                  </h3>
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium border ${diff.color}`}>
-                    {c.difficulty}
-                  </span>
-                </div>
-                <p className="text-xs text-muted-foreground line-clamp-1">
-                  {c.patientName}, {c.patientAge}a, {c.patientSex === 'M' ? '♂' : '♀'} — "{c.chiefComplaint}"
-                </p>
-              </div>
+        {loading ? (
+          <div className="flex flex-col items-center justify-center py-20">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mb-4" />
+            <p className="text-muted-foreground font-medium">Acessando Banco de Dados de Casos...</p>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            {cases.map((c, i) => {
+              const status = getCaseStatus(c.id);
+              const diff = difficultyConfig[c.difficulty] || difficultyConfig.Iniciante;
+              const DiffIcon = diff.icon;
 
-              <div className="shrink-0 flex items-center gap-3">
-                {status && (
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${status.is_correct ? 'bg-success/20 text-success' : 'bg-destructive/20 text-destructive'}`}>
-                    {status.is_correct ? '✓ Acertou' : '✗ Errou'}
-                  </span>
-                )}
-                <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
-                  <Clock className="w-3 h-3" /> ~15min
-                </div>
-                <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-              </div>
-            </motion.button>
-          );
-        })}
-      </div>
+              return (
+                <motion.button
+                  key={c.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  onClick={() => navigate(`/simulation/${c.id}`)}
+                  className="glass-card w-full p-4 text-left hover:glow-primary hover:border-primary/30 transition-all group flex items-center gap-4"
+                >
+                  <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+                    <Activity className="w-6 h-6 text-primary" />
+                  </div>
+
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {c.title}
+                      </h3>
+                      <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium border ${diff.color}`}>
+                        {c.difficulty}
+                      </span>
+                    </div>
+                    <p className="text-xs text-muted-foreground line-clamp-1">
+                      {c.patientName}, {c.patientAge}a, {c.patientSex === 'M' ? '♂' : '♀'} — "{c.chiefComplaint}"
+                    </p>
+                  </div>
+
+                  <div className="shrink-0 flex items-center gap-3">
+                    {status && (
+                      <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${status.is_correct ? 'bg-success/20 text-success' : 'bg-destructive/20 text-destructive'}`}>
+                        {status.is_correct ? '✓ Acertou' : '✗ Errou'}
+                      </span>
+                    )}
+                    <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
+                      <Clock className="w-3 h-3" /> ~15min
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                  </div>
+                </motion.button>
+              );
+            })}
+          </div>
+        )}
+      </main>
     </div>
   );
 }
