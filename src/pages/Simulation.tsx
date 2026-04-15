@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { AlertCircle } from 'lucide-react';
 import DashboardHeader from '@/components/simulation/DashboardHeader';
 import CasePanel from '@/components/simulation/CasePanel';
 import ChatInterface from '@/components/simulation/ChatInterface';
@@ -9,6 +10,7 @@ import FeedbackReport from '@/components/simulation/FeedbackReport';
 import { useSimulation } from '@/hooks/useSimulation';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 export default function Simulation() {
   const { caseId } = useParams<{ caseId: string }>();
@@ -17,6 +19,8 @@ export default function Simulation() {
 
   const {
     state,
+    casesLoading,
+    casesError,
     vitalSigns,
     isLoading,
     fluctuateVitals,
@@ -53,17 +57,33 @@ export default function Simulation() {
     }
   }, [state.isFinished]);
 
-  if (state.isFinished) {
-    return <FeedbackReport state={state} onRestart={() => navigate('/')} />;
+  // Error state
+  if (casesError) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen p-4">
+        <Alert variant="destructive" className="max-w-md">
+          <AlertCircle className="h-4 w-4" />
+          <AlertDescription>{casesError}</AlertDescription>
+        </Alert>
+        <button onClick={() => navigate('/')} className="mt-4 text-sm text-primary hover:underline">
+          Voltar ao início
+        </button>
+      </div>
+    );
   }
 
-  if (!state.currentCase) {
+  // Loading state
+  if (casesLoading || !state.currentCase) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mb-4" />
         <p className="text-muted-foreground font-medium">Preparando prontuário...</p>
       </div>
     );
+  }
+
+  if (state.isFinished) {
+    return <FeedbackReport state={state} onRestart={() => navigate('/')} />;
   }
 
   const availableExams = Object.keys(state.currentCase.labResults);

@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react';
-import { CLINICAL_CASES, ClinicalCase } from '@/data/clinicalCases';
+import { useState, useCallback, useEffect } from 'react';
+import { ClinicalCase, fetchClinicalCases } from '@/data/clinicalCases';
 import { supabase } from '@/integrations/supabase/client';
 
 export type { ClinicalCase } from '@/data/clinicalCases';
@@ -53,33 +53,56 @@ const initialState: SimulationState = {
   diagnosisAttempt: '',
 };
 
+const buildWelcome = (c: ClinicalCase): ChatMessage => ({
+  role: 'system',
+  content: `Novo paciente: ${c.patientName}, ${c.patientAge}a, ${c.patientSex === 'M' ? '♂' : '♀'}. Queixa: "${c.chiefComplaint}". Conduza a anamnese.`,
+});
+
 export const useSimulation = (initialCaseId?: string) => {
-  const cases = CLINICAL_CASES;
-
-  const findCase = (id: string) => cases.find(c => c.id === id) || null;
-
-  const buildWelcome = (c: ClinicalCase): ChatMessage => ({
-    role: 'system',
-    content: `Novo paciente: ${c.patientName}, ${c.patientAge}a, ${c.patientSex === 'M' ? '♂' : '♀'}. Queixa: "${c.chiefComplaint}". Conduza a anamnese.`,
-  });
-
-  const getInitialState = (): SimulationState => {
-    const c = initialCaseId ? findCase(initialCaseId) : null;
-    return {
-      ...initialState,
-      currentCase: c,
-      messages: c ? [buildWelcome(c)] : [],
-    };
-  };
-
-  const [state, setState] = useState<SimulationState>(getInitialState);
-  const [vitalSigns, setVitalSigns] = useState(
-    state.currentCase?.vitalSigns || { pa: '0/0', fc: 0, sao2: 0, temp: 36, fr: 16 }
-  );
+  const [cases, setCases] = useState<ClinicalCase[]>([]);
+  const [casesLoading, setCasesLoading] = useState(true);
+  const [casesError, setCasesError] = useState<string | null>(null);
+  const [state, setState] = useState<SimulationState>(initialState);
+  const [vitalSigns, setVitalSigns] = useState({ pa: '0/0', fc: 0, sao2: 0, temp: 36, fr: 16 });
   const [isLoading, setIsLoading] = useState(false);
 
+  // Fetch cases from JSON on mount
+  useEffect(() => {
+    let cancelled = false;
+    setCasesLoading(true);
+    setCasesError(null);
+
+    fetchClinicalCases()
+      .then((data) => {
+        if (cancelled) return;
+        setCases(data);
+        setCasesLoading(false);
+
+        // Auto-load initial case if provided
+        if (initialCaseId) {
+          const c = data.find((x) => x.id === initialCaseId);
+          if (c) {
+            setState({
+              ...initialState,
+              currentCase: c,
+              messages: [buildWelcome(c)],
+            });
+            setVitalSigns(c.vitalSigns);
+          }
+        }
+      })
+      .catch((err) => {
+        if (cancelled) return;
+        console.error(err);
+        setCasesError('Erro ao carregar banco de dados do GitHub');
+        setCasesLoading(false);
+      });
+
+    return () => { cancelled = true; };
+  }, [initialCaseId]);
+
   const loadCase = useCallback((id: string) => {
-    const c = findCase(id);
+    const c = cases.find((x) => x.id === id);
     if (!c) return;
     setState({
       ...initialState,
@@ -87,11 +110,11 @@ export const useSimulation = (initialCaseId?: string) => {
       messages: [buildWelcome(c)],
     });
     setVitalSigns(c.vitalSigns);
-  }, []);
+  }, [cases]);
 
   const fluctuateVitals = useCallback(() => {
     if (!state.currentCase) return;
-    setVitalSigns(prev => ({
+    setVitalSigns((prev) => ({
       ...prev,
       fc: prev.fc + (Math.random() > 0.5 ? 1 : -1),
       sao2: Math.min(100, prev.sao2 + (Math.random() > 0.5 ? 0.1 : -0.1)),
@@ -102,7 +125,7 @@ export const useSimulation = (initialCaseId?: string) => {
     if (!state.currentCase) return;
 
     const userMsg: ChatMessage = { role: 'user', content: text };
-    setState(prev => ({ ...prev, messages: [...prev.messages, userMsg] }));
+    setState((prev) => ({ ...prev, messages: [...prev.messages, userMsg] }));
     setIsLoading(true);
 
     try {
@@ -114,20 +137,19 @@ export const useSimulation = (initialCaseId?: string) => {
       });
 
       if (error) {
-        setState(prev => ({
+        setState((prev) => ({
           ...prev,
           messages: [...prev.messages, { role: 'system' as const, content: 'Erro de conexão com o paciente.' }],
         }));
       } else {
         const reply: ChatMessage = { role: 'patient', content: data.content };
-        
-        // Process empathy data if available
+
         if (data.empathy) {
           const empathyData = data.empathy as EmpathyData;
-          setState(prev => {
+          setState((prev) => {
             const newHistory = [...prev.empathyHistory, empathyData];
             const avgScore = Math.round(
-              newHistory.reduce((sum, e) => sum + e.score, 0) / newHistory.length * 10
+              (newHistory.reduce((sum, e) => sum + e.score, 0) / newHistory.length) * 10
             );
             return {
               ...prev,
@@ -137,11 +159,11 @@ export const useSimulation = (initialCaseId?: string) => {
             };
           });
         } else {
-          setState(prev => ({ ...prev, messages: [...prev.messages, reply] }));
+          setState((prev) => ({ ...prev, messages: [...prev.messages, reply] }));
         }
       }
     } catch {
-      setState(prev => ({
+      setState((prev) => ({
         ...prev,
         messages: [...prev.messages, { role: 'system' as const, content: 'Erro de conexão com o paciente.' }],
       }));
@@ -156,7 +178,7 @@ export const useSimulation = (initialCaseId?: string) => {
       .map(([k, v]) => `**${k}:** ${v}`)
       .join('\n');
     const msg: ChatMessage = { role: 'system', content: `📋 **Exame Físico Realizado:**\n${examText}` };
-    setState(prev => ({
+    setState((prev) => ({
       ...prev,
       physicalExamDone: true,
       reasoningScore: Math.max(0, prev.reasoningScore + 5),
@@ -172,7 +194,7 @@ export const useSimulation = (initialCaseId?: string) => {
       role: 'system',
       content: `🔬 **${exam}:** ${result}`,
     };
-    setState(prev => ({
+    setState((prev) => ({
       ...prev,
       examsRequested: [...prev.examsRequested, exam],
       costEffectiveness: isUnnecessary ? Math.max(0, prev.costEffectiveness - 10) : prev.costEffectiveness,
@@ -181,12 +203,14 @@ export const useSimulation = (initialCaseId?: string) => {
   }, [state.currentCase]);
 
   const submitDiagnosis = useCallback((diagnosis: string) => {
-    setState(prev => ({ ...prev, isFinished: true, diagnosisAttempt: diagnosis }));
+    setState((prev) => ({ ...prev, isFinished: true, diagnosisAttempt: diagnosis }));
   }, []);
 
   return {
     state,
     cases,
+    casesLoading,
+    casesError,
     vitalSigns,
     isLoading,
     loadCase,
