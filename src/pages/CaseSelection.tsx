@@ -147,7 +147,6 @@ export default function CaseSelection() {
             })}
           </div>
         )}
-      </main>
     </div>
   );
 }
