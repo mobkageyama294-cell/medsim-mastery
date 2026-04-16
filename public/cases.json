@@ -1,12 +1,17 @@
 [
-[
   {
     "id": "001",
     "title": "Paciente com Dor Torácica Aguda",
     "specialty": "Cardiologia",
     "difficulty": "Intermediário",
     "description": "Carlos Alberto, 58a. Dor no peito há 2 horas com irradiação para braço esquerdo.",
-    "vitalSigns": { "pa": "160/100", "fc": 102, "sao2": 94, "temp": 36.8, "fr": 22 },
+    "vitalSigns": {
+      "pa": "160/100",
+      "fc": 102,
+      "sao2": 94,
+      "temp": 36.8,
+      "fr": 22
+    },
     "correctDiagnosis": "Infarto Agudo do Miocárdio com Supradesnivelamento de ST (IAMCSST)",
     "unnecessaryExams": ["Colonoscopia", "Eletroencefalograma"]
   },
@@ -16,7 +21,13 @@
     "specialty": "Neurologia",
     "difficulty": "Avançado",
     "description": "Maria Souza, 42a. A pior dor de cabeça da vida, início súbito.",
-    "vitalSigns": { "pa": "180/110", "fc": 88, "sao2": 97, "temp": 37.5, "fr": 18 },
+    "vitalSigns": {
+      "pa": "180/110",
+      "fc": 88,
+      "sao2": 97,
+      "temp": 37.5,
+      "fr": 18
+    },
     "correctDiagnosis": "Hemorragia Subaracnoidea",
     "unnecessaryExams": ["Endoscopia", "Ecocardiograma"]
   },
@@ -26,7 +37,13 @@
     "specialty": "Cirurgia Geral",
     "difficulty": "Intermediário",
     "description": "Mercedes Oliveira, 55a. Dor forte em hipocôndrio direito após alimentação gordurosa.",
-    "vitalSigns": { "pa": "135/85", "fc": 92, "sao2": 96, "temp": 37.8, "fr": 20 },
+    "vitalSigns": {
+      "pa": "135/85",
+      "fc": 92,
+      "sao2": 96,
+      "temp": 37.8,
+      "fr": 20
+    },
     "correctDiagnosis": "Colecistite Aguda Calculosa",
     "unnecessaryExams": ["Troponina", "Eletroencefalograma"]
   },
@@ -36,7 +53,13 @@
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
     "description": "Waldir Ferreira, 68a. Falta de ar ao deitar e edema importante em pernas.",
-    "vitalSigns": { "pa": "160/100", "fc": 110, "sao2": 89, "temp": 36.5, "fr": 28 },
+    "vitalSigns": {
+      "pa": "160/100",
+      "fc": 110,
+      "sao2": 89,
+      "temp": 36.5,
+      "fr": 28
+    },
     "correctDiagnosis": "Insuficiência Cardíaca Congestiva",
     "unnecessaryExams": ["D-Dímero", "Colonoscopia"]
   },
@@ -46,7 +69,13 @@
     "specialty": "Infectologia",
     "difficulty": "Avançado",
     "description": "Lucas Mendes, 19a. Febre alta, cefaleia e petéquias pelo corpo.",
-    "vitalSigns": { "pa": "110/70", "fc": 118, "sao2": 95, "temp": 39.2, "fr": 22 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 118,
+      "sao2": 95,
+      "temp": 39.2,
+      "fr": 22
+    },
     "correctDiagnosis": "Meningite Bacteriana",
     "unnecessaryExams": ["Ecocardiograma", "Raio-X de Coluna"]
   },
@@ -56,7 +85,13 @@
     "specialty": "Nefrologia",
     "difficulty": "Iniciante",
     "description": "Ricardo Santos, 35a. Dor excruciante em flanco direito irradiando para virilha.",
-    "vitalSigns": { "pa": "150/90", "fc": 105, "sao2": 98, "temp": 36.6, "fr": 20 },
+    "vitalSigns": {
+      "pa": "150/90",
+      "fc": 105,
+      "sao2": 98,
+      "temp": 36.6,
+      "fr": 20
+    },
     "correctDiagnosis": "Litíase Renal",
     "unnecessaryExams": ["Troponina", "Amilase"]
   },
@@ -66,7 +101,13 @@
     "specialty": "Pneumologia",
     "difficulty": "Iniciante",
     "description": "Camila Rodrigues, 28a. Tosse com catarro amarelado e dor pleurítica.",
-    "vitalSigns": { "pa": "115/75", "fc": 102, "sao2": 91, "temp": 38.9, "fr": 26 },
+    "vitalSigns": {
+      "pa": "115/75",
+      "fc": 102,
+      "sao2": 91,
+      "temp": 38.9,
+      "fr": 26
+    },
     "correctDiagnosis": "Pneumonia Lobar",
     "unnecessaryExams": ["Ecocardiograma", "Colonoscopia"]
   },
@@ -76,7 +117,13 @@
     "specialty": "Cardiologia",
     "difficulty": "Intermediário",
     "description": "Mulher de 37 anos com início súbito de palpitações após quadro viral.",
-    "vitalSigns": { "pa": "110/70", "fc": 155, "sao2": 96, "temp": 36.5, "fr": 18 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 155,
+      "sao2": 96,
+      "temp": 36.5,
+      "fr": 18
+    },
     "correctDiagnosis": "Taquicardia Supraventricular",
     "unnecessaryExams": ["Endoscopia"]
   },
@@ -86,7 +133,13 @@
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
     "description": "Dispneia, edema em MMII e hepatomegalia de borda romba.",
-    "vitalSigns": { "pa": "150/95", "fc": 98, "sao2": 88, "temp": 36.4, "fr": 24 },
+    "vitalSigns": {
+      "pa": "150/95",
+      "fc": 98,
+      "sao2": 88,
+      "temp": 36.4,
+      "fr": 24
+    },
     "correctDiagnosis": "ICC Descompensada",
     "unnecessaryExams": ["Colonoscopia"]
   },
@@ -96,7 +149,13 @@
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
     "description": "Dor torácica intensa, súbita, com irradiação para o dorso.",
-    "vitalSigns": { "pa": "190/110", "fc": 110, "sao2": 94, "temp": 36.7, "fr": 20 },
+    "vitalSigns": {
+      "pa": "190/110",
+      "fc": 110,
+      "sao2": 94,
+      "temp": 36.7,
+      "fr": 20
+    },
     "correctDiagnosis": "Dissecação Aórtica Aguda",
     "unnecessaryExams": ["Glicemia"]
   },
@@ -106,7 +165,13 @@
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
     "description": "Febre prolongada associada a novo sopro cardíaco em idoso.",
-    "vitalSigns": { "pa": "110/60", "fc": 105, "sao2": 95, "temp": 38.2, "fr": 18 },
+    "vitalSigns": {
+      "pa": "110/60",
+      "fc": 105,
+      "sao2": 95,
+      "temp": 38.2,
+      "fr": 18
+    },
     "correctDiagnosis": "Endocardite Infecciosa",
     "unnecessaryExams": ["Raio-X de Pelve"]
   },
@@ -116,7 +181,13 @@
     "specialty": "Clínica Médica",
     "difficulty": "Iniciante",
     "description": "Paciente relata tontura e síncope sempre ao se levantar rapidamente.",
-    "vitalSigns": { "pa": "120/80", "fc": 75, "sao2": 98, "temp": 36.6, "fr": 14 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 75,
+      "sao2": 98,
+      "temp": 36.6,
+      "fr": 14
+    },
     "correctDiagnosis": "Hipotensão Ortostática",
     "unnecessaryExams": ["Troponina"]
   },
@@ -126,7 +197,13 @@
     "specialty": "Cardiologia",
     "difficulty": "Intermediário",
     "description": "Cardiomegalia e arritmias em paciente vindo de área endêmica.",
-    "vitalSigns": { "pa": "100/65", "fc": 52, "sao2": 96, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "100/65",
+      "fc": 52,
+      "sao2": 96,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Chagas Crônico",
     "unnecessaryExams": ["TC de Crânio"]
   },
@@ -136,7 +213,13 @@
     "specialty": "Pneumologia",
     "difficulty": "Intermediário",
     "description": "Dor em punhalada e dispneia súbita em jovem longilíneo.",
-    "vitalSigns": { "pa": "118/76", "fc": 108, "sao2": 90, "temp": 36.5, "fr": 26 },
+    "vitalSigns": {
+      "pa": "118/76",
+      "fc": 108,
+      "sao2": 90,
+      "temp": 36.5,
+      "fr": 26
+    },
     "correctDiagnosis": "Pneumotórax Espontâneo",
     "unnecessaryExams": ["Troponina"]
   },
@@ -146,7 +229,13 @@
     "specialty": "Infectologia",
     "difficulty": "Iniciante",
     "description": "Tosse, febre e macicez à percussão pulmonar.",
-    "vitalSigns": { "pa": "120/80", "fc": 102, "sao2": 92, "temp": 38.8, "fr": 24 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 102,
+      "sao2": 92,
+      "temp": 38.8,
+      "fr": 24
+    },
     "correctDiagnosis": "Pneumonia Bacteriana",
     "unnecessaryExams": ["EAS"]
   },
@@ -156,7 +245,13 @@
     "specialty": "Infectologia",
     "difficulty": "Intermediário",
     "description": "Tosse crônica, emagrecimento e sudorese noturna.",
-    "vitalSigns": { "pa": "110/70", "fc": 85, "sao2": 97, "temp": 37.4, "fr": 18 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 85,
+      "sao2": 97,
+      "temp": 37.4,
+      "fr": 18
+    },
     "correctDiagnosis": "Tuberculose Pulmonar",
     "unnecessaryExams": ["ECG"]
   },
@@ -166,7 +261,13 @@
     "specialty": "Pneumologia",
     "difficulty": "Iniciante",
     "description": "Sibilos e dispneia com piora no período noturno.",
-    "vitalSigns": { "pa": "125/80", "fc": 110, "sao2": 93, "temp": 36.6, "fr": 28 },
+    "vitalSigns": {
+      "pa": "125/80",
+      "fc": 110,
+      "sao2": 93,
+      "temp": 36.6,
+      "fr": 28
+    },
     "correctDiagnosis": "Crise Asmática",
     "unnecessaryExams": ["TC de Abdome"]
   },
@@ -176,7 +277,13 @@
     "specialty": "Pneumologia",
     "difficulty": "Avançado",
     "description": "Dispneia progressiva e tosse em paciente tabagista crônico.",
-    "vitalSigns": { "pa": "135/85", "fc": 92, "sao2": 88, "temp": 36.5, "fr": 22 },
+    "vitalSigns": {
+      "pa": "135/85",
+      "fc": 92,
+      "sao2": 88,
+      "temp": 36.5,
+      "fr": 22
+    },
     "correctDiagnosis": "DPOC Exacerbado",
     "unnecessaryExams": ["Amilase"]
   },
@@ -186,7 +293,13 @@
     "specialty": "Cirurgia Geral",
     "difficulty": "Iniciante",
     "description": "Dor que migrou do umbigo para a fossa ilíaca direita.",
-    "vitalSigns": { "pa": "120/80", "fc": 104, "sao2": 99, "temp": 37.9, "fr": 20 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 104,
+      "sao2": 99,
+      "temp": 37.9,
+      "fr": 20
+    },
     "correctDiagnosis": "Apendicite Aguda",
     "unnecessaryExams": ["Troponina"]
   },
@@ -196,7 +309,13 @@
     "specialty": "Gastroenterologia",
     "difficulty": "Intermediário",
     "description": "Disfagia de condução e regurgitação de alimentos.",
-    "vitalSigns": { "pa": "115/75", "fc": 80, "sao2": 98, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "115/75",
+      "fc": 80,
+      "sao2": 98,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Megaesôfago Chagásico",
     "unnecessaryExams": ["Raio-X de Tórax"]
   },
@@ -206,7 +325,13 @@
     "specialty": "Gastroenterologia",
     "difficulty": "Avançado",
     "description": "Icterícia, ascite e fígado de consistência nodular.",
-    "vitalSigns": { "pa": "100/60", "fc": 90, "sao2": 96, "temp": 36.8, "fr": 18 },
+    "vitalSigns": {
+      "pa": "100/60",
+      "fc": 90,
+      "sao2": 96,
+      "temp": 36.8,
+      "fr": 18
+    },
     "correctDiagnosis": "Cirrose Hepática",
     "unnecessaryExams": ["ECG"]
   },
@@ -216,7 +341,13 @@
     "specialty": "Cirurgia Geral",
     "difficulty": "Avançado",
     "description": "Dor abdominal súbita, intensa, em abdome em tábua.",
-    "vitalSigns": { "pa": "90/60", "fc": 120, "sao2": 94, "temp": 36.4, "fr": 26 },
+    "vitalSigns": {
+      "pa": "90/60",
+      "fc": 120,
+      "sao2": 94,
+      "temp": 36.4,
+      "fr": 26
+    },
     "correctDiagnosis": "Úlcera Péptica Perfurada",
     "unnecessaryExams": ["Troponina"]
   },
@@ -226,7 +357,13 @@
     "specialty": "Gastroenterologia",
     "difficulty": "Iniciante",
     "description": "Pirose e regurgitação que pioram ao deitar após comer.",
-    "vitalSigns": { "pa": "120/80", "fc": 78, "sao2": 98, "temp": 36.6, "fr": 14 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 78,
+      "sao2": 98,
+      "temp": 36.6,
+      "fr": 14
+    },
     "correctDiagnosis": "Doença do Refluxo Gastroesofágico (DRGE)",
     "unnecessaryExams": ["ECG"]
   },
@@ -236,7 +373,13 @@
     "specialty": "Proctologia",
     "difficulty": "Iniciante",
     "description": "Sangramento vivo ao evacuar, sem dor abdominal.",
-    "vitalSigns": { "pa": "120/80", "fc": 82, "sao2": 99, "temp": 36.5, "fr": 14 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 82,
+      "sao2": 99,
+      "temp": 36.5,
+      "fr": 14
+    },
     "correctDiagnosis": "Hemorroidas Internas",
     "unnecessaryExams": ["Troponina"]
   }
