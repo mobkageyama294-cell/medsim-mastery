@@ -28,6 +28,17 @@ interface SimpleCase {
   unnecessaryExams: string[];
 }
 
+/** Extract a spoiler-free label from the case description (patient + chief complaint). */
+function obfuscatedLabel(c: SimpleCase): string {
+  // description usually starts with "Name, age. complaint…"
+  const desc = c.description;
+  // Try to grab everything after the first period/dot that follows the age
+  const match = desc.match(/\d+a\.\s*(.+)/);
+  if (match) return match[1].trim();
+  return desc;
+}
+}
+
 interface CaseHistoryItem {
   case_id: string;
   is_correct: boolean;
