@@ -1,10 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { LogOut, ChevronRight, Clock, Activity, AlertCircle } from 'lucide-react';
+import {
+  Activity,
+  AlertCircle,
+  Clock,
+  Search,
+  Filter,
+  ChevronRight,
+  CheckCircle2,
+  XCircle,
+} from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
 
 interface SimpleCase {
   id: string;
@@ -23,13 +34,27 @@ interface CaseHistoryItem {
   reasoning_score: number;
 }
 
+const SPECIALTY_COLORS: Record<string, string> = {
+  Cardiologia: 'bg-red-500/10 text-red-500 dark:text-red-400 border-red-500/20',
+  Neurologia: 'bg-violet-500/10 text-violet-500 dark:text-violet-400 border-violet-500/20',
+  'Cirurgia Geral': 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20',
+  Infectologia: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
+  Nefrologia: 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
+  Pneumologia: 'bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/20',
+  Gastroenterologia: 'bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20',
+  Proctologia: 'bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20',
+  'Clínica Médica': 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20',
+};
+
 export default function CaseSelection() {
   const navigate = useNavigate();
-  const { user, signOut } = useAuth();
+  const { user } = useAuth();
   const [cases, setCases] = useState<SimpleCase[]>([]);
   const [history, setHistory] = useState<CaseHistoryItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [search, setSearch] = useState('');
+  const [activeSpecialty, setActiveSpecialty] = useState<string | null>(null);
 
   useEffect(() => {
     fetch('/cases.json')
@@ -61,110 +86,192 @@ export default function CaseSelection() {
     }
   }, [user]);
 
+  const specialties = useMemo(() => [...new Set(cases.map((c) => c.specialty))], [cases]);
+
+  const filtered = useMemo(() => {
+    let result = cases;
+    if (activeSpecialty) result = result.filter((c) => c.specialty === activeSpecialty);
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      result = result.filter(
+        (c) =>
+          c.title.toLowerCase().includes(q) ||
+          c.description.toLowerCase().includes(q) ||
+          c.specialty.toLowerCase().includes(q)
+      );
+    }
+    return result;
+  }, [cases, activeSpecialty, search]);
+
   const getCaseStatus = (caseId: string) => {
     const attempts = history.filter((h) => h.case_id === caseId);
     if (attempts.length === 0) return null;
     return attempts.reduce((a, b) => (a.reasoning_score > b.reasoning_score ? a : b));
   };
 
-  const handleLogout = async () => {
-    await signOut();
-    navigate('/auth');
-  };
-
-  const specialtyColor: Record<string, string> = {
-    Cardiologia: 'bg-destructive/15 text-destructive border-destructive/25',
-    Neurologia: 'bg-primary/15 text-primary border-primary/25',
-    'Cirurgia Geral': 'bg-warning/15 text-warning border-warning/25',
-    Infectologia: 'bg-success/15 text-success border-success/25',
-    Nefrologia: 'bg-accent/30 text-accent-foreground border-accent/40',
-    Pneumologia: 'bg-secondary/50 text-secondary-foreground border-secondary/60',
-    Gastroenterologia: 'bg-warning/15 text-warning border-warning/25',
-    Proctologia: 'bg-muted text-muted-foreground border-border',
-    'Clínica Médica': 'bg-primary/15 text-primary border-primary/25',
-  };
+  const completedCount = useMemo(
+    () => new Set(history.map((h) => h.case_id)).size,
+    [history]
+  );
 
   return (
-    <div className="min-h-screen p-4 md:p-8 max-w-5xl mx-auto">
-      <motion.header
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="glass-card glow-primary p-4 mb-8 flex items-center justify-between"
-      >
-        <div>
-          <h1 className="text-lg font-bold text-foreground">Selecione um Caso Clínico</h1>
-          <p className="text-xs text-muted-foreground">
-            {loading ? 'Acessando Banco de Dados de Casos...' : `${cases.length} casos disponíveis`}
-          </p>
+    <div className="min-h-[calc(100vh-3.5rem)]">
+      {/* Hero stats */}
+      <div className="border-b border-border/40 bg-card/50">
+        <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-6 md:py-8">
+          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
+            <h1 className="text-xl md:text-2xl font-bold text-foreground mb-1">Casos Clínicos</h1>
+            <p className="text-sm text-muted-foreground">
+              {loading
+                ? 'Carregando banco de dados...'
+                : `${cases.length} casos disponíveis · ${completedCount} concluídos`}
+            </p>
+          </motion.div>
         </div>
-        <button onClick={handleLogout} className="p-2 rounded-lg hover:bg-muted/50 md:hidden">
-          <LogOut className="w-4 h-4 text-muted-foreground" />
-        </button>
-      </motion.header>
+      </div>
 
-      {error && (
-        <Alert variant="destructive" className="mb-6">
-          <AlertCircle className="h-4 w-4" />
-          <AlertDescription>{error}</AlertDescription>
-        </Alert>
-      )}
+      <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-6">
+        {error && (
+          <Alert variant="destructive" className="mb-6">
+            <AlertCircle className="h-4 w-4" />
+            <AlertDescription>{error}</AlertDescription>
+          </Alert>
+        )}
 
-      {loading ? (
-        <div className="flex flex-col items-center justify-center py-20">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mb-4" />
-          <p className="text-muted-foreground font-medium">Acessando Banco de Dados de Casos...</p>
-        </div>
-      ) : (
-        <div className="space-y-3">
-          {cases.map((c, i) => {
-            const status = getCaseStatus(c.id);
-            const specColor = specialtyColor[c.specialty] || 'bg-muted text-muted-foreground border-border';
+        {loading ? (
+          <div className="flex flex-col items-center justify-center py-24">
+            <div className="animate-spin rounded-full h-10 w-10 border-2 border-primary border-t-transparent mb-4" />
+            <p className="text-muted-foreground text-sm font-medium">Acessando Banco de Dados de Casos...</p>
+          </div>
+        ) : (
+          <>
+            {/* Toolbar: search + filters */}
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.05 }}
+              className="mb-6 space-y-4"
+            >
+              {/* Search */}
+              <div className="relative max-w-md">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Buscar caso clínico..."
+                  className="pl-9 h-10 bg-card border-border/60"
+                />
+              </div>
 
-            return (
-              <motion.button
-                key={c.id}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.03 }}
-                onClick={() => navigate(`/simulation/${c.id}`)}
-                className="glass-card w-full p-4 text-left hover:glow-primary hover:border-primary/30 transition-all group flex items-center gap-4"
-              >
-                <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                  <Activity className="w-6 h-6 text-primary" />
-                </div>
+              {/* Specialty pills */}
+              <div className="flex items-center gap-2 flex-wrap">
+                <Filter className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
+                <button
+                  onClick={() => setActiveSpecialty(null)}
+                  className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
+                    !activeSpecialty
+                      ? 'bg-primary text-primary-foreground border-primary'
+                      : 'bg-card text-muted-foreground border-border/60 hover:border-primary/40 hover:text-foreground'
+                  }`}
+                >
+                  Todas
+                </button>
+                {specialties.map((s) => (
+                  <button
+                    key={s}
+                    onClick={() => setActiveSpecialty(activeSpecialty === s ? null : s)}
+                    className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
+                      activeSpecialty === s
+                        ? 'bg-primary text-primary-foreground border-primary'
+                        : 'bg-card text-muted-foreground border-border/60 hover:border-primary/40 hover:text-foreground'
+                    }`}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            </motion.div>
 
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1 flex-wrap">
-                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+            {/* Count */}
+            <p className="text-xs text-muted-foreground mb-4">
+              {filtered.length} {filtered.length === 1 ? 'caso encontrado' : 'casos encontrados'}
+            </p>
+
+            {/* Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {filtered.map((c, i) => {
+                const status = getCaseStatus(c.id);
+                const specColor = SPECIALTY_COLORS[c.specialty] || 'bg-muted text-muted-foreground border-border';
+
+                return (
+                  <motion.button
+                    key={c.id}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.025, duration: 0.3 }}
+                    onClick={() => navigate(`/simulation/${c.id}`)}
+                    className="group relative flex flex-col rounded-xl border border-border/60 bg-card p-5 text-left transition-all duration-200 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5"
+                  >
+                    {/* Top row */}
+                    <div className="flex items-start justify-between gap-2 mb-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                        <Activity className="h-5 w-5 text-primary" />
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        {status ? (
+                          status.is_correct ? (
+                            <Badge variant="outline" className="gap-1 text-[10px] border-success/30 text-success bg-success/10">
+                              <CheckCircle2 className="h-3 w-3" /> Acertou
+                            </Badge>
+                          ) : (
+                            <Badge variant="outline" className="gap-1 text-[10px] border-destructive/30 text-destructive bg-destructive/10">
+                              <XCircle className="h-3 w-3" /> Errou
+                            </Badge>
+                          )
+                        ) : (
+                          <Badge variant="outline" className="text-[10px] border-border text-muted-foreground">
+                            Pendente
+                          </Badge>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Title & specialty */}
+                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors mb-1.5 line-clamp-1">
                       {c.title}
                     </h3>
-                    <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium border ${specColor}`}>
+                    <Badge variant="outline" className={`w-fit text-[10px] mb-3 ${specColor}`}>
                       {c.specialty}
-                    </span>
-                  </div>
-                  <p className="text-xs text-muted-foreground line-clamp-1">{c.description}</p>
-                </div>
+                    </Badge>
 
-                <div className="shrink-0 flex items-center gap-3">
-                  {status && (
-                    <span
-                      className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${
-                        status.is_correct ? 'bg-success/20 text-success' : 'bg-destructive/20 text-destructive'
-                      }`}
-                    >
-                      {status.is_correct ? '✓ Acertou' : '✗ Errou'}
-                    </span>
-                  )}
-                  <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
-                    <Clock className="w-3 h-3" /> ~15min
-                  </div>
-                  <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                </div>
-              </motion.button>
-            );
-          })}
-        </div>
-      )}
+                    {/* Description */}
+                    <p className="text-xs text-muted-foreground line-clamp-2 mb-4 flex-1">
+                      {c.description}
+                    </p>
+
+                    {/* Footer */}
+                    <div className="flex items-center justify-between pt-3 border-t border-border/40">
+                      <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
+                        <Clock className="h-3 w-3" /> ~15 min
+                      </div>
+                      <span className="flex items-center gap-1 text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity font-medium">
+                        Iniciar <ChevronRight className="h-3.5 w-3.5" />
+                      </span>
+                    </div>
+                  </motion.button>
+                );
+              })}
+            </div>
+
+            {filtered.length === 0 && (
+              <div className="text-center py-16 text-muted-foreground">
+                <Search className="h-8 w-8 mx-auto mb-3 opacity-40" />
+                <p className="text-sm">Nenhum caso encontrado para o filtro selecionado.</p>
+              </div>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 }
