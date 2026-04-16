@@ -28,6 +28,16 @@ interface SimpleCase {
   unnecessaryExams: string[];
 }
 
+/** Extract a spoiler-free label from the case description (patient + chief complaint). */
+function obfuscatedLabel(c: SimpleCase): string {
+  // description usually starts with "Name, age. complaint…"
+  const desc = c.description;
+  // Try to grab everything after the first period/dot that follows the age
+  const match = desc.match(/\d+a\.\s*(.+)/);
+  if (match) return match[1].trim();
+  return desc;
+}
+
 interface CaseHistoryItem {
   case_id: string;
   is_correct: boolean;
@@ -95,7 +105,7 @@ export default function CaseSelection() {
       const q = search.toLowerCase();
       result = result.filter(
         (c) =>
-          c.title.toLowerCase().includes(q) ||
+          obfuscatedLabel(c).toLowerCase().includes(q) ||
           c.description.toLowerCase().includes(q) ||
           c.specialty.toLowerCase().includes(q)
       );
@@ -236,17 +246,17 @@ export default function CaseSelection() {
                       </div>
                     </div>
 
-                    {/* Title & specialty */}
-                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors mb-1.5 line-clamp-1">
-                      {c.title}
+                    {/* Obfuscated title — never show diagnosis */}
+                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors mb-1.5 line-clamp-2">
+                      Paciente: {obfuscatedLabel(c)}
                     </h3>
                     <Badge variant="outline" className={`w-fit text-[10px] mb-3 ${specColor}`}>
                       {c.specialty}
                     </Badge>
 
-                    {/* Description */}
+                    {/* Brief context without revealing diagnosis */}
                     <p className="text-xs text-muted-foreground line-clamp-2 mb-4 flex-1">
-                      {c.description}
+                      Atendimento de {c.specialty.toLowerCase()} — investigue, conduza a anamnese e formule sua hipótese diagnóstica.
                     </p>
 
                     {/* Footer */}
