@@ -105,7 +105,7 @@ export default function CaseSelection() {
       const q = search.toLowerCase();
       result = result.filter(
         (c) =>
-          c.title.toLowerCase().includes(q) ||
+          obfuscatedLabel(c).toLowerCase().includes(q) ||
           c.description.toLowerCase().includes(q) ||
           c.specialty.toLowerCase().includes(q)
       );
@@ -246,17 +246,17 @@ export default function CaseSelection() {
                       </div>
                     </div>
 
-                    {/* Title & specialty */}
-                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors mb-1.5 line-clamp-1">
-                      {c.title}
+                    {/* Obfuscated title — never show diagnosis */}
+                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors mb-1.5 line-clamp-2">
+                      Paciente: {obfuscatedLabel(c)}
                     </h3>
                     <Badge variant="outline" className={`w-fit text-[10px] mb-3 ${specColor}`}>
                       {c.specialty}
                     </Badge>
 
-                    {/* Description */}
+                    {/* Brief context without revealing diagnosis */}
                     <p className="text-xs text-muted-foreground line-clamp-2 mb-4 flex-1">
-                      {c.description}
+                      Atendimento de {c.specialty.toLowerCase()} — investigue, conduza a anamnese e formule sua hipótese diagnóstica.
                     </p>
 
                     {/* Footer */}
