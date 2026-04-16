@@ -1,7 +1,7 @@
 [
   {
     "id": "001",
-    "title": "Dor Torácica Aguda",
+    "title": "Paciente com Dor Torácica Aguda",
     "specialty": "Cardiologia",
     "difficulty": "Intermediário",
     "description": "Carlos Alberto, 58a. Dor no peito há 2 horas com irradiação para braço esquerdo.",
@@ -11,7 +11,7 @@
   },
   {
     "id": "002",
-    "title": "Cefaleia Súbita Intensa",
+    "title": "Paciente com Cefaleia Súbita Intensa",
     "specialty": "Neurologia",
     "difficulty": "Avançado",
     "description": "Maria Souza, 42a. A pior dor de cabeça da vida, início súbito.",
@@ -21,7 +21,7 @@
   },
   {
     "id": "003",
-    "title": "Dor Abdominal Aguda",
+    "title": "Paciente com Dor Abdominal Aguda",
     "specialty": "Cirurgia Geral",
     "difficulty": "Intermediário",
     "description": "Mercedes Oliveira, 55a. Dor forte em hipocôndrio direito após alimentação gordurosa.",
@@ -31,7 +31,7 @@
   },
   {
     "id": "004",
-    "title": "Dispneia e Edema",
+    "title": "Paciente com Dispneia e Edema",
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
     "description": "Waldir Ferreira, 68a. Falta de ar ao deitar e edema importante em pernas.",
@@ -41,7 +41,7 @@
   },
   {
     "id": "005",
-    "title": "Febre e Rigidez de Nuca",
+    "title": "Paciente com Febre e Rigidez de Nuca",
     "specialty": "Infectologia",
     "difficulty": "Avançado",
     "description": "Lucas Mendes, 19a. Febre alta, cefaleia e petéquias pelo corpo.",
@@ -51,7 +51,7 @@
   },
   {
     "id": "006",
-    "title": "Dor Lombar Irradiada",
+    "title": "Paciente com Dor Lombar Irradiada",
     "specialty": "Nefrologia",
     "difficulty": "Iniciante",
     "description": "Ricardo Santos, 35a. Dor excruciante em flanco direito irradiando para virilha.",
@@ -61,7 +61,7 @@
   },
   {
     "id": "007",
-    "title": "Febre e Tosse Produtiva",
+    "title": "Paciente com Febre e Tosse Produtiva",
     "specialty": "Pneumologia",
     "difficulty": "Iniciante",
     "description": "Camila Rodrigues, 28a. Tosse com catarro amarelado e dor pleurítica.",
@@ -71,8 +71,7 @@
   },
   {
     "id": "008",
-    "id_num": 8,
-    "title": "Arritmia Cardíaca Súbita",
+    "title": "Paciente com Palpitações Súbitas",
     "specialty": "Cardiologia",
     "difficulty": "Intermediário",
     "description": "Mulher de 37 anos com início súbito de palpitações após quadro viral.",
@@ -82,8 +81,7 @@
   },
   {
     "id": "009",
-    "id_num": 9,
-    "title": "Insuficiência Cardíaca",
+    "title": "Paciente com Falta de Ar e Edema",
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
     "description": "Dispneia, edema em MMII e hepatomegalia de borda romba.",
@@ -93,8 +91,7 @@
   },
   {
     "id": "010",
-    "id_num": 10,
-    "title": "Dissecação Aórtica",
+    "title": "Paciente com Dor Torácica Lancinante",
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
     "description": "Dor torácica intensa, súbita, com irradiação para o dorso.",
@@ -104,8 +101,7 @@
   },
   {
     "id": "011",
-    "id_num": 11,
-    "title": "Endocardite Infecciosa",
+    "title": "Paciente com Febre e Sopro Novo",
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
     "description": "Febre prolongada associada a novo sopro cardíaco em idoso.",
@@ -115,8 +111,7 @@
   },
   {
     "id": "012",
-    "id_num": 12,
-    "title": "Hipotensão Ortostática",
+    "title": "Paciente com Tontura ao Levantar",
     "specialty": "Clínica Médica",
     "difficulty": "Iniciante",
     "description": "Paciente relata tontura e síncope sempre ao se levantar rapidamente.",
@@ -126,8 +121,7 @@
   },
   {
     "id": "013",
-    "id_num": 13,
-    "title": "Doença de Chagas",
+    "title": "Paciente com Cardiomegalia e Arritmia",
     "specialty": "Cardiologia",
     "difficulty": "Intermediário",
     "description": "Cardiomegalia e arritmias em paciente vindo de área endêmica.",
@@ -137,8 +131,7 @@
   },
   {
     "id": "014",
-    "id_num": 14,
-    "title": "Pneumotórax",
+    "title": "Paciente com Dor Pleural e Dispneia",
     "specialty": "Pneumologia",
     "difficulty": "Intermediário",
     "description": "Dor em punhalada e dispneia súbita em jovem longilíneo.",
@@ -148,8 +141,7 @@
   },
   {
     "id": "015",
-    "id_num": 15,
-    "title": "Pneumonia Lobar",
+    "title": "Paciente com Tosse e Consolidação",
     "specialty": "Infectologia",
     "difficulty": "Iniciante",
     "description": "Tosse, febre e macicez à percussão pulmonar.",
@@ -159,8 +151,7 @@
   },
   {
     "id": "016",
-    "id_num": 16,
-    "title": "Tuberculose",
+    "title": "Paciente com Tosse Crônica e Emagrecimento",
     "specialty": "Infectologia",
     "difficulty": "Intermediário",
     "description": "Tosse crônica, emagrecimento e sudorese noturna.",
@@ -170,8 +161,7 @@
   },
   {
     "id": "017",
-    "id_num": 17,
-    "title": "Asma Brônquica",
+    "title": "Paciente com Chiado no Peito e Dispneia",
     "specialty": "Pneumologia",
     "difficulty": "Iniciante",
     "description": "Sibilos e dispneia com piora no período noturno.",
@@ -181,8 +171,7 @@
   },
   {
     "id": "018",
-    "id_num": 18,
-    "title": "DPOC",
+    "title": "Paciente Tabagista com Dispneia Progressiva",
     "specialty": "Pneumologia",
     "difficulty": "Avançado",
     "description": "Dispneia progressiva e tosse em paciente tabagista crônico.",
@@ -192,8 +181,7 @@
   },
   {
     "id": "019",
-    "id_num": 19,
-    "title": "Apendicite",
+    "title": "Paciente com Dor na Fossa Ilíaca Direita",
     "specialty": "Cirurgia Geral",
     "difficulty": "Iniciante",
     "description": "Dor que migrou do umbigo para a fossa ilíaca direita.",
@@ -203,8 +191,7 @@
   },
   {
     "id": "020",
-    "id_num": 20,
-    "title": "Megaesôfago",
+    "title": "Paciente com Dificuldade de Deglutição",
     "specialty": "Gastroenterologia",
     "difficulty": "Intermediário",
     "description": "Disfagia de condução e regurgitação de alimentos.",
@@ -214,8 +201,7 @@
   },
   {
     "id": "021",
-    "id_num": 21,
-    "title": "Cirrose Hepática",
+    "title": "Paciente com Icterícia e Ascite",
     "specialty": "Gastroenterologia",
     "difficulty": "Avançado",
     "description": "Icterícia, ascite e fígado de consistência nodular.",
@@ -225,8 +211,7 @@
   },
   {
     "id": "022",
-    "id_num": 22,
-    "title": "Úlcera Perfurada",
+    "title": "Paciente com Dor Abdominal Súbita e em Tábua",
     "specialty": "Cirurgia Geral",
     "difficulty": "Avançado",
     "description": "Dor abdominal súbita, intensa, em abdome em tábua.",
@@ -236,19 +221,17 @@
   },
   {
     "id": "023",
-    "id_num": 23,
-    "title": "DRGE",
+    "title": "Paciente com Azia e Regurgitação",
     "specialty": "Gastroenterologia",
     "difficulty": "Iniciante",
     "description": "Pirose e regurgitação que pioram ao deitar após comer.",
     "vitalSigns": { "pa": "120/80", "fc": 78, "sao2": 98, "temp": 36.6, "fr": 14 },
-    "correctDiagnosis": "Doença do Refluxo",
+    "correctDiagnosis": "Doença do Refluxo Gastroesofágico (DRGE)",
     "unnecessaryExams": ["ECG"]
   },
   {
     "id": "024",
-    "id_num": 24,
-    "title": "Hemorroidas",
+    "title": "Paciente com Sangramento Anal Vivo",
     "specialty": "Proctologia",
     "difficulty": "Iniciante",
     "description": "Sangramento vivo ao evacuar, sem dor abdominal.",
