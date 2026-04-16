@@ -448,5 +448,705 @@
     "vitalSigns": { "pa": "120/80", "fc": 76, "sao2": 99, "temp": 36.5, "fr": 16 },
     "correctDiagnosis": "Dispepsia Funcional",
     "unnecessaryExams": ["Eletroencefalograma", "Ressonância de Tórax"]
+  },
+  {
+    "id": "046",
+    "title": "Doença de Hirschsprung Neonatal",
+    "specialty": "Pediatria",
+    "difficulty": "Avançado",
+    "description": "Recém-nascido com 48h de vida apresenta falha na eliminação de mecônio, distensão abdominal e vômitos biliosos.",
+    "vitalSigns": { "pa": "65/40", "fc": 145, "sao2": 96, "temp": 37.2, "fr": 45 },
+    "correctDiagnosis": "Doença de Hirschsprung",
+    "unnecessaryExams": ["Ecocardiograma", "Dosagem de Vitamina B12"]
+  },
+  {
+    "id": "047",
+    "title": "Hipotireoidismo Congênito",
+    "specialty": "Pediatria",
+    "difficulty": "Intermediário",
+    "description": "Lactente com atraso no desenvolvimento, constipação crônica, macroglossia e icterícia prolongada.",
+    "vitalSigns": { "pa": "80/50", "fc": 90, "sao2": 98, "temp": 36.2, "fr": 28 },
+    "correctDiagnosis": "Hipotireoidismo Congênito",
+    "unnecessaryExams": ["Raio-X de Tórax", "Colonoscopia"]
+  },
+  {
+    "id": "048",
+    "title": "Kerion Celsi",
+    "specialty": "Pediatria",
+    "difficulty": "Intermediário",
+    "description": "Criança com placa elevada e inflamatória no couro cabeludo, com pústulas e microabscessos.",
+    "vitalSigns": { "pa": "100/60", "fc": 95, "sao2": 99, "temp": 37.8, "fr": 22 },
+    "correctDiagnosis": "Kerion Celsi (Tinea Capitis Inflamatória)",
+    "unnecessaryExams": ["ECG", "Ureia e Creatinina"]
+  },
+  {
+    "id": "049",
+    "title": "Escabiose em Lactente",
+    "specialty": "Pediatria",
+    "difficulty": "Iniciante",
+    "description": "Bebê de 25 dias com prurido intenso, pápulas e crostas em palmas e plantas. Mãe com lesões em mamas.",
+    "vitalSigns": { "pa": "75/45", "fc": 120, "sao2": 98, "temp": 36.7, "fr": 32 },
+    "correctDiagnosis": "Escabiose (Sarna)",
+    "unnecessaryExams": ["Hemocultura", "Raio-X de Abdome"]
+  },
+  {
+    "id": "050",
+    "title": "Dacriocistite Aguda",
+    "specialty": "Pediatria",
+    "difficulty": "Intermediário",
+    "description": "Lactente de 2 meses com edema, vermelhidão e dor no canto interno do olho com refluxo purulento.",
+    "vitalSigns": { "pa": "85/55", "fc": 115, "sao2": 99, "temp": 37.4, "fr": 26 },
+    "correctDiagnosis": "Dacriocistite Aguda",
+    "unnecessaryExams": ["Eletroencefalograma", "Troponina"]
+  },
+  {
+    "id": "051",
+    "title": "Endometriose Pélvica",
+    "specialty": "Ginecologia",
+    "difficulty": "Avançado",
+    "description": "Mulher de 40 anos com dor pélvica crônica e infertilidade. Biópsia revela glândulas endometriais ectópicas.",
+    "vitalSigns": { "pa": "110/70", "fc": 72, "sao2": 99, "temp": 36.5, "fr": 16 },
+    "correctDiagnosis": "Endometriose",
+    "unnecessaryExams": ["Raio-X de Coluna", "Cintilografia Miocárdica"]
+  },
+  {
+    "id": "052",
+    "title": "Tumor Adenomatoide Uterino",
+    "specialty": "Ginecologia",
+    "difficulty": "Avançado",
+    "description": "Achado incidental em histerectomia: pequenas neoplasias benignas de origem mesotelial na serosa uterina.",
+    "vitalSigns": { "pa": "120/80", "fc": 70, "sao2": 98, "temp": 36.6, "fr": 14 },
+    "correctDiagnosis": "Tumor Adenomatoide",
+    "unnecessaryExams": ["D-Dímero", "Endoscopia"]
+  },
+  {
+    "id": "053",
+    "title": "Sífilis na Gestação",
+    "specialty": "Obstetrícia",
+    "difficulty": "Intermediário",
+    "description": "Gestante no 2º trimestre com teste rápido positivo para sífilis e VDRL 1:32.",
+    "vitalSigns": { "pa": "115/75", "fc": 88, "sao2": 97, "temp": 36.8, "fr": 18 },
+    "correctDiagnosis": "Sífilis Gestacional",
+    "unnecessaryExams": ["Colonoscopia", "Ressonância de Crânio"]
+  },
+  {
+    "id": "054",
+    "title": "Pólipo Endometrial Hemorrágico",
+    "specialty": "Ginecologia",
+    "difficulty": "Iniciante",
+    "description": "Mulher na peri-menopausa com sangramento uterino anormal. USG mostra crescimento focal de células endometriais.",
+    "vitalSigns": { "pa": "125/80", "fc": 82, "sao2": 98, "temp": 36.5, "fr": 16 },
+    "correctDiagnosis": "Pólipo Endometrial",
+    "unnecessaryExams": ["Troponina", "Raio-X de Pelve"]
+  },
+  {
+    "id": "055",
+    "title": "Síndrome de Asherman",
+    "specialty": "Ginecologia",
+    "difficulty": "Avançado",
+    "description": "Amenorreia secundária após curetagem uterina complicada. Suspeita de sinéquias uterinas.",
+    "vitalSigns": { "pa": "110/70", "fc": 74, "sao2": 99, "temp": 36.4, "fr": 14 },
+    "correctDiagnosis": "Síndrome de Asherman",
+    "unnecessaryExams": ["ECG", "Hemocultura"]
+  },
+  {
+    "id": "056",
+    "title": "Dismenorreia por Miomatose",
+    "specialty": "Ginecologia",
+    "difficulty": "Iniciante",
+    "description": "Mulher de 35 anos com cólicas intensas, peso pélvico e nódulos palpáveis ao toque vaginal.",
+    "vitalSigns": { "pa": "120/80", "fc": 78, "sao2": 98, "temp": 36.6, "fr": 16 },
+    "correctDiagnosis": "Leiomiomatose Uterina",
+    "unnecessaryExams": ["Eletroencefalograma", "Amilase"]
+  },
+  {
+    "id": "057",
+    "title": "Câncer de Endométrio",
+    "specialty": "Ginecologia",
+    "difficulty": "Intermediário",
+    "description": "Mulher de 65 anos com sangramento vaginal pós-menopausa. Espessamento endometrial ao USG.",
+    "vitalSigns": { "pa": "135/85", "fc": 76, "sao2": 97, "temp": 36.5, "fr": 18 },
+    "correctDiagnosis": "Carcinoma de Endométrio",
+    "unnecessaryExams": ["Raio-X de Tórax", "Troponina"]
+  },
+  {
+    "id": "058",
+    "title": "Doença de Chagas Aguda (Oral)",
+    "specialty": "Infectologia",
+    "difficulty": "Avançado",
+    "description": "Grupo com febre prolongada, mialgia e edema de face após ingestão de açaí artesanal em área endêmica.",
+    "vitalSigns": { "pa": "100/60", "fc": 110, "sao2": 95, "temp": 38.9, "fr": 22 },
+    "correctDiagnosis": "Doença de Chagas Aguda",
+    "unnecessaryExams": ["Colonoscopia", "Mamografia"]
+  },
+  {
+    "id": "059",
+    "title": "Leishmaniose Tegumentar",
+    "specialty": "Infectologia",
+    "difficulty": "Intermediário",
+    "description": "Úlcera de bordas elevadas e fundo granulomatoso na perna, indolor, evolução de 6 meses.",
+    "vitalSigns": { "pa": "120/80", "fc": 80, "sao2": 98, "temp": 36.8, "fr": 16 },
+    "correctDiagnosis": "Leishmaniose Cutânea",
+    "unnecessaryExams": ["ECG", "Gasometria Arterial"]
+  },
+  {
+    "id": "060",
+    "title": "Febre Amarela (Fase Toxêmica)",
+    "specialty": "Infectologia",
+    "difficulty": "Avançado",
+    "description": "Febre alta e bradicardia relativa (Sinal de Faget), evoluindo para icterícia e hematêmese.",
+    "vitalSigns": { "pa": "90/50", "fc": 55, "sao2": 92, "temp": 39.5, "fr": 26 },
+    "correctDiagnosis": "Febre Amarela",
+    "unnecessaryExams": ["Colonoscopia", "Eletroencefalograma"]
+  },
+  {
+    "id": "061",
+    "title": "Zika Vírus na Gestação",
+    "specialty": "Obstetrícia",
+    "difficulty": "Intermediário",
+    "description": "Gestante com exantema pruriginoso, febre baixa e conjuntivite não purulenta.",
+    "vitalSigns": { "pa": "110/70", "fc": 88, "sao2": 98, "temp": 37.6, "fr": 20 },
+    "correctDiagnosis": "Zika Vírus",
+    "unnecessaryExams": ["Endoscopia", "Troponina"]
+  },
+  {
+    "id": "062",
+    "title": "Chikungunya Crônica",
+    "specialty": "Infectologia",
+    "difficulty": "Intermediário",
+    "description": "Artralgia incapacitante em mãos e pés após 6 meses de quadro agudo de arbovirose.",
+    "vitalSigns": { "pa": "125/80", "fc": 82, "sao2": 99, "temp": 36.5, "fr": 18 },
+    "correctDiagnosis": "Febre Chikungunya (Fase Crônica)",
+    "unnecessaryExams": ["Raio-X de Crânio", "Hemocultura"]
+  },
+  {
+    "id": "063",
+    "title": "Leishmaniose Visceral (Calazar)",
+    "specialty": "Infectologia",
+    "difficulty": "Avançado",
+    "description": "Febre longa, emagrecimento acentuado e hepatosplenomegalia maciça.",
+    "vitalSigns": { "pa": "100/60", "fc": 105, "sao2": 94, "temp": 38.5, "fr": 22 },
+    "correctDiagnosis": "Leishmaniose Visceral",
+    "unnecessaryExams": ["Ecocardiograma", "Colonoscopia"]
+  },
+  {
+    "id": "064",
+    "title": "Malária por P. falciparum",
+    "specialty": "Infectologia",
+    "difficulty": "Avançado",
+    "description": "Paroxismos febris, anemia grave e icterícia em viajante vindo da África.",
+    "vitalSigns": { "pa": "95/60", "fc": 118, "sao2": 91, "temp": 40.1, "fr": 26 },
+    "correctDiagnosis": "Malária Grave",
+    "unnecessaryExams": ["Eletroencefalograma", "PSA"]
+  },
+  {
+    "id": "065",
+    "title": "Mordedura de Cão",
+    "specialty": "Infectologia",
+    "difficulty": "Iniciante",
+    "description": "Criança de 5 anos mordida por cão de rua na mão. Ferimento lacero-contuso.",
+    "vitalSigns": { "pa": "105/65", "fc": 110, "sao2": 99, "temp": 36.8, "fr": 24 },
+    "correctDiagnosis": "Acidente por Animal Raivoso",
+    "unnecessaryExams": ["TC de Abdome", "Troponina"]
+  },
+  {
+    "id": "066",
+    "title": "Lúpus Eritematoso Sistêmico",
+    "specialty": "Clínica Médica",
+    "difficulty": "Intermediário",
+    "description": "Mulher jovem com eritema malar, artrite e proteinúria importante.",
+    "vitalSigns": { "pa": "145/95", "fc": 92, "sao2": 97, "temp": 37.4, "fr": 20 },
+    "correctDiagnosis": "Lúpus Eritematoso Sistêmico (LES)",
+    "unnecessaryExams": ["Colonoscopia", "Raio-X de Crânio"]
+  },
+  {
+    "id": "067",
+    "title": "Retinopatia Diabética Proliferativa",
+    "specialty": "Oftalmologia",
+    "difficulty": "Avançado",
+    "description": "Perda súbita de visão por hemorragia vítrea em paciente diabético tipo 2.",
+    "vitalSigns": { "pa": "160/100", "fc": 85, "sao2": 96, "temp": 36.6, "fr": 18 },
+    "correctDiagnosis": "Retinopatia Diabética Proliferativa",
+    "unnecessaryExams": ["Urocultura", "Troponina"]
+  },
+  {
+    "id": "068",
+    "title": "Acromegalia",
+    "specialty": "Endocrinologia",
+    "difficulty": "Intermediário",
+    "description": "Crescimento de mãos, pés e mandíbula. Cefaleia e hemianopsia bitemporal.",
+    "vitalSigns": { "pa": "150/90", "fc": 78, "sao2": 98, "temp": 36.5, "fr": 16 },
+    "correctDiagnosis": "Acromegalia",
+    "unnecessaryExams": ["Raio-X de Tórax", "Colonoscopia"]
+  },
+  {
+    "id": "069",
+    "title": "Dislipidemia Mista",
+    "specialty": "Endocrinologia",
+    "difficulty": "Iniciante",
+    "description": "Sedentário com xantelasmas e níveis de triglicerídeos > 400 mg/dL.",
+    "vitalSigns": { "pa": "138/88", "fc": 80, "sao2": 98, "temp": 36.4, "fr": 16 },
+    "correctDiagnosis": "Dislipidemia Mista",
+    "unnecessaryExams": ["Eletroencefalograma", "Hemocultura"]
+  },
+  {
+    "id": "070",
+    "title": "Hipertensão com Lesão de Órgão-Alvo",
+    "specialty": "Cardiologia",
+    "difficulty": "Intermediário",
+    "description": "Obeso com PA 150/90 mmHg, hipertrofia ventricular esquerda e microalbuminúria.",
+    "vitalSigns": { "pa": "150/90", "fc": 88, "sao2": 97, "temp": 36.7, "fr": 18 },
+    "correctDiagnosis": "Hipertensão Arterial Sistêmica",
+    "unnecessaryExams": ["Colonoscopia", "Amilase"]
+  },
+  {
+    "id": "071",
+    "title": "Anemia por Deficiência de B12",
+    "specialty": "Hematologia",
+    "difficulty": "Intermediário",
+    "description": "Idoso com glossite, perda de sensibilidade vibratória e irritabilidade.",
+    "vitalSigns": { "pa": "110/60", "fc": 98, "sao2": 95, "temp": 36.8, "fr": 20 },
+    "correctDiagnosis": "Anemia Megaloblástica",
+    "unnecessaryExams": ["ECG", "Raio-X de Joelho"]
+  },
+  {
+    "id": "072",
+    "title": "Insuficiência Renal Crônica",
+    "specialty": "Nefrologia",
+    "difficulty": "Avançado",
+    "description": "Paciente com uremia apresentando unhas de Lindsay (brancas proximalmente).",
+    "vitalSigns": { "pa": "170/110", "fc": 94, "sao2": 93, "temp": 36.2, "fr": 22 },
+    "correctDiagnosis": "Insuficiência Renal Crônica",
+    "unnecessaryExams": ["Colonoscopia", "Troponina"]
+  },
+  {
+    "id": "073",
+    "title": "Artrite Reumatoide",
+    "specialty": "Reumatologia",
+    "difficulty": "Intermediário",
+    "description": "Rigidez matinal e sinovite em articulações interfalangianas proximais.",
+    "vitalSigns": { "pa": "120/80", "fc": 85, "sao2": 98, "temp": 37.2, "fr": 18 },
+    "correctDiagnosis": "Artrite Reumatoide",
+    "unnecessaryExams": ["PSA", "Troponina"]
+  },
+  {
+    "id": "074",
+    "title": "Hiperesplenismo por Cirrose",
+    "specialty": "Hepatologia",
+    "difficulty": "Avançado",
+    "description": "Esplenomegalia com pancitopenia no hemograma em paciente cirrótico.",
+    "vitalSigns": { "pa": "100/60", "fc": 90, "sao2": 96, "temp": 36.5, "fr": 18 },
+    "correctDiagnosis": "Hiperesplenismo",
+    "unnecessaryExams": ["ECG", "Raio-X de Crânio"]
+  },
+  {
+    "id": "075",
+    "title": "Abscesso Anal Profundo",
+    "specialty": "Proctologia",
+    "difficulty": "Intermediário",
+    "description": "Diabético com dor anorretal intensa, sensibilidade profunda e febre.",
+    "vitalSigns": { "pa": "130/85", "fc": 108, "sao2": 97, "temp": 38.8, "fr": 20 },
+    "correctDiagnosis": "Abscesso Isquiorretal",
+    "unnecessaryExams": ["Troponina", "Eletroencefalograma"]
+  },
+  {
+    "id": "076",
+    "title": "AVE Isquêmico",
+    "specialty": "Neurologia",
+    "difficulty": "Intermediário",
+    "description": "Início súbito de afasia e hemiparesia à direita em paciente de 60 anos.",
+    "vitalSigns": { "pa": "185/105", "fc": 92, "sao2": 94, "temp": 36.6, "fr": 20 },
+    "correctDiagnosis": "Acidente Vascular Encefálico Isquêmico",
+    "unnecessaryExams": ["Amilase", "Colonoscopia"]
+  },
+  {
+    "id": "077",
+    "title": "Demência Vascular",
+    "specialty": "Neurologia",
+    "difficulty": "Intermediário",
+    "description": "Comprometimento da função executiva, incontinência e marcha apráxica em hipertenso.",
+    "vitalSigns": { "pa": "155/95", "fc": 78, "sao2": 98, "temp": 36.4, "fr": 16 },
+    "correctDiagnosis": "Demência Vascular",
+    "unnecessaryExams": ["Hemocultura", "Raio-X de Tórax"]
+  },
+  {
+    "id": "078",
+    "title": "Delirium por Infecção Urinária",
+    "specialty": "Clínica Médica",
+    "difficulty": "Intermediário",
+    "description": "Idoso com confusão mental aguda, agitação e flutuação da consciência.",
+    "vitalSigns": { "pa": "115/70", "fc": 112, "sao2": 95, "temp": 37.9, "fr": 22 },
+    "correctDiagnosis": "Delirium (Síndrome Confusional Aguda)",
+    "unnecessaryExams": ["Troponina", "Raio-X de Pelve"]
+  },
+  {
+    "id": "079",
+    "title": "VPPB",
+    "specialty": "Neurologia",
+    "difficulty": "Iniciante",
+    "description": "Vertigem ao deitar ou virar na cama. Dix-Hallpike positivo para nistagmo.",
+    "vitalSigns": { "pa": "125/80", "fc": 82, "sao2": 99, "temp": 36.5, "fr": 16 },
+    "correctDiagnosis": "Vertigem Posicional Paroxística Benigna",
+    "unnecessaryExams": ["Troponina", "Glicemia"]
+  },
+  {
+    "id": "080",
+    "title": "Migrânea com Aura",
+    "specialty": "Neurologia",
+    "difficulty": "Iniciante",
+    "description": "Fosfenos seguidos de cefaleia hemicraniana pulsátil, náuseas e fotofobia.",
+    "vitalSigns": { "pa": "120/80", "fc": 88, "sao2": 99, "temp": 36.7, "fr": 18 },
+    "correctDiagnosis": "Enxaqueca com Aura",
+    "unnecessaryExams": ["Raio-X de Tórax", "Colonoscopia"]
+  },
+  {
+    "id": "081",
+    "title": "Depressão Geriátrica",
+    "specialty": "Psiquiatria",
+    "difficulty": "Iniciante",
+    "description": "Idosa com tristeza profunda, anedonia e perda de apetite.",
+    "vitalSigns": { "pa": "130/80", "fc": 72, "sao2": 98, "temp": 36.5, "fr": 16 },
+    "correctDiagnosis": "Transtorno Depressivo Maior",
+    "unnecessaryExams": ["ECG", "Troponina"]
+  },
+  {
+    "id": "082",
+    "title": "Esquizofrenia",
+    "specialty": "Psiquiatria",
+    "difficulty": "Avançado",
+    "description": "Jovem com isolamento, embotamento afetivo e delírio persecutório.",
+    "vitalSigns": { "pa": "115/75", "fc": 84, "sao2": 99, "temp": 36.6, "fr": 18 },
+    "correctDiagnosis": "Esquizofrenia",
+    "unnecessaryExams": ["Raio-X de Tórax", "Colonoscopia"]
+  },
+  {
+    "id": "083",
+    "title": "Carcinoma Basocelular",
+    "specialty": "Dermatologia",
+    "difficulty": "Iniciante",
+    "description": "Pápula perlácea com telangiectasias no rosto com úlcera central.",
+    "vitalSigns": { "pa": "130/85", "fc": 76, "sao2": 98, "temp": 36.5, "fr": 16 },
+    "correctDiagnosis": "Carcinoma Basocelular",
+    "unnecessaryExams": ["Troponina", "PSA"]
+  },
+  {
+    "id": "084",
+    "title": "Melanoma de Face",
+    "specialty": "Dermatologia",
+    "difficulty": "Intermediário",
+    "description": "Nódulo em domo, coloração negro-azulada na bochecha de idoso.",
+    "vitalSigns": { "pa": "125/80", "fc": 80, "sao2": 99, "temp": 36.6, "fr": 18 },
+    "correctDiagnosis": "Melanoma Nodular",
+    "unnecessaryExams": ["Urocultura", "ECG"]
+  },
+  {
+    "id": "085",
+    "title": "Adenoma Pleomórfico",
+    "specialty": "Cirurgia Geral",
+    "difficulty": "Intermediário",
+    "description": "Massa indolor, firme e móvel na região pré-auricular (parótida).",
+    "vitalSigns": { "pa": "120/80", "fc": 74, "sao2": 98, "temp": 36.5, "fr": 16 },
+    "correctDiagnosis": "Adenoma Pleomórfico de Parótida",
+    "unnecessaryExams": ["Colonoscopia", "Troponina"]
+  },
+  {
+    "id": "086",
+    "title": "Tumor de Wilms",
+    "specialty": "Pediatria",
+    "difficulty": "Avançado",
+    "description": "Criança de 19 meses com massa abdominal firme e lisa, sem dor.",
+    "vitalSigns": { "pa": "110/70", "fc": 115, "sao2": 97, "temp": 36.9, "fr": 30 },
+    "correctDiagnosis": "Nefroblastoma (Tumor de Wilms)",
+    "unnecessaryExams": ["Eletroencefalograma", "Colonoscopia"]
+  },
+  {
+    "id": "087",
+    "title": "Câncer de Pâncreas",
+    "specialty": "Cirurgia Geral",
+    "difficulty": "Avançado",
+    "description": "Icterícia obstrutiva, sinal de Courvoisier e perda de peso acentuada.",
+    "vitalSigns": { "pa": "110/65", "fc": 88, "sao2": 95, "temp": 36.7, "fr": 20 },
+    "correctDiagnosis": "Adenocarcinoma de Pâncreas",
+    "unnecessaryExams": ["ECG", "Troponina"]
+  },
+  {
+    "id": "088",
+    "title": "Carcinoma de Bexiga",
+    "specialty": "Urologia",
+    "difficulty": "Intermediário",
+    "description": "Homem de 50 anos, tabagista, com hematúria macroscópica indolor.",
+    "vitalSigns": { "pa": "140/90", "fc": 82, "sao2": 98, "temp": 36.5, "fr": 18 },
+    "correctDiagnosis": "Carcinoma Urotelial",
+    "unnecessaryExams": ["Troponina", "Raio-X de Crânio"]
+  },
+  {
+    "id": "089",
+    "title": "Osteossarcoma",
+    "specialty": "Ortopedia",
+    "difficulty": "Avançado",
+    "description": "Adolescente com dor óssea noturna e tumefação em extremidade de tíbia.",
+    "vitalSigns": { "pa": "115/75", "fc": 95, "sao2": 99, "temp": 37.1, "fr": 20 },
+    "correctDiagnosis": "Osteossarcoma",
+    "unnecessaryExams": ["Colonoscopia", "Eletroencefalograma"]
+  },
+  {
+    "id": "090",
+    "title": "Coriocarcinoma",
+    "specialty": "Obstetrícia",
+    "difficulty": "Avançado",
+    "description": "HCG persistentemente elevado após mola hidatiforme e sangramento vaginal.",
+    "vitalSigns": { "pa": "110/70", "fc": 88, "sao2": 98, "temp": 36.6, "fr": 18 },
+    "correctDiagnosis": "Coriocarcinoma Gestacional",
+    "unnecessaryExams": ["ECG", "Mamografia"]
+  },
+  {
+    "id": "091",
+    "title": "Gripe (Influenza)",
+    "specialty": "Infectologia",
+    "difficulty": "Iniciante",
+    "description": "Paciente com febre alta súbita, dor de garganta, tosse seca e mialgia intensa com prostração.",
+    "vitalSigns": { "pa": "110/70", "fc": 105, "sao2": 96, "temp": 39.2, "fr": 22 },
+    "correctDiagnosis": "Influenza (Gripe)",
+    "unnecessaryExams": ["Colonoscopia", "Radiografia de Coluna"]
+  },
+  {
+    "id": "092",
+    "title": "Resfriado Comum",
+    "specialty": "Clínica Médica",
+    "difficulty": "Iniciante",
+    "description": "Congestão nasal, espirros e rinorreia. Estado geral preservado e febre ausente.",
+    "vitalSigns": { "pa": "120/80", "fc": 72, "sao2": 99, "temp": 36.6, "fr": 14 },
+    "correctDiagnosis": "Nasofaringite Aguda (Resfriado)",
+    "unnecessaryExams": ["Tomografia de Tórax", "Troponina"]
+  },
+  {
+    "id": "093",
+    "title": "Dengue Grupo A",
+    "specialty": "Infectologia",
+    "difficulty": "Iniciante",
+    "description": "Febre alta, dor retro-orbitária e mialgia. Prova do laço negativa e sem sinais de alarme.",
+    "vitalSigns": { "pa": "115/75", "fc": 90, "sao2": 98, "temp": 38.8, "fr": 18 },
+    "correctDiagnosis": "Dengue sem Sinais de Alarme",
+    "unnecessaryExams": ["Endoscopia", "Ressonância de Crânio"]
+  },
+  {
+    "id": "094",
+    "title": "Varicela (Catapora)",
+    "specialty": "Pediatria",
+    "difficulty": "Iniciante",
+    "description": "Exantema polimórfico (máculas, pápulas e vesículas simultâneas) com prurido intenso.",
+    "vitalSigns": { "pa": "100/60", "fc": 100, "sao2": 98, "temp": 37.9, "fr": 20 },
+    "correctDiagnosis": "Varicela",
+    "unnecessaryExams": ["Eletroencefalograma", "Urografia Excretora"]
+  },
+  {
+    "id": "095",
+    "title": "Síndrome Mão-Pé-Boca",
+    "specialty": "Pediatria",
+    "difficulty": "Iniciante",
+    "description": "Lactente com vesículas em mãos, pés e nádegas, além de úlceras em cavidade oral.",
+    "vitalSigns": { "pa": "85/50", "fc": 110, "sao2": 99, "temp": 37.5, "fr": 24 },
+    "correctDiagnosis": "Doença Mão-Pé-Boca (Coxsackie)",
+    "unnecessaryExams": ["Raio-X de Tórax", "Dosagem de PSA"]
+  },
+  {
+    "id": "096",
+    "title": "Herpangina",
+    "specialty": "Pediatria",
+    "difficulty": "Intermediário",
+    "description": "Febre alta súbita e vesículas branco-acinzentadas em palato mole e úvula.",
+    "vitalSigns": { "pa": "95/60", "fc": 120, "sao2": 98, "temp": 39.4, "fr": 26 },
+    "correctDiagnosis": "Herpangina",
+    "unnecessaryExams": ["Colonoscopia", "Ecocardiograma"]
+  },
+  {
+    "id": "097",
+    "title": "Faringoamigdalite Bacteriana",
+    "specialty": "Clínica Médica",
+    "difficulty": "Iniciante",
+    "description": "Dor de garganta intensa, febre alta e exsudato purulento em amígdalas.",
+    "vitalSigns": { "pa": "110/70", "fc": 105, "sao2": 98, "temp": 38.9, "fr": 20 },
+    "correctDiagnosis": "Amigdalite Bacteriana (Estreptocócica)",
+    "unnecessaryExams": ["Tomografia de Crânio", "Amilase"]
+  },
+  {
+    "id": "098",
+    "title": "Bacteriúria Assintomática",
+    "specialty": "Obstetrícia",
+    "difficulty": "Intermediário",
+    "description": "Gestante sem sintomas com urocultura revelando >100.000 UFC/ml.",
+    "vitalSigns": { "pa": "110/70", "fc": 80, "sao2": 99, "temp": 36.6, "fr": 16 },
+    "correctDiagnosis": "Bacteriúria Assintomática na Gravidez",
+    "unnecessaryExams": ["Raio-X de Tórax", "Colonoscopia"]
+  },
+  {
+    "id": "099",
+    "title": "Cistite na Gravidez",
+    "specialty": "Obstetrícia",
+    "difficulty": "Iniciante",
+    "description": "Gestante com disúria e polaciúria, sem febre ou dor lombar.",
+    "vitalSigns": { "pa": "115/75", "fc": 85, "sao2": 99, "temp": 36.8, "fr": 18 },
+    "correctDiagnosis": "Infecção do Trato Urinário Baixo (Cistite)",
+    "unnecessaryExams": ["Eletroencefalograma", "Troponina"]
+  },
+  {
+    "id": "100",
+    "title": "Pielonefrite na Gestação",
+    "specialty": "Obstetrícia",
+    "difficulty": "Avançado",
+    "description": "Gestante com febre, calafrios e Sinal de Giordano positivo.",
+    "vitalSigns": { "pa": "100/60", "fc": 115, "sao2": 96, "temp": 39.1, "fr": 24 },
+    "correctDiagnosis": "Pielonefrite Aguda",
+    "unnecessaryExams": ["Mamografia", "Cintilografia Óssea"]
+  },
+  {
+    "id": "101",
+    "title": "Hiperêmese Gravídica",
+    "specialty": "Obstetrícia",
+    "difficulty": "Intermediário",
+    "description": "Vômitos frequentes no 1º trimestre com perda ponderal leve e sem desidratação grave.",
+    "vitalSigns": { "pa": "105/65", "fc": 90, "sao2": 98, "temp": 36.7, "fr": 18 },
+    "correctDiagnosis": "Hiperêmese Gravídica",
+    "unnecessaryExams": ["Raio-X de Abdome", "ECG"]
+  },
+  {
+    "id": "102",
+    "title": "Vaginose Bacteriana",
+    "specialty": "Ginecologia",
+    "difficulty": "Iniciante",
+    "description": "Corrimento branco-acinzentado com odor fétido que piora após coito.",
+    "vitalSigns": { "pa": "120/80", "fc": 74, "sao2": 99, "temp": 36.5, "fr": 16 },
+    "correctDiagnosis": "Vaginose Bacteriana (Gardnerella)",
+    "unnecessaryExams": ["Troponina", "Raio-X de Tórax"]
+  },
+  {
+    "id": "103",
+    "title": "Urticária Colinérgica",
+    "specialty": "Dermatologia",
+    "difficulty": "Intermediário",
+    "description": "Pequenas urticas após banho quente, exercício ou estresse emocional.",
+    "vitalSigns": { "pa": "125/80", "fc": 95, "sao2": 99, "temp": 37.2, "fr": 20 },
+    "correctDiagnosis": "Urticária Colinérgica",
+    "unnecessaryExams": ["Endoscopia", "Hemocultura"]
+  },
+  {
+    "id": "104",
+    "title": "Dermatite de Contato (Níquel)",
+    "specialty": "Dermatologia",
+    "difficulty": "Iniciante",
+    "description": "Eczema pruriginoso em lóbulo da orelha e região umbilical (contato com metal).",
+    "vitalSigns": { "pa": "110/70", "fc": 72, "sao2": 99, "temp": 36.5, "fr": 14 },
+    "correctDiagnosis": "Dermatite de Contato Alérgica",
+    "unnecessaryExams": ["ECG", "Glicemia de Jejum"]
+  },
+  {
+    "id": "105",
+    "title": "Eczema Asteatósico",
+    "specialty": "Dermatologia",
+    "difficulty": "Iniciante",
+    "description": "Pele de idoso com aspecto de porcelana craquelada e fissuras lineares.",
+    "vitalSigns": { "pa": "130/85", "fc": 70, "sao2": 97, "temp": 36.4, "fr": 16 },
+    "correctDiagnosis": "Eczema Asteatósico (Desidratação Cutânea)",
+    "unnecessaryExams": ["Urocultura", "Troponina"]
+  },
+  {
+    "id": "106",
+    "title": "Disidrose",
+    "specialty": "Dermatologia",
+    "difficulty": "Iniciante",
+    "description": "Vesículas profundas ('grãos de sagu') em faces laterais dos dedos e palmas.",
+    "vitalSigns": { "pa": "120/80", "fc": 80, "sao2": 99, "temp": 36.5, "fr": 16 },
+    "correctDiagnosis": "Eczema Disidrótico",
+    "unnecessaryExams": ["Raio-X de Tórax", "Colonoscopia"]
+  },
+  {
+    "id": "107",
+    "title": "Dermatite Seborreica",
+    "specialty": "Dermatologia",
+    "difficulty": "Iniciante",
+    "description": "Descamação amarelada em couro cabeludo, sobrancelhas e sulcos nasolabiais.",
+    "vitalSigns": { "pa": "120/80", "fc": 72, "sao2": 99, "temp": 36.6, "fr": 14 },
+    "correctDiagnosis": "Dermatite Seborreica",
+    "unnecessaryExams": ["Troponina", "Eletroneuromiografia"]
+  },
+  {
+    "id": "108",
+    "title": "Diarreia por Rotavírus",
+    "specialty": "Pediatria",
+    "difficulty": "Iniciante",
+    "description": "Evacuações amolecidas explosivas, vômitos e dor abdominal em criança.",
+    "vitalSigns": { "pa": "95/60", "fc": 115, "sao2": 97, "temp": 38.2, "fr": 24 },
+    "correctDiagnosis": "Gastroenterite por Rotavírus",
+    "unnecessaryExams": ["PSA", "Ressonância de Coluna"]
+  },
+  {
+    "id": "109",
+    "title": "Constipação Funcional",
+    "specialty": "Gastroenterologia",
+    "difficulty": "Iniciante",
+    "description": "Fezes endurecidas e esforço excessivo sem sinais de alarme.",
+    "vitalSigns": { "pa": "125/80", "fc": 75, "sao2": 99, "temp": 36.5, "fr": 14 },
+    "correctDiagnosis": "Constipação Funcional",
+    "unnecessaryExams": ["ECG", "Hemocultura"]
+  },
+  {
+    "id": "110",
+    "title": "Ascaridíase",
+    "specialty": "Pediatria",
+    "difficulty": "Iniciante",
+    "description": "Criança com distensão abdominal leve e história de eliminação de vermes cilíndricos.",
+    "vitalSigns": { "pa": "100/65", "fc": 90, "sao2": 98, "temp": 36.8, "fr": 18 },
+    "correctDiagnosis": "Ascaridíase (Lombriga)",
+    "unnecessaryExams": ["Eletroencefalograma", "Mamografia"]
+  },
+  {
+    "id": "111",
+    "title": "Cefaleia Tensional",
+    "specialty": "Neurologia",
+    "difficulty": "Iniciante",
+    "description": "Dor em pressão, bilateral, 'em faixa', associada a estresse.",
+    "vitalSigns": { "pa": "130/85", "fc": 84, "sao2": 99, "temp": 36.6, "fr": 18 },
+    "correctDiagnosis": "Cefaleia do Tipo Tensional",
+    "unnecessaryExams": ["TC de Abdome", "Troponina"]
+  },
+  {
+    "id": "112",
+    "title": "Vertigem Posicional (VPPB)",
+    "specialty": "Neurologia",
+    "difficulty": "Iniciante",
+    "description": "Vertigem rotatória súbita ao mudar posição da cabeça na cama.",
+    "vitalSigns": { "pa": "135/85", "fc": 80, "sao2": 99, "temp": 36.5, "fr": 16 },
+    "correctDiagnosis": "Vertigem Posicional Paroxística Benigna",
+    "unnecessaryExams": ["Radiografia de Tórax", "Colonoscopia"]
+  },
+  {
+    "id": "113",
+    "title": "Transtorno de Ansiedade de Doença",
+    "specialty": "Psiquiatria",
+    "difficulty": "Intermediário",
+    "description": "Preocupação excessiva e medo persistente de ter uma doença grave, apesar de exames normais.",
+    "vitalSigns": { "pa": "120/80", "fc": 88, "sao2": 99, "temp": 36.6, "fr": 18 },
+    "correctDiagnosis": "Transtorno de Ansiedade de Doença (Hipocondria)",
+    "unnecessaryExams": ["Cintilografia", "Endoscopia"]
+  },
+  {
+    "id": "114",
+    "title": "Distimia",
+    "specialty": "Psiquiatria",
+    "difficulty": "Intermediário",
+    "description": "Humor deprimido crônico há mais de 2 anos, com baixa autoestima e fadiga.",
+    "vitalSigns": { "pa": "115/75", "fc": 72, "sao2": 98, "temp": 36.5, "fr": 14 },
+    "correctDiagnosis": "Transtorno Depressivo Persistente (Distimia)",
+    "unnecessaryExams": ["Raio-X de Tórax", "Troponina"]
+  },
+  {
+    "id": "115",
+    "title": "Agorafobia",
+    "specialty": "Psiquiatria",
+    "difficulty": "Intermediário",
+    "description": "Medo intenso de locais abertos ou multidões de onde seria difícil escapar.",
+    "vitalSigns": { "pa": "130/80", "fc": 92, "sao2": 99, "temp": 36.7, "fr": 20 },
+    "correctDiagnosis": "Agorafobia",
+    "unnecessaryExams": ["Colonoscopia", "Eletroencefalograma"]
   }
 ]
