@@ -37,7 +37,6 @@ function obfuscatedLabel(c: SimpleCase): string {
   if (match) return match[1].trim();
   return desc;
 }
-}
 
 interface CaseHistoryItem {
   case_id: string;
