@@ -13,30 +13,19 @@ import {
 } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
-import { fetchClinicalCases } from '@/data/clinicalCases';
+import { fetchClinicalCases, type ClinicalCase } from '@/data/clinicalCases';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 
-interface SimpleCase {
-  id: string;
-  title: string;
-  specialty: string;
-  description: string;
-  correctDiagnosis: string;
-  baseVitals: { bp: string; hr: number; ox: number };
-  labResults: Record<string, string>;
-  unnecessaryExams: string[];
-}
-
 /** Extract a spoiler-free label from the case description (patient + chief complaint). */
-function obfuscatedLabel(c: SimpleCase): string {
+function obfuscatedLabel(c: ClinicalCase): string {
   // description usually starts with "Name, age. complaint…"
-  const desc = c.description;
+  const desc = c.history || c.chiefComplaint || '';
   // Try to grab everything after the first period/dot that follows the age
   const match = desc.match(/\d+a\.\s*(.+)/);
   if (match) return match[1].trim();
-  return desc;
+  return c.chiefComplaint || desc;
 }
 
 interface CaseHistoryItem {
@@ -60,7 +49,7 @@ const SPECIALTY_COLORS: Record<string, string> = {
 export default function CaseSelection() {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const [cases, setCases] = useState<SimpleCase[]>([]);
+  const [cases, setCases] = useState<ClinicalCase[]>([]);
   const [history, setHistory] = useState<CaseHistoryItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -108,7 +97,7 @@ export default function CaseSelection() {
       result = result.filter(
         (c) =>
           obfuscatedLabel(c).toLowerCase().includes(q) ||
-          c.description.toLowerCase().includes(q) ||
+            (c.history || c.chiefComplaint || '').toLowerCase().includes(q) ||
           c.specialty.toLowerCase().includes(q)
       );
     }
