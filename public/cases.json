@@ -1148,5 +1148,355 @@
     "vitalSigns": { "pa": "130/80", "fc": 92, "sao2": 99, "temp": 36.7, "fr": 20 },
     "correctDiagnosis": "Agorafobia",
     "unnecessaryExams": ["Colonoscopia", "Eletroencefalograma"]
+  },
+  {
+    "id": "116",
+    "title": "Arterite de Células Gigantes",
+    "specialty": "Reumatologia",
+    "difficulty": "Avançado",
+    "description": "Paciente de 65 anos com cefaleia persistente, claudicação de mandíbula e perda súbita de visão unilateral.",
+    "vitalSigns": { "pa": "140/90", "fc": 82, "sao2": 97, "temp": 37.8, "fr": 18 },
+    "correctDiagnosis": "Arterite Temporal (Células Gigantes)",
+    "unnecessaryExams": ["Colonoscopia", "Radiografia de Tornozelo"]
+  },
+  {
+    "id": "117",
+    "title": "Sarcoidose Systemica",
+    "specialty": "Pneumologia",
+    "difficulty": "Avançado",
+    "description": "Homem com tosse seca, dispneia progressiva e linfadenopatia hilar bilateral na radiografia de tórax.",
+    "vitalSigns": { "pa": "120/80", "fc": 88, "sao2": 93, "temp": 37.1, "fr": 22 },
+    "correctDiagnosis": "Sarcoidose",
+    "unnecessaryExams": ["Eletroencefalograma", "Dosagem de PSA"]
+  },
+  {
+    "id": "118",
+    "title": "Beribéri Infantil",
+    "specialty": "Nutrologia",
+    "difficulty": "Avançado",
+    "description": "Lactente com insuficiência cardíaca súbita, afonia e ausência de reflexos. Mãe apresenta sinais de desnutrição.",
+    "vitalSigns": { "pa": "70/40", "fc": 160, "sao2": 90, "temp": 36.4, "fr": 50 },
+    "correctDiagnosis": "Beribéri (Deficiência de Tiamina/B1)",
+    "unnecessaryExams": ["Tomografia de Crânio", "Urocultura"]
+  },
+  {
+    "id": "119",
+    "title": "Escorbuto",
+    "specialty": "Nutrologia",
+    "difficulty": "Intermediário",
+    "description": "Criança com dieta restrita apresenta gengivas sangrantes, petéquias e reabertura de cicatrizes antigas.",
+    "vitalSigns": { "pa": "95/60", "fc": 100, "sao2": 98, "temp": 36.8, "fr": 22 },
+    "correctDiagnosis": "Escorbuto (Deficiência de Vitamina C)",
+    "unnecessaryExams": ["ECG", "Ecocardiograma"]
+  },
+  {
+    "id": "120",
+    "title": "Hemocromatose Hereditária",
+    "specialty": "Hematologia",
+    "difficulty": "Avançado",
+    "description": "Paciente com 'diabetes bronzeado' (pigmentação escura da pele), diabetes e insuficiência cardíaca.",
+    "vitalSigns": { "pa": "110/70", "fc": 76, "sao2": 96, "temp": 36.5, "fr": 16 },
+    "correctDiagnosis": "Hemocromatose",
+    "unnecessaryExams": ["Raio-X de Tórax", "Troponina"]
+  },
+  {
+    "id": "121",
+    "title": "Choque Séptico",
+    "specialty": "Infectologia",
+    "difficulty": "Avançado",
+    "description": "Hipotensão severa, extremidades frias, cianose e oligúria após foco infeccioso grave.",
+    "vitalSigns": { "pa": "70/40", "fc": 130, "sao2": 88, "temp": 39.5, "fr": 28 },
+    "correctDiagnosis": "Choque Séptico",
+    "unnecessaryExams": ["Cintilografia Óssea", "Colonoscopia"]
+  },
+  {
+    "id": "122",
+    "title": "Leptospirose",
+    "specialty": "Infectologia",
+    "difficulty": "Intermediário",
+    "description": "Icterícia alaranjada, febre alta e dor intensa nas panturrilhas após contato com água de enchente.",
+    "vitalSigns": { "pa": "100/60", "fc": 110, "sao2": 94, "temp": 39.8, "fr": 24 },
+    "correctDiagnosis": "Leptospirose (Síndrome de Weil)",
+    "unnecessaryExams": ["Eletroencefalograma", "Mamografia"]
+  },
+  {
+    "id": "123",
+    "title": "Albinismo Oculocutâneo",
+    "specialty": "Dermatologia",
+    "difficulty": "Iniciante",
+    "description": "Pele leitosa, cabelos brancos, íris translúcida, fotofobia e nistagmo.",
+    "vitalSigns": { "pa": "120/80", "fc": 72, "sao2": 99, "temp": 36.6, "fr": 14 },
+    "correctDiagnosis": "Albinismo",
+    "unnecessaryExams": ["Troponina", "Hemocultura"]
+  },
+  {
+    "id": "124",
+    "title": "Síndrome Complexa de Dor Regional",
+    "specialty": "Neurologia",
+    "difficulty": "Avançado",
+    "description": "Dor urente desproporcional após trauma leve, com pele brilhante e rigidez no membro afetado.",
+    "vitalSigns": { "pa": "130/80", "fc": 85, "sao2": 99, "temp": 37.0, "fr": 18 },
+    "correctDiagnosis": "SCDR Tipo I (Distrofia Simpático Reflexa)",
+    "unnecessaryExams": ["Endoscopia", "Glicemia de Jejum"]
+  },
+  {
+    "id": "125",
+    "title": "Púrpura Senil",
+    "specialty": "Geriatria",
+    "difficulty": "Iniciante",
+    "description": "Equimoses extensas em dorso de mãos de idoso após traumas mínimos, sem alteração de coagulação.",
+    "vitalSigns": { "pa": "140/85", "fc": 70, "sao2": 97, "temp": 36.4, "fr": 16 },
+    "correctDiagnosis": "Púrpura Senil de Bateman",
+    "unnecessaryExams": ["TC de Crânio", "Troponina"]
+  },
+  {
+    "id": "126",
+    "title": "Doença de Ménière",
+    "specialty": "Otorrinolaringologia",
+    "difficulty": "Intermediário",
+    "description": "Tríade de vertigem incapacitante, zumbido (tinnitus) e perda auditiva flutuante.",
+    "vitalSigns": { "pa": "120/80", "fc": 80, "sao2": 99, "temp": 36.6, "fr": 16 },
+    "correctDiagnosis": "Doença de Ménière",
+    "unnecessaryExams": ["Raio-X de Tórax", "Glicemia"]
+  },
+  {
+    "id": "127",
+    "title": "Neuralgia do Trigêmeo",
+    "specialty": "Neurologia",
+    "difficulty": "Intermediário",
+    "description": "Dor facial em 'choque' de curta duração, desencadeada por mastigação ou toque.",
+    "vitalSigns": { "pa": "130/85", "fc": 88, "sao2": 99, "temp": 36.7, "fr": 18 },
+    "correctDiagnosis": "Neuralgia do Trigêmeo",
+    "unnecessaryExams": ["Amilase", "Hemocultura"]
+  },
+  {
+    "id": "128",
+    "title": "Síndrome de Stokes-Adams",
+    "specialty": "Cardiologia",
+    "difficulty": "Avançado",
+    "description": "Perda súbita de consciência em paciente com bloqueio atrioventricular prévio.",
+    "vitalSigns": { "pa": "90/50", "fc": 35, "sao2": 92, "temp": 36.2, "fr": 20 },
+    "correctDiagnosis": "Síncope de Stokes-Adams",
+    "unnecessaryExams": ["Colonoscopia", "Beta-HCG"]
+  },
+  {
+    "id": "129",
+    "title": "Narcolepsia",
+    "specialty": "Neurologia",
+    "difficulty": "Avançado",
+    "description": "Sonolência diurna excessiva associada a perda súbita do tônus muscular (cataplexia).",
+    "vitalSigns": { "pa": "120/80", "fc": 74, "sao2": 99, "temp": 36.5, "fr": 14 },
+    "correctDiagnosis": "Narcolepsia",
+    "unnecessaryExams": ["Raio-X de Tórax", "Troponina"]
+  },
+  {
+    "id": "130",
+    "title": "Terror Noturno",
+    "specialty": "Psiquiatria",
+    "difficulty": "Iniciante",
+    "description": "Criança grita e senta na cama com taquicardia no início da noite; amnésia do evento ao acordar.",
+    "vitalSigns": { "pa": "105/65", "fc": 110, "sao2": 99, "temp": 36.8, "fr": 22 },
+    "correctDiagnosis": "Terror Noturno",
+    "unnecessaryExams": ["Tomografia de Abdome", "Troponina"]
+  },
+  {
+    "id": "131",
+    "title": "Tabes Dorsalis",
+    "specialty": "Infectologia",
+    "difficulty": "Avançado",
+    "description": "Marcha atáxica e perda de sensibilidade vibratória em paciente com sífilis terciária.",
+    "vitalSigns": { "pa": "130/80", "fc": 78, "sao2": 98, "temp": 36.6, "fr": 16 },
+    "correctDiagnosis": "Tabes Dorsalis (Neurossífilis)",
+    "unnecessaryExams": ["Mamografia", "Amilase"]
+  },
+  {
+    "id": "132",
+    "title": "Síndrome de Claude Bernard-Horner",
+    "specialty": "Neurologia",
+    "difficulty": "Avançado",
+    "description": "Miose, enoftalmia e ptose pálpebral unilateral em paciente com tumor pulmonar apical.",
+    "vitalSigns": { "pa": "115/75", "fc": 82, "sao2": 94, "temp": 36.7, "fr": 20 },
+    "correctDiagnosis": "Síndrome de Horner (Tumor de Pancoast)",
+    "unnecessaryExams": ["Eletroencefalograma", "PSA"]
+  },
+  {
+    "id": "133",
+    "title": "Amnésia de Fixação",
+    "specialty": "Neurologia",
+    "difficulty": "Intermediário",
+    "description": "Preservação de memórias remotas, mas incapacidade total de reter fatos recentes.",
+    "vitalSigns": { "pa": "140/90", "fc": 70, "sao2": 97, "temp": 36.4, "fr": 16 },
+    "correctDiagnosis": "Amnésia Anterógrada",
+    "unnecessaryExams": ["Raio-X de Pelve", "Urocultura"]
+  },
+  {
+    "id": "134",
+    "title": "Persistência do Canal Arterial",
+    "specialty": "Pediatria",
+    "difficulty": "Intermediário",
+    "description": "Recém-nascido com sopro contínuo em 'maquinaria' na região infraclavicular esquerda.",
+    "vitalSigns": { "pa": "65/45", "fc": 145, "sao2": 95, "temp": 37.0, "fr": 48 },
+    "correctDiagnosis": "Persistência do Canal Arterial (PCA)",
+    "unnecessaryExams": ["Eletroencefalograma", "Endoscopia"]
+  },
+  {
+    "id": "135",
+    "title": "Tetralogia de Fallot",
+    "specialty": "Pediatria",
+    "difficulty": "Avançado",
+    "description": "Cianose ao nascimento e melhora da dispneia ao assumir posição de cócoras.",
+    "vitalSigns": { "pa": "80/50", "fc": 130, "sao2": 82, "temp": 36.8, "fr": 40 },
+    "correctDiagnosis": "Tetralogia de Fallot",
+    "unnecessaryExams": ["Urocultura", "Dosagem de B12"]
+  },
+  {
+    "id": "136",
+    "title": "Bronquiectasias",
+    "specialty": "Pneumologia",
+    "difficulty": "Intermediário",
+    "description": "Tosse crônica com expectoração purulenta matinal e baqueteamento digital.",
+    "vitalSigns": { "pa": "110/70", "fc": 95, "sao2": 91, "temp": 37.5, "fr": 24 },
+    "correctDiagnosis": "Bronquiectasias Infetadas",
+    "unnecessaryExams": ["Eletroencefalograma", "Troponina"]
+  },
+  {
+    "id": "137",
+    "title": "Atelectasia Pulmonar",
+    "specialty": "Pneumologia",
+    "difficulty": "Intermediário",
+    "description": "Retração de hemitórax e desvio de traqueia ipsilateral após obstrução brônquica.",
+    "vitalSigns": { "pa": "125/80", "fc": 102, "sao2": 89, "temp": 37.2, "fr": 26 },
+    "correctDiagnosis": "Atelectasia",
+    "unnecessaryExams": ["PSA", "Glicemia"]
+  },
+  {
+    "id": "138",
+    "title": "Síndrome da Veia Cava Superior",
+    "specialty": "Oncologia",
+    "difficulty": "Avançado",
+    "description": "Turgência jugular, edema em 'esclavina' (face/pescoço) e cefaleia por tumor mediastinal.",
+    "vitalSigns": { "pa": "130/80", "fc": 90, "sao2": 92, "temp": 36.9, "fr": 22 },
+    "correctDiagnosis": "Síndrome da Veia Cava Superior",
+    "unnecessaryExams": ["Colonoscopia", "Radiografia de Joelho"]
+  },
+  {
+    "id": "139",
+    "title": "Epiglotite Aguda",
+    "specialty": "Pediatria",
+    "difficulty": "Avançado",
+    "description": "Febre alta, salivação (sialorreia) e posição de tripé. Ausência de tosse rouca.",
+    "vitalSigns": { "pa": "90/60", "fc": 140, "sao2": 90, "temp": 39.9, "fr": 35 },
+    "correctDiagnosis": "Epiglotite",
+    "unnecessaryExams": ["Exame de toque retal", "Urocultura"]
+  },
+  {
+    "id": "140",
+    "title": "Crupe Viral",
+    "specialty": "Pediatria",
+    "difficulty": "Iniciante",
+    "description": "Tosse ladrante (cachorro), rouquidão e estridor que piora à noite após resfriado.",
+    "vitalSigns": { "pa": "100/60", "fc": 115, "sao2": 95, "temp": 37.8, "fr": 28 },
+    "correctDiagnosis": "Crupe (Laringotraqueobronquite)",
+    "unnecessaryExams": ["Troponina", "Mamografia"]
+  },
+  {
+    "id": "141",
+    "title": "Fenilcetonúria",
+    "specialty": "Pediatria",
+    "difficulty": "Intermediário",
+    "description": "Detecção no teste do pezinho de falha no metabolismo de fenilalanina.",
+    "vitalSigns": { "pa": "80/50", "fc": 120, "sao2": 99, "temp": 36.6, "fr": 30 },
+    "correctDiagnosis": "Fenilcetonúria (PKU)",
+    "unnecessaryExams": ["Raio-X de Tórax", "ECG"]
+  },
+  {
+    "id": "142",
+    "title": "Dacriocistite do Lactente",
+    "specialty": "Pediatria",
+    "difficulty": "Iniciante",
+    "description": "Obstrução de ducto lacrimal com inflamação e saída de pus ao comprimir o saco lacrimal.",
+    "vitalSigns": { "pa": "85/55", "fc": 110, "sao2": 99, "temp": 37.4, "fr": 24 },
+    "correctDiagnosis": "Dacriocistite Aguda",
+    "unnecessaryExams": ["Hemocultura", "Eletroencefalograma"]
+  },
+  {
+    "id": "143",
+    "title": "Desidratação Grave",
+    "specialty": "Pediatria",
+    "difficulty": "Avançado",
+    "description": "Fontanela deprimida, sinal da dobra positivo e ausência de lágrimas em lactente com diarreia.",
+    "vitalSigns": { "pa": "60/35", "fc": 170, "sao2": 92, "temp": 38.5, "fr": 55 },
+    "correctDiagnosis": "Desidratação Grave",
+    "unnecessaryExams": ["Radiografia de Crânio", "Dosagem de PSA"]
+  },
+  {
+    "id": "144",
+    "title": "Síndrome de Mallory-Weiss",
+    "specialty": "Gastroenterologia",
+    "difficulty": "Intermediário",
+    "description": "Hematêmese após episódios violentos de vômito ou tosse em paciente etilista.",
+    "vitalSigns": { "pa": "100/60", "fc": 105, "sao2": 95, "temp": 36.7, "fr": 20 },
+    "correctDiagnosis": "Síndrome de Mallory-Weiss",
+    "unnecessaryExams": ["Eletroencefalograma", "Raio-X de Tórax"]
+  },
+  {
+    "id": "145",
+    "title": "Doença Celíaca",
+    "specialty": "Gastroenterologia",
+    "difficulty": "Intermediário",
+    "description": "Má absorção, diarreia crônica e distensão abdominal após introdução de glúten na dieta.",
+    "vitalSigns": { "pa": "100/60", "fc": 90, "sao2": 98, "temp": 36.5, "fr": 18 },
+    "correctDiagnosis": "Doença Celíaca",
+    "unnecessaryExams": ["ECG", "Troponina"]
+  },
+  {
+    "id": "146",
+    "title": "Síndrome do Cólon Irritável",
+    "specialty": "Gastroenterologia",
+    "difficulty": "Iniciante",
+    "description": "Dor abdominal crônica que alivia com a evacuação, alternando diarreia e constipação.",
+    "vitalSigns": { "pa": "120/80", "fc": 74, "sao2": 99, "temp": 36.6, "fr": 16 },
+    "correctDiagnosis": "Síndrome do Intestino Irritável",
+    "unnecessaryExams": ["TC de Crânio", "Troponina"]
+  },
+  {
+    "id": "147",
+    "title": "Fístula Anorretal",
+    "specialty": "Proctologia",
+    "difficulty": "Intermediário",
+    "description": "Orifício perianal com saída de secreção fétida após abscesso prévio.",
+    "vitalSigns": { "pa": "125/80", "fc": 80, "sao2": 99, "temp": 37.1, "fr": 18 },
+    "correctDiagnosis": "Fístula Anal",
+    "unnecessaryExams": ["Raio-X de Tórax", "PSA"]
+  },
+  {
+    "id": "148",
+    "title": "Síndrome de Sheehan",
+    "specialty": "Endocrinologia",
+    "difficulty": "Avançado",
+    "description": "Agalactia e amenorreia após hemorragia pós-parto severa (choque hipovolêmico).",
+    "vitalSigns": { "pa": "90/60", "fc": 68, "sao2": 98, "temp": 36.0, "fr": 14 },
+    "correctDiagnosis": "Pan-hipopituitarismo Pós-Parto (Sheehan)",
+    "unnecessaryExams": ["Colonoscopia", "Eletroencefalograma"]
+  },
+  {
+    "id": "149",
+    "title": "SOP",
+    "specialty": "Ginecologia",
+    "difficulty": "Iniciante",
+    "description": "Hirsutismo, acne e irregularidade menstrual em mulher jovem.",
+    "vitalSigns": { "pa": "120/80", "fc": 78, "sao2": 99, "temp": 36.6, "fr": 16 },
+    "correctDiagnosis": "Síndrome dos Ovários Policísticos",
+    "unnecessaryExams": ["Troponina", "Raio-X de Tórax"]
+  },
+  {
+    "id": "150",
+    "title": "Câncer de Ovário",
+    "specialty": "Ginecologia",
+    "difficulty": "Avançado",
+    "description": "Aumento do volume abdominal (ascite) e emagrecimento rápido em mulher na pós-menopausa.",
+    "vitalSigns": { "pa": "110/70", "fc": 92, "sao2": 96, "temp": 36.8, "fr": 18 },
+    "correctDiagnosis": "Neoplasia de Ovário",
+    "unnecessaryExams": ["Eletroencefalograma", "Dosagem de B12"]
   }
 ]
