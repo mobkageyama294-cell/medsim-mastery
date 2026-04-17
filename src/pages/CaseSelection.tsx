@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useCallback, useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -13,29 +13,19 @@ import {
 } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
+import { fetchClinicalCases, type ClinicalCase } from '@/data/clinicalCases';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 
-interface SimpleCase {
-  id: string;
-  title: string;
-  specialty: string;
-  description: string;
-  correctDiagnosis: string;
-  baseVitals: { bp: string; hr: number; ox: number };
-  labResults: Record<string, string>;
-  unnecessaryExams: string[];
-}
-
 /** Extract a spoiler-free label from the case description (patient + chief complaint). */
-function obfuscatedLabel(c: SimpleCase): string {
+function obfuscatedLabel(c: ClinicalCase): string {
   // description usually starts with "Name, age. complaint…"
-  const desc = c.description;
+  const desc = c.history || c.chiefComplaint || '';
   // Try to grab everything after the first period/dot that follows the age
   const match = desc.match(/\d+a\.\s*(.+)/);
   if (match) return match[1].trim();
-  return desc;
+  return c.chiefComplaint || desc;
 }
 
 interface CaseHistoryItem {
@@ -59,29 +49,30 @@ const SPECIALTY_COLORS: Record<string, string> = {
 export default function CaseSelection() {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const [cases, setCases] = useState<SimpleCase[]>([]);
+  const [cases, setCases] = useState<ClinicalCase[]>([]);
   const [history, setHistory] = useState<CaseHistoryItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState('');
   const [activeSpecialty, setActiveSpecialty] = useState<string | null>(null);
 
-  useEffect(() => {
-    fetch('/cases.json')
-      .then((res) => {
-        if (!res.ok) throw new Error('fetch failed');
-        return res.json();
-      })
-      .then((data: SimpleCase[]) => {
-        console.log('Casos carregados:', data);
-        setCases(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setError('Erro ao carregar banco de dados do GitHub');
-        setLoading(false);
-      });
+  const loadCases = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+
+    const data = await fetchClinicalCases();
+    setCases(data);
+
+    if (data.length === 0) {
+      setError('Erro ao carregar banco de dados do GitHub');
+    }
+
+    setLoading(false);
   }, []);
+
+  useEffect(() => {
+    loadCases();
+  }, [loadCases]);
 
   useEffect(() => {
     if (user) {
@@ -106,7 +97,7 @@ export default function CaseSelection() {
       result = result.filter(
         (c) =>
           obfuscatedLabel(c).toLowerCase().includes(q) ||
-          c.description.toLowerCase().includes(q) ||
+            (c.history || c.chiefComplaint || '').toLowerCase().includes(q) ||
           c.specialty.toLowerCase().includes(q)
       );
     }
@@ -144,7 +135,14 @@ export default function CaseSelection() {
         {error && (
           <Alert variant="destructive" className="mb-6">
             <AlertCircle className="h-4 w-4" />
-            <AlertDescription>{error}</AlertDescription>
+            <AlertDescription>
+              <div className="flex flex-wrap items-center gap-3">
+                <span>{error}</span>
+                <button type="button" onClick={loadCases} className="text-sm font-medium text-primary hover:underline">
+                  Tentar Novamente
+                </button>
+              </div>
+            </AlertDescription>
           </Alert>
         )}
 
