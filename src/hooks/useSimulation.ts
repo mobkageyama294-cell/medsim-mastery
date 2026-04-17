@@ -62,6 +62,7 @@ export const useSimulation = (initialCaseId?: string) => {
   const [cases, setCases] = useState<ClinicalCase[]>([]);
   const [casesLoading, setCasesLoading] = useState(true);
   const [casesError, setCasesError] = useState<string | null>(null);
+  const [reloadToken, setReloadToken] = useState(0);
   const [state, setState] = useState<SimulationState>(initialState);
   const [vitalSigns, setVitalSigns] = useState({ pa: '0/0', fc: 0, sao2: 0, temp: 36, fr: 16 });
   const [isLoading, setIsLoading] = useState(false);
@@ -69,18 +70,26 @@ export const useSimulation = (initialCaseId?: string) => {
   // Fetch cases from JSON on mount
   useEffect(() => {
     let cancelled = false;
-    setCasesLoading(true);
-    setCasesError(null);
+    const loadCases = async () => {
+      setCasesLoading(true);
+      setCasesError(null);
 
-    fetchClinicalCases()
-      .then((data) => {
+      try {
+        const data = await fetchClinicalCases();
         if (cancelled) return;
-        setCases(data);
-        setCasesLoading(false);
 
-        // Auto-load initial case if provided
+        setCases(data);
+
+        if (data.length === 0) {
+          setState((prev) => ({ ...prev, currentCase: null, messages: [] }));
+          setCasesError('Erro ao carregar banco de dados do GitHub');
+          setCasesLoading(false);
+          return;
+        }
+
         if (initialCaseId) {
-          const c = data.find((x) => x.id === initialCaseId);
+          const c = data.find((x) => x.id === initialCaseId) || null;
+
           if (c) {
             setState({
               ...initialState,
@@ -88,18 +97,29 @@ export const useSimulation = (initialCaseId?: string) => {
               messages: [buildWelcome(c)],
             });
             setVitalSigns(c.vitalSigns);
+          } else {
+            setState((prev) => ({ ...prev, currentCase: null }));
           }
         }
-      })
-      .catch((err) => {
+
+        setCasesLoading(false);
+      } catch (err) {
         if (cancelled) return;
         console.error(err);
+        setCases([]);
         setCasesError('Erro ao carregar banco de dados do GitHub');
         setCasesLoading(false);
-      });
+      }
+    };
+
+    loadCases();
 
     return () => { cancelled = true; };
-  }, [initialCaseId]);
+  }, [initialCaseId, reloadToken]);
+
+  const retryCases = useCallback(() => {
+    setReloadToken((prev) => prev + 1);
+  }, []);
 
   const loadCase = useCallback((id: string) => {
     const c = cases.find((x) => x.id === id);
@@ -211,6 +231,7 @@ export const useSimulation = (initialCaseId?: string) => {
     cases,
     casesLoading,
     casesError,
+    retryCases,
     vitalSigns,
     isLoading,
     loadCase,

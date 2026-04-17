@@ -21,6 +21,7 @@ export default function Simulation() {
     state,
     casesLoading,
     casesError,
+    retryCases,
     vitalSigns,
     isLoading,
     fluctuateVitals,
@@ -29,6 +30,7 @@ export default function Simulation() {
     requestExam,
     submitDiagnosis,
   } = useSimulation(caseId);
+  const currentCase = state.currentCase;
 
   useEffect(() => {
     const interval = setInterval(fluctuateVitals, 3000);
@@ -36,17 +38,17 @@ export default function Simulation() {
   }, [fluctuateVitals]);
 
   useEffect(() => {
-    if (state.isFinished && user && state.currentCase) {
+    if (state.isFinished && user && currentCase) {
       const isCorrect = state.diagnosisAttempt
         ?.toLowerCase()
-        .includes(state.currentCase.correctDiagnosis.toLowerCase().substring(0, 20));
+        .includes(currentCase.correctDiagnosis.toLowerCase().substring(0, 20));
 
       supabase.from('case_history').insert({
         user_id: user.id,
-        case_id: state.currentCase.id,
-        case_title: state.currentCase.title,
+        case_id: currentCase.id,
+        case_title: currentCase.title,
         diagnosis_attempt: state.diagnosisAttempt,
-        correct_diagnosis: state.currentCase.correctDiagnosis,
+        correct_diagnosis: currentCase.correctDiagnosis,
         reasoning_score: state.reasoningScore,
         patient_health: state.patientHealth,
         cost_effectiveness: state.costEffectiveness,
@@ -65,15 +67,20 @@ export default function Simulation() {
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>{casesError}</AlertDescription>
         </Alert>
-        <button onClick={() => navigate('/')} className="mt-4 text-sm text-primary hover:underline">
-          Voltar ao início
-        </button>
+        <div className="mt-4 flex items-center gap-4">
+          <button onClick={retryCases} className="text-sm text-primary hover:underline">
+            Tentar Novamente
+          </button>
+          <button onClick={() => navigate('/')} className="text-sm text-primary hover:underline">
+            Voltar ao início
+          </button>
+        </div>
       </div>
     );
   }
 
   // Loading state
-  if (casesLoading || !state.currentCase) {
+  if (casesLoading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mb-4" />
@@ -82,11 +89,15 @@ export default function Simulation() {
     );
   }
 
+  if (!currentCase) {
+    return <div className="flex min-h-screen items-center justify-center p-4 text-muted-foreground">Carregando caso clínico...</div>;
+  }
+
   if (state.isFinished) {
     return <FeedbackReport state={state} onRestart={() => navigate('/')} />;
   }
 
-  const availableExams = Object.keys(state.currentCase.labResults);
+  const availableExams = Object.keys(currentCase?.labResults || {});
 
   return (
     <div className="min-h-screen p-3 md:p-5 space-y-4 max-w-[1600px] mx-auto">
@@ -102,7 +113,7 @@ export default function Simulation() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 flex-1">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }} className="lg:col-span-4">
-          <CasePanel clinicalCase={state.currentCase} vitalSigns={vitalSigns} />
+          <CasePanel clinicalCase={currentCase} vitalSigns={vitalSigns} />
         </motion.div>
         <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }} className="lg:col-span-8 h-[500px] lg:h-[600px]">
           <ChatInterface messages={state.messages} onSendMessage={sendMessage} isLoading={isLoading} />
@@ -118,7 +129,7 @@ export default function Simulation() {
           physicalExamDone={state.physicalExamDone}
           examsRequested={state.examsRequested}
           availableExams={availableExams}
-          availableUnnecessaryExams={state.currentCase.unnecessaryExams}
+          availableUnnecessaryExams={currentCase.unnecessaryExams}
         />
       </motion.div>
     </div>
