@@ -1,1 +1,98 @@
+// src/pages/Simulation.tsx
+import React, { useState, useMemo } from 'react';
+import ResultsModal from '../components/ResultsModal';
+import { ScoringInput } from '../utils/scoring';
 
+/**
+ * Interface fictícia para o Caso Clínico (para contexto)
+ */
+interface ClinicalCase {
+  title: string;
+  correctDiagnosis: string;
+  unnecessaryExams: string[];
+}
+
+const Simulation: React.FC = () => {
+  // --- Estados do Jogo ---
+  const [showResults, setShowResults] = useState(false);
+  const [chatHistory, setChatHistory] = useState<string>("");
+  const [requestedExams, setRequestedExams] = useState<string[]>([]);
+  
+  // Caso clínico atual (Exemplo vindo de uma base de dados ou props)
+  const [currentCase] = useState<ClinicalCase>({
+    title: "Caso 01 - Dor Torácica",
+    correctDiagnosis: "Infarto Agudo do Miocárdio",
+    unnecessaryExams: ["Raio-X de Crânio", "Ultrassom de Joelho"]
+  });
+
+  /**
+   * Estado do ScoringInput.
+   * Iniciamos como null para saber que a simulação ainda não foi avaliada.
+   */
+  const [scoringInput, setScoringInput] = useState<ScoringInput | null>(null);
+
+  /**
+   * Função para processar o fim da simulação.
+   * Centraliza a lógica de preparação de dados antes de abrir o modal.
+   */
+  const handleSubmitDiagnosis = (userDiagnosis: string) => {
+    // 1. Filtra exames desnecessários baseando-se no caso atual
+    const unnecessaryRequested = requestedExams.filter(exam =>
+      currentCase.unnecessaryExams?.includes(exam)
+    );
+
+    // 2. Monta o objeto de entrada para o cálculo
+    const input: ScoringInput = {
+      userDiagnosis: userDiagnosis.trim(),
+      correctDiagnosis: currentCase.correctDiagnosis,
+      unnecessaryExamsRequested: unnecessaryRequested,
+      dialogueText: chatHistory,
+      technicalTerms: [] // Aqui poderias passar termos específicos deste caso
+    };
+
+    // 3. Salva os dados e dispara a exibição do modal
+    setScoringInput(input);
+    setShowResults(true);
+  };
+
+  /**
+   * Função para resetar a simulação (Útil para o botão "Tentar Novamente")
+   */
+  const handleReset = () => {
+    setShowResults(false);
+    setScoringInput(null);
+    setChatHistory("");
+    setRequestedExams([]);
+  };
+
+  return (
+    <div className="p-8">
+      <h1 className="text-xl font-bold mb-4">{currentCase.title}</h1>
+      
+      {/* ... Resto da interface do Chat e Seleção de Exames ... */}
+
+      {/* Exemplo de botão que finalizaria a simulação */}
+      <button 
+        onClick={() => handleSubmitDiagnosis("Suspeita de Infarto")}
+        className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700"
+      >
+        Enviar Diagnóstico Final
+      </button>
+
+      {/* 
+          Renderização Segura do Modal:
+          O modal só é montado se scoringInput existir, evitando o uso do '!'
+      */}
+      {scoringInput && (
+        <ResultsModal
+          isOpen={showResults}
+          onClose={() => setShowResults(false)}
+          scoringInput={scoringInput}
+          caseTitle={currentCase.title}
+        />
+      )}
+    </div>
+  );
+};
+
+export default Simulation;
