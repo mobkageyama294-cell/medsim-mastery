@@ -1,6 +1,9 @@
 [
   {
     "id": "001",
+    "patientName": "Carlos Alberto",
+    "patientGender": "Masculino",
+    "patientAge": 58,
     "title": "Paciente com Dor Torácica Aguda",
     "specialty": "Cardiologia",
     "difficulty": "Intermediário",
@@ -11,6 +14,9 @@
   },
   {
     "id": "002",
+    "patientName": "Maria Souza",
+    "patientGender": "Feminino",
+    "patientAge": 42,
     "title": "Paciente com Cefaleia Súbita Intensa",
     "specialty": "Neurologia",
     "difficulty": "Avançado",
@@ -21,6 +27,9 @@
   },
   {
     "id": "003",
+    "patientName": "Mercedes Oliveira",
+    "patientGender": "Feminino",
+    "patientAge": 55,
     "title": "Paciente com Dor Abdominal Aguda",
     "specialty": "Cirurgia Geral",
     "difficulty": "Intermediário",
@@ -31,6 +40,9 @@
   },
   {
     "id": "004",
+    "patientName": "Waldir Ferreira",
+    "patientGender": "Masculino",
+    "patientAge": 68,
     "title": "Paciente com Dispneia e Edema",
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
@@ -41,6 +53,9 @@
   },
   {
     "id": "005",
+    "patientName": "Lucas Mendes",
+    "patientGender": "Masculino",
+    "patientAge": 19,
     "title": "Paciente com Febre e Rigidez de Nuca",
     "specialty": "Infectologia",
     "difficulty": "Avançado",
@@ -51,6 +66,9 @@
   },
   {
     "id": "006",
+    "patientName": "Ricardo Santos",
+    "patientGender": "Masculino",
+    "patientAge": 35,
     "title": "Paciente com Dor Lombar Irradiada",
     "specialty": "Nefrologia",
     "difficulty": "Iniciante",
@@ -61,6 +79,9 @@
   },
   {
     "id": "007",
+    "patientName": "Camila Rodrigues",
+    "patientGender": "Feminino",
+    "patientAge": 28,
     "title": "Paciente com Febre e Tosse Produtiva",
     "specialty": "Pneumologia",
     "difficulty": "Iniciante",
@@ -71,6 +92,9 @@
   },
   {
     "id": "008",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 37,
     "title": "Paciente com Palpitações Súbitas",
     "specialty": "Cardiologia",
     "difficulty": "Intermediário",
@@ -81,6 +105,9 @@
   },
   {
     "id": "009",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 60,
     "title": "Paciente com Falta de Ar e Edema",
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
@@ -91,6 +118,9 @@
   },
   {
     "id": "010",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 55,
     "title": "Paciente com Dor Torácica Lancinante",
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
@@ -101,6 +131,9 @@
   },
   {
     "id": "011",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 72,
     "title": "Paciente com Febre e Sopro Novo",
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
@@ -111,6 +144,9 @@
   },
   {
     "id": "012",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 65,
     "title": "Paciente com Tontura ao Levantar",
     "specialty": "Clínica Médica",
     "difficulty": "Iniciante",
@@ -121,6 +157,9 @@
   },
   {
     "id": "013",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 45,
     "title": "Paciente com Cardiomegalia e Arritmia",
     "specialty": "Cardiologia",
     "difficulty": "Intermediário",
@@ -131,6 +170,9 @@
   },
   {
     "id": "014",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 22,
     "title": "Paciente com Dor Pleural e Dispneia",
     "specialty": "Pneumologia",
     "difficulty": "Intermediário",
@@ -141,6 +183,9 @@
   },
   {
     "id": "015",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 50,
     "title": "Paciente com Tosse e Consolidação",
     "specialty": "Infectologia",
     "difficulty": "Iniciante",
@@ -151,6 +196,9 @@
   },
   {
     "id": "016",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 45,
     "title": "Paciente com Tosse Crônica e Emagrecimento",
     "specialty": "Infectologia",
     "difficulty": "Intermediário",
@@ -161,6 +209,9 @@
   },
   {
     "id": "017",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 25,
     "title": "Paciente com Chiado no Peito e Dispneia",
     "specialty": "Pneumologia",
     "difficulty": "Iniciante",
@@ -171,6 +222,9 @@
   },
   {
     "id": "018",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 65,
     "title": "Paciente Tabagista com Dispneia Progressiva",
     "specialty": "Pneumologia",
     "difficulty": "Avançado",
@@ -181,6 +235,9 @@
   },
   {
     "id": "019",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 30,
     "title": "Paciente com Dor na Fossa Ilíaca Direita",
     "specialty": "Cirurgia Geral",
     "difficulty": "Iniciante",
@@ -191,6 +248,9 @@
   },
   {
     "id": "020",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 50,
     "title": "Paciente com Dificuldade de Deglutição",
     "specialty": "Gastroenterologia",
     "difficulty": "Intermediário",
@@ -201,6 +261,9 @@
   },
   {
     "id": "021",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 55,
     "title": "Paciente com Icterícia e Ascite",
     "specialty": "Gastroenterologia",
     "difficulty": "Avançado",
@@ -211,6 +274,9 @@
   },
   {
     "id": "022",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 45,
     "title": "Paciente com Dor Abdominal Súbita e em Tábua",
     "specialty": "Cirurgia Geral",
     "difficulty": "Avançado",
@@ -221,6 +287,9 @@
   },
   {
     "id": "023",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 45,
     "title": "Paciente com Azia e Regurgitação",
     "specialty": "Gastroenterologia",
     "difficulty": "Iniciante",
@@ -231,6 +300,9 @@
   },
   {
     "id": "024",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 50,
     "title": "Paciente com Sangramento Anal Vivo",
     "specialty": "Proctologia",
     "difficulty": "Iniciante",
@@ -241,6 +313,9 @@
   },
   {
     "id": "025",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 30,
     "title": "Paciente com Febre e Dor Mamária",
     "specialty": "Infectologia",
     "difficulty": "Iniciante",
@@ -251,6 +326,9 @@
   },
   {
     "id": "026",
+    "patientName": "Lactente",
+    "patientGender": "Masculino",
+    "patientAge": 0.8,
     "title": "Lactente com Febre e Exantema Súbito",
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
@@ -261,6 +339,9 @@
   },
   {
     "id": "027",
+    "patientName": "Criança",
+    "patientGender": "Feminino",
+    "patientAge": 5,
     "title": "Criança com Face Esbofeteada",
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
@@ -271,6 +352,9 @@
   },
   {
     "id": "028",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 20,
     "title": "Paciente com Fadiga e Febre Prolongada",
     "specialty": "Infectologia",
     "difficulty": "Intermediário",
@@ -281,6 +365,9 @@
   },
   {
     "id": "029",
+    "patientName": "Criança",
+    "patientGender": "Feminino",
+    "patientAge": 6,
     "title": "Paciente com Pele em Lixa e Dor de Garganta",
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
@@ -291,6 +378,9 @@
   },
   {
     "id": "030",
+    "patientName": "Criança",
+    "patientGender": "Masculino",
+    "patientAge": 4,
     "title": "Criança com Febre Persistente e Olhos Vermelhos",
     "specialty": "Pediatria",
     "difficulty": "Avançado",
@@ -301,6 +391,9 @@
   },
   {
     "id": "031",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 35,
     "title": "Paciente com Febre Alta e Calafrios Cíclicos",
     "specialty": "Infectologia",
     "difficulty": "Intermediário",
@@ -311,6 +404,9 @@
   },
   {
     "id": "032",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 10,
     "title": "Paciente com Linfonodo Doloroso pós-Arranhão",
     "specialty": "Infectologia",
     "difficulty": "Iniciante",
@@ -321,6 +417,9 @@
   },
   {
     "id": "033",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 32,
     "title": "Paciente com Prurido e Corrimento Branco",
     "specialty": "Ginecologia",
     "difficulty": "Iniciante",
@@ -331,6 +430,9 @@
   },
   {
     "id": "034",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 28,
     "title": "Paciente com Corrimento Amarelo-Esverdeado",
     "specialty": "Ginecologia",
     "difficulty": "Iniciante",
@@ -341,6 +443,9 @@
   },
   {
     "id": "035",
+    "patientName": "Gestante",
+    "patientGender": "Feminino",
+    "patientAge": 28,
     "title": "Gestante com Hipertensão e Cefaleia",
     "specialty": "Obstetrícia",
     "difficulty": "Avançado",
@@ -351,6 +456,9 @@
   },
   {
     "id": "036",
+    "patientName": "Adolescente",
+    "patientGender": "Feminino",
+    "patientAge": 15,
     "title": "Adolescente com Ausência de Menstruação",
     "specialty": "Ginecologia",
     "difficulty": "Intermediário",
@@ -361,6 +469,9 @@
   },
   {
     "id": "037",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 70,
     "title": "Paciente com Varizes e Lesão em Perna",
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
@@ -371,6 +482,9 @@
   },
   {
     "id": "038",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 25,
     "title": "Paciente com Eczema em Dobras",
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
@@ -381,6 +495,9 @@
   },
   {
     "id": "039",
+    "patientName": "Homem",
+    "patientGender": "Masculino",
+    "patientAge": 45,
     "title": "Paciente com Lesão em Virilha",
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
@@ -391,6 +508,9 @@
   },
   {
     "id": "040",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 55,
     "title": "Paciente com Placa Vermelha e Febre",
     "specialty": "Dermatologia",
     "difficulty": "Intermediário",
@@ -401,6 +521,9 @@
   },
   {
     "id": "041",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 35,
     "title": "Paciente com Medo Intenso e Palpitações",
     "specialty": "Psiquiatria",
     "difficulty": "Intermediário",
@@ -411,6 +534,9 @@
   },
   {
     "id": "042",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 40,
     "title": "Paciente com Perda de Visão após Estresse",
     "specialty": "Psiquiatria",
     "difficulty": "Intermediário",
@@ -421,6 +547,9 @@
   },
   {
     "id": "043",
+    "patientName": "Jovem",
+    "patientGender": "Masculino",
+    "patientAge": 22,
     "title": "Paciente com Isolamento e Delírios",
     "specialty": "Psiquiatria",
     "difficulty": "Avançado",
@@ -431,6 +560,9 @@
   },
   {
     "id": "044",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 60,
     "title": "Paciente com Dor Ocular e Visão de Halos",
     "specialty": "Oftalmologia",
     "difficulty": "Intermediário",
@@ -441,6 +573,9 @@
   },
   {
     "id": "045",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 45,
     "title": "Paciente com Dor de Estômago Crônica",
     "specialty": "Gastroenterologia",
     "difficulty": "Iniciante",
@@ -451,6 +586,9 @@
   },
   {
     "id": "046",
+    "patientName": "Recém-nascido",
+    "patientGender": "Masculino",
+    "patientAge": 0,
     "title": "Doença de Hirschsprung Neonatal",
     "specialty": "Pediatria",
     "difficulty": "Avançado",
@@ -461,6 +599,9 @@
   },
   {
     "id": "047",
+    "patientName": "Lactente",
+    "patientGender": "Masculino",
+    "patientAge": 0.7,
     "title": "Hipotireoidismo Congênito",
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
@@ -471,6 +612,9 @@
   },
   {
     "id": "048",
+    "patientName": "Criança",
+    "patientGender": "Masculino",
+    "patientAge": 8,
     "title": "Kerion Celsi",
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
@@ -481,6 +625,9 @@
   },
   {
     "id": "049",
+    "patientName": "Bebê",
+    "patientGender": "Feminino",
+    "patientAge": 0.07,
     "title": "Escabiose em Lactente",
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
@@ -491,6 +638,9 @@
   },
   {
     "id": "050",
+    "patientName": "Lactente",
+    "patientGender": "Feminino",
+    "patientAge": 0.17,
     "title": "Dacriocistite Aguda",
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
@@ -501,6 +651,9 @@
   },
   {
     "id": "051",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 40,
     "title": "Endometriose Pélvica",
     "specialty": "Ginecologia",
     "difficulty": "Avançado",
@@ -511,6 +664,9 @@
   },
   {
     "id": "052",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 55,
     "title": "Tumor Adenomatoide Uterino",
     "specialty": "Ginecologia",
     "difficulty": "Avançado",
@@ -521,6 +677,9 @@
   },
   {
     "id": "053",
+    "patientName": "Gestante",
+    "patientGender": "Feminino",
+    "patientAge": 26,
     "title": "Sífilis na Gestação",
     "specialty": "Obstetrícia",
     "difficulty": "Intermediário",
@@ -531,6 +690,9 @@
   },
   {
     "id": "054",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 48,
     "title": "Pólipo Endometrial Hemorrágico",
     "specialty": "Ginecologia",
     "difficulty": "Iniciante",
@@ -541,6 +703,9 @@
   },
   {
     "id": "055",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 32,
     "title": "Síndrome de Asherman",
     "specialty": "Ginecologia",
     "difficulty": "Avançado",
@@ -551,6 +716,9 @@
   },
   {
     "id": "056",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 35,
     "title": "Dismenorreia por Miomatose",
     "specialty": "Ginecologia",
     "difficulty": "Iniciante",
@@ -561,6 +729,9 @@
   },
   {
     "id": "057",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 65,
     "title": "Câncer de Endométrio",
     "specialty": "Ginecologia",
     "difficulty": "Intermediário",
@@ -571,6 +742,9 @@
   },
   {
     "id": "058",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 35,
     "title": "Doença de Chagas Aguda (Oral)",
     "specialty": "Infectologia",
     "difficulty": "Avançado",
@@ -581,6 +755,9 @@
   },
   {
     "id": "059",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 40,
     "title": "Leishmaniose Tegumentar",
     "specialty": "Infectologia",
     "difficulty": "Intermediário",
@@ -591,6 +768,9 @@
   },
   {
     "id": "060",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 28,
     "title": "Febre Amarela (Fase Toxêmica)",
     "specialty": "Infectologia",
     "difficulty": "Avançado",
@@ -601,6 +781,9 @@
   },
   {
     "id": "061",
+    "patientName": "Gestante",
+    "patientGender": "Feminino",
+    "patientAge": 24,
     "title": "Zika Vírus na Gestação",
     "specialty": "Obstetrícia",
     "difficulty": "Intermediário",
@@ -611,6 +794,9 @@
   },
   {
     "id": "062",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 45,
     "title": "Chikungunya Crônica",
     "specialty": "Infectologia",
     "difficulty": "Intermediário",
@@ -621,6 +807,9 @@
   },
   {
     "id": "063",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 35,
     "title": "Leishmaniose Visceral (Calazar)",
     "specialty": "Infectologia",
     "difficulty": "Avançado",
@@ -631,6 +820,9 @@
   },
   {
     "id": "064",
+    "patientName": "Viajante",
+    "patientGender": "Masculino",
+    "patientAge": 42,
     "title": "Malária por P. falciparum",
     "specialty": "Infectologia",
     "difficulty": "Avançado",
@@ -641,6 +833,9 @@
   },
   {
     "id": "065",
+    "patientName": "Criança",
+    "patientGender": "Masculino",
+    "patientAge": 5,
     "title": "Mordedura de Cão",
     "specialty": "Infectologia",
     "difficulty": "Iniciante",
@@ -651,6 +846,9 @@
   },
   {
     "id": "066",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 28,
     "title": "Lúpus Eritematoso Sistêmico",
     "specialty": "Clínica Médica",
     "difficulty": "Intermediário",
@@ -661,6 +859,9 @@
   },
   {
     "id": "067",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 60,
     "title": "Retinopatia Diabética Proliferativa",
     "specialty": "Oftalmologia",
     "difficulty": "Avançado",
@@ -671,6 +872,9 @@
   },
   {
     "id": "068",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 45,
     "title": "Acromegalia",
     "specialty": "Endocrinologia",
     "difficulty": "Intermediário",
@@ -681,6 +885,9 @@
   },
   {
     "id": "069",
+    "patientName": "Sedentário",
+    "patientGender": "Masculino",
+    "patientAge": 50,
     "title": "Dislipidemia Mista",
     "specialty": "Endocrinologia",
     "difficulty": "Iniciante",
@@ -691,6 +898,9 @@
   },
   {
     "id": "070",
+    "patientName": "Obeso",
+    "patientGender": "Masculino",
+    "patientAge": 48,
     "title": "Hipertensão com Lesão de Órgão-Alvo",
     "specialty": "Cardiologia",
     "difficulty": "Intermediário",
@@ -701,6 +911,9 @@
   },
   {
     "id": "071",
+    "patientName": "Idoso",
+    "patientGender": "Masculino",
+    "patientAge": 72,
     "title": "Anemia por Deficiência de B12",
     "specialty": "Hematologia",
     "difficulty": "Intermediário",
@@ -711,6 +924,9 @@
   },
   {
     "id": "072",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 55,
     "title": "Insuficiência Renal Crônica",
     "specialty": "Nefrologia",
     "difficulty": "Avançado",
@@ -721,6 +937,9 @@
   },
   {
     "id": "073",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 45,
     "title": "Artrite Reumatoide",
     "specialty": "Reumatologia",
     "difficulty": "Intermediário",
@@ -731,6 +950,9 @@
   },
   {
     "id": "074",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 60,
     "title": "Hiperesplenismo por Cirrose",
     "specialty": "Hepatologia",
     "difficulty": "Avançado",
@@ -741,6 +963,9 @@
   },
   {
     "id": "075",
+    "patientName": "Diabético",
+    "patientGender": "Masculino",
+    "patientAge": 55,
     "title": "Abscesso Anal Profundo",
     "specialty": "Proctologia",
     "difficulty": "Intermediário",
@@ -751,6 +976,9 @@
   },
   {
     "id": "076",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 60,
     "title": "AVE Isquêmico",
     "specialty": "Neurologia",
     "difficulty": "Intermediário",
@@ -761,6 +989,9 @@
   },
   {
     "id": "077",
+    "patientName": "Hipertenso",
+    "patientGender": "Masculino",
+    "patientAge": 68,
     "title": "Demência Vascular",
     "specialty": "Neurologia",
     "difficulty": "Intermediário",
@@ -771,6 +1002,9 @@
   },
   {
     "id": "078",
+    "patientName": "Idoso",
+    "patientGender": "Masculino",
+    "patientAge": 78,
     "title": "Delirium por Infecção Urinária",
     "specialty": "Clínica Médica",
     "difficulty": "Intermediário",
@@ -781,6 +1015,9 @@
   },
   {
     "id": "079",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 55,
     "title": "VPPB",
     "specialty": "Neurologia",
     "difficulty": "Iniciante",
@@ -791,6 +1028,9 @@
   },
   {
     "id": "080",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 35,
     "title": "Migrânea com Aura",
     "specialty": "Neurologia",
     "difficulty": "Iniciante",
@@ -801,6 +1041,9 @@
   },
   {
     "id": "081",
+    "patientName": "Idosa",
+    "patientGender": "Feminino",
+    "patientAge": 72,
     "title": "Depressão Geriátrica",
     "specialty": "Psiquiatria",
     "difficulty": "Iniciante",
@@ -811,6 +1054,9 @@
   },
   {
     "id": "082",
+    "patientName": "Jovem",
+    "patientGender": "Masculino",
+    "patientAge": 22,
     "title": "Esquizofrenia",
     "specialty": "Psiquiatria",
     "difficulty": "Avançado",
@@ -821,6 +1067,9 @@
   },
   {
     "id": "083",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 65,
     "title": "Carcinoma Basocelular",
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
@@ -831,6 +1080,9 @@
   },
   {
     "id": "084",
+    "patientName": "Idoso",
+    "patientGender": "Masculino",
+    "patientAge": 70,
     "title": "Melanoma de Face",
     "specialty": "Dermatologia",
     "difficulty": "Intermediário",
@@ -841,6 +1093,9 @@
   },
   {
     "id": "085",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 48,
     "title": "Adenoma Pleomórfico",
     "specialty": "Cirurgia Geral",
     "difficulty": "Intermediário",
@@ -851,6 +1106,9 @@
   },
   {
     "id": "086",
+    "patientName": "Criança",
+    "patientGender": "Feminino",
+    "patientAge": 1.6,
     "title": "Tumor de Wilms",
     "specialty": "Pediatria",
     "difficulty": "Avançado",
@@ -861,6 +1119,9 @@
   },
   {
     "id": "087",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 65,
     "title": "Câncer de Pâncreas",
     "specialty": "Cirurgia Geral",
     "difficulty": "Avançado",
@@ -871,6 +1132,9 @@
   },
   {
     "id": "088",
+    "patientName": "Homem",
+    "patientGender": "Masculino",
+    "patientAge": 50,
     "title": "Carcinoma de Bexiga",
     "specialty": "Urologia",
     "difficulty": "Intermediário",
@@ -881,6 +1145,9 @@
   },
   {
     "id": "089",
+    "patientName": "Adolescente",
+    "patientGender": "Masculino",
+    "patientAge": 15,
     "title": "Osteossarcoma",
     "specialty": "Ortopedia",
     "difficulty": "Avançado",
@@ -891,6 +1158,9 @@
   },
   {
     "id": "090",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 28,
     "title": "Coriocarcinoma",
     "specialty": "Obstetrícia",
     "difficulty": "Avançado",
@@ -901,6 +1171,9 @@
   },
   {
     "id": "091",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 35,
     "title": "Gripe (Influenza)",
     "specialty": "Infectologia",
     "difficulty": "Iniciante",
@@ -911,6 +1184,9 @@
   },
   {
     "id": "092",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 30,
     "title": "Resfriado Comum",
     "specialty": "Clínica Médica",
     "difficulty": "Iniciante",
@@ -921,6 +1197,9 @@
   },
   {
     "id": "093",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 28,
     "title": "Dengue Grupo A",
     "specialty": "Infectologia",
     "difficulty": "Iniciante",
@@ -931,6 +1210,9 @@
   },
   {
     "id": "094",
+    "patientName": "Criança",
+    "patientGender": "Masculino",
+    "patientAge": 5,
     "title": "Varicela (Catapora)",
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
@@ -941,6 +1223,9 @@
   },
   {
     "id": "095",
+    "patientName": "Lactente",
+    "patientGender": "Masculino",
+    "patientAge": 1.5,
     "title": "Síndrome Mão-Pé-Boca",
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
@@ -951,6 +1236,9 @@
   },
   {
     "id": "096",
+    "patientName": "Criança",
+    "patientGender": "Feminino",
+    "patientAge": 4,
     "title": "Herpangina",
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
@@ -961,6 +1249,9 @@
   },
   {
     "id": "097",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 25,
     "title": "Faringoamigdalite Bacteriana",
     "specialty": "Clínica Médica",
     "difficulty": "Iniciante",
@@ -971,6 +1262,9 @@
   },
   {
     "id": "098",
+    "patientName": "Gestante",
+    "patientGender": "Feminino",
+    "patientAge": 28,
     "title": "Bacteriúria Assintomática",
     "specialty": "Obstetrícia",
     "difficulty": "Intermediário",
@@ -981,6 +1275,9 @@
   },
   {
     "id": "099",
+    "patientName": "Gestante",
+    "patientGender": "Feminino",
+    "patientAge": 24,
     "title": "Cistite na Gravidez",
     "specialty": "Obstetrícia",
     "difficulty": "Iniciante",
@@ -991,6 +1288,9 @@
   },
   {
     "id": "100",
+    "patientName": "Gestante",
+    "patientGender": "Feminino",
+    "patientAge": 30,
     "title": "Pielonefrite na Gestação",
     "specialty": "Obstetrícia",
     "difficulty": "Avançado",
@@ -1001,6 +1301,9 @@
   },
   {
     "id": "101",
+    "patientName": "Gestante",
+    "patientGender": "Feminino",
+    "patientAge": 22,
     "title": "Hiperêmese Gravídica",
     "specialty": "Obstetrícia",
     "difficulty": "Intermediário",
@@ -1011,6 +1314,9 @@
   },
   {
     "id": "102",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 32,
     "title": "Vaginose Bacteriana",
     "specialty": "Ginecologia",
     "difficulty": "Iniciante",
@@ -1021,6 +1327,9 @@
   },
   {
     "id": "103",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 25,
     "title": "Urticária Colinérgica",
     "specialty": "Dermatologia",
     "difficulty": "Intermediário",
@@ -1031,6 +1340,9 @@
   },
   {
     "id": "104",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 30,
     "title": "Dermatite de Contato (Níquel)",
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
@@ -1041,6 +1353,9 @@
   },
   {
     "id": "105",
+    "patientName": "Idoso",
+    "patientGender": "Masculino",
+    "patientAge": 75,
     "title": "Eczema Asteatósico",
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
@@ -1051,6 +1366,9 @@
   },
   {
     "id": "106",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 35,
     "title": "Disidrose",
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
@@ -1061,6 +1379,9 @@
   },
   {
     "id": "107",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 28,
     "title": "Dermatite Seborreica",
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
@@ -1071,6 +1392,9 @@
   },
   {
     "id": "108",
+    "patientName": "Criança",
+    "patientGender": "Masculino",
+    "patientAge": 2,
     "title": "Diarreia por Rotavírus",
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
@@ -1081,6 +1405,9 @@
   },
   {
     "id": "109",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 40,
     "title": "Constipação Funcional",
     "specialty": "Gastroenterologia",
     "difficulty": "Iniciante",
@@ -1091,6 +1418,9 @@
   },
   {
     "id": "110",
+    "patientName": "Criança",
+    "patientGender": "Masculino",
+    "patientAge": 6,
     "title": "Ascaridíase",
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
@@ -1101,6 +1431,9 @@
   },
   {
     "id": "111",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 35,
     "title": "Cefaleia Tensional",
     "specialty": "Neurologia",
     "difficulty": "Iniciante",
@@ -1111,6 +1444,9 @@
   },
   {
     "id": "112",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 55,
     "title": "Vertigem Posicional (VPPB)",
     "specialty": "Neurologia",
     "difficulty": "Iniciante",
@@ -1121,6 +1457,9 @@
   },
   {
     "id": "113",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 38,
     "title": "Transtorno de Ansiedade de Doença",
     "specialty": "Psiquiatria",
     "difficulty": "Intermediário",
@@ -1131,6 +1470,9 @@
   },
   {
     "id": "114",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 45,
     "title": "Distimia",
     "specialty": "Psiquiatria",
     "difficulty": "Intermediário",
@@ -1141,6 +1483,9 @@
   },
   {
     "id": "115",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 32,
     "title": "Agorafobia",
     "specialty": "Psiquiatria",
     "difficulty": "Intermediário",
@@ -1151,6 +1496,9 @@
   },
   {
     "id": "116",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 65,
     "title": "Arterite de Células Gigantes",
     "specialty": "Reumatologia",
     "difficulty": "Avançado",
@@ -1161,6 +1509,9 @@
   },
   {
     "id": "117",
+    "patientName": "Homem",
+    "patientGender": "Masculino",
+    "patientAge": 45,
     "title": "Sarcoidose Systemica",
     "specialty": "Pneumologia",
     "difficulty": "Avançado",
@@ -1171,6 +1522,9 @@
   },
   {
     "id": "118",
+    "patientName": "Lactente",
+    "patientGender": "Masculino",
+    "patientAge": 0.5,
     "title": "Beribéri Infantil",
     "specialty": "Nutrologia",
     "difficulty": "Avançado",
@@ -1181,6 +1535,9 @@
   },
   {
     "id": "119",
+    "patientName": "Criança",
+    "patientGender": "Masculino",
+    "patientAge": 6,
     "title": "Escorbuto",
     "specialty": "Nutrologia",
     "difficulty": "Intermediário",
@@ -1191,6 +1548,9 @@
   },
   {
     "id": "120",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 45,
     "title": "Hemocromatose Hereditária",
     "specialty": "Hematologia",
     "difficulty": "Avançado",
@@ -1201,6 +1561,9 @@
   },
   {
     "id": "121",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 50,
     "title": "Choque Séptico",
     "specialty": "Infectologia",
     "difficulty": "Avançado",
@@ -1211,6 +1574,9 @@
   },
   {
     "id": "122",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 38,
     "title": "Leptospirose",
     "specialty": "Infectologia",
     "difficulty": "Intermediário",
@@ -1221,6 +1587,9 @@
   },
   {
     "id": "123",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 25,
     "title": "Albinismo Oculocutâneo",
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
@@ -1231,6 +1600,9 @@
   },
   {
     "id": "124",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 45,
     "title": "Síndrome Complexa de Dor Regional",
     "specialty": "Neurologia",
     "difficulty": "Avançado",
@@ -1241,6 +1613,9 @@
   },
   {
     "id": "125",
+    "patientName": "Idoso",
+    "patientGender": "Masculino",
+    "patientAge": 75,
     "title": "Púrpura Senil",
     "specialty": "Geriatria",
     "difficulty": "Iniciante",
@@ -1251,6 +1626,9 @@
   },
   {
     "id": "126",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 48,
     "title": "Doença de Ménière",
     "specialty": "Otorrinolaringologia",
     "difficulty": "Intermediário",
@@ -1261,6 +1639,9 @@
   },
   {
     "id": "127",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 55,
     "title": "Neuralgia do Trigêmeo",
     "specialty": "Neurologia",
     "difficulty": "Intermediário",
@@ -1271,6 +1652,9 @@
   },
   {
     "id": "128",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 70,
     "title": "Síndrome de Stokes-Adams",
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
@@ -1281,6 +1665,9 @@
   },
   {
     "id": "129",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 30,
     "title": "Narcolepsia",
     "specialty": "Neurologia",
     "difficulty": "Avançado",
@@ -1291,6 +1678,9 @@
   },
   {
     "id": "130",
+    "patientName": "Criança",
+    "patientGender": "Masculino",
+    "patientAge": 5,
     "title": "Terror Noturno",
     "specialty": "Psiquiatria",
     "difficulty": "Iniciante",
@@ -1301,6 +1691,9 @@
   },
   {
     "id": "131",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 55,
     "title": "Tabes Dorsalis",
     "specialty": "Infectologia",
     "difficulty": "Avançado",
@@ -1311,6 +1704,9 @@
   },
   {
     "id": "132",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 60,
     "title": "Síndrome de Claude Bernard-Horner",
     "specialty": "Neurologia",
     "difficulty": "Avançado",
@@ -1321,6 +1717,9 @@
   },
   {
     "id": "133",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 65,
     "title": "Amnésia de Fixação",
     "specialty": "Neurologia",
     "difficulty": "Intermediário",
@@ -1331,6 +1730,9 @@
   },
   {
     "id": "134",
+    "patientName": "Recém-nascido",
+    "patientGender": "Masculino",
+    "patientAge": 0,
     "title": "Persistência do Canal Arterial",
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
@@ -1341,6 +1743,9 @@
   },
   {
     "id": "135",
+    "patientName": "Recém-nascido",
+    "patientGender": "Feminino",
+    "patientAge": 0,
     "title": "Tetralogia de Fallot",
     "specialty": "Pediatria",
     "difficulty": "Avançado",
@@ -1351,6 +1756,9 @@
   },
   {
     "id": "136",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 50,
     "title": "Bronquiectasias",
     "specialty": "Pneumologia",
     "difficulty": "Intermediário",
@@ -1361,6 +1769,9 @@
   },
   {
     "id": "137",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 60,
     "title": "Atelectasia Pulmonar",
     "specialty": "Pneumologia",
     "difficulty": "Intermediário",
@@ -1371,6 +1782,9 @@
   },
   {
     "id": "138",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 55,
     "title": "Síndrome da Veia Cava Superior",
     "specialty": "Oncologia",
     "difficulty": "Avançado",
@@ -1381,6 +1795,9 @@
   },
   {
     "id": "139",
+    "patientName": "Criança",
+    "patientGender": "Feminino",
+    "patientAge": 4,
     "title": "Epiglotite Aguda",
     "specialty": "Pediatria",
     "difficulty": "Avançado",
@@ -1391,6 +1808,9 @@
   },
   {
     "id": "140",
+    "patientName": "Criança",
+    "patientGender": "Masculino",
+    "patientAge": 3,
     "title": "Crupe Viral",
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
@@ -1401,6 +1821,9 @@
   },
   {
     "id": "141",
+    "patientName": "Recém-nascido",
+    "patientGender": "Feminino",
+    "patientAge": 0.03,
     "title": "Fenilcetonúria",
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
@@ -1411,6 +1834,9 @@
   },
   {
     "id": "142",
+    "patientName": "Lactente",
+    "patientGender": "Feminino",
+    "patientAge": 0.3,
     "title": "Dacriocistite do Lactente",
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
@@ -1421,6 +1847,9 @@
   },
   {
     "id": "143",
+    "patientName": "Lactente",
+    "patientGender": "Masculino",
+    "patientAge": 0.6,
     "title": "Desidratação Grave",
     "specialty": "Pediatria",
     "difficulty": "Avançado",
@@ -1431,6 +1860,9 @@
   },
   {
     "id": "144",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 48,
     "title": "Síndrome de Mallory-Weiss",
     "specialty": "Gastroenterologia",
     "difficulty": "Intermediário",
@@ -1441,6 +1873,9 @@
   },
   {
     "id": "145",
+    "patientName": "Criança",
+    "patientGender": "Masculino",
+    "patientAge": 3,
     "title": "Doença Celíaca",
     "specialty": "Gastroenterologia",
     "difficulty": "Intermediário",
@@ -1451,6 +1886,9 @@
   },
   {
     "id": "146",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 38,
     "title": "Síndrome do Cólon Irritável",
     "specialty": "Gastroenterologia",
     "difficulty": "Iniciante",
@@ -1461,6 +1899,9 @@
   },
   {
     "id": "147",
+    "patientName": "Paciente",
+    "patientGender": "Masculino",
+    "patientAge": 45,
     "title": "Fístula Anorretal",
     "specialty": "Proctologia",
     "difficulty": "Intermediário",
@@ -1471,6 +1912,9 @@
   },
   {
     "id": "148",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 32,
     "title": "Síndrome de Sheehan",
     "specialty": "Endocrinologia",
     "difficulty": "Avançado",
@@ -1481,6 +1925,9 @@
   },
   {
     "id": "149",
+    "patientName": "Mulher",
+    "patientGender": "Feminino",
+    "patientAge": 24,
     "title": "SOP",
     "specialty": "Ginecologia",
     "difficulty": "Iniciante",
@@ -1491,6 +1938,9 @@
   },
   {
     "id": "150",
+    "patientName": "Paciente",
+    "patientGender": "Feminino",
+    "patientAge": 62,
     "title": "Câncer de Ovário",
     "specialty": "Ginecologia",
     "difficulty": "Avançado",
