@@ -98,18 +98,20 @@ export default function CaseSelection() {
 
   const filtered = useMemo(() => {
     let result = cases;
-    if (activeSpecialty) result = result.filter((c) => c.specialty === activeSpecialty);
+    if (activeDifficulty) {
+      result = result.filter((c) => (c?.difficulty ?? 'Iniciante') === activeDifficulty);
+    }
     if (search.trim()) {
       const q = search.toLowerCase();
       result = result.filter(
         (c) =>
           obfuscatedLabel(c).toLowerCase().includes(q) ||
-            (c.history || c.chiefComplaint || '').toLowerCase().includes(q) ||
-          c.specialty.toLowerCase().includes(q)
+          (c?.history || c?.chiefComplaint || '').toLowerCase().includes(q) ||
+          (c?.specialty ?? '').toLowerCase().includes(q)
       );
     }
     return result;
-  }, [cases, activeSpecialty, search]);
+  }, [cases, activeDifficulty, search]);
 
   const getCaseStatus = (caseId: string) => {
     const attempts = history.filter((h) => h.case_id === caseId);
