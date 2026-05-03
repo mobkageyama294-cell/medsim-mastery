@@ -54,7 +54,14 @@ export default function CaseSelection() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState('');
-  const [activeSpecialty, setActiveSpecialty] = useState<string | null>(null);
+  const [activeDifficulty, setActiveDifficulty] = useState<string | null>(null);
+
+  const DIFFICULTY_LEVELS = ['Iniciante', 'Intermediário', 'Avançado'] as const;
+  const DIFFICULTY_STYLES: Record<string, string> = {
+    'Iniciante': 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
+    'Intermediário': 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20',
+    'Avançado': 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20',
+  };
 
   const loadCases = useCallback(async () => {
     setLoading(true);
@@ -91,18 +98,20 @@ export default function CaseSelection() {
 
   const filtered = useMemo(() => {
     let result = cases;
-    if (activeSpecialty) result = result.filter((c) => c.specialty === activeSpecialty);
+    if (activeDifficulty) {
+      result = result.filter((c) => (c?.difficulty ?? 'Iniciante') === activeDifficulty);
+    }
     if (search.trim()) {
       const q = search.toLowerCase();
       result = result.filter(
         (c) =>
           obfuscatedLabel(c).toLowerCase().includes(q) ||
-            (c.history || c.chiefComplaint || '').toLowerCase().includes(q) ||
-          c.specialty.toLowerCase().includes(q)
+          (c?.history || c?.chiefComplaint || '').toLowerCase().includes(q) ||
+          (c?.specialty ?? '').toLowerCase().includes(q)
       );
     }
     return result;
-  }, [cases, activeSpecialty, search]);
+  }, [cases, activeDifficulty, search]);
 
   const getCaseStatus = (caseId: string) => {
     const attempts = history.filter((h) => h.case_id === caseId);
@@ -171,30 +180,30 @@ export default function CaseSelection() {
                 />
               </div>
 
-              {/* Specialty pills */}
+              {/* Difficulty pills */}
               <div className="flex items-center gap-2 flex-wrap">
                 <Filter className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
                 <button
-                  onClick={() => setActiveSpecialty(null)}
+                  onClick={() => setActiveDifficulty(null)}
                   className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
-                    !activeSpecialty
+                    !activeDifficulty
                       ? 'bg-primary text-primary-foreground border-primary'
                       : 'bg-card text-muted-foreground border-border/60 hover:border-primary/40 hover:text-foreground'
                   }`}
                 >
-                  Todas
+                  Todos os níveis
                 </button>
-                {specialties.map((s) => (
+                {DIFFICULTY_LEVELS.map((d) => (
                   <button
-                    key={s}
-                    onClick={() => setActiveSpecialty(activeSpecialty === s ? null : s)}
+                    key={d}
+                    onClick={() => setActiveDifficulty(activeDifficulty === d ? null : d)}
                     className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
-                      activeSpecialty === s
+                      activeDifficulty === d
                         ? 'bg-primary text-primary-foreground border-primary'
-                        : 'bg-card text-muted-foreground border-border/60 hover:border-primary/40 hover:text-foreground'
+                        : `${DIFFICULTY_STYLES[d]} hover:border-primary/40`
                     }`}
                   >
-                    {s}
+                    {d}
                   </button>
                 ))}
               </div>
@@ -248,9 +257,14 @@ export default function CaseSelection() {
                     <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors mb-1.5 line-clamp-2">
                       Paciente: {obfuscatedLabel(c)}
                     </h3>
-                    <Badge variant="outline" className={`w-fit text-[10px] mb-3 ${specColor}`}>
-                      {c.specialty}
-                    </Badge>
+                    <div className="flex items-center gap-1.5 flex-wrap mb-3">
+                      <Badge variant="outline" className={`w-fit text-[10px] ${specColor}`}>
+                        {c?.specialty ?? 'Clínica Médica'}
+                      </Badge>
+                      <Badge variant="outline" className={`w-fit text-[10px] ${DIFFICULTY_STYLES[c?.difficulty ?? 'Iniciante'] ?? ''}`}>
+                        {c?.difficulty ?? 'Iniciante'}
+                      </Badge>
+                    </div>
 
                     {/* Brief context without revealing diagnosis */}
                     <p className="text-xs text-muted-foreground line-clamp-2 mb-4 flex-1">
