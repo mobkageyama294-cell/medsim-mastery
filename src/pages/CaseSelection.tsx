@@ -180,30 +180,30 @@ export default function CaseSelection() {
                 />
               </div>
 
-              {/* Specialty pills */}
+              {/* Difficulty pills */}
               <div className="flex items-center gap-2 flex-wrap">
                 <Filter className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
                 <button
-                  onClick={() => setActiveSpecialty(null)}
+                  onClick={() => setActiveDifficulty(null)}
                   className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
-                    !activeSpecialty
+                    !activeDifficulty
                       ? 'bg-primary text-primary-foreground border-primary'
                       : 'bg-card text-muted-foreground border-border/60 hover:border-primary/40 hover:text-foreground'
                   }`}
                 >
-                  Todas
+                  Todos os níveis
                 </button>
-                {specialties.map((s) => (
+                {DIFFICULTY_LEVELS.map((d) => (
                   <button
-                    key={s}
-                    onClick={() => setActiveSpecialty(activeSpecialty === s ? null : s)}
+                    key={d}
+                    onClick={() => setActiveDifficulty(activeDifficulty === d ? null : d)}
                     className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
-                      activeSpecialty === s
+                      activeDifficulty === d
                         ? 'bg-primary text-primary-foreground border-primary'
-                        : 'bg-card text-muted-foreground border-border/60 hover:border-primary/40 hover:text-foreground'
+                        : `${DIFFICULTY_STYLES[d]} hover:border-primary/40`
                     }`}
                   >
-                    {s}
+                    {d}
                   </button>
                 ))}
               </div>
