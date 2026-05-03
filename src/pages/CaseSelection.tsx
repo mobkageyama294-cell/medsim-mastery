@@ -257,9 +257,14 @@ export default function CaseSelection() {
                     <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors mb-1.5 line-clamp-2">
                       Paciente: {obfuscatedLabel(c)}
                     </h3>
-                    <Badge variant="outline" className={`w-fit text-[10px] mb-3 ${specColor}`}>
-                      {c.specialty}
-                    </Badge>
+                    <div className="flex items-center gap-1.5 flex-wrap mb-3">
+                      <Badge variant="outline" className={`w-fit text-[10px] ${specColor}`}>
+                        {c?.specialty ?? 'Clínica Médica'}
+                      </Badge>
+                      <Badge variant="outline" className={`w-fit text-[10px] ${DIFFICULTY_STYLES[c?.difficulty ?? 'Iniciante'] ?? ''}`}>
+                        {c?.difficulty ?? 'Iniciante'}
+                      </Badge>
+                    </div>
 
                     {/* Brief context without revealing diagnosis */}
                     <p className="text-xs text-muted-foreground line-clamp-2 mb-4 flex-1">
