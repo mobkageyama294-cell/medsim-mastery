@@ -126,5 +126,5 @@ export function calculateFinalScore(state: {
     total: hum + acc.score + tech + eff.score,
   };
 
-  return { ...partial, autoFeedback: buildAutoFeedback(partial) };
+  return { ...partial, autoFeedback: buildAutoFeedback(partial, acc.viaColloquial) };
 }
