@@ -1,71 +1,85 @@
+## Plano: Perfis Psicológicos por Paciente + Aceitação de Linguagem Coloquial no Diagnóstico
 
-## Plano de Atualização: Sistema de Avaliação + Filtros + Feedback Detalhado
+### Objetivo
+1. Cada um dos 24 pacientes em `public/cases.json` ganha um **perfil psicológico próprio** (modo operante) que guia o comportamento da IA durante a anamnese.
+2. O sistema de avaliação aceita **respostas em linguagem coloquial porém corretas** como "parcialmente certas" (não mais como erradas).
 
-### 1. Novo Sistema de Pontuação (0-100, 25 pts cada critério)
+---
 
-**Arquivo:** `src/lib/scoring.ts` (novo)
+### 1. Enriquecimento de `public/cases.json`
 
-Função `calculateFinalScore(state, currentCase)` que retorna:
+Adicionar 3 novos campos a cada um dos 24 casos:
+
+- `patientPersonality`: arquétipo psicológico (string controlada)
+- `personalityTraits`: descrição em 1-2 frases de como o paciente se comporta
+- `colloquialDiagnosis`: array de sinônimos leigos/coloquiais aceitos (ex.: `["ataque cardíaco", "ataque do coração", "infarto"]` para IAM)
+
+**Arquétipos disponíveis** (distribuídos pelos 24 casos):
+- `ansioso` — fala rápido, interrompe, faz perguntas repetidas
+- `negacionista` — minimiza sintomas, resiste a perguntas sobre hábitos
+- `estoico` — subestima a dor, respostas curtas
+- `tagarela` — divaga, conta histórias paralelas
+- `confuso` — mistura datas e sintomas (idosos, quadros neuro)
+- `desconfiado` — questiona o médico, pede justificativas
+- `colaborativo` — responde de forma direta e organizada
+- `medroso` — chora, pede para chamar a família
+- `agitado/irritado` — impaciente, exige resultados
+- `deprimido` — apático, fala monossilábica, baixa energia
+
+Distribuição proposta (exemplos coerentes com o quadro clínico):
+- 001 IAM (Carlos, 58a) → `negacionista` ("é só azia")
+- 002 HSA (Maria, 42a) → `medroso`
+- 004 ICC (Waldir, 68a) → `estoico`
+- 005 Meningite (Lucas, 19a) → `confuso` (rebaixamento)
+- 006 Cólica renal (Ricardo, 35a) → `agitado`
+- demais 18 casos: distribuir os arquétipos restantes por idade/quadro
+
+### 2. Tipagem (`src/data/clinicalCases.ts`)
+
+Estender `ClinicalCase` com:
 ```ts
-{
-  total: number,           // 0-100
-  humanitarian: number,    // 0-25 (deriva de empathyScore)
-  accuracy: number,        // 0-25 (match com correctDiagnosis)
-  technicalLanguage: number, // 0-25 (analisa termos médicos no chat do user)
-  efficiency: number,      // 0-25 (penaliza exames desnecessários)
-  unnecessaryExamsRequested: string[],
-  diagnosisMatch: 'exact' | 'partial' | 'incorrect',
-  autoFeedback: string     // texto gerado dinamicamente
-}
+patientPersonality: 'ansioso' | 'negacionista' | 'estoico' | 'tagarela' 
+                  | 'confuso' | 'desconfiado' | 'colaborativo' | 'medroso' 
+                  | 'agitado' | 'deprimido';
+personalityTraits?: string;
+colloquialDiagnosis?: string[];
 ```
 
-**Lógicas:**
-- **Humanitário**: `(empathyScore / 100) * 25`
-- **Acurácia**: comparação por tokens-chave entre `diagnosisAttempt` e `correctDiagnosis` (exact = 25, partial = 15, incorrect = 0)
-- **Linguagem técnica**: contar termos médicos (lista curada: "anamnese", "ausculta", "diagnóstico diferencial", "propedêutica", "sintomatologia", "etiologia", "prognóstico", "evolução", etc.) nas mensagens `role: 'user'` → escala até 25
-- **Eficiência**: `25 - (examsRequested ∩ unnecessaryExams).length * 5`, mínimo 0
-- **autoFeedback**: regras condicionais combinando os 4 critérios
+Atualizar `normalizeClinicalCase` para preservar os novos campos com defaults seguros.
 
-### 2. Filtro de Dificuldade (substituir "Tipos de Casos")
+### 3. Edge Function `supabase/functions/patient-chat/index.ts`
 
-**Arquivo:** `src/pages/CaseSelection.tsx`
+O system prompt já tem `Personalidade: ${caseContext.patientPersonality}` (Camada 1). Vamos:
+- Passar `personalityTraits` no `caseContext` enviado pela função `sendMessage` (`src/hooks/useSimulation.ts`).
+- Acrescentar ao prompt um **bloco de instruções específico por arquétipo** (mapeamento `ansioso → fale rápido, interrompa…`, `negacionista → minimize, resista…`, etc.) para que cada perfil tenha um modo operante distinto e reconhecível.
+- Reforçar que o paciente NUNCA muda de personalidade durante a sessão.
 
-- Remover filtro atual de specialty/tipos
-- Adicionar pills: `Todos | Iniciante | Intermediário | Avançado`
-- Filtrar `cases.filter(c => difficulty === 'Todos' || c.difficulty === selected)`
-- Se `c.difficulty` ausente → tratar como "Iniciante" (default seguro)
-- Adicionar badge visual de dificuldade em cada card (cores: verde/amarelo/vermelho)
+### 4. Aceitação de linguagem coloquial (`src/lib/scoring.ts`)
 
-### 3. Tela de Resultados Reformulada
+Atualizar `diagnosisAccuracy`:
+- Receber também `colloquialDiagnosis: string[]` do caso.
+- Se o input do usuário (normalizado) bater com qualquer sinônimo coloquial → retornar `score: 18, match: 'partial'` (meio certo).
+- Mantém o match exato quando coincide com `correctDiagnosis` técnico.
+- Mantém o fallback por tokens.
 
-**Arquivo:** `src/components/simulation/FeedbackReport.tsx` (refatorar)
+Atualizar `calculateFinalScore` para repassar `c?.colloquialDiagnosis ?? []`.
 
-Estrutura nova:
-1. **Hero**: Nota final grande (ex: "78/100") com ícone de status + título do caso
-2. **4 Barras de Progresso** (uma por critério) com label, valor `/25` e cor adaptativa
-3. **Seção "Diagnóstico"**: card com `Correto: X` vs `Sua hipótese: Y` (verde/vermelho)
-4. **Seção "Exames Desnecessários Solicitados"**: lista com ícone de alerta; se vazia → mensagem positiva "Nenhum exame desnecessário — excelente eficiência!"
-5. **Seção "Observações de Melhoria"**: card destacado com `autoFeedback` gerado
-6. **Seção "Análise de Empatia"**: manter breakdown atual dos 5 fatores
-7. Botões: "Tentar Outro" / "Compartilhar"
+Ajustar `buildAutoFeedback`: quando `match === 'partial'` por coloquialismo, mensagem dedicada — "Você identificou o problema corretamente, mas use a nomenclatura técnica formal (ex.: 'Infarto Agudo do Miocárdio' em vez de 'ataque cardíaco')."
 
-### 4. Segurança (Optional Chaining em todos os pontos)
+### 5. Exibição na UI (`src/components/simulation/CasePanel.tsx`)
 
-- `FeedbackReport`: proteger `state?.currentCase?.correctDiagnosis ?? 'N/A'`, `state?.empathyHistory ?? []`, `state?.examsRequested ?? []`
-- `scoring.ts`: defaults para todos os inputs (`unnecessaryExams ?? []`, `messages ?? []`)
-- `Simulation.tsx`: já tem guards; verificar passagem de `state` completo ao FeedbackReport
-- Salvar `final_score` no Supabase em `case_history.insert` (campo novo opcional — ou reusar `reasoning_score` se schema imutável)
+Mostrar discretamente o arquétipo ao estudante como dica de abordagem? **Não** — o perfil deve ser descoberto via interação. Mantemos invisível no painel; apenas a IA o usa.
 
-### Arquivos afetados
-```text
-+ src/lib/scoring.ts                         (novo — lógica de pontuação)
-~ src/components/simulation/FeedbackReport.tsx (refatoração completa)
-~ src/pages/CaseSelection.tsx                (trocar filtros)
-~ src/pages/Simulation.tsx                   (passar dados completos ao feedback)
-```
+### 6. Detalhes técnicos
 
-### Notas técnicas
-- Lista de termos médicos será definida inline em `scoring.ts` (~30 termos PT-BR)
-- Match de diagnóstico: normalizar (lowercase, sem acentos), procurar substring de 15+ chars + tokens significativos
-- Cores das barras: ≥80% success, ≥50% warning, <50% destructive
-- `difficulty` no `cases.json`: se não existir nos 24 casos, manter fallback "Iniciante" — não bloqueia entrega
+- O JSON cresce ~3 campos × 24 casos; arquivo continua leve.
+- Sem migrations de banco — tudo client-side + JSON estático + edge function.
+- Sem mudança em `case_history` (Supabase).
+- A função `sendMessage` em `useSimulation` já monta `caseContext`; basta incluir os campos novos.
+
+### Arquivos alterados
+- `public/cases.json` (perfis + sinônimos para os 24 casos)
+- `src/data/clinicalCases.ts` (tipos + normalização)
+- `src/hooks/useSimulation.ts` (passar campos no caseContext)
+- `supabase/functions/patient-chat/index.ts` (mapeamento de arquétipos no prompt)
+- `src/lib/scoring.ts` (aceitar coloquialismo como acerto parcial)

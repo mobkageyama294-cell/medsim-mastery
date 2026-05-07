@@ -22,6 +22,8 @@ export interface ClinicalCase {
   differentialDiagnoses: string[];
   unnecessaryExams: string[];
   patientPersonality: string;
+  personalityTraits?: string;
+  colloquialDiagnosis?: string[];
 }
 
 type RawClinicalCase = Partial<ClinicalCase> & {
@@ -76,6 +78,8 @@ function normalizeClinicalCase(raw: RawClinicalCase): ClinicalCase {
     differentialDiagnoses: raw.differentialDiagnoses || [],
     unnecessaryExams: raw.unnecessaryExams || [],
     patientPersonality: raw.patientPersonality || 'colaborativo',
+    personalityTraits: (raw as any).personalityTraits || '',
+    colloquialDiagnosis: (raw as any).colloquialDiagnosis || [],
   };
 }
 

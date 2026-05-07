@@ -31,11 +31,24 @@ function normalize(s: string): string {
     .trim();
 }
 
-function diagnosisAccuracy(attempt: string, correct: string): { score: number; match: ScoreBreakdown['diagnosisMatch'] } {
+function diagnosisAccuracy(
+  attempt: string,
+  correct: string,
+  colloquial: string[] = [],
+): { score: number; match: ScoreBreakdown['diagnosisMatch']; viaColloquial: boolean } {
   const a = normalize(attempt);
   const c = normalize(correct);
-  if (!a || !c) return { score: 0, match: 'incorrect' };
-  if (a === c || a.includes(c) || c.includes(a)) return { score: 25, match: 'exact' };
+  if (!a || !c) return { score: 0, match: 'incorrect', viaColloquial: false };
+  if (a === c || a.includes(c) || c.includes(a)) return { score: 25, match: 'exact', viaColloquial: false };
+
+  // Aceitar linguagem coloquial correta como acerto parcial alto
+  for (const term of colloquial) {
+    const t = normalize(term);
+    if (!t) continue;
+    if (a === t || a.includes(t) || t.includes(a)) {
+      return { score: 20, match: 'partial', viaColloquial: true };
+    }
+  }
 
   const stop = new Set(['de','do','da','com','sem','e','a','o','em','por']);
   const tokensC = c.split(' ').filter((t) => t.length > 3 && !stop.has(t));
@@ -43,9 +56,9 @@ function diagnosisAccuracy(attempt: string, correct: string): { score: number; m
   const hits = tokensC.filter((t) => tokensA.has(t)).length;
   const ratio = tokensC.length ? hits / tokensC.length : 0;
 
-  if (ratio >= 0.5) return { score: 18, match: 'partial' };
-  if (ratio >= 0.25) return { score: 10, match: 'partial' };
-  return { score: 0, match: 'incorrect' };
+  if (ratio >= 0.5) return { score: 18, match: 'partial', viaColloquial: false };
+  if (ratio >= 0.25) return { score: 10, match: 'partial', viaColloquial: false };
+  return { score: 0, match: 'incorrect', viaColloquial: false };
 }
 
 function technicalScore(messages: ChatMessage[]): number {
@@ -69,9 +82,11 @@ function efficiencyScore(requested: string[], unnecessary: string[]): { score: n
   return { score, bad };
 }
 
-function buildAutoFeedback(b: Omit<ScoreBreakdown, 'autoFeedback'>): string {
+function buildAutoFeedback(b: Omit<ScoreBreakdown, 'autoFeedback'>, viaColloquial = false): string {
   const parts: string[] = [];
   if (b.diagnosisMatch === 'exact') parts.push('Excelente acurácia diagnóstica — você acertou em cheio.');
+  else if (b.diagnosisMatch === 'partial' && viaColloquial)
+    parts.push('Você identificou corretamente o problema, mas use a nomenclatura técnica formal em vez de termos coloquiais (ex.: "Infarto Agudo do Miocárdio" no lugar de "ataque cardíaco").');
   else if (b.diagnosisMatch === 'partial') parts.push('Sua hipótese esteve parcialmente correta; revise os critérios definidores da patologia.');
   else parts.push('O diagnóstico final divergiu do esperado — vale revisar os achados-chave deste quadro clínico.');
 
@@ -96,7 +111,7 @@ export function calculateFinalScore(state: {
   currentCase?: ClinicalCase | null;
 }): ScoreBreakdown {
   const c = state?.currentCase;
-  const acc = diagnosisAccuracy(state?.diagnosisAttempt ?? '', c?.correctDiagnosis ?? '');
+  const acc = diagnosisAccuracy(state?.diagnosisAttempt ?? '', c?.correctDiagnosis ?? '', c?.colloquialDiagnosis ?? []);
   const hum = humanitarianScore(state?.empathyScore ?? 0, state?.empathyHistory ?? []);
   const tech = technicalScore(state?.messages ?? []);
   const eff = efficiencyScore(state?.examsRequested ?? [], c?.unnecessaryExams ?? []);
@@ -111,5 +126,5 @@ export function calculateFinalScore(state: {
     total: hum + acc.score + tech + eff.score,
   };
 
-  return { ...partial, autoFeedback: buildAutoFeedback(partial) };
+  return { ...partial, autoFeedback: buildAutoFeedback(partial, acc.viaColloquial) };
 }

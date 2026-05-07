@@ -8,9 +8,26 @@
     "specialty": "Cardiologia",
     "difficulty": "Intermediário",
     "description": "Carlos Alberto, 58a. Dor no peito há 2 horas com irradiação para braço esquerdo.",
-    "vitalSigns": { "pa": "160/100", "fc": 102, "sao2": 94, "temp": 36.8, "fr": 22 },
+    "vitalSigns": {
+      "pa": "160/100",
+      "fc": 102,
+      "sao2": 94,
+      "temp": 36.8,
+      "fr": 22
+    },
     "correctDiagnosis": "Infarto Agudo do Miocárdio com Supradesnivelamento de ST (IAMCSST)",
-    "unnecessaryExams": ["Colonoscopia", "Eletroencefalograma"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Eletroencefalograma"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "ataque cardíaco",
+      "ataque do coração",
+      "ataque cardiaco",
+      "enfarte"
+    ]
   },
   {
     "id": "002",
@@ -21,9 +38,26 @@
     "specialty": "Neurologia",
     "difficulty": "Avançado",
     "description": "Maria Souza, 42a. A pior dor de cabeça da vida, início súbito.",
-    "vitalSigns": { "pa": "180/110", "fc": 88, "sao2": 97, "temp": 37.5, "fr": 18 },
+    "vitalSigns": {
+      "pa": "180/110",
+      "fc": 88,
+      "sao2": 97,
+      "temp": 37.5,
+      "fr": 18
+    },
     "correctDiagnosis": "Hemorragia Subaracnoidea",
-    "unnecessaryExams": ["Endoscopia", "Ecocardiograma"]
+    "unnecessaryExams": [
+      "Endoscopia",
+      "Ecocardiograma"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "derrame",
+      "derrame cerebral",
+      "avc hemorrágico",
+      "sangramento no cérebro"
+    ]
   },
   {
     "id": "003",
@@ -34,9 +68,27 @@
     "specialty": "Cirurgia Geral",
     "difficulty": "Intermediário",
     "description": "Mercedes Oliveira, 55a. Dor forte em hipocôndrio direito após alimentação gordurosa.",
-    "vitalSigns": { "pa": "135/85", "fc": 92, "sao2": 96, "temp": 37.8, "fr": 20 },
+    "vitalSigns": {
+      "pa": "135/85",
+      "fc": 92,
+      "sao2": 96,
+      "temp": 37.8,
+      "fr": 20
+    },
     "correctDiagnosis": "Colecistite Aguda Calculosa",
-    "unnecessaryExams": ["Troponina", "Eletroencefalograma"]
+    "unnecessaryExams": [
+      "Troponina",
+      "Eletroencefalograma"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "pedra na vesícula",
+      "inflamação da vesícula",
+      "crise de vesícula",
+      "infecção urinária",
+      "itu"
+    ]
   },
   {
     "id": "004",
@@ -47,9 +99,25 @@
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
     "description": "Waldir Ferreira, 68a. Falta de ar ao deitar e edema importante em pernas.",
-    "vitalSigns": { "pa": "160/100", "fc": 110, "sao2": 89, "temp": 36.5, "fr": 28 },
+    "vitalSigns": {
+      "pa": "160/100",
+      "fc": 110,
+      "sao2": 89,
+      "temp": 36.5,
+      "fr": 28
+    },
     "correctDiagnosis": "Insuficiência Cardíaca Congestiva",
-    "unnecessaryExams": ["D-Dímero", "Colonoscopia"]
+    "unnecessaryExams": [
+      "D-Dímero",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "ansioso",
+    "personalityTraits": "Fala rápido, interrompe o médico, repete a mesma pergunta várias vezes e demonstra preocupação excessiva com cada sintoma.",
+    "colloquialDiagnosis": [
+      "coração fraco",
+      "fraqueza do coração",
+      "insuficiencia cardiaca"
+    ]
   },
   {
     "id": "005",
@@ -60,9 +128,24 @@
     "specialty": "Infectologia",
     "difficulty": "Avançado",
     "description": "Lucas Mendes, 19a. Febre alta, cefaleia e petéquias pelo corpo.",
-    "vitalSigns": { "pa": "110/70", "fc": 118, "sao2": 95, "temp": 39.2, "fr": 22 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 118,
+      "sao2": 95,
+      "temp": 39.2,
+      "fr": 22
+    },
     "correctDiagnosis": "Meningite Bacteriana",
-    "unnecessaryExams": ["Ecocardiograma", "Raio-X de Coluna"]
+    "unnecessaryExams": [
+      "Ecocardiograma",
+      "Raio-X de Coluna"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "inflamação no cérebro",
+      "meningite"
+    ]
   },
   {
     "id": "006",
@@ -73,9 +156,27 @@
     "specialty": "Nefrologia",
     "difficulty": "Iniciante",
     "description": "Ricardo Santos, 35a. Dor excruciante em flanco direito irradiando para virilha.",
-    "vitalSigns": { "pa": "150/90", "fc": 105, "sao2": 98, "temp": 36.6, "fr": 20 },
+    "vitalSigns": {
+      "pa": "150/90",
+      "fc": 105,
+      "sao2": 98,
+      "temp": 36.6,
+      "fr": 20
+    },
     "correctDiagnosis": "Litíase Renal",
-    "unnecessaryExams": ["Troponina", "Amilase"]
+    "unnecessaryExams": [
+      "Troponina",
+      "Amilase"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "pedra no rim",
+      "cálculo renal",
+      "colica renal",
+      "cólica renal",
+      "pedra nos rins"
+    ]
   },
   {
     "id": "007",
@@ -86,9 +187,25 @@
     "specialty": "Pneumologia",
     "difficulty": "Iniciante",
     "description": "Camila Rodrigues, 28a. Tosse com catarro amarelado e dor pleurítica.",
-    "vitalSigns": { "pa": "115/75", "fc": 102, "sao2": 91, "temp": 38.9, "fr": 26 },
+    "vitalSigns": {
+      "pa": "115/75",
+      "fc": 102,
+      "sao2": 91,
+      "temp": 38.9,
+      "fr": 26
+    },
     "correctDiagnosis": "Pneumonia Lobar",
-    "unnecessaryExams": ["Ecocardiograma", "Colonoscopia"]
+    "unnecessaryExams": [
+      "Ecocardiograma",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "pneumonia",
+      "inflamação no pulmão",
+      "infecção no pulmão"
+    ]
   },
   {
     "id": "008",
@@ -99,9 +216,24 @@
     "specialty": "Cardiologia",
     "difficulty": "Intermediário",
     "description": "Mulher de 37 anos com início súbito de palpitações após quadro viral.",
-    "vitalSigns": { "pa": "110/70", "fc": 155, "sao2": 96, "temp": 36.5, "fr": 18 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 155,
+      "sao2": 96,
+      "temp": 36.5,
+      "fr": 18
+    },
     "correctDiagnosis": "Taquicardia Supraventricular",
-    "unnecessaryExams": ["Endoscopia"]
+    "unnecessaryExams": [
+      "Endoscopia"
+    ],
+    "patientPersonality": "tagarela",
+    "personalityTraits": "Divaga, conta histórias paralelas da família e do trabalho antes de chegar ao ponto da queixa.",
+    "colloquialDiagnosis": [
+      "coração acelerado",
+      "arritmia",
+      "palpitação"
+    ]
   },
   {
     "id": "009",
@@ -112,9 +244,24 @@
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
     "description": "Dispneia, edema em MMII e hepatomegalia de borda romba.",
-    "vitalSigns": { "pa": "150/95", "fc": 98, "sao2": 88, "temp": 36.4, "fr": 24 },
+    "vitalSigns": {
+      "pa": "150/95",
+      "fc": 98,
+      "sao2": 88,
+      "temp": 36.4,
+      "fr": 24
+    },
     "correctDiagnosis": "ICC Descompensada",
-    "unnecessaryExams": ["Colonoscopia"]
+    "unnecessaryExams": [
+      "Colonoscopia"
+    ],
+    "patientPersonality": "tagarela",
+    "personalityTraits": "Divaga, conta histórias paralelas da família e do trabalho antes de chegar ao ponto da queixa.",
+    "colloquialDiagnosis": [
+      "coração fraco",
+      "insuficiencia cardiaca",
+      "insuficiência do coração"
+    ]
   },
   {
     "id": "010",
@@ -125,9 +272,23 @@
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
     "description": "Dor torácica intensa, súbita, com irradiação para o dorso.",
-    "vitalSigns": { "pa": "190/110", "fc": 110, "sao2": 94, "temp": 36.7, "fr": 20 },
+    "vitalSigns": {
+      "pa": "190/110",
+      "fc": 110,
+      "sao2": 94,
+      "temp": 36.7,
+      "fr": 20
+    },
     "correctDiagnosis": "Dissecação Aórtica Aguda",
-    "unnecessaryExams": ["Glicemia"]
+    "unnecessaryExams": [
+      "Glicemia"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "rompimento da aorta",
+      "aorta rasgada"
+    ]
   },
   {
     "id": "011",
@@ -138,9 +299,22 @@
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
     "description": "Febre prolongada associada a novo sopro cardíaco em idoso.",
-    "vitalSigns": { "pa": "110/60", "fc": 105, "sao2": 95, "temp": 38.2, "fr": 18 },
+    "vitalSigns": {
+      "pa": "110/60",
+      "fc": 105,
+      "sao2": 95,
+      "temp": 38.2,
+      "fr": 18
+    },
     "correctDiagnosis": "Endocardite Infecciosa",
-    "unnecessaryExams": ["Raio-X de Pelve"]
+    "unnecessaryExams": [
+      "Raio-X de Pelve"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "infecção no coração"
+    ]
   },
   {
     "id": "012",
@@ -151,9 +325,23 @@
     "specialty": "Clínica Médica",
     "difficulty": "Iniciante",
     "description": "Paciente relata tontura e síncope sempre ao se levantar rapidamente.",
-    "vitalSigns": { "pa": "120/80", "fc": 75, "sao2": 98, "temp": 36.6, "fr": 14 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 75,
+      "sao2": 98,
+      "temp": 36.6,
+      "fr": 14
+    },
     "correctDiagnosis": "Hipotensão Ortostática",
-    "unnecessaryExams": ["Troponina"]
+    "unnecessaryExams": [
+      "Troponina"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "pressão baixa",
+      "tontura ao levantar"
+    ]
   },
   {
     "id": "013",
@@ -164,9 +352,23 @@
     "specialty": "Cardiologia",
     "difficulty": "Intermediário",
     "description": "Cardiomegalia e arritmias em paciente vindo de área endêmica.",
-    "vitalSigns": { "pa": "100/65", "fc": 52, "sao2": 96, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "100/65",
+      "fc": 52,
+      "sao2": 96,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Chagas Crônico",
-    "unnecessaryExams": ["TC de Crânio"]
+    "unnecessaryExams": [
+      "TC de Crânio"
+    ],
+    "patientPersonality": "estoico",
+    "personalityTraits": "Subestima a dor, dá respostas curtas e diz frases como \"não é nada demais, doutor\", mesmo diante de quadro grave.",
+    "colloquialDiagnosis": [
+      "doença de chagas",
+      "chagas"
+    ]
   },
   {
     "id": "014",
@@ -177,9 +379,24 @@
     "specialty": "Pneumologia",
     "difficulty": "Intermediário",
     "description": "Dor em punhalada e dispneia súbita em jovem longilíneo.",
-    "vitalSigns": { "pa": "118/76", "fc": 108, "sao2": 90, "temp": 36.5, "fr": 26 },
+    "vitalSigns": {
+      "pa": "118/76",
+      "fc": 108,
+      "sao2": 90,
+      "temp": 36.5,
+      "fr": 26
+    },
     "correctDiagnosis": "Pneumotórax Espontâneo",
-    "unnecessaryExams": ["Troponina"]
+    "unnecessaryExams": [
+      "Troponina"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "pulmão furado",
+      "pulmão colabado",
+      "ar no pulmão"
+    ]
   },
   {
     "id": "015",
@@ -190,9 +407,24 @@
     "specialty": "Infectologia",
     "difficulty": "Iniciante",
     "description": "Tosse, febre e macicez à percussão pulmonar.",
-    "vitalSigns": { "pa": "120/80", "fc": 102, "sao2": 92, "temp": 38.8, "fr": 24 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 102,
+      "sao2": 92,
+      "temp": 38.8,
+      "fr": 24
+    },
     "correctDiagnosis": "Pneumonia Bacteriana",
-    "unnecessaryExams": ["EAS"]
+    "unnecessaryExams": [
+      "EAS"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "pneumonia",
+      "inflamação no pulmão",
+      "infecção no pulmão"
+    ]
   },
   {
     "id": "016",
@@ -203,9 +435,24 @@
     "specialty": "Infectologia",
     "difficulty": "Intermediário",
     "description": "Tosse crônica, emagrecimento e sudorese noturna.",
-    "vitalSigns": { "pa": "110/70", "fc": 85, "sao2": 97, "temp": 37.4, "fr": 18 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 85,
+      "sao2": 97,
+      "temp": 37.4,
+      "fr": 18
+    },
     "correctDiagnosis": "Tuberculose Pulmonar",
-    "unnecessaryExams": ["ECG"]
+    "unnecessaryExams": [
+      "ECG"
+    ],
+    "patientPersonality": "deprimido",
+    "personalityTraits": "Apático, fala monossilábica, baixa energia, evita contato visual e demonstra desânimo generalizado.",
+    "colloquialDiagnosis": [
+      "tuberculose",
+      "tísica",
+      "tb"
+    ]
   },
   {
     "id": "017",
@@ -216,9 +463,24 @@
     "specialty": "Pneumologia",
     "difficulty": "Iniciante",
     "description": "Sibilos e dispneia com piora no período noturno.",
-    "vitalSigns": { "pa": "125/80", "fc": 110, "sao2": 93, "temp": 36.6, "fr": 28 },
+    "vitalSigns": {
+      "pa": "125/80",
+      "fc": 110,
+      "sao2": 93,
+      "temp": 36.6,
+      "fr": 28
+    },
     "correctDiagnosis": "Crise Asmática",
-    "unnecessaryExams": ["TC de Abdome"]
+    "unnecessaryExams": [
+      "TC de Abdome"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "crise de asma",
+      "asma",
+      "falta de ar da asma"
+    ]
   },
   {
     "id": "018",
@@ -229,9 +491,24 @@
     "specialty": "Pneumologia",
     "difficulty": "Avançado",
     "description": "Dispneia progressiva e tosse em paciente tabagista crônico.",
-    "vitalSigns": { "pa": "135/85", "fc": 92, "sao2": 88, "temp": 36.5, "fr": 22 },
+    "vitalSigns": {
+      "pa": "135/85",
+      "fc": 92,
+      "sao2": 88,
+      "temp": 36.5,
+      "fr": 22
+    },
     "correctDiagnosis": "DPOC Exacerbado",
-    "unnecessaryExams": ["Amilase"]
+    "unnecessaryExams": [
+      "Amilase"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "enfisema",
+      "bronquite crônica",
+      "pulmão de fumante"
+    ]
   },
   {
     "id": "019",
@@ -242,9 +519,23 @@
     "specialty": "Cirurgia Geral",
     "difficulty": "Iniciante",
     "description": "Dor que migrou do umbigo para a fossa ilíaca direita.",
-    "vitalSigns": { "pa": "120/80", "fc": 104, "sao2": 99, "temp": 37.9, "fr": 20 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 104,
+      "sao2": 99,
+      "temp": 37.9,
+      "fr": 20
+    },
     "correctDiagnosis": "Apendicite Aguda",
-    "unnecessaryExams": ["Troponina"]
+    "unnecessaryExams": [
+      "Troponina"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "inflamação do apêndice",
+      "apendice inflamado"
+    ]
   },
   {
     "id": "020",
@@ -255,9 +546,23 @@
     "specialty": "Gastroenterologia",
     "difficulty": "Intermediário",
     "description": "Disfagia de condução e regurgitação de alimentos.",
-    "vitalSigns": { "pa": "115/75", "fc": 80, "sao2": 98, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "115/75",
+      "fc": 80,
+      "sao2": 98,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Megaesôfago Chagásico",
-    "unnecessaryExams": ["Raio-X de Tórax"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "esôfago dilatado",
+      "esofago de chagas"
+    ]
   },
   {
     "id": "021",
@@ -268,9 +573,23 @@
     "specialty": "Gastroenterologia",
     "difficulty": "Avançado",
     "description": "Icterícia, ascite e fígado de consistência nodular.",
-    "vitalSigns": { "pa": "100/60", "fc": 90, "sao2": 96, "temp": 36.8, "fr": 18 },
+    "vitalSigns": {
+      "pa": "100/60",
+      "fc": 90,
+      "sao2": 96,
+      "temp": 36.8,
+      "fr": 18
+    },
     "correctDiagnosis": "Cirrose Hepática",
-    "unnecessaryExams": ["ECG"]
+    "unnecessaryExams": [
+      "ECG"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "fígado endurecido",
+      "cirrose hepatica"
+    ]
   },
   {
     "id": "022",
@@ -281,9 +600,24 @@
     "specialty": "Cirurgia Geral",
     "difficulty": "Avançado",
     "description": "Dor abdominal súbita, intensa, em abdome em tábua.",
-    "vitalSigns": { "pa": "90/60", "fc": 120, "sao2": 94, "temp": 36.4, "fr": 26 },
+    "vitalSigns": {
+      "pa": "90/60",
+      "fc": 120,
+      "sao2": 94,
+      "temp": 36.4,
+      "fr": 26
+    },
     "correctDiagnosis": "Úlcera Péptica Perfurada",
-    "unnecessaryExams": ["Troponina"]
+    "unnecessaryExams": [
+      "Troponina"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "úlcera furada",
+      "úlcera do estômago perfurada",
+      "ulcera estomago"
+    ]
   },
   {
     "id": "023",
@@ -294,9 +628,24 @@
     "specialty": "Gastroenterologia",
     "difficulty": "Iniciante",
     "description": "Pirose e regurgitação que pioram ao deitar após comer.",
-    "vitalSigns": { "pa": "120/80", "fc": 78, "sao2": 98, "temp": 36.6, "fr": 14 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 78,
+      "sao2": 98,
+      "temp": 36.6,
+      "fr": 14
+    },
     "correctDiagnosis": "Doença do Refluxo Gastroesofágico (DRGE)",
-    "unnecessaryExams": ["ECG"]
+    "unnecessaryExams": [
+      "ECG"
+    ],
+    "patientPersonality": "ansioso",
+    "personalityTraits": "Fala rápido, interrompe o médico, repete a mesma pergunta várias vezes e demonstra preocupação excessiva com cada sintoma.",
+    "colloquialDiagnosis": [
+      "refluxo",
+      "azia crônica",
+      "queimação no estômago"
+    ]
   },
   {
     "id": "024",
@@ -307,9 +656,24 @@
     "specialty": "Proctologia",
     "difficulty": "Iniciante",
     "description": "Sangramento vivo ao evacuar, sem dor abdominal.",
-    "vitalSigns": { "pa": "120/80", "fc": 82, "sao2": 99, "temp": 36.5, "fr": 14 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 82,
+      "sao2": 99,
+      "temp": 36.5,
+      "fr": 14
+    },
     "correctDiagnosis": "Hemorroidas Internas",
-    "unnecessaryExams": ["Troponina"]
+    "unnecessaryExams": [
+      "Troponina"
+    ],
+    "patientPersonality": "ansioso",
+    "personalityTraits": "Fala rápido, interrompe o médico, repete a mesma pergunta várias vezes e demonstra preocupação excessiva com cada sintoma.",
+    "colloquialDiagnosis": [
+      "hemorroida",
+      "almorreima",
+      "figos"
+    ]
   },
   {
     "id": "025",
@@ -320,9 +684,24 @@
     "specialty": "Infectologia",
     "difficulty": "Iniciante",
     "description": "Mulher em fase de amamentação apresenta ingurgitamento mamário, dor intensa, vermelhidão, febre e mal-estar geral.",
-    "vitalSigns": { "pa": "110/70", "fc": 98, "sao2": 97, "temp": 38.5, "fr": 20 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 98,
+      "sao2": 97,
+      "temp": 38.5,
+      "fr": 20
+    },
     "correctDiagnosis": "Mastite Puerperal",
-    "unnecessaryExams": ["Mamografia", "Ressonância de Sela Turca"]
+    "unnecessaryExams": [
+      "Mamografia",
+      "Ressonância de Sela Turca"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "inflamação da mama",
+      "infecção na mama"
+    ]
   },
   {
     "id": "026",
@@ -333,9 +712,24 @@
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
     "description": "Lactente apresenta febre alta isolada que, após desaparecer subitamente, é seguida pelo surgimento de manchas rosadas no tronco.",
-    "vitalSigns": { "pa": "95/60", "fc": 130, "sao2": 98, "temp": 39.0, "fr": 30 },
+    "vitalSigns": {
+      "pa": "95/60",
+      "fc": 130,
+      "sao2": 98,
+      "temp": 39.0,
+      "fr": 30
+    },
     "correctDiagnosis": "Exantema Súbito (Roséola)",
-    "unnecessaryExams": ["Raio-X de Tórax", "Cultura de Urina"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "Cultura de Urina"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "roséola",
+      "manchas vermelhas do bebê"
+    ]
   },
   {
     "id": "027",
@@ -346,9 +740,24 @@
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
     "description": "Criança manifesta exantema facial com aspecto de 'face esbofeteada' e palidez perioral, seguido de lesões reticuladas nos membros.",
-    "vitalSigns": { "pa": "100/65", "fc": 95, "sao2": 99, "temp": 37.5, "fr": 22 },
+    "vitalSigns": {
+      "pa": "100/65",
+      "fc": 95,
+      "sao2": 99,
+      "temp": 37.5,
+      "fr": 22
+    },
     "correctDiagnosis": "Eritema Infeccioso (Parvovírus B19)",
-    "unnecessaryExams": ["ECG", "Dosagem de Amilase"]
+    "unnecessaryExams": [
+      "ECG",
+      "Dosagem de Amilase"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "parvovirose",
+      "doença da bochecha esbofeteada"
+    ]
   },
   {
     "id": "028",
@@ -359,9 +768,24 @@
     "specialty": "Infectologia",
     "difficulty": "Intermediário",
     "description": "Paciente jovem apresenta febre prolongada, fadiga intensa, dor de garganta e aumento de linfonodos.",
-    "vitalSigns": { "pa": "110/70", "fc": 92, "sao2": 98, "temp": 38.2, "fr": 18 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 92,
+      "sao2": 98,
+      "temp": 38.2,
+      "fr": 18
+    },
     "correctDiagnosis": "Mononucleose Infecciosa (Vírus Epstein-Barr)",
-    "unnecessaryExams": ["Colonoscopia", "Tomografia de Crânio"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Tomografia de Crânio"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "doença do beijo",
+      "mono"
+    ]
   },
   {
     "id": "029",
@@ -372,9 +796,24 @@
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
     "description": "Criança com dor de garganta evolui com febre alta e pele áspera 'em lixa'. Língua em aspecto de framboesa.",
-    "vitalSigns": { "pa": "105/70", "fc": 112, "sao2": 97, "temp": 39.1, "fr": 24 },
+    "vitalSigns": {
+      "pa": "105/70",
+      "fc": 112,
+      "sao2": 97,
+      "temp": 39.1,
+      "fr": 24
+    },
     "correctDiagnosis": "Escarlatina (Streptococcus pyogenes)",
-    "unnecessaryExams": ["Eletroencefalograma", "Raio-X de Coluna"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Raio-X de Coluna"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "escarlatina",
+      "língua de morango"
+    ]
   },
   {
     "id": "030",
@@ -385,9 +824,23 @@
     "specialty": "Pediatria",
     "difficulty": "Avançado",
     "description": "Criança com febre alta por mais de cinco dias, conjuntivite sem secreção, lábios fissurados e edema de mãos e pés.",
-    "vitalSigns": { "pa": "100/65", "fc": 125, "sao2": 96, "temp": 39.4, "fr": 28 },
+    "vitalSigns": {
+      "pa": "100/65",
+      "fc": 125,
+      "sao2": 96,
+      "temp": 39.4,
+      "fr": 28
+    },
     "correctDiagnosis": "Doença de Kawasaki",
-    "unnecessaryExams": ["Endoscopia Digestiva", "Cintilografia Óssea"]
+    "unnecessaryExams": [
+      "Endoscopia Digestiva",
+      "Cintilografia Óssea"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "doença de kawasaki"
+    ]
   },
   {
     "id": "031",
@@ -398,9 +851,24 @@
     "specialty": "Infectologia",
     "difficulty": "Intermediário",
     "description": "Paciente com história de viagem recente apresenta ciclos de calafrios intensos, febre muito alta e sudorese profusa.",
-    "vitalSigns": { "pa": "100/60", "fc": 115, "sao2": 94, "temp": 40.2, "fr": 26 },
+    "vitalSigns": {
+      "pa": "100/60",
+      "fc": 115,
+      "sao2": 94,
+      "temp": 40.2,
+      "fr": 26
+    },
     "correctDiagnosis": "Malária (Plasmodium sp.)",
-    "unnecessaryExams": ["ECG", "Colonoscopia"]
+    "unnecessaryExams": [
+      "ECG",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "ansioso",
+    "personalityTraits": "Fala rápido, interrompe o médico, repete a mesma pergunta várias vezes e demonstra preocupação excessiva com cada sintoma.",
+    "colloquialDiagnosis": [
+      "malaria",
+      "maleita"
+    ]
   },
   {
     "id": "032",
@@ -411,9 +879,24 @@
     "specialty": "Infectologia",
     "difficulty": "Iniciante",
     "description": "Paciente apresenta pápulas no local de um ferimento prévio causado por gato, evoluindo para íngua dolorosa regional.",
-    "vitalSigns": { "pa": "115/75", "fc": 88, "sao2": 98, "temp": 38.0, "fr": 18 },
+    "vitalSigns": {
+      "pa": "115/75",
+      "fc": 88,
+      "sao2": 98,
+      "temp": 38.0,
+      "fr": 18
+    },
     "correctDiagnosis": "Doença da Arranhadura do Gato (Bartonella henselae)",
-    "unnecessaryExams": ["Mamografia", "Raio-X de Tórax"]
+    "unnecessaryExams": [
+      "Mamografia",
+      "Raio-X de Tórax"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "doença do gato",
+      "cat scratch"
+    ]
   },
   {
     "id": "033",
@@ -424,9 +907,25 @@
     "specialty": "Ginecologia",
     "difficulty": "Iniciante",
     "description": "Mulher queixa-se de prurido intenso na vulva, acompanhado de corrimento branco e grumoso (aspecto de leite coalhado).",
-    "vitalSigns": { "pa": "110/70", "fc": 78, "sao2": 99, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 78,
+      "sao2": 99,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Candidíase Vulvovaginal",
-    "unnecessaryExams": ["Colonoscopia", "ECG"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "ECG"
+    ],
+    "patientPersonality": "tagarela",
+    "personalityTraits": "Divaga, conta histórias paralelas da família e do trabalho antes de chegar ao ponto da queixa.",
+    "colloquialDiagnosis": [
+      "sapinho",
+      "corrimento branco",
+      "candida"
+    ]
   },
   {
     "id": "034",
@@ -437,9 +936,24 @@
     "specialty": "Ginecologia",
     "difficulty": "Iniciante",
     "description": "Paciente apresenta corrimento abundante amarelo-esverdeado e irritação vulvar. Colo do útero com aspecto de framboesa.",
-    "vitalSigns": { "pa": "110/70", "fc": 82, "sao2": 98, "temp": 37.0, "fr": 16 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 82,
+      "sao2": 98,
+      "temp": 37.0,
+      "fr": 16
+    },
     "correctDiagnosis": "Tricomoníase (Trichomonas vaginalis)",
-    "unnecessaryExams": ["Raio-X de Tórax", "Eletroencefalograma"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "Eletroencefalograma"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "corrimento amarelado",
+      "tricomonas"
+    ]
   },
   {
     "id": "035",
@@ -450,9 +964,25 @@
     "specialty": "Obstetrícia",
     "difficulty": "Avançado",
     "description": "Gestante com mais de 20 semanas apresenta pressão arterial elevada associada a cefaleia e alterações visuais.",
-    "vitalSigns": { "pa": "160/105", "fc": 95, "sao2": 97, "temp": 36.8, "fr": 18 },
+    "vitalSigns": {
+      "pa": "160/105",
+      "fc": 95,
+      "sao2": 97,
+      "temp": 36.8,
+      "fr": 18
+    },
     "correctDiagnosis": "Pré-Eclâmpsia",
-    "unnecessaryExams": ["Colonoscopia", "Ressonância de Ombro"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Ressonância de Ombro"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "pressão alta da gravidez",
+      "pre eclampsia",
+      "eclampsia"
+    ]
   },
   {
     "id": "036",
@@ -463,9 +993,24 @@
     "specialty": "Ginecologia",
     "difficulty": "Intermediário",
     "description": "Adolescente que nunca menstruou é avaliada quanto ao desenvolvimento dos caracteres sexuais e anatomia genital.",
-    "vitalSigns": { "pa": "110/70", "fc": 72, "sao2": 99, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 72,
+      "sao2": 99,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Amenorreia Primária",
-    "unnecessaryExams": ["ECG", "Raio-X de Tórax"]
+    "unnecessaryExams": [
+      "ECG",
+      "Raio-X de Tórax"
+    ],
+    "patientPersonality": "desconfiado",
+    "personalityTraits": "Questiona cada pergunta do médico, pede justificativas (\"para que isso?\") e demora a abrir-se.",
+    "colloquialDiagnosis": [
+      "falta de menstruação",
+      "menstruação ausente"
+    ]
   },
   {
     "id": "037",
@@ -476,9 +1021,23 @@
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
     "description": "Paciente idosa com varizes apresenta placas avermelhadas e descamativas no terço inferior das pernas com prurido.",
-    "vitalSigns": { "pa": "135/85", "fc": 80, "sao2": 96, "temp": 36.5, "fr": 18 },
+    "vitalSigns": {
+      "pa": "135/85",
+      "fc": 80,
+      "sao2": 96,
+      "temp": 36.5,
+      "fr": 18
+    },
     "correctDiagnosis": "Dermatite de Estase",
-    "unnecessaryExams": ["Eletroencefalograma", "Colonoscopia"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "tagarela",
+    "personalityTraits": "Divaga, conta histórias paralelas da família e do trabalho antes de chegar ao ponto da queixa.",
+    "colloquialDiagnosis": [
+      "inflamação por má circulação"
+    ]
   },
   {
     "id": "038",
@@ -489,9 +1048,25 @@
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
     "description": "Paciente com histórico de alergias apresenta eczema crônico localizado nas dobras dos cotovelos e joelhos.",
-    "vitalSigns": { "pa": "110/70", "fc": 78, "sao2": 98, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 78,
+      "sao2": 98,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Dermatite Atópica",
-    "unnecessaryExams": ["ECG", "Raio-X de Abdome"]
+    "unnecessaryExams": [
+      "ECG",
+      "Raio-X de Abdome"
+    ],
+    "patientPersonality": "desconfiado",
+    "personalityTraits": "Questiona cada pergunta do médico, pede justificativas (\"para que isso?\") e demora a abrir-se.",
+    "colloquialDiagnosis": [
+      "eczema",
+      "pele atopica",
+      "alergia de pele"
+    ]
   },
   {
     "id": "039",
@@ -502,9 +1077,24 @@
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
     "description": "Homem apresenta manchas vermelhas e úmidas na virilha, com bordas bem definidas, poupando a bolsa escrotal.",
-    "vitalSigns": { "pa": "130/85", "fc": 85, "sao2": 97, "temp": 36.7, "fr": 18 },
+    "vitalSigns": {
+      "pa": "130/85",
+      "fc": 85,
+      "sao2": 97,
+      "temp": 36.7,
+      "fr": 18
+    },
     "correctDiagnosis": "Tinea Cruris (Micose da Virilha)",
-    "unnecessaryExams": ["Eletroencefalograma", "Ressonância de Joelho"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Ressonância de Joelho"
+    ],
+    "patientPersonality": "ansioso",
+    "personalityTraits": "Fala rápido, interrompe o médico, repete a mesma pergunta várias vezes e demonstra preocupação excessiva com cada sintoma.",
+    "colloquialDiagnosis": [
+      "micose da virilha",
+      "frieira na virilha"
+    ]
   },
   {
     "id": "040",
@@ -515,9 +1105,24 @@
     "specialty": "Dermatologia",
     "difficulty": "Intermediário",
     "description": "Início súbito de febre seguido pelo aparecimento de placa vermelha viva, quente e dolorosa com limites bem demarcados.",
-    "vitalSigns": { "pa": "120/80", "fc": 102, "sao2": 95, "temp": 38.7, "fr": 22 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 102,
+      "sao2": 95,
+      "temp": 38.7,
+      "fr": 22
+    },
     "correctDiagnosis": "Erisipela (Streptococcus pyogenes)",
-    "unnecessaryExams": ["Colonoscopia", "Eletroencefalograma"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Eletroencefalograma"
+    ],
+    "patientPersonality": "estoico",
+    "personalityTraits": "Subestima a dor, dá respostas curtas e diz frases como \"não é nada demais, doutor\", mesmo diante de quadro grave.",
+    "colloquialDiagnosis": [
+      "infecção na perna",
+      "erisipela"
+    ]
   },
   {
     "id": "041",
@@ -528,9 +1133,25 @@
     "specialty": "Psiquiatria",
     "difficulty": "Intermediário",
     "description": "Paciente relata ataques súbitos de medo intenso, acompanhados de palpitações, falta de ar e medo de morrer.",
-    "vitalSigns": { "pa": "130/85", "fc": 115, "sao2": 98, "temp": 36.5, "fr": 24 },
+    "vitalSigns": {
+      "pa": "130/85",
+      "fc": 115,
+      "sao2": 98,
+      "temp": 36.5,
+      "fr": 24
+    },
     "correctDiagnosis": "Transtorno de Pânico",
-    "unnecessaryExams": ["Eletroencefalograma", "Ressonância de Crânio"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Ressonância de Crânio"
+    ],
+    "patientPersonality": "ansioso",
+    "personalityTraits": "Fala rápido, interrompe o médico, repete a mesma pergunta várias vezes e demonstra preocupação excessiva com cada sintoma.",
+    "colloquialDiagnosis": [
+      "síndrome do pânico",
+      "crise de pânico",
+      "ataque de pânico"
+    ]
   },
   {
     "id": "042",
@@ -541,9 +1162,24 @@
     "specialty": "Psiquiatria",
     "difficulty": "Intermediário",
     "description": "Paciente apresenta perda súbita de visão ou paralisia após estressor emocional, com exames neurológicos normais.",
-    "vitalSigns": { "pa": "115/75", "fc": 80, "sao2": 99, "temp": 36.6, "fr": 16 },
+    "vitalSigns": {
+      "pa": "115/75",
+      "fc": 80,
+      "sao2": 99,
+      "temp": 36.6,
+      "fr": 16
+    },
     "correctDiagnosis": "Transtorno Conversivo",
-    "unnecessaryExams": ["RNM de Crânio", "Eletroneuromiografia"]
+    "unnecessaryExams": [
+      "RNM de Crânio",
+      "Eletroneuromiografia"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "histeria",
+      "conversão"
+    ]
   },
   {
     "id": "043",
@@ -554,9 +1190,25 @@
     "specialty": "Psiquiatria",
     "difficulty": "Avançado",
     "description": "Jovem apresenta isolamento progressivo e delírios de perseguição, acreditando estar sendo vigiado.",
-    "vitalSigns": { "pa": "110/70", "fc": 88, "sao2": 98, "temp": 36.5, "fr": 18 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 88,
+      "sao2": 98,
+      "temp": 36.5,
+      "fr": 18
+    },
     "correctDiagnosis": "Esquizofrenia (Surto Psicótico)",
-    "unnecessaryExams": ["Colonoscopia", "Raio-X de Tórax"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Raio-X de Tórax"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "surto psicótico",
+      "loucura",
+      "psicose"
+    ]
   },
   {
     "id": "044",
@@ -567,9 +1219,24 @@
     "specialty": "Oftalmologia",
     "difficulty": "Intermediário",
     "description": "Paciente apresenta dor ocular intensa, visão borrada e percepção de halos coloridos ao redor das luzes.",
-    "vitalSigns": { "pa": "160/95", "fc": 95, "sao2": 98, "temp": 36.5, "fr": 18 },
+    "vitalSigns": {
+      "pa": "160/95",
+      "fc": 95,
+      "sao2": 98,
+      "temp": 36.5,
+      "fr": 18
+    },
     "correctDiagnosis": "Glaucoma Agudo (Ângulo Fechado)",
-    "unnecessaryExams": ["ECG", "Colonoscopia"]
+    "unnecessaryExams": [
+      "ECG",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "pressão alta no olho",
+      "glaucoma"
+    ]
   },
   {
     "id": "045",
@@ -580,9 +1247,24 @@
     "specialty": "Gastroenterologia",
     "difficulty": "Iniciante",
     "description": "Paciente queixa-se de sensação de empachamento pós-prandial ou dor no estômago há meses, com endoscopia normal.",
-    "vitalSigns": { "pa": "120/80", "fc": 76, "sao2": 99, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 76,
+      "sao2": 99,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Dispepsia Funcional",
-    "unnecessaryExams": ["Eletroencefalograma", "Ressonância de Tórax"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Ressonância de Tórax"
+    ],
+    "patientPersonality": "desconfiado",
+    "personalityTraits": "Questiona cada pergunta do médico, pede justificativas (\"para que isso?\") e demora a abrir-se.",
+    "colloquialDiagnosis": [
+      "má digestão",
+      "estômago ruim"
+    ]
   },
   {
     "id": "046",
@@ -593,9 +1275,23 @@
     "specialty": "Pediatria",
     "difficulty": "Avançado",
     "description": "Recém-nascido com 48h de vida apresenta falha na eliminação de mecônio, distensão abdominal e vômitos biliosos.",
-    "vitalSigns": { "pa": "65/40", "fc": 145, "sao2": 96, "temp": 37.2, "fr": 45 },
+    "vitalSigns": {
+      "pa": "65/40",
+      "fc": 145,
+      "sao2": 96,
+      "temp": 37.2,
+      "fr": 45
+    },
     "correctDiagnosis": "Doença de Hirschsprung",
-    "unnecessaryExams": ["Ecocardiograma", "Dosagem de Vitamina B12"]
+    "unnecessaryExams": [
+      "Ecocardiograma",
+      "Dosagem de Vitamina B12"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "megacólon congênito"
+    ]
   },
   {
     "id": "047",
@@ -606,9 +1302,24 @@
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
     "description": "Lactente com atraso no desenvolvimento, constipação crônica, macroglossia e icterícia prolongada.",
-    "vitalSigns": { "pa": "80/50", "fc": 90, "sao2": 98, "temp": 36.2, "fr": 28 },
+    "vitalSigns": {
+      "pa": "80/50",
+      "fc": 90,
+      "sao2": 98,
+      "temp": 36.2,
+      "fr": 28
+    },
     "correctDiagnosis": "Hipotireoidismo Congênito",
-    "unnecessaryExams": ["Raio-X de Tórax", "Colonoscopia"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "tireoide preguiçosa",
+      "tireoide baixa"
+    ]
   },
   {
     "id": "048",
@@ -619,9 +1330,23 @@
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
     "description": "Criança com placa elevada e inflamatória no couro cabeludo, com pústulas e microabscessos.",
-    "vitalSigns": { "pa": "100/60", "fc": 95, "sao2": 99, "temp": 37.8, "fr": 22 },
+    "vitalSigns": {
+      "pa": "100/60",
+      "fc": 95,
+      "sao2": 99,
+      "temp": 37.8,
+      "fr": 22
+    },
     "correctDiagnosis": "Kerion Celsi (Tinea Capitis Inflamatória)",
-    "unnecessaryExams": ["ECG", "Ureia e Creatinina"]
+    "unnecessaryExams": [
+      "ECG",
+      "Ureia e Creatinina"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "micose no couro cabeludo"
+    ]
   },
   {
     "id": "049",
@@ -632,9 +1357,24 @@
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
     "description": "Bebê de 25 dias com prurido intenso, pápulas e crostas em palmas e plantas. Mãe com lesões em mamas.",
-    "vitalSigns": { "pa": "75/45", "fc": 120, "sao2": 98, "temp": 36.7, "fr": 32 },
+    "vitalSigns": {
+      "pa": "75/45",
+      "fc": 120,
+      "sao2": 98,
+      "temp": 36.7,
+      "fr": 32
+    },
     "correctDiagnosis": "Escabiose (Sarna)",
-    "unnecessaryExams": ["Hemocultura", "Raio-X de Abdome"]
+    "unnecessaryExams": [
+      "Hemocultura",
+      "Raio-X de Abdome"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "sarna",
+      "sarna humana"
+    ]
   },
   {
     "id": "050",
@@ -645,9 +1385,26 @@
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
     "description": "Lactente de 2 meses com edema, vermelhidão e dor no canto interno do olho com refluxo purulento.",
-    "vitalSigns": { "pa": "85/55", "fc": 115, "sao2": 99, "temp": 37.4, "fr": 26 },
+    "vitalSigns": {
+      "pa": "85/55",
+      "fc": 115,
+      "sao2": 99,
+      "temp": 37.4,
+      "fr": 26
+    },
     "correctDiagnosis": "Dacriocistite Aguda",
-    "unnecessaryExams": ["Eletroencefalograma", "Troponina"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Troponina"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "infecção no canal lacrimal",
+      "olho lacrimejando infectado",
+      "infecção urinária",
+      "itu"
+    ]
   },
   {
     "id": "051",
@@ -658,9 +1415,24 @@
     "specialty": "Ginecologia",
     "difficulty": "Avançado",
     "description": "Mulher de 40 anos com dor pélvica crônica e infertilidade. Biópsia revela glândulas endometriais ectópicas.",
-    "vitalSigns": { "pa": "110/70", "fc": 72, "sao2": 99, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 72,
+      "sao2": 99,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Endometriose",
-    "unnecessaryExams": ["Raio-X de Coluna", "Cintilografia Miocárdica"]
+    "unnecessaryExams": [
+      "Raio-X de Coluna",
+      "Cintilografia Miocárdica"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "endometriose",
+      "cólica forte de menstruação"
+    ]
   },
   {
     "id": "052",
@@ -671,9 +1443,21 @@
     "specialty": "Ginecologia",
     "difficulty": "Avançado",
     "description": "Achado incidental em histerectomia: pequenas neoplasias benignas de origem mesotelial na serosa uterina.",
-    "vitalSigns": { "pa": "120/80", "fc": 70, "sao2": 98, "temp": 36.6, "fr": 14 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 70,
+      "sao2": 98,
+      "temp": 36.6,
+      "fr": 14
+    },
     "correctDiagnosis": "Tumor Adenomatoide",
-    "unnecessaryExams": ["D-Dímero", "Endoscopia"]
+    "unnecessaryExams": [
+      "D-Dímero",
+      "Endoscopia"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": []
   },
   {
     "id": "053",
@@ -684,9 +1468,24 @@
     "specialty": "Obstetrícia",
     "difficulty": "Intermediário",
     "description": "Gestante no 2º trimestre com teste rápido positivo para sífilis e VDRL 1:32.",
-    "vitalSigns": { "pa": "115/75", "fc": 88, "sao2": 97, "temp": 36.8, "fr": 18 },
+    "vitalSigns": {
+      "pa": "115/75",
+      "fc": 88,
+      "sao2": 97,
+      "temp": 36.8,
+      "fr": 18
+    },
     "correctDiagnosis": "Sífilis Gestacional",
-    "unnecessaryExams": ["Colonoscopia", "Ressonância de Crânio"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Ressonância de Crânio"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "sifilis",
+      "cancro duro"
+    ]
   },
   {
     "id": "054",
@@ -697,9 +1496,23 @@
     "specialty": "Ginecologia",
     "difficulty": "Iniciante",
     "description": "Mulher na peri-menopausa com sangramento uterino anormal. USG mostra crescimento focal de células endometriais.",
-    "vitalSigns": { "pa": "125/80", "fc": 82, "sao2": 98, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "125/80",
+      "fc": 82,
+      "sao2": 98,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Pólipo Endometrial",
-    "unnecessaryExams": ["Troponina", "Raio-X de Pelve"]
+    "unnecessaryExams": [
+      "Troponina",
+      "Raio-X de Pelve"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "polipo no útero"
+    ]
   },
   {
     "id": "055",
@@ -710,9 +1523,24 @@
     "specialty": "Ginecologia",
     "difficulty": "Avançado",
     "description": "Amenorreia secundária após curetagem uterina complicada. Suspeita de sinéquias uterinas.",
-    "vitalSigns": { "pa": "110/70", "fc": 74, "sao2": 99, "temp": 36.4, "fr": 14 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 74,
+      "sao2": 99,
+      "temp": 36.4,
+      "fr": 14
+    },
     "correctDiagnosis": "Síndrome de Asherman",
-    "unnecessaryExams": ["ECG", "Hemocultura"]
+    "unnecessaryExams": [
+      "ECG",
+      "Hemocultura"
+    ],
+    "patientPersonality": "desconfiado",
+    "personalityTraits": "Questiona cada pergunta do médico, pede justificativas (\"para que isso?\") e demora a abrir-se.",
+    "colloquialDiagnosis": [
+      "sinéquias uterinas",
+      "aderências uterinas"
+    ]
   },
   {
     "id": "056",
@@ -723,9 +1551,24 @@
     "specialty": "Ginecologia",
     "difficulty": "Iniciante",
     "description": "Mulher de 35 anos com cólicas intensas, peso pélvico e nódulos palpáveis ao toque vaginal.",
-    "vitalSigns": { "pa": "120/80", "fc": 78, "sao2": 98, "temp": 36.6, "fr": 16 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 78,
+      "sao2": 98,
+      "temp": 36.6,
+      "fr": 16
+    },
     "correctDiagnosis": "Leiomiomatose Uterina",
-    "unnecessaryExams": ["Eletroencefalograma", "Amilase"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Amilase"
+    ],
+    "patientPersonality": "desconfiado",
+    "personalityTraits": "Questiona cada pergunta do médico, pede justificativas (\"para que isso?\") e demora a abrir-se.",
+    "colloquialDiagnosis": [
+      "mioma",
+      "miomas no útero"
+    ]
   },
   {
     "id": "057",
@@ -736,9 +1579,24 @@
     "specialty": "Ginecologia",
     "difficulty": "Intermediário",
     "description": "Mulher de 65 anos com sangramento vaginal pós-menopausa. Espessamento endometrial ao USG.",
-    "vitalSigns": { "pa": "135/85", "fc": 76, "sao2": 97, "temp": 36.5, "fr": 18 },
+    "vitalSigns": {
+      "pa": "135/85",
+      "fc": 76,
+      "sao2": 97,
+      "temp": 36.5,
+      "fr": 18
+    },
     "correctDiagnosis": "Carcinoma de Endométrio",
-    "unnecessaryExams": ["Raio-X de Tórax", "Troponina"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "Troponina"
+    ],
+    "patientPersonality": "deprimido",
+    "personalityTraits": "Apático, fala monossilábica, baixa energia, evita contato visual e demonstra desânimo generalizado.",
+    "colloquialDiagnosis": [
+      "câncer do útero",
+      "câncer de endométrio"
+    ]
   },
   {
     "id": "058",
@@ -749,9 +1607,24 @@
     "specialty": "Infectologia",
     "difficulty": "Avançado",
     "description": "Grupo com febre prolongada, mialgia e edema de face após ingestão de açaí artesanal em área endêmica.",
-    "vitalSigns": { "pa": "100/60", "fc": 110, "sao2": 95, "temp": 38.9, "fr": 22 },
+    "vitalSigns": {
+      "pa": "100/60",
+      "fc": 110,
+      "sao2": 95,
+      "temp": 38.9,
+      "fr": 22
+    },
     "correctDiagnosis": "Doença de Chagas Aguda",
-    "unnecessaryExams": ["Colonoscopia", "Mamografia"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Mamografia"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "doença de chagas",
+      "chagas"
+    ]
   },
   {
     "id": "059",
@@ -762,9 +1635,24 @@
     "specialty": "Infectologia",
     "difficulty": "Intermediário",
     "description": "Úlcera de bordas elevadas e fundo granulomatoso na perna, indolor, evolução de 6 meses.",
-    "vitalSigns": { "pa": "120/80", "fc": 80, "sao2": 98, "temp": 36.8, "fr": 16 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 80,
+      "sao2": 98,
+      "temp": 36.8,
+      "fr": 16
+    },
     "correctDiagnosis": "Leishmaniose Cutânea",
-    "unnecessaryExams": ["ECG", "Gasometria Arterial"]
+    "unnecessaryExams": [
+      "ECG",
+      "Gasometria Arterial"
+    ],
+    "patientPersonality": "ansioso",
+    "personalityTraits": "Fala rápido, interrompe o médico, repete a mesma pergunta várias vezes e demonstra preocupação excessiva com cada sintoma.",
+    "colloquialDiagnosis": [
+      "ferida brava",
+      "úlcera de bauru"
+    ]
   },
   {
     "id": "060",
@@ -775,9 +1663,23 @@
     "specialty": "Infectologia",
     "difficulty": "Avançado",
     "description": "Febre alta e bradicardia relativa (Sinal de Faget), evoluindo para icterícia e hematêmese.",
-    "vitalSigns": { "pa": "90/50", "fc": 55, "sao2": 92, "temp": 39.5, "fr": 26 },
+    "vitalSigns": {
+      "pa": "90/50",
+      "fc": 55,
+      "sao2": 92,
+      "temp": 39.5,
+      "fr": 26
+    },
     "correctDiagnosis": "Febre Amarela",
-    "unnecessaryExams": ["Colonoscopia", "Eletroencefalograma"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Eletroencefalograma"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "febre amarela"
+    ]
   },
   {
     "id": "061",
@@ -788,9 +1690,23 @@
     "specialty": "Obstetrícia",
     "difficulty": "Intermediário",
     "description": "Gestante com exantema pruriginoso, febre baixa e conjuntivite não purulenta.",
-    "vitalSigns": { "pa": "110/70", "fc": 88, "sao2": 98, "temp": 37.6, "fr": 20 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 88,
+      "sao2": 98,
+      "temp": 37.6,
+      "fr": 20
+    },
     "correctDiagnosis": "Zika Vírus",
-    "unnecessaryExams": ["Endoscopia", "Troponina"]
+    "unnecessaryExams": [
+      "Endoscopia",
+      "Troponina"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "zika"
+    ]
   },
   {
     "id": "062",
@@ -801,9 +1717,24 @@
     "specialty": "Infectologia",
     "difficulty": "Intermediário",
     "description": "Artralgia incapacitante em mãos e pés após 6 meses de quadro agudo de arbovirose.",
-    "vitalSigns": { "pa": "125/80", "fc": 82, "sao2": 99, "temp": 36.5, "fr": 18 },
+    "vitalSigns": {
+      "pa": "125/80",
+      "fc": 82,
+      "sao2": 99,
+      "temp": 36.5,
+      "fr": 18
+    },
     "correctDiagnosis": "Febre Chikungunya (Fase Crônica)",
-    "unnecessaryExams": ["Raio-X de Crânio", "Hemocultura"]
+    "unnecessaryExams": [
+      "Raio-X de Crânio",
+      "Hemocultura"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "chikungunya",
+      "febre chikungunya"
+    ]
   },
   {
     "id": "063",
@@ -814,9 +1745,24 @@
     "specialty": "Infectologia",
     "difficulty": "Avançado",
     "description": "Febre longa, emagrecimento acentuado e hepatosplenomegalia maciça.",
-    "vitalSigns": { "pa": "100/60", "fc": 105, "sao2": 94, "temp": 38.5, "fr": 22 },
+    "vitalSigns": {
+      "pa": "100/60",
+      "fc": 105,
+      "sao2": 94,
+      "temp": 38.5,
+      "fr": 22
+    },
     "correctDiagnosis": "Leishmaniose Visceral",
-    "unnecessaryExams": ["Ecocardiograma", "Colonoscopia"]
+    "unnecessaryExams": [
+      "Ecocardiograma",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "calazar",
+      "barriga d agua"
+    ]
   },
   {
     "id": "064",
@@ -827,9 +1773,26 @@
     "specialty": "Infectologia",
     "difficulty": "Avançado",
     "description": "Paroxismos febris, anemia grave e icterícia em viajante vindo da África.",
-    "vitalSigns": { "pa": "95/60", "fc": 118, "sao2": 91, "temp": 40.1, "fr": 26 },
+    "vitalSigns": {
+      "pa": "95/60",
+      "fc": 118,
+      "sao2": 91,
+      "temp": 40.1,
+      "fr": 26
+    },
     "correctDiagnosis": "Malária Grave",
-    "unnecessaryExams": ["Eletroencefalograma", "PSA"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "PSA"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "malaria",
+      "maleita",
+      "malaria grave",
+      "maleita grave"
+    ]
   },
   {
     "id": "065",
@@ -840,9 +1803,24 @@
     "specialty": "Infectologia",
     "difficulty": "Iniciante",
     "description": "Criança de 5 anos mordida por cão de rua na mão. Ferimento lacero-contuso.",
-    "vitalSigns": { "pa": "105/65", "fc": 110, "sao2": 99, "temp": 36.8, "fr": 24 },
+    "vitalSigns": {
+      "pa": "105/65",
+      "fc": 110,
+      "sao2": 99,
+      "temp": 36.8,
+      "fr": 24
+    },
     "correctDiagnosis": "Acidente por Animal Raivoso",
-    "unnecessaryExams": ["TC de Abdome", "Troponina"]
+    "unnecessaryExams": [
+      "TC de Abdome",
+      "Troponina"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "raiva",
+      "mordida de cachorro com raiva"
+    ]
   },
   {
     "id": "066",
@@ -853,9 +1831,24 @@
     "specialty": "Clínica Médica",
     "difficulty": "Intermediário",
     "description": "Mulher jovem com eritema malar, artrite e proteinúria importante.",
-    "vitalSigns": { "pa": "145/95", "fc": 92, "sao2": 97, "temp": 37.4, "fr": 20 },
+    "vitalSigns": {
+      "pa": "145/95",
+      "fc": 92,
+      "sao2": 97,
+      "temp": 37.4,
+      "fr": 20
+    },
     "correctDiagnosis": "Lúpus Eritematoso Sistêmico (LES)",
-    "unnecessaryExams": ["Colonoscopia", "Raio-X de Crânio"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Raio-X de Crânio"
+    ],
+    "patientPersonality": "estoico",
+    "personalityTraits": "Subestima a dor, dá respostas curtas e diz frases como \"não é nada demais, doutor\", mesmo diante de quadro grave.",
+    "colloquialDiagnosis": [
+      "lupus",
+      "doença autoimune"
+    ]
   },
   {
     "id": "067",
@@ -866,9 +1859,23 @@
     "specialty": "Oftalmologia",
     "difficulty": "Avançado",
     "description": "Perda súbita de visão por hemorragia vítrea em paciente diabético tipo 2.",
-    "vitalSigns": { "pa": "160/100", "fc": 85, "sao2": 96, "temp": 36.6, "fr": 18 },
+    "vitalSigns": {
+      "pa": "160/100",
+      "fc": 85,
+      "sao2": 96,
+      "temp": 36.6,
+      "fr": 18
+    },
     "correctDiagnosis": "Retinopatia Diabética Proliferativa",
-    "unnecessaryExams": ["Urocultura", "Troponina"]
+    "unnecessaryExams": [
+      "Urocultura",
+      "Troponina"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "problema de vista por diabetes"
+    ]
   },
   {
     "id": "068",
@@ -879,9 +1886,24 @@
     "specialty": "Endocrinologia",
     "difficulty": "Intermediário",
     "description": "Crescimento de mãos, pés e mandíbula. Cefaleia e hemianopsia bitemporal.",
-    "vitalSigns": { "pa": "150/90", "fc": 78, "sao2": 98, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "150/90",
+      "fc": 78,
+      "sao2": 98,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Acromegalia",
-    "unnecessaryExams": ["Raio-X de Tórax", "Colonoscopia"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "deprimido",
+    "personalityTraits": "Apático, fala monossilábica, baixa energia, evita contato visual e demonstra desânimo generalizado.",
+    "colloquialDiagnosis": [
+      "gigantismo",
+      "crescimento exagerado"
+    ]
   },
   {
     "id": "069",
@@ -892,9 +1914,24 @@
     "specialty": "Endocrinologia",
     "difficulty": "Iniciante",
     "description": "Sedentário com xantelasmas e níveis de triglicerídeos > 400 mg/dL.",
-    "vitalSigns": { "pa": "138/88", "fc": 80, "sao2": 98, "temp": 36.4, "fr": 16 },
+    "vitalSigns": {
+      "pa": "138/88",
+      "fc": 80,
+      "sao2": 98,
+      "temp": 36.4,
+      "fr": 16
+    },
     "correctDiagnosis": "Dislipidemia Mista",
-    "unnecessaryExams": ["Eletroencefalograma", "Hemocultura"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Hemocultura"
+    ],
+    "patientPersonality": "desconfiado",
+    "personalityTraits": "Questiona cada pergunta do médico, pede justificativas (\"para que isso?\") e demora a abrir-se.",
+    "colloquialDiagnosis": [
+      "colesterol alto",
+      "gordura no sangue"
+    ]
   },
   {
     "id": "070",
@@ -905,9 +1942,24 @@
     "specialty": "Cardiologia",
     "difficulty": "Intermediário",
     "description": "Obeso com PA 150/90 mmHg, hipertrofia ventricular esquerda e microalbuminúria.",
-    "vitalSigns": { "pa": "150/90", "fc": 88, "sao2": 97, "temp": 36.7, "fr": 18 },
+    "vitalSigns": {
+      "pa": "150/90",
+      "fc": 88,
+      "sao2": 97,
+      "temp": 36.7,
+      "fr": 18
+    },
     "correctDiagnosis": "Hipertensão Arterial Sistêmica",
-    "unnecessaryExams": ["Colonoscopia", "Amilase"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Amilase"
+    ],
+    "patientPersonality": "deprimido",
+    "personalityTraits": "Apático, fala monossilábica, baixa energia, evita contato visual e demonstra desânimo generalizado.",
+    "colloquialDiagnosis": [
+      "pressão alta",
+      "hipertensao"
+    ]
   },
   {
     "id": "071",
@@ -918,9 +1970,24 @@
     "specialty": "Hematologia",
     "difficulty": "Intermediário",
     "description": "Idoso com glossite, perda de sensibilidade vibratória e irritabilidade.",
-    "vitalSigns": { "pa": "110/60", "fc": 98, "sao2": 95, "temp": 36.8, "fr": 20 },
+    "vitalSigns": {
+      "pa": "110/60",
+      "fc": 98,
+      "sao2": 95,
+      "temp": 36.8,
+      "fr": 20
+    },
     "correctDiagnosis": "Anemia Megaloblástica",
-    "unnecessaryExams": ["ECG", "Raio-X de Joelho"]
+    "unnecessaryExams": [
+      "ECG",
+      "Raio-X de Joelho"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "anemia por falta de b12",
+      "anemia perniciosa"
+    ]
   },
   {
     "id": "072",
@@ -931,9 +1998,24 @@
     "specialty": "Nefrologia",
     "difficulty": "Avançado",
     "description": "Paciente com uremia apresentando unhas de Lindsay (brancas proximalmente).",
-    "vitalSigns": { "pa": "170/110", "fc": 94, "sao2": 93, "temp": 36.2, "fr": 22 },
+    "vitalSigns": {
+      "pa": "170/110",
+      "fc": 94,
+      "sao2": 93,
+      "temp": 36.2,
+      "fr": 22
+    },
     "correctDiagnosis": "Insuficiência Renal Crônica",
-    "unnecessaryExams": ["Colonoscopia", "Troponina"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Troponina"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "rim que não funciona",
+      "falência renal"
+    ]
   },
   {
     "id": "073",
@@ -944,9 +2026,24 @@
     "specialty": "Reumatologia",
     "difficulty": "Intermediário",
     "description": "Rigidez matinal e sinovite em articulações interfalangianas proximais.",
-    "vitalSigns": { "pa": "120/80", "fc": 85, "sao2": 98, "temp": 37.2, "fr": 18 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 85,
+      "sao2": 98,
+      "temp": 37.2,
+      "fr": 18
+    },
     "correctDiagnosis": "Artrite Reumatoide",
-    "unnecessaryExams": ["PSA", "Troponina"]
+    "unnecessaryExams": [
+      "PSA",
+      "Troponina"
+    ],
+    "patientPersonality": "estoico",
+    "personalityTraits": "Subestima a dor, dá respostas curtas e diz frases como \"não é nada demais, doutor\", mesmo diante de quadro grave.",
+    "colloquialDiagnosis": [
+      "reumatismo",
+      "artrite"
+    ]
   },
   {
     "id": "074",
@@ -957,9 +2054,23 @@
     "specialty": "Hepatologia",
     "difficulty": "Avançado",
     "description": "Esplenomegalia com pancitopenia no hemograma em paciente cirrótico.",
-    "vitalSigns": { "pa": "100/60", "fc": 90, "sao2": 96, "temp": 36.5, "fr": 18 },
+    "vitalSigns": {
+      "pa": "100/60",
+      "fc": 90,
+      "sao2": 96,
+      "temp": 36.5,
+      "fr": 18
+    },
     "correctDiagnosis": "Hiperesplenismo",
-    "unnecessaryExams": ["ECG", "Raio-X de Crânio"]
+    "unnecessaryExams": [
+      "ECG",
+      "Raio-X de Crânio"
+    ],
+    "patientPersonality": "ansioso",
+    "personalityTraits": "Fala rápido, interrompe o médico, repete a mesma pergunta várias vezes e demonstra preocupação excessiva com cada sintoma.",
+    "colloquialDiagnosis": [
+      "baço aumentado"
+    ]
   },
   {
     "id": "075",
@@ -970,9 +2081,24 @@
     "specialty": "Proctologia",
     "difficulty": "Intermediário",
     "description": "Diabético com dor anorretal intensa, sensibilidade profunda e febre.",
-    "vitalSigns": { "pa": "130/85", "fc": 108, "sao2": 97, "temp": 38.8, "fr": 20 },
+    "vitalSigns": {
+      "pa": "130/85",
+      "fc": 108,
+      "sao2": 97,
+      "temp": 38.8,
+      "fr": 20
+    },
     "correctDiagnosis": "Abscesso Isquiorretal",
-    "unnecessaryExams": ["Troponina", "Eletroencefalograma"]
+    "unnecessaryExams": [
+      "Troponina",
+      "Eletroencefalograma"
+    ],
+    "patientPersonality": "tagarela",
+    "personalityTraits": "Divaga, conta histórias paralelas da família e do trabalho antes de chegar ao ponto da queixa.",
+    "colloquialDiagnosis": [
+      "abscesso anal",
+      "pus perto do ânus"
+    ]
   },
   {
     "id": "076",
@@ -983,9 +2109,25 @@
     "specialty": "Neurologia",
     "difficulty": "Intermediário",
     "description": "Início súbito de afasia e hemiparesia à direita em paciente de 60 anos.",
-    "vitalSigns": { "pa": "185/105", "fc": 92, "sao2": 94, "temp": 36.6, "fr": 20 },
+    "vitalSigns": {
+      "pa": "185/105",
+      "fc": 92,
+      "sao2": 94,
+      "temp": 36.6,
+      "fr": 20
+    },
     "correctDiagnosis": "Acidente Vascular Encefálico Isquêmico",
-    "unnecessaryExams": ["Amilase", "Colonoscopia"]
+    "unnecessaryExams": [
+      "Amilase",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "derrame",
+      "avc isquemico",
+      "avc"
+    ]
   },
   {
     "id": "077",
@@ -996,9 +2138,24 @@
     "specialty": "Neurologia",
     "difficulty": "Intermediário",
     "description": "Comprometimento da função executiva, incontinência e marcha apráxica em hipertenso.",
-    "vitalSigns": { "pa": "155/95", "fc": 78, "sao2": 98, "temp": 36.4, "fr": 16 },
+    "vitalSigns": {
+      "pa": "155/95",
+      "fc": 78,
+      "sao2": 98,
+      "temp": 36.4,
+      "fr": 16
+    },
     "correctDiagnosis": "Demência Vascular",
-    "unnecessaryExams": ["Hemocultura", "Raio-X de Tórax"]
+    "unnecessaryExams": [
+      "Hemocultura",
+      "Raio-X de Tórax"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "demência",
+      "esclerose"
+    ]
   },
   {
     "id": "078",
@@ -1009,9 +2166,23 @@
     "specialty": "Clínica Médica",
     "difficulty": "Intermediário",
     "description": "Idoso com confusão mental aguda, agitação e flutuação da consciência.",
-    "vitalSigns": { "pa": "115/70", "fc": 112, "sao2": 95, "temp": 37.9, "fr": 22 },
+    "vitalSigns": {
+      "pa": "115/70",
+      "fc": 112,
+      "sao2": 95,
+      "temp": 37.9,
+      "fr": 22
+    },
     "correctDiagnosis": "Delirium (Síndrome Confusional Aguda)",
-    "unnecessaryExams": ["Troponina", "Raio-X de Pelve"]
+    "unnecessaryExams": [
+      "Troponina",
+      "Raio-X de Pelve"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "confusão mental aguda"
+    ]
   },
   {
     "id": "079",
@@ -1022,9 +2193,25 @@
     "specialty": "Neurologia",
     "difficulty": "Iniciante",
     "description": "Vertigem ao deitar ou virar na cama. Dix-Hallpike positivo para nistagmo.",
-    "vitalSigns": { "pa": "125/80", "fc": 82, "sao2": 99, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "125/80",
+      "fc": 82,
+      "sao2": 99,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Vertigem Posicional Paroxística Benigna",
-    "unnecessaryExams": ["Troponina", "Glicemia"]
+    "unnecessaryExams": [
+      "Troponina",
+      "Glicemia"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "labirintite",
+      "vppb",
+      "tontura de posição"
+    ]
   },
   {
     "id": "080",
@@ -1035,9 +2222,25 @@
     "specialty": "Neurologia",
     "difficulty": "Iniciante",
     "description": "Fosfenos seguidos de cefaleia hemicraniana pulsátil, náuseas e fotofobia.",
-    "vitalSigns": { "pa": "120/80", "fc": 88, "sao2": 99, "temp": 36.7, "fr": 18 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 88,
+      "sao2": 99,
+      "temp": 36.7,
+      "fr": 18
+    },
     "correctDiagnosis": "Enxaqueca com Aura",
-    "unnecessaryExams": ["Raio-X de Tórax", "Colonoscopia"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "tagarela",
+    "personalityTraits": "Divaga, conta histórias paralelas da família e do trabalho antes de chegar ao ponto da queixa.",
+    "colloquialDiagnosis": [
+      "enxaqueca",
+      "migrânea",
+      "dor de cabeça forte"
+    ]
   },
   {
     "id": "081",
@@ -1048,9 +2251,24 @@
     "specialty": "Psiquiatria",
     "difficulty": "Iniciante",
     "description": "Idosa com tristeza profunda, anedonia e perda de apetite.",
-    "vitalSigns": { "pa": "130/80", "fc": 72, "sao2": 98, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "130/80",
+      "fc": 72,
+      "sao2": 98,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Transtorno Depressivo Maior",
-    "unnecessaryExams": ["ECG", "Troponina"]
+    "unnecessaryExams": [
+      "ECG",
+      "Troponina"
+    ],
+    "patientPersonality": "deprimido",
+    "personalityTraits": "Apático, fala monossilábica, baixa energia, evita contato visual e demonstra desânimo generalizado.",
+    "colloquialDiagnosis": [
+      "depressão",
+      "depressao"
+    ]
   },
   {
     "id": "082",
@@ -1061,9 +2279,25 @@
     "specialty": "Psiquiatria",
     "difficulty": "Avançado",
     "description": "Jovem com isolamento, embotamento afetivo e delírio persecutório.",
-    "vitalSigns": { "pa": "115/75", "fc": 84, "sao2": 99, "temp": 36.6, "fr": 18 },
+    "vitalSigns": {
+      "pa": "115/75",
+      "fc": 84,
+      "sao2": 99,
+      "temp": 36.6,
+      "fr": 18
+    },
     "correctDiagnosis": "Esquizofrenia",
-    "unnecessaryExams": ["Raio-X de Tórax", "Colonoscopia"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "surto psicótico",
+      "loucura",
+      "psicose"
+    ]
   },
   {
     "id": "083",
@@ -1074,9 +2308,24 @@
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
     "description": "Pápula perlácea com telangiectasias no rosto com úlcera central.",
-    "vitalSigns": { "pa": "130/85", "fc": 76, "sao2": 98, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "130/85",
+      "fc": 76,
+      "sao2": 98,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Carcinoma Basocelular",
-    "unnecessaryExams": ["Troponina", "PSA"]
+    "unnecessaryExams": [
+      "Troponina",
+      "PSA"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "câncer de pele",
+      "cbc"
+    ]
   },
   {
     "id": "084",
@@ -1087,9 +2336,24 @@
     "specialty": "Dermatologia",
     "difficulty": "Intermediário",
     "description": "Nódulo em domo, coloração negro-azulada na bochecha de idoso.",
-    "vitalSigns": { "pa": "125/80", "fc": 80, "sao2": 99, "temp": 36.6, "fr": 18 },
+    "vitalSigns": {
+      "pa": "125/80",
+      "fc": 80,
+      "sao2": 99,
+      "temp": 36.6,
+      "fr": 18
+    },
     "correctDiagnosis": "Melanoma Nodular",
-    "unnecessaryExams": ["Urocultura", "ECG"]
+    "unnecessaryExams": [
+      "Urocultura",
+      "ECG"
+    ],
+    "patientPersonality": "estoico",
+    "personalityTraits": "Subestima a dor, dá respostas curtas e diz frases como \"não é nada demais, doutor\", mesmo diante de quadro grave.",
+    "colloquialDiagnosis": [
+      "câncer de pele melanoma",
+      "pinta cancerosa"
+    ]
   },
   {
     "id": "085",
@@ -1100,9 +2364,23 @@
     "specialty": "Cirurgia Geral",
     "difficulty": "Intermediário",
     "description": "Massa indolor, firme e móvel na região pré-auricular (parótida).",
-    "vitalSigns": { "pa": "120/80", "fc": 74, "sao2": 98, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 74,
+      "sao2": 98,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Adenoma Pleomórfico de Parótida",
-    "unnecessaryExams": ["Colonoscopia", "Troponina"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Troponina"
+    ],
+    "patientPersonality": "desconfiado",
+    "personalityTraits": "Questiona cada pergunta do médico, pede justificativas (\"para que isso?\") e demora a abrir-se.",
+    "colloquialDiagnosis": [
+      "tumor benigno de parótida"
+    ]
   },
   {
     "id": "086",
@@ -1113,9 +2391,24 @@
     "specialty": "Pediatria",
     "difficulty": "Avançado",
     "description": "Criança de 19 meses com massa abdominal firme e lisa, sem dor.",
-    "vitalSigns": { "pa": "110/70", "fc": 115, "sao2": 97, "temp": 36.9, "fr": 30 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 115,
+      "sao2": 97,
+      "temp": 36.9,
+      "fr": 30
+    },
     "correctDiagnosis": "Nefroblastoma (Tumor de Wilms)",
-    "unnecessaryExams": ["Eletroencefalograma", "Colonoscopia"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "tumor no rim infantil",
+      "câncer de rim infantil"
+    ]
   },
   {
     "id": "087",
@@ -1126,9 +2419,24 @@
     "specialty": "Cirurgia Geral",
     "difficulty": "Avançado",
     "description": "Icterícia obstrutiva, sinal de Courvoisier e perda de peso acentuada.",
-    "vitalSigns": { "pa": "110/65", "fc": 88, "sao2": 95, "temp": 36.7, "fr": 20 },
+    "vitalSigns": {
+      "pa": "110/65",
+      "fc": 88,
+      "sao2": 95,
+      "temp": 36.7,
+      "fr": 20
+    },
     "correctDiagnosis": "Adenocarcinoma de Pâncreas",
-    "unnecessaryExams": ["ECG", "Troponina"]
+    "unnecessaryExams": [
+      "ECG",
+      "Troponina"
+    ],
+    "patientPersonality": "desconfiado",
+    "personalityTraits": "Questiona cada pergunta do médico, pede justificativas (\"para que isso?\") e demora a abrir-se.",
+    "colloquialDiagnosis": [
+      "câncer de pâncreas",
+      "tumor de pancreas"
+    ]
   },
   {
     "id": "088",
@@ -1139,9 +2447,23 @@
     "specialty": "Urologia",
     "difficulty": "Intermediário",
     "description": "Homem de 50 anos, tabagista, com hematúria macroscópica indolor.",
-    "vitalSigns": { "pa": "140/90", "fc": 82, "sao2": 98, "temp": 36.5, "fr": 18 },
+    "vitalSigns": {
+      "pa": "140/90",
+      "fc": 82,
+      "sao2": 98,
+      "temp": 36.5,
+      "fr": 18
+    },
     "correctDiagnosis": "Carcinoma Urotelial",
-    "unnecessaryExams": ["Troponina", "Raio-X de Crânio"]
+    "unnecessaryExams": [
+      "Troponina",
+      "Raio-X de Crânio"
+    ],
+    "patientPersonality": "desconfiado",
+    "personalityTraits": "Questiona cada pergunta do médico, pede justificativas (\"para que isso?\") e demora a abrir-se.",
+    "colloquialDiagnosis": [
+      "câncer de bexiga"
+    ]
   },
   {
     "id": "089",
@@ -1152,9 +2474,23 @@
     "specialty": "Ortopedia",
     "difficulty": "Avançado",
     "description": "Adolescente com dor óssea noturna e tumefação em extremidade de tíbia.",
-    "vitalSigns": { "pa": "115/75", "fc": 95, "sao2": 99, "temp": 37.1, "fr": 20 },
+    "vitalSigns": {
+      "pa": "115/75",
+      "fc": 95,
+      "sao2": 99,
+      "temp": 37.1,
+      "fr": 20
+    },
     "correctDiagnosis": "Osteossarcoma",
-    "unnecessaryExams": ["Colonoscopia", "Eletroencefalograma"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Eletroencefalograma"
+    ],
+    "patientPersonality": "ansioso",
+    "personalityTraits": "Fala rápido, interrompe o médico, repete a mesma pergunta várias vezes e demonstra preocupação excessiva com cada sintoma.",
+    "colloquialDiagnosis": [
+      "câncer de osso"
+    ]
   },
   {
     "id": "090",
@@ -1165,9 +2501,23 @@
     "specialty": "Obstetrícia",
     "difficulty": "Avançado",
     "description": "HCG persistentemente elevado após mola hidatiforme e sangramento vaginal.",
-    "vitalSigns": { "pa": "110/70", "fc": 88, "sao2": 98, "temp": 36.6, "fr": 18 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 88,
+      "sao2": 98,
+      "temp": 36.6,
+      "fr": 18
+    },
     "correctDiagnosis": "Coriocarcinoma Gestacional",
-    "unnecessaryExams": ["ECG", "Mamografia"]
+    "unnecessaryExams": [
+      "ECG",
+      "Mamografia"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "câncer da gravidez"
+    ]
   },
   {
     "id": "091",
@@ -1178,9 +2528,23 @@
     "specialty": "Infectologia",
     "difficulty": "Iniciante",
     "description": "Paciente com febre alta súbita, dor de garganta, tosse seca e mialgia intensa com prostração.",
-    "vitalSigns": { "pa": "110/70", "fc": 105, "sao2": 96, "temp": 39.2, "fr": 22 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 105,
+      "sao2": 96,
+      "temp": 39.2,
+      "fr": 22
+    },
     "correctDiagnosis": "Influenza (Gripe)",
-    "unnecessaryExams": ["Colonoscopia", "Radiografia de Coluna"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Radiografia de Coluna"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "gripe"
+    ]
   },
   {
     "id": "092",
@@ -1191,9 +2555,24 @@
     "specialty": "Clínica Médica",
     "difficulty": "Iniciante",
     "description": "Congestão nasal, espirros e rinorreia. Estado geral preservado e febre ausente.",
-    "vitalSigns": { "pa": "120/80", "fc": 72, "sao2": 99, "temp": 36.6, "fr": 14 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 72,
+      "sao2": 99,
+      "temp": 36.6,
+      "fr": 14
+    },
     "correctDiagnosis": "Nasofaringite Aguda (Resfriado)",
-    "unnecessaryExams": ["Tomografia de Tórax", "Troponina"]
+    "unnecessaryExams": [
+      "Tomografia de Tórax",
+      "Troponina"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "resfriado",
+      "gripe leve"
+    ]
   },
   {
     "id": "093",
@@ -1204,9 +2583,23 @@
     "specialty": "Infectologia",
     "difficulty": "Iniciante",
     "description": "Febre alta, dor retro-orbitária e mialgia. Prova do laço negativa e sem sinais de alarme.",
-    "vitalSigns": { "pa": "115/75", "fc": 90, "sao2": 98, "temp": 38.8, "fr": 18 },
+    "vitalSigns": {
+      "pa": "115/75",
+      "fc": 90,
+      "sao2": 98,
+      "temp": 38.8,
+      "fr": 18
+    },
     "correctDiagnosis": "Dengue sem Sinais de Alarme",
-    "unnecessaryExams": ["Endoscopia", "Ressonância de Crânio"]
+    "unnecessaryExams": [
+      "Endoscopia",
+      "Ressonância de Crânio"
+    ],
+    "patientPersonality": "deprimido",
+    "personalityTraits": "Apático, fala monossilábica, baixa energia, evita contato visual e demonstra desânimo generalizado.",
+    "colloquialDiagnosis": [
+      "dengue"
+    ]
   },
   {
     "id": "094",
@@ -1217,9 +2610,23 @@
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
     "description": "Exantema polimórfico (máculas, pápulas e vesículas simultâneas) com prurido intenso.",
-    "vitalSigns": { "pa": "100/60", "fc": 100, "sao2": 98, "temp": 37.9, "fr": 20 },
+    "vitalSigns": {
+      "pa": "100/60",
+      "fc": 100,
+      "sao2": 98,
+      "temp": 37.9,
+      "fr": 20
+    },
     "correctDiagnosis": "Varicela",
-    "unnecessaryExams": ["Eletroencefalograma", "Urografia Excretora"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Urografia Excretora"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "catapora"
+    ]
   },
   {
     "id": "095",
@@ -1230,9 +2637,24 @@
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
     "description": "Lactente com vesículas em mãos, pés e nádegas, além de úlceras em cavidade oral.",
-    "vitalSigns": { "pa": "85/50", "fc": 110, "sao2": 99, "temp": 37.5, "fr": 24 },
+    "vitalSigns": {
+      "pa": "85/50",
+      "fc": 110,
+      "sao2": 99,
+      "temp": 37.5,
+      "fr": 24
+    },
     "correctDiagnosis": "Doença Mão-Pé-Boca (Coxsackie)",
-    "unnecessaryExams": ["Raio-X de Tórax", "Dosagem de PSA"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "Dosagem de PSA"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "mao pe boca",
+      "mão pé e boca"
+    ]
   },
   {
     "id": "096",
@@ -1243,9 +2665,23 @@
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
     "description": "Febre alta súbita e vesículas branco-acinzentadas em palato mole e úvula.",
-    "vitalSigns": { "pa": "95/60", "fc": 120, "sao2": 98, "temp": 39.4, "fr": 26 },
+    "vitalSigns": {
+      "pa": "95/60",
+      "fc": 120,
+      "sao2": 98,
+      "temp": 39.4,
+      "fr": 26
+    },
     "correctDiagnosis": "Herpangina",
-    "unnecessaryExams": ["Colonoscopia", "Ecocardiograma"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Ecocardiograma"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "feridas na boca"
+    ]
   },
   {
     "id": "097",
@@ -1256,9 +2692,24 @@
     "specialty": "Clínica Médica",
     "difficulty": "Iniciante",
     "description": "Dor de garganta intensa, febre alta e exsudato purulento em amígdalas.",
-    "vitalSigns": { "pa": "110/70", "fc": 105, "sao2": 98, "temp": 38.9, "fr": 20 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 105,
+      "sao2": 98,
+      "temp": 38.9,
+      "fr": 20
+    },
     "correctDiagnosis": "Amigdalite Bacteriana (Estreptocócica)",
-    "unnecessaryExams": ["Tomografia de Crânio", "Amilase"]
+    "unnecessaryExams": [
+      "Tomografia de Crânio",
+      "Amilase"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "inflamação na garganta",
+      "amigdalas inflamadas"
+    ]
   },
   {
     "id": "098",
@@ -1269,9 +2720,23 @@
     "specialty": "Obstetrícia",
     "difficulty": "Intermediário",
     "description": "Gestante sem sintomas com urocultura revelando >100.000 UFC/ml.",
-    "vitalSigns": { "pa": "110/70", "fc": 80, "sao2": 99, "temp": 36.6, "fr": 16 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 80,
+      "sao2": 99,
+      "temp": 36.6,
+      "fr": 16
+    },
     "correctDiagnosis": "Bacteriúria Assintomática na Gravidez",
-    "unnecessaryExams": ["Raio-X de Tórax", "Colonoscopia"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "bactéria na urina"
+    ]
   },
   {
     "id": "099",
@@ -1282,9 +2747,24 @@
     "specialty": "Obstetrícia",
     "difficulty": "Iniciante",
     "description": "Gestante com disúria e polaciúria, sem febre ou dor lombar.",
-    "vitalSigns": { "pa": "115/75", "fc": 85, "sao2": 99, "temp": 36.8, "fr": 18 },
+    "vitalSigns": {
+      "pa": "115/75",
+      "fc": 85,
+      "sao2": 99,
+      "temp": 36.8,
+      "fr": 18
+    },
     "correctDiagnosis": "Infecção do Trato Urinário Baixo (Cistite)",
-    "unnecessaryExams": ["Eletroencefalograma", "Troponina"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Troponina"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "infecção urinária",
+      "itu"
+    ]
   },
   {
     "id": "100",
@@ -1295,9 +2775,24 @@
     "specialty": "Obstetrícia",
     "difficulty": "Avançado",
     "description": "Gestante com febre, calafrios e Sinal de Giordano positivo.",
-    "vitalSigns": { "pa": "100/60", "fc": 115, "sao2": 96, "temp": 39.1, "fr": 24 },
+    "vitalSigns": {
+      "pa": "100/60",
+      "fc": 115,
+      "sao2": 96,
+      "temp": 39.1,
+      "fr": 24
+    },
     "correctDiagnosis": "Pielonefrite Aguda",
-    "unnecessaryExams": ["Mamografia", "Cintilografia Óssea"]
+    "unnecessaryExams": [
+      "Mamografia",
+      "Cintilografia Óssea"
+    ],
+    "patientPersonality": "tagarela",
+    "personalityTraits": "Divaga, conta histórias paralelas da família e do trabalho antes de chegar ao ponto da queixa.",
+    "colloquialDiagnosis": [
+      "infecção nos rins",
+      "infecção urinária alta"
+    ]
   },
   {
     "id": "101",
@@ -1308,9 +2803,23 @@
     "specialty": "Obstetrícia",
     "difficulty": "Intermediário",
     "description": "Vômitos frequentes no 1º trimestre com perda ponderal leve e sem desidratação grave.",
-    "vitalSigns": { "pa": "105/65", "fc": 90, "sao2": 98, "temp": 36.7, "fr": 18 },
+    "vitalSigns": {
+      "pa": "105/65",
+      "fc": 90,
+      "sao2": 98,
+      "temp": 36.7,
+      "fr": 18
+    },
     "correctDiagnosis": "Hiperêmese Gravídica",
-    "unnecessaryExams": ["Raio-X de Abdome", "ECG"]
+    "unnecessaryExams": [
+      "Raio-X de Abdome",
+      "ECG"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "vômito da gravidez excessivo"
+    ]
   },
   {
     "id": "102",
@@ -1321,9 +2830,24 @@
     "specialty": "Ginecologia",
     "difficulty": "Iniciante",
     "description": "Corrimento branco-acinzentado com odor fétido que piora após coito.",
-    "vitalSigns": { "pa": "120/80", "fc": 74, "sao2": 99, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 74,
+      "sao2": 99,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Vaginose Bacteriana (Gardnerella)",
-    "unnecessaryExams": ["Troponina", "Raio-X de Tórax"]
+    "unnecessaryExams": [
+      "Troponina",
+      "Raio-X de Tórax"
+    ],
+    "patientPersonality": "estoico",
+    "personalityTraits": "Subestima a dor, dá respostas curtas e diz frases como \"não é nada demais, doutor\", mesmo diante de quadro grave.",
+    "colloquialDiagnosis": [
+      "corrimento com odor",
+      "gardnerella"
+    ]
   },
   {
     "id": "103",
@@ -1334,9 +2858,24 @@
     "specialty": "Dermatologia",
     "difficulty": "Intermediário",
     "description": "Pequenas urticas após banho quente, exercício ou estresse emocional.",
-    "vitalSigns": { "pa": "125/80", "fc": 95, "sao2": 99, "temp": 37.2, "fr": 20 },
+    "vitalSigns": {
+      "pa": "125/80",
+      "fc": 95,
+      "sao2": 99,
+      "temp": 37.2,
+      "fr": 20
+    },
     "correctDiagnosis": "Urticária Colinérgica",
-    "unnecessaryExams": ["Endoscopia", "Hemocultura"]
+    "unnecessaryExams": [
+      "Endoscopia",
+      "Hemocultura"
+    ],
+    "patientPersonality": "desconfiado",
+    "personalityTraits": "Questiona cada pergunta do médico, pede justificativas (\"para que isso?\") e demora a abrir-se.",
+    "colloquialDiagnosis": [
+      "alergia de pele",
+      "urticária"
+    ]
   },
   {
     "id": "104",
@@ -1347,9 +2886,23 @@
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
     "description": "Eczema pruriginoso em lóbulo da orelha e região umbilical (contato com metal).",
-    "vitalSigns": { "pa": "110/70", "fc": 72, "sao2": 99, "temp": 36.5, "fr": 14 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 72,
+      "sao2": 99,
+      "temp": 36.5,
+      "fr": 14
+    },
     "correctDiagnosis": "Dermatite de Contato Alérgica",
-    "unnecessaryExams": ["ECG", "Glicemia de Jejum"]
+    "unnecessaryExams": [
+      "ECG",
+      "Glicemia de Jejum"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "alergia de contato"
+    ]
   },
   {
     "id": "105",
@@ -1360,9 +2913,23 @@
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
     "description": "Pele de idoso com aspecto de porcelana craquelada e fissuras lineares.",
-    "vitalSigns": { "pa": "130/85", "fc": 70, "sao2": 97, "temp": 36.4, "fr": 16 },
+    "vitalSigns": {
+      "pa": "130/85",
+      "fc": 70,
+      "sao2": 97,
+      "temp": 36.4,
+      "fr": 16
+    },
     "correctDiagnosis": "Eczema Asteatósico (Desidratação Cutânea)",
-    "unnecessaryExams": ["Urocultura", "Troponina"]
+    "unnecessaryExams": [
+      "Urocultura",
+      "Troponina"
+    ],
+    "patientPersonality": "tagarela",
+    "personalityTraits": "Divaga, conta histórias paralelas da família e do trabalho antes de chegar ao ponto da queixa.",
+    "colloquialDiagnosis": [
+      "pele ressecada do idoso"
+    ]
   },
   {
     "id": "106",
@@ -1373,9 +2940,23 @@
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
     "description": "Vesículas profundas ('grãos de sagu') em faces laterais dos dedos e palmas.",
-    "vitalSigns": { "pa": "120/80", "fc": 80, "sao2": 99, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 80,
+      "sao2": 99,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Eczema Disidrótico",
-    "unnecessaryExams": ["Raio-X de Tórax", "Colonoscopia"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "bolhas nas mãos"
+    ]
   },
   {
     "id": "107",
@@ -1386,9 +2967,24 @@
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
     "description": "Descamação amarelada em couro cabeludo, sobrancelhas e sulcos nasolabiais.",
-    "vitalSigns": { "pa": "120/80", "fc": 72, "sao2": 99, "temp": 36.6, "fr": 14 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 72,
+      "sao2": 99,
+      "temp": 36.6,
+      "fr": 14
+    },
     "correctDiagnosis": "Dermatite Seborreica",
-    "unnecessaryExams": ["Troponina", "Eletroneuromiografia"]
+    "unnecessaryExams": [
+      "Troponina",
+      "Eletroneuromiografia"
+    ],
+    "patientPersonality": "tagarela",
+    "personalityTraits": "Divaga, conta histórias paralelas da família e do trabalho antes de chegar ao ponto da queixa.",
+    "colloquialDiagnosis": [
+      "caspa",
+      "seborreia"
+    ]
   },
   {
     "id": "108",
@@ -1399,9 +2995,24 @@
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
     "description": "Evacuações amolecidas explosivas, vômitos e dor abdominal em criança.",
-    "vitalSigns": { "pa": "95/60", "fc": 115, "sao2": 97, "temp": 38.2, "fr": 24 },
+    "vitalSigns": {
+      "pa": "95/60",
+      "fc": 115,
+      "sao2": 97,
+      "temp": 38.2,
+      "fr": 24
+    },
     "correctDiagnosis": "Gastroenterite por Rotavírus",
-    "unnecessaryExams": ["PSA", "Ressonância de Coluna"]
+    "unnecessaryExams": [
+      "PSA",
+      "Ressonância de Coluna"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "virose intestinal infantil",
+      "diarreia por virus"
+    ]
   },
   {
     "id": "109",
@@ -1412,9 +3023,24 @@
     "specialty": "Gastroenterologia",
     "difficulty": "Iniciante",
     "description": "Fezes endurecidas e esforço excessivo sem sinais de alarme.",
-    "vitalSigns": { "pa": "125/80", "fc": 75, "sao2": 99, "temp": 36.5, "fr": 14 },
+    "vitalSigns": {
+      "pa": "125/80",
+      "fc": 75,
+      "sao2": 99,
+      "temp": 36.5,
+      "fr": 14
+    },
     "correctDiagnosis": "Constipação Funcional",
-    "unnecessaryExams": ["ECG", "Hemocultura"]
+    "unnecessaryExams": [
+      "ECG",
+      "Hemocultura"
+    ],
+    "patientPersonality": "desconfiado",
+    "personalityTraits": "Questiona cada pergunta do médico, pede justificativas (\"para que isso?\") e demora a abrir-se.",
+    "colloquialDiagnosis": [
+      "intestino preso",
+      "prisão de ventre"
+    ]
   },
   {
     "id": "110",
@@ -1425,9 +3051,24 @@
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
     "description": "Criança com distensão abdominal leve e história de eliminação de vermes cilíndricos.",
-    "vitalSigns": { "pa": "100/65", "fc": 90, "sao2": 98, "temp": 36.8, "fr": 18 },
+    "vitalSigns": {
+      "pa": "100/65",
+      "fc": 90,
+      "sao2": 98,
+      "temp": 36.8,
+      "fr": 18
+    },
     "correctDiagnosis": "Ascaridíase (Lombriga)",
-    "unnecessaryExams": ["Eletroencefalograma", "Mamografia"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Mamografia"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "lombriga",
+      "verme"
+    ]
   },
   {
     "id": "111",
@@ -1438,9 +3079,21 @@
     "specialty": "Neurologia",
     "difficulty": "Iniciante",
     "description": "Dor em pressão, bilateral, 'em faixa', associada a estresse.",
-    "vitalSigns": { "pa": "130/85", "fc": 84, "sao2": 99, "temp": 36.6, "fr": 18 },
+    "vitalSigns": {
+      "pa": "130/85",
+      "fc": 84,
+      "sao2": 99,
+      "temp": 36.6,
+      "fr": 18
+    },
     "correctDiagnosis": "Cefaleia do Tipo Tensional",
-    "unnecessaryExams": ["TC de Abdome", "Troponina"]
+    "unnecessaryExams": [
+      "TC de Abdome",
+      "Troponina"
+    ],
+    "patientPersonality": "tagarela",
+    "personalityTraits": "Divaga, conta histórias paralelas da família e do trabalho antes de chegar ao ponto da queixa.",
+    "colloquialDiagnosis": []
   },
   {
     "id": "112",
@@ -1451,9 +3104,25 @@
     "specialty": "Neurologia",
     "difficulty": "Iniciante",
     "description": "Vertigem rotatória súbita ao mudar posição da cabeça na cama.",
-    "vitalSigns": { "pa": "135/85", "fc": 80, "sao2": 99, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "135/85",
+      "fc": 80,
+      "sao2": 99,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Vertigem Posicional Paroxística Benigna",
-    "unnecessaryExams": ["Radiografia de Tórax", "Colonoscopia"]
+    "unnecessaryExams": [
+      "Radiografia de Tórax",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "ansioso",
+    "personalityTraits": "Fala rápido, interrompe o médico, repete a mesma pergunta várias vezes e demonstra preocupação excessiva com cada sintoma.",
+    "colloquialDiagnosis": [
+      "labirintite",
+      "vppb",
+      "tontura de posição"
+    ]
   },
   {
     "id": "113",
@@ -1464,9 +3133,24 @@
     "specialty": "Psiquiatria",
     "difficulty": "Intermediário",
     "description": "Preocupação excessiva e medo persistente de ter uma doença grave, apesar de exames normais.",
-    "vitalSigns": { "pa": "120/80", "fc": 88, "sao2": 99, "temp": 36.6, "fr": 18 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 88,
+      "sao2": 99,
+      "temp": 36.6,
+      "fr": 18
+    },
     "correctDiagnosis": "Transtorno de Ansiedade de Doença (Hipocondria)",
-    "unnecessaryExams": ["Cintilografia", "Endoscopia"]
+    "unnecessaryExams": [
+      "Cintilografia",
+      "Endoscopia"
+    ],
+    "patientPersonality": "ansioso",
+    "personalityTraits": "Fala rápido, interrompe o médico, repete a mesma pergunta várias vezes e demonstra preocupação excessiva com cada sintoma.",
+    "colloquialDiagnosis": [
+      "hipocondria",
+      "medo de estar doente"
+    ]
   },
   {
     "id": "114",
@@ -1477,9 +3161,25 @@
     "specialty": "Psiquiatria",
     "difficulty": "Intermediário",
     "description": "Humor deprimido crônico há mais de 2 anos, com baixa autoestima e fadiga.",
-    "vitalSigns": { "pa": "115/75", "fc": 72, "sao2": 98, "temp": 36.5, "fr": 14 },
+    "vitalSigns": {
+      "pa": "115/75",
+      "fc": 72,
+      "sao2": 98,
+      "temp": 36.5,
+      "fr": 14
+    },
     "correctDiagnosis": "Transtorno Depressivo Persistente (Distimia)",
-    "unnecessaryExams": ["Raio-X de Tórax", "Troponina"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "Troponina"
+    ],
+    "patientPersonality": "deprimido",
+    "personalityTraits": "Apático, fala monossilábica, baixa energia, evita contato visual e demonstra desânimo generalizado.",
+    "colloquialDiagnosis": [
+      "depressão",
+      "depressao",
+      "depressão crônica leve"
+    ]
   },
   {
     "id": "115",
@@ -1490,9 +3190,23 @@
     "specialty": "Psiquiatria",
     "difficulty": "Intermediário",
     "description": "Medo intenso de locais abertos ou multidões de onde seria difícil escapar.",
-    "vitalSigns": { "pa": "130/80", "fc": 92, "sao2": 99, "temp": 36.7, "fr": 20 },
+    "vitalSigns": {
+      "pa": "130/80",
+      "fc": 92,
+      "sao2": 99,
+      "temp": 36.7,
+      "fr": 20
+    },
     "correctDiagnosis": "Agorafobia",
-    "unnecessaryExams": ["Colonoscopia", "Eletroencefalograma"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Eletroencefalograma"
+    ],
+    "patientPersonality": "ansioso",
+    "personalityTraits": "Fala rápido, interrompe o médico, repete a mesma pergunta várias vezes e demonstra preocupação excessiva com cada sintoma.",
+    "colloquialDiagnosis": [
+      "medo de sair de casa"
+    ]
   },
   {
     "id": "116",
@@ -1503,9 +3217,23 @@
     "specialty": "Reumatologia",
     "difficulty": "Avançado",
     "description": "Paciente de 65 anos com cefaleia persistente, claudicação de mandíbula e perda súbita de visão unilateral.",
-    "vitalSigns": { "pa": "140/90", "fc": 82, "sao2": 97, "temp": 37.8, "fr": 18 },
+    "vitalSigns": {
+      "pa": "140/90",
+      "fc": 82,
+      "sao2": 97,
+      "temp": 37.8,
+      "fr": 18
+    },
     "correctDiagnosis": "Arterite Temporal (Células Gigantes)",
-    "unnecessaryExams": ["Colonoscopia", "Radiografia de Tornozelo"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Radiografia de Tornozelo"
+    ],
+    "patientPersonality": "desconfiado",
+    "personalityTraits": "Questiona cada pergunta do médico, pede justificativas (\"para que isso?\") e demora a abrir-se.",
+    "colloquialDiagnosis": [
+      "arterite de cabeça"
+    ]
   },
   {
     "id": "117",
@@ -1516,9 +3244,23 @@
     "specialty": "Pneumologia",
     "difficulty": "Avançado",
     "description": "Homem com tosse seca, dispneia progressiva e linfadenopatia hilar bilateral na radiografia de tórax.",
-    "vitalSigns": { "pa": "120/80", "fc": 88, "sao2": 93, "temp": 37.1, "fr": 22 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 88,
+      "sao2": 93,
+      "temp": 37.1,
+      "fr": 22
+    },
     "correctDiagnosis": "Sarcoidose",
-    "unnecessaryExams": ["Eletroencefalograma", "Dosagem de PSA"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Dosagem de PSA"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "sarcoidose"
+    ]
   },
   {
     "id": "118",
@@ -1529,9 +3271,23 @@
     "specialty": "Nutrologia",
     "difficulty": "Avançado",
     "description": "Lactente com insuficiência cardíaca súbita, afonia e ausência de reflexos. Mãe apresenta sinais de desnutrição.",
-    "vitalSigns": { "pa": "70/40", "fc": 160, "sao2": 90, "temp": 36.4, "fr": 50 },
+    "vitalSigns": {
+      "pa": "70/40",
+      "fc": 160,
+      "sao2": 90,
+      "temp": 36.4,
+      "fr": 50
+    },
     "correctDiagnosis": "Beribéri (Deficiência de Tiamina/B1)",
-    "unnecessaryExams": ["Tomografia de Crânio", "Urocultura"]
+    "unnecessaryExams": [
+      "Tomografia de Crânio",
+      "Urocultura"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "falta de vitamina b1"
+    ]
   },
   {
     "id": "119",
@@ -1542,9 +3298,23 @@
     "specialty": "Nutrologia",
     "difficulty": "Intermediário",
     "description": "Criança com dieta restrita apresenta gengivas sangrantes, petéquias e reabertura de cicatrizes antigas.",
-    "vitalSigns": { "pa": "95/60", "fc": 100, "sao2": 98, "temp": 36.8, "fr": 22 },
+    "vitalSigns": {
+      "pa": "95/60",
+      "fc": 100,
+      "sao2": 98,
+      "temp": 36.8,
+      "fr": 22
+    },
     "correctDiagnosis": "Escorbuto (Deficiência de Vitamina C)",
-    "unnecessaryExams": ["ECG", "Ecocardiograma"]
+    "unnecessaryExams": [
+      "ECG",
+      "Ecocardiograma"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "falta de vitamina c"
+    ]
   },
   {
     "id": "120",
@@ -1555,9 +3325,23 @@
     "specialty": "Hematologia",
     "difficulty": "Avançado",
     "description": "Paciente com 'diabetes bronzeado' (pigmentação escura da pele), diabetes e insuficiência cardíaca.",
-    "vitalSigns": { "pa": "110/70", "fc": 76, "sao2": 96, "temp": 36.5, "fr": 16 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 76,
+      "sao2": 96,
+      "temp": 36.5,
+      "fr": 16
+    },
     "correctDiagnosis": "Hemocromatose",
-    "unnecessaryExams": ["Raio-X de Tórax", "Troponina"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "Troponina"
+    ],
+    "patientPersonality": "estoico",
+    "personalityTraits": "Subestima a dor, dá respostas curtas e diz frases como \"não é nada demais, doutor\", mesmo diante de quadro grave.",
+    "colloquialDiagnosis": [
+      "excesso de ferro"
+    ]
   },
   {
     "id": "121",
@@ -1568,9 +3352,24 @@
     "specialty": "Infectologia",
     "difficulty": "Avançado",
     "description": "Hipotensão severa, extremidades frias, cianose e oligúria após foco infeccioso grave.",
-    "vitalSigns": { "pa": "70/40", "fc": 130, "sao2": 88, "temp": 39.5, "fr": 28 },
+    "vitalSigns": {
+      "pa": "70/40",
+      "fc": 130,
+      "sao2": 88,
+      "temp": 39.5,
+      "fr": 28
+    },
     "correctDiagnosis": "Choque Séptico",
-    "unnecessaryExams": ["Cintilografia Óssea", "Colonoscopia"]
+    "unnecessaryExams": [
+      "Cintilografia Óssea",
+      "Colonoscopia"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "infecção generalizada",
+      "sepse"
+    ]
   },
   {
     "id": "122",
@@ -1581,9 +3380,24 @@
     "specialty": "Infectologia",
     "difficulty": "Intermediário",
     "description": "Icterícia alaranjada, febre alta e dor intensa nas panturrilhas após contato com água de enchente.",
-    "vitalSigns": { "pa": "100/60", "fc": 110, "sao2": 94, "temp": 39.8, "fr": 24 },
+    "vitalSigns": {
+      "pa": "100/60",
+      "fc": 110,
+      "sao2": 94,
+      "temp": 39.8,
+      "fr": 24
+    },
     "correctDiagnosis": "Leptospirose (Síndrome de Weil)",
-    "unnecessaryExams": ["Eletroencefalograma", "Mamografia"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Mamografia"
+    ],
+    "patientPersonality": "negacionista",
+    "personalityTraits": "Minimiza os sintomas, atribui tudo a causas banais (\"é só cansaço\", \"é só azia\") e resiste a perguntas sobre hábitos prejudiciais.",
+    "colloquialDiagnosis": [
+      "doença do rato",
+      "leptospirose"
+    ]
   },
   {
     "id": "123",
@@ -1594,9 +3408,23 @@
     "specialty": "Dermatologia",
     "difficulty": "Iniciante",
     "description": "Pele leitosa, cabelos brancos, íris translúcida, fotofobia e nistagmo.",
-    "vitalSigns": { "pa": "120/80", "fc": 72, "sao2": 99, "temp": 36.6, "fr": 14 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 72,
+      "sao2": 99,
+      "temp": 36.6,
+      "fr": 14
+    },
     "correctDiagnosis": "Albinismo",
-    "unnecessaryExams": ["Troponina", "Hemocultura"]
+    "unnecessaryExams": [
+      "Troponina",
+      "Hemocultura"
+    ],
+    "patientPersonality": "ansioso",
+    "personalityTraits": "Fala rápido, interrompe o médico, repete a mesma pergunta várias vezes e demonstra preocupação excessiva com cada sintoma.",
+    "colloquialDiagnosis": [
+      "albinismo"
+    ]
   },
   {
     "id": "124",
@@ -1607,9 +3435,23 @@
     "specialty": "Neurologia",
     "difficulty": "Avançado",
     "description": "Dor urente desproporcional após trauma leve, com pele brilhante e rigidez no membro afetado.",
-    "vitalSigns": { "pa": "130/80", "fc": 85, "sao2": 99, "temp": 37.0, "fr": 18 },
+    "vitalSigns": {
+      "pa": "130/80",
+      "fc": 85,
+      "sao2": 99,
+      "temp": 37.0,
+      "fr": 18
+    },
     "correctDiagnosis": "SCDR Tipo I (Distrofia Simpático Reflexa)",
-    "unnecessaryExams": ["Endoscopia", "Glicemia de Jejum"]
+    "unnecessaryExams": [
+      "Endoscopia",
+      "Glicemia de Jejum"
+    ],
+    "patientPersonality": "deprimido",
+    "personalityTraits": "Apático, fala monossilábica, baixa energia, evita contato visual e demonstra desânimo generalizado.",
+    "colloquialDiagnosis": [
+      "dor crônica regional"
+    ]
   },
   {
     "id": "125",
@@ -1620,9 +3462,23 @@
     "specialty": "Geriatria",
     "difficulty": "Iniciante",
     "description": "Equimoses extensas em dorso de mãos de idoso após traumas mínimos, sem alteração de coagulação.",
-    "vitalSigns": { "pa": "140/85", "fc": 70, "sao2": 97, "temp": 36.4, "fr": 16 },
+    "vitalSigns": {
+      "pa": "140/85",
+      "fc": 70,
+      "sao2": 97,
+      "temp": 36.4,
+      "fr": 16
+    },
     "correctDiagnosis": "Púrpura Senil de Bateman",
-    "unnecessaryExams": ["TC de Crânio", "Troponina"]
+    "unnecessaryExams": [
+      "TC de Crânio",
+      "Troponina"
+    ],
+    "patientPersonality": "estoico",
+    "personalityTraits": "Subestima a dor, dá respostas curtas e diz frases como \"não é nada demais, doutor\", mesmo diante de quadro grave.",
+    "colloquialDiagnosis": [
+      "manchas roxas do idoso"
+    ]
   },
   {
     "id": "126",
@@ -1633,9 +3489,24 @@
     "specialty": "Otorrinolaringologia",
     "difficulty": "Intermediário",
     "description": "Tríade de vertigem incapacitante, zumbido (tinnitus) e perda auditiva flutuante.",
-    "vitalSigns": { "pa": "120/80", "fc": 80, "sao2": 99, "temp": 36.6, "fr": 16 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 80,
+      "sao2": 99,
+      "temp": 36.6,
+      "fr": 16
+    },
     "correctDiagnosis": "Doença de Ménière",
-    "unnecessaryExams": ["Raio-X de Tórax", "Glicemia"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "Glicemia"
+    ],
+    "patientPersonality": "desconfiado",
+    "personalityTraits": "Questiona cada pergunta do médico, pede justificativas (\"para que isso?\") e demora a abrir-se.",
+    "colloquialDiagnosis": [
+      "labirintite com surdez",
+      "meniere"
+    ]
   },
   {
     "id": "127",
@@ -1646,9 +3517,24 @@
     "specialty": "Neurologia",
     "difficulty": "Intermediário",
     "description": "Dor facial em 'choque' de curta duração, desencadeada por mastigação ou toque.",
-    "vitalSigns": { "pa": "130/85", "fc": 88, "sao2": 99, "temp": 36.7, "fr": 18 },
+    "vitalSigns": {
+      "pa": "130/85",
+      "fc": 88,
+      "sao2": 99,
+      "temp": 36.7,
+      "fr": 18
+    },
     "correctDiagnosis": "Neuralgia do Trigêmeo",
-    "unnecessaryExams": ["Amilase", "Hemocultura"]
+    "unnecessaryExams": [
+      "Amilase",
+      "Hemocultura"
+    ],
+    "patientPersonality": "tagarela",
+    "personalityTraits": "Divaga, conta histórias paralelas da família e do trabalho antes de chegar ao ponto da queixa.",
+    "colloquialDiagnosis": [
+      "dor facial em choque",
+      "tic doloroso"
+    ]
   },
   {
     "id": "128",
@@ -1659,9 +3545,24 @@
     "specialty": "Cardiologia",
     "difficulty": "Avançado",
     "description": "Perda súbita de consciência em paciente com bloqueio atrioventricular prévio.",
-    "vitalSigns": { "pa": "90/50", "fc": 35, "sao2": 92, "temp": 36.2, "fr": 20 },
+    "vitalSigns": {
+      "pa": "90/50",
+      "fc": 35,
+      "sao2": 92,
+      "temp": 36.2,
+      "fr": 20
+    },
     "correctDiagnosis": "Síncope de Stokes-Adams",
-    "unnecessaryExams": ["Colonoscopia", "Beta-HCG"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Beta-HCG"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "desmaio do coração",
+      "sincope cardiaca"
+    ]
   },
   {
     "id": "129",
@@ -1672,9 +3573,23 @@
     "specialty": "Neurologia",
     "difficulty": "Avançado",
     "description": "Sonolência diurna excessiva associada a perda súbita do tônus muscular (cataplexia).",
-    "vitalSigns": { "pa": "120/80", "fc": 74, "sao2": 99, "temp": 36.5, "fr": 14 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 74,
+      "sao2": 99,
+      "temp": 36.5,
+      "fr": 14
+    },
     "correctDiagnosis": "Narcolepsia",
-    "unnecessaryExams": ["Raio-X de Tórax", "Troponina"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "Troponina"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "sono incontrolável"
+    ]
   },
   {
     "id": "130",
@@ -1685,9 +3600,23 @@
     "specialty": "Psiquiatria",
     "difficulty": "Iniciante",
     "description": "Criança grita e senta na cama com taquicardia no início da noite; amnésia do evento ao acordar.",
-    "vitalSigns": { "pa": "105/65", "fc": 110, "sao2": 99, "temp": 36.8, "fr": 22 },
+    "vitalSigns": {
+      "pa": "105/65",
+      "fc": 110,
+      "sao2": 99,
+      "temp": 36.8,
+      "fr": 22
+    },
     "correctDiagnosis": "Terror Noturno",
-    "unnecessaryExams": ["Tomografia de Abdome", "Troponina"]
+    "unnecessaryExams": [
+      "Tomografia de Abdome",
+      "Troponina"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "pavor noturno"
+    ]
   },
   {
     "id": "131",
@@ -1698,9 +3627,25 @@
     "specialty": "Infectologia",
     "difficulty": "Avançado",
     "description": "Marcha atáxica e perda de sensibilidade vibratória em paciente com sífilis terciária.",
-    "vitalSigns": { "pa": "130/80", "fc": 78, "sao2": 98, "temp": 36.6, "fr": 16 },
+    "vitalSigns": {
+      "pa": "130/80",
+      "fc": 78,
+      "sao2": 98,
+      "temp": 36.6,
+      "fr": 16
+    },
     "correctDiagnosis": "Tabes Dorsalis (Neurossífilis)",
-    "unnecessaryExams": ["Mamografia", "Amilase"]
+    "unnecessaryExams": [
+      "Mamografia",
+      "Amilase"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "sifilis",
+      "cancro duro",
+      "neurossifilis"
+    ]
   },
   {
     "id": "132",
@@ -1711,9 +3656,23 @@
     "specialty": "Neurologia",
     "difficulty": "Avançado",
     "description": "Miose, enoftalmia e ptose pálpebral unilateral em paciente com tumor pulmonar apical.",
-    "vitalSigns": { "pa": "115/75", "fc": 82, "sao2": 94, "temp": 36.7, "fr": 20 },
+    "vitalSigns": {
+      "pa": "115/75",
+      "fc": 82,
+      "sao2": 94,
+      "temp": 36.7,
+      "fr": 20
+    },
     "correctDiagnosis": "Síndrome de Horner (Tumor de Pancoast)",
-    "unnecessaryExams": ["Eletroencefalograma", "PSA"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "PSA"
+    ],
+    "patientPersonality": "estoico",
+    "personalityTraits": "Subestima a dor, dá respostas curtas e diz frases como \"não é nada demais, doutor\", mesmo diante de quadro grave.",
+    "colloquialDiagnosis": [
+      "síndrome de horner"
+    ]
   },
   {
     "id": "133",
@@ -1724,9 +3683,23 @@
     "specialty": "Neurologia",
     "difficulty": "Intermediário",
     "description": "Preservação de memórias remotas, mas incapacidade total de reter fatos recentes.",
-    "vitalSigns": { "pa": "140/90", "fc": 70, "sao2": 97, "temp": 36.4, "fr": 16 },
+    "vitalSigns": {
+      "pa": "140/90",
+      "fc": 70,
+      "sao2": 97,
+      "temp": 36.4,
+      "fr": 16
+    },
     "correctDiagnosis": "Amnésia Anterógrada",
-    "unnecessaryExams": ["Raio-X de Pelve", "Urocultura"]
+    "unnecessaryExams": [
+      "Raio-X de Pelve",
+      "Urocultura"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "perda de memória recente"
+    ]
   },
   {
     "id": "134",
@@ -1737,9 +3710,23 @@
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
     "description": "Recém-nascido com sopro contínuo em 'maquinaria' na região infraclavicular esquerda.",
-    "vitalSigns": { "pa": "65/45", "fc": 145, "sao2": 95, "temp": 37.0, "fr": 48 },
+    "vitalSigns": {
+      "pa": "65/45",
+      "fc": 145,
+      "sao2": 95,
+      "temp": 37.0,
+      "fr": 48
+    },
     "correctDiagnosis": "Persistência do Canal Arterial (PCA)",
-    "unnecessaryExams": ["Eletroencefalograma", "Endoscopia"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Endoscopia"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "cardiopatia congênita pca"
+    ]
   },
   {
     "id": "135",
@@ -1750,9 +3737,23 @@
     "specialty": "Pediatria",
     "difficulty": "Avançado",
     "description": "Cianose ao nascimento e melhora da dispneia ao assumir posição de cócoras.",
-    "vitalSigns": { "pa": "80/50", "fc": 130, "sao2": 82, "temp": 36.8, "fr": 40 },
+    "vitalSigns": {
+      "pa": "80/50",
+      "fc": 130,
+      "sao2": 82,
+      "temp": 36.8,
+      "fr": 40
+    },
     "correctDiagnosis": "Tetralogia de Fallot",
-    "unnecessaryExams": ["Urocultura", "Dosagem de B12"]
+    "unnecessaryExams": [
+      "Urocultura",
+      "Dosagem de B12"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "cardiopatia congênita cianótica"
+    ]
   },
   {
     "id": "136",
@@ -1763,9 +3764,23 @@
     "specialty": "Pneumologia",
     "difficulty": "Intermediário",
     "description": "Tosse crônica com expectoração purulenta matinal e baqueteamento digital.",
-    "vitalSigns": { "pa": "110/70", "fc": 95, "sao2": 91, "temp": 37.5, "fr": 24 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 95,
+      "sao2": 91,
+      "temp": 37.5,
+      "fr": 24
+    },
     "correctDiagnosis": "Bronquiectasias Infetadas",
-    "unnecessaryExams": ["Eletroencefalograma", "Troponina"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Troponina"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "dilatação dos brônquios"
+    ]
   },
   {
     "id": "137",
@@ -1776,9 +3791,23 @@
     "specialty": "Pneumologia",
     "difficulty": "Intermediário",
     "description": "Retração de hemitórax e desvio de traqueia ipsilateral após obstrução brônquica.",
-    "vitalSigns": { "pa": "125/80", "fc": 102, "sao2": 89, "temp": 37.2, "fr": 26 },
+    "vitalSigns": {
+      "pa": "125/80",
+      "fc": 102,
+      "sao2": 89,
+      "temp": 37.2,
+      "fr": 26
+    },
     "correctDiagnosis": "Atelectasia",
-    "unnecessaryExams": ["PSA", "Glicemia"]
+    "unnecessaryExams": [
+      "PSA",
+      "Glicemia"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "pulmão colabado parcial"
+    ]
   },
   {
     "id": "138",
@@ -1789,9 +3818,23 @@
     "specialty": "Oncologia",
     "difficulty": "Avançado",
     "description": "Turgência jugular, edema em 'esclavina' (face/pescoço) e cefaleia por tumor mediastinal.",
-    "vitalSigns": { "pa": "130/80", "fc": 90, "sao2": 92, "temp": 36.9, "fr": 22 },
+    "vitalSigns": {
+      "pa": "130/80",
+      "fc": 90,
+      "sao2": 92,
+      "temp": 36.9,
+      "fr": 22
+    },
     "correctDiagnosis": "Síndrome da Veia Cava Superior",
-    "unnecessaryExams": ["Colonoscopia", "Radiografia de Joelho"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Radiografia de Joelho"
+    ],
+    "patientPersonality": "confuso",
+    "personalityTraits": "Mistura datas, esquece detalhes, dá informações contraditórias sobre o início dos sintomas.",
+    "colloquialDiagnosis": [
+      "obstrução da veia cava"
+    ]
   },
   {
     "id": "139",
@@ -1802,9 +3845,23 @@
     "specialty": "Pediatria",
     "difficulty": "Avançado",
     "description": "Febre alta, salivação (sialorreia) e posição de tripé. Ausência de tosse rouca.",
-    "vitalSigns": { "pa": "90/60", "fc": 140, "sao2": 90, "temp": 39.9, "fr": 35 },
+    "vitalSigns": {
+      "pa": "90/60",
+      "fc": 140,
+      "sao2": 90,
+      "temp": 39.9,
+      "fr": 35
+    },
     "correctDiagnosis": "Epiglotite",
-    "unnecessaryExams": ["Exame de toque retal", "Urocultura"]
+    "unnecessaryExams": [
+      "Exame de toque retal",
+      "Urocultura"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "inflamação da epiglote"
+    ]
   },
   {
     "id": "140",
@@ -1815,9 +3872,24 @@
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
     "description": "Tosse ladrante (cachorro), rouquidão e estridor que piora à noite após resfriado.",
-    "vitalSigns": { "pa": "100/60", "fc": 115, "sao2": 95, "temp": 37.8, "fr": 28 },
+    "vitalSigns": {
+      "pa": "100/60",
+      "fc": 115,
+      "sao2": 95,
+      "temp": 37.8,
+      "fr": 28
+    },
     "correctDiagnosis": "Crupe (Laringotraqueobronquite)",
-    "unnecessaryExams": ["Troponina", "Mamografia"]
+    "unnecessaryExams": [
+      "Troponina",
+      "Mamografia"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "laringite estridulosa",
+      "tosse de cachorro"
+    ]
   },
   {
     "id": "141",
@@ -1828,9 +3900,24 @@
     "specialty": "Pediatria",
     "difficulty": "Intermediário",
     "description": "Detecção no teste do pezinho de falha no metabolismo de fenilalanina.",
-    "vitalSigns": { "pa": "80/50", "fc": 120, "sao2": 99, "temp": 36.6, "fr": 30 },
+    "vitalSigns": {
+      "pa": "80/50",
+      "fc": 120,
+      "sao2": 99,
+      "temp": 36.6,
+      "fr": 30
+    },
     "correctDiagnosis": "Fenilcetonúria (PKU)",
-    "unnecessaryExams": ["Raio-X de Tórax", "ECG"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "ECG"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "pku",
+      "erro inato do metabolismo"
+    ]
   },
   {
     "id": "142",
@@ -1841,9 +3928,26 @@
     "specialty": "Pediatria",
     "difficulty": "Iniciante",
     "description": "Obstrução de ducto lacrimal com inflamação e saída de pus ao comprimir o saco lacrimal.",
-    "vitalSigns": { "pa": "85/55", "fc": 110, "sao2": 99, "temp": 37.4, "fr": 24 },
+    "vitalSigns": {
+      "pa": "85/55",
+      "fc": 110,
+      "sao2": 99,
+      "temp": 37.4,
+      "fr": 24
+    },
     "correctDiagnosis": "Dacriocistite Aguda",
-    "unnecessaryExams": ["Hemocultura", "Eletroencefalograma"]
+    "unnecessaryExams": [
+      "Hemocultura",
+      "Eletroencefalograma"
+    ],
+    "patientPersonality": "agitado",
+    "personalityTraits": "Impaciente, gesticula, exige resultados imediatos e reclama da demora no atendimento.",
+    "colloquialDiagnosis": [
+      "infecção no canal lacrimal",
+      "olho lacrimejando infectado",
+      "infecção urinária",
+      "itu"
+    ]
   },
   {
     "id": "143",
@@ -1854,9 +3958,23 @@
     "specialty": "Pediatria",
     "difficulty": "Avançado",
     "description": "Fontanela deprimida, sinal da dobra positivo e ausência de lágrimas em lactente com diarreia.",
-    "vitalSigns": { "pa": "60/35", "fc": 170, "sao2": 92, "temp": 38.5, "fr": 55 },
+    "vitalSigns": {
+      "pa": "60/35",
+      "fc": 170,
+      "sao2": 92,
+      "temp": 38.5,
+      "fr": 55
+    },
     "correctDiagnosis": "Desidratação Grave",
-    "unnecessaryExams": ["Radiografia de Crânio", "Dosagem de PSA"]
+    "unnecessaryExams": [
+      "Radiografia de Crânio",
+      "Dosagem de PSA"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "desidratação severa"
+    ]
   },
   {
     "id": "144",
@@ -1867,9 +3985,23 @@
     "specialty": "Gastroenterologia",
     "difficulty": "Intermediário",
     "description": "Hematêmese após episódios violentos de vômito ou tosse em paciente etilista.",
-    "vitalSigns": { "pa": "100/60", "fc": 105, "sao2": 95, "temp": 36.7, "fr": 20 },
+    "vitalSigns": {
+      "pa": "100/60",
+      "fc": 105,
+      "sao2": 95,
+      "temp": 36.7,
+      "fr": 20
+    },
     "correctDiagnosis": "Síndrome de Mallory-Weiss",
-    "unnecessaryExams": ["Eletroencefalograma", "Raio-X de Tórax"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Raio-X de Tórax"
+    ],
+    "patientPersonality": "deprimido",
+    "personalityTraits": "Apático, fala monossilábica, baixa energia, evita contato visual e demonstra desânimo generalizado.",
+    "colloquialDiagnosis": [
+      "laceração do esôfago"
+    ]
   },
   {
     "id": "145",
@@ -1880,9 +4012,24 @@
     "specialty": "Gastroenterologia",
     "difficulty": "Intermediário",
     "description": "Má absorção, diarreia crônica e distensão abdominal após introdução de glúten na dieta.",
-    "vitalSigns": { "pa": "100/60", "fc": 90, "sao2": 98, "temp": 36.5, "fr": 18 },
+    "vitalSigns": {
+      "pa": "100/60",
+      "fc": 90,
+      "sao2": 98,
+      "temp": 36.5,
+      "fr": 18
+    },
     "correctDiagnosis": "Doença Celíaca",
-    "unnecessaryExams": ["ECG", "Troponina"]
+    "unnecessaryExams": [
+      "ECG",
+      "Troponina"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "doença celíaca",
+      "intolerância ao glúten"
+    ]
   },
   {
     "id": "146",
@@ -1893,9 +4040,25 @@
     "specialty": "Gastroenterologia",
     "difficulty": "Iniciante",
     "description": "Dor abdominal crônica que alivia com a evacuação, alternando diarreia e constipação.",
-    "vitalSigns": { "pa": "120/80", "fc": 74, "sao2": 99, "temp": 36.6, "fr": 16 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 74,
+      "sao2": 99,
+      "temp": 36.6,
+      "fr": 16
+    },
     "correctDiagnosis": "Síndrome do Intestino Irritável",
-    "unnecessaryExams": ["TC de Crânio", "Troponina"]
+    "unnecessaryExams": [
+      "TC de Crânio",
+      "Troponina"
+    ],
+    "patientPersonality": "desconfiado",
+    "personalityTraits": "Questiona cada pergunta do médico, pede justificativas (\"para que isso?\") e demora a abrir-se.",
+    "colloquialDiagnosis": [
+      "sii",
+      "colite nervosa",
+      "cólon irritável"
+    ]
   },
   {
     "id": "147",
@@ -1906,9 +4069,23 @@
     "specialty": "Proctologia",
     "difficulty": "Intermediário",
     "description": "Orifício perianal com saída de secreção fétida após abscesso prévio.",
-    "vitalSigns": { "pa": "125/80", "fc": 80, "sao2": 99, "temp": 37.1, "fr": 18 },
+    "vitalSigns": {
+      "pa": "125/80",
+      "fc": 80,
+      "sao2": 99,
+      "temp": 37.1,
+      "fr": 18
+    },
     "correctDiagnosis": "Fístula Anal",
-    "unnecessaryExams": ["Raio-X de Tórax", "PSA"]
+    "unnecessaryExams": [
+      "Raio-X de Tórax",
+      "PSA"
+    ],
+    "patientPersonality": "tagarela",
+    "personalityTraits": "Divaga, conta histórias paralelas da família e do trabalho antes de chegar ao ponto da queixa.",
+    "colloquialDiagnosis": [
+      "fistula no anus"
+    ]
   },
   {
     "id": "148",
@@ -1919,9 +4096,24 @@
     "specialty": "Endocrinologia",
     "difficulty": "Avançado",
     "description": "Agalactia e amenorreia após hemorragia pós-parto severa (choque hipovolêmico).",
-    "vitalSigns": { "pa": "90/60", "fc": 68, "sao2": 98, "temp": 36.0, "fr": 14 },
+    "vitalSigns": {
+      "pa": "90/60",
+      "fc": 68,
+      "sao2": 98,
+      "temp": 36.0,
+      "fr": 14
+    },
     "correctDiagnosis": "Pan-hipopituitarismo Pós-Parto (Sheehan)",
-    "unnecessaryExams": ["Colonoscopia", "Eletroencefalograma"]
+    "unnecessaryExams": [
+      "Colonoscopia",
+      "Eletroencefalograma"
+    ],
+    "patientPersonality": "estoico",
+    "personalityTraits": "Subestima a dor, dá respostas curtas e diz frases como \"não é nada demais, doutor\", mesmo diante de quadro grave.",
+    "colloquialDiagnosis": [
+      "sheehan",
+      "falência da hipófise pós-parto"
+    ]
   },
   {
     "id": "149",
@@ -1932,9 +4124,24 @@
     "specialty": "Ginecologia",
     "difficulty": "Iniciante",
     "description": "Hirsutismo, acne e irregularidade menstrual em mulher jovem.",
-    "vitalSigns": { "pa": "120/80", "fc": 78, "sao2": 99, "temp": 36.6, "fr": 16 },
+    "vitalSigns": {
+      "pa": "120/80",
+      "fc": 78,
+      "sao2": 99,
+      "temp": 36.6,
+      "fr": 16
+    },
     "correctDiagnosis": "Síndrome dos Ovários Policísticos",
-    "unnecessaryExams": ["Troponina", "Raio-X de Tórax"]
+    "unnecessaryExams": [
+      "Troponina",
+      "Raio-X de Tórax"
+    ],
+    "patientPersonality": "colaborativo",
+    "personalityTraits": "Responde de forma direta, organizada e cooperativa, fornecendo informações claras quando perguntado.",
+    "colloquialDiagnosis": [
+      "sop",
+      "sindrome dos ovarios policisticos"
+    ]
   },
   {
     "id": "150",
@@ -1945,8 +4152,23 @@
     "specialty": "Ginecologia",
     "difficulty": "Avançado",
     "description": "Aumento do volume abdominal (ascite) e emagrecimento rápido em mulher na pós-menopausa.",
-    "vitalSigns": { "pa": "110/70", "fc": 92, "sao2": 96, "temp": 36.8, "fr": 18 },
+    "vitalSigns": {
+      "pa": "110/70",
+      "fc": 92,
+      "sao2": 96,
+      "temp": 36.8,
+      "fr": 18
+    },
     "correctDiagnosis": "Neoplasia de Ovário",
-    "unnecessaryExams": ["Eletroencefalograma", "Dosagem de B12"]
+    "unnecessaryExams": [
+      "Eletroencefalograma",
+      "Dosagem de B12"
+    ],
+    "patientPersonality": "medroso",
+    "personalityTraits": "Voz trêmula, olhos marejados, pede para chamar a família e teme o pior diagnóstico.",
+    "colloquialDiagnosis": [
+      "câncer de ovário",
+      "tumor de ovário"
+    ]
   }
 ]
