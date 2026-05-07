@@ -82,9 +82,11 @@ function efficiencyScore(requested: string[], unnecessary: string[]): { score: n
   return { score, bad };
 }
 
-function buildAutoFeedback(b: Omit<ScoreBreakdown, 'autoFeedback'>): string {
+function buildAutoFeedback(b: Omit<ScoreBreakdown, 'autoFeedback'>, viaColloquial = false): string {
   const parts: string[] = [];
   if (b.diagnosisMatch === 'exact') parts.push('Excelente acurácia diagnóstica — você acertou em cheio.');
+  else if (b.diagnosisMatch === 'partial' && viaColloquial)
+    parts.push('Você identificou corretamente o problema, mas use a nomenclatura técnica formal em vez de termos coloquiais (ex.: "Infarto Agudo do Miocárdio" no lugar de "ataque cardíaco").');
   else if (b.diagnosisMatch === 'partial') parts.push('Sua hipótese esteve parcialmente correta; revise os critérios definidores da patologia.');
   else parts.push('O diagnóstico final divergiu do esperado — vale revisar os achados-chave deste quadro clínico.');
 
@@ -109,7 +111,7 @@ export function calculateFinalScore(state: {
   currentCase?: ClinicalCase | null;
 }): ScoreBreakdown {
   const c = state?.currentCase;
-  const acc = diagnosisAccuracy(state?.diagnosisAttempt ?? '', c?.correctDiagnosis ?? '');
+  const acc = diagnosisAccuracy(state?.diagnosisAttempt ?? '', c?.correctDiagnosis ?? '', c?.colloquialDiagnosis ?? []);
   const hum = humanitarianScore(state?.empathyScore ?? 0, state?.empathyHistory ?? []);
   const tech = technicalScore(state?.messages ?? []);
   const eff = efficiencyScore(state?.examsRequested ?? [], c?.unnecessaryExams ?? []);
