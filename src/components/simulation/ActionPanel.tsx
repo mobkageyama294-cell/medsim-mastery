@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Stethoscope, FlaskConical, Pill, Target, Flag, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import HintButton from '@/components/gamification/HintButton';
+import type { ClinicalCase } from '@/data/clinicalCases';
 
 interface ActionPanelProps {
   onPhysicalExam: () => void;
@@ -11,6 +13,7 @@ interface ActionPanelProps {
   examsRequested: string[];
   availableExams: string[];
   availableUnnecessaryExams: string[];
+  clinicalCase: ClinicalCase | null;
 }
 
 type ModalType = 'exams' | 'diagnosis' | 'prescribe' | null;
