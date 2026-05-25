@@ -45,27 +45,7 @@ export default function Simulation() {
     }
   }, [state.isFinished, startedAt]);
 
-  useEffect(() => {
-    if (state.isFinished && user && currentCase) {
-      const isCorrect = state.diagnosisAttempt
-        ?.toLowerCase()
-        .includes(currentCase.correctDiagnosis.toLowerCase().substring(0, 20));
-
-      supabase.from('case_history').insert({
-        user_id: user.id,
-        case_id: currentCase.id,
-        case_title: currentCase.title,
-        diagnosis_attempt: state.diagnosisAttempt,
-        correct_diagnosis: currentCase.correctDiagnosis,
-        reasoning_score: state.reasoningScore,
-        patient_health: state.patientHealth,
-        cost_effectiveness: state.costEffectiveness,
-        is_correct: !!isCorrect,
-      }).then(({ error }) => {
-        if (error) console.error('Failed to save case history:', error);
-      });
-    }
-  }, [state.isFinished]);
+  // case_history persistence is now handled inside FeedbackReport (with full score breakdown)
 
   // Error state
   if (casesError) {
