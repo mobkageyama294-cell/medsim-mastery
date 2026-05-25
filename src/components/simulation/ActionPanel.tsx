@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Stethoscope, FlaskConical, Pill, Target, Flag, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import HintButton from '@/components/gamification/HintButton';
+import type { ClinicalCase } from '@/data/clinicalCases';
 
 interface ActionPanelProps {
   onPhysicalExam: () => void;
@@ -11,6 +13,7 @@ interface ActionPanelProps {
   examsRequested: string[];
   availableExams: string[];
   availableUnnecessaryExams: string[];
+  clinicalCase: ClinicalCase | null;
 }
 
 type ModalType = 'exams' | 'diagnosis' | 'prescribe' | null;
@@ -24,6 +27,7 @@ export default function ActionPanel({
   examsRequested,
   availableExams,
   availableUnnecessaryExams,
+  clinicalCase,
 }: ActionPanelProps) {
   const [modal, setModal] = useState<ModalType>(null);
   const [diagnosisInput, setDiagnosisInput] = useState('');
@@ -34,7 +38,7 @@ export default function ActionPanel({
     <>
       <div className="glass-card p-4">
         <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Ações Rápidas</h3>
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-2">
+        <div className="grid grid-cols-2 lg:grid-cols-6 gap-2">
           <button
             onClick={onPhysicalExam}
             disabled={physicalExamDone}
@@ -70,11 +74,13 @@ export default function ActionPanel({
 
           <button
             onClick={onFinishCase}
-            className="flex items-center gap-2 p-3 rounded-lg border border-destructive/30 bg-destructive/5 hover:bg-destructive/10 transition-all text-sm col-span-2 lg:col-span-1"
+            className="flex items-center gap-2 p-3 rounded-lg border border-destructive/30 bg-destructive/5 hover:bg-destructive/10 transition-all text-sm"
           >
             <Flag className="w-4 h-4 text-destructive" />
             <span className="text-xs font-medium text-destructive">Finalizar Caso</span>
           </button>
+
+          <HintButton clinicalCase={clinicalCase} />
         </div>
       </div>
 

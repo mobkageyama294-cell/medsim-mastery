@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { AlertCircle } from 'lucide-react';
@@ -8,14 +8,11 @@ import ChatInterface from '@/components/simulation/ChatInterface';
 import ActionPanel from '@/components/simulation/ActionPanel';
 import FeedbackReport from '@/components/simulation/FeedbackReport';
 import { useSimulation } from '@/hooks/useSimulation';
-import { useAuth } from '@/hooks/useAuth';
-import { supabase } from '@/integrations/supabase/client';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 
 export default function Simulation() {
   const { caseId } = useParams<{ caseId: string }>();
   const navigate = useNavigate();
-  const { user } = useAuth();
 
   const {
     state,
@@ -31,6 +28,8 @@ export default function Simulation() {
     submitDiagnosis,
   } = useSimulation(caseId);
   const currentCase = state.currentCase;
+  const [startedAt] = useState(() => Date.now());
+  const durationRef = useRef(0);
 
   useEffect(() => {
     const interval = setInterval(fluctuateVitals, 3000);
@@ -38,26 +37,12 @@ export default function Simulation() {
   }, [fluctuateVitals]);
 
   useEffect(() => {
-    if (state.isFinished && user && currentCase) {
-      const isCorrect = state.diagnosisAttempt
-        ?.toLowerCase()
-        .includes(currentCase.correctDiagnosis.toLowerCase().substring(0, 20));
-
-      supabase.from('case_history').insert({
-        user_id: user.id,
-        case_id: currentCase.id,
-        case_title: currentCase.title,
-        diagnosis_attempt: state.diagnosisAttempt,
-        correct_diagnosis: currentCase.correctDiagnosis,
-        reasoning_score: state.reasoningScore,
-        patient_health: state.patientHealth,
-        cost_effectiveness: state.costEffectiveness,
-        is_correct: !!isCorrect,
-      }).then(({ error }) => {
-        if (error) console.error('Failed to save case history:', error);
-      });
+    if (state.isFinished) {
+      durationRef.current = Math.round((Date.now() - startedAt) / 1000);
     }
-  }, [state.isFinished]);
+  }, [state.isFinished, startedAt]);
+
+  // case_history persistence is now handled inside FeedbackReport (with full score breakdown)
 
   // Error state
   if (casesError) {
@@ -94,7 +79,7 @@ export default function Simulation() {
   }
 
   if (state.isFinished) {
-    return <FeedbackReport state={state} onRestart={() => navigate('/')} />;
+    return <FeedbackReport state={state} durationSeconds={durationRef.current} onRestart={() => navigate('/')} />;
   }
 
   const availableExams = Object.keys(currentCase?.labResults || {});
@@ -130,6 +115,7 @@ export default function Simulation() {
           examsRequested={state.examsRequested}
           availableExams={availableExams}
           availableUnnecessaryExams={currentCase.unnecessaryExams}
+          clinicalCase={currentCase}
         />
       </motion.div>
     </div>
