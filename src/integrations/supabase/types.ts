@@ -22,10 +22,15 @@ export type Database = {
           correct_diagnosis: string
           cost_effectiveness: number
           diagnosis_attempt: string | null
+          duration_seconds: number | null
+          final_score: number | null
+          humanitarian_score: number | null
           id: string
           is_correct: boolean
           patient_health: number
           reasoning_score: number
+          specialty: string | null
+          unnecessary_count: number | null
           user_id: string
         }
         Insert: {
@@ -35,10 +40,15 @@ export type Database = {
           correct_diagnosis: string
           cost_effectiveness?: number
           diagnosis_attempt?: string | null
+          duration_seconds?: number | null
+          final_score?: number | null
+          humanitarian_score?: number | null
           id?: string
           is_correct?: boolean
           patient_health?: number
           reasoning_score?: number
+          specialty?: string | null
+          unnecessary_count?: number | null
           user_id: string
         }
         Update: {
@@ -48,10 +58,15 @@ export type Database = {
           correct_diagnosis?: string
           cost_effectiveness?: number
           diagnosis_attempt?: string | null
+          duration_seconds?: number | null
+          final_score?: number | null
+          humanitarian_score?: number | null
           id?: string
           is_correct?: boolean
           patient_health?: number
           reasoning_score?: number
+          specialty?: string | null
+          unnecessary_count?: number | null
           user_id?: string
         }
         Relationships: []
@@ -78,6 +93,42 @@ export type Database = {
           created_at?: string
           display_name?: string | null
           id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_progress: {
+        Row: {
+          achievements: string[]
+          best_streak: number
+          coins: number
+          created_at: string
+          current_streak: number
+          recent_scores: number[]
+          total_cases: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          achievements?: string[]
+          best_streak?: number
+          coins?: number
+          created_at?: string
+          current_streak?: number
+          recent_scores?: number[]
+          total_cases?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          achievements?: string[]
+          best_streak?: number
+          coins?: number
+          created_at?: string
+          current_streak?: number
+          recent_scores?: number[]
+          total_cases?: number
           updated_at?: string
           user_id?: string
         }
