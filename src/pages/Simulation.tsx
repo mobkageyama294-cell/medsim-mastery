@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { AlertCircle } from 'lucide-react';
@@ -31,11 +31,19 @@ export default function Simulation() {
     submitDiagnosis,
   } = useSimulation(caseId);
   const currentCase = state.currentCase;
+  const [startedAt] = useState(() => Date.now());
+  const durationRef = useRef(0);
 
   useEffect(() => {
     const interval = setInterval(fluctuateVitals, 3000);
     return () => clearInterval(interval);
   }, [fluctuateVitals]);
+
+  useEffect(() => {
+    if (state.isFinished) {
+      durationRef.current = Math.round((Date.now() - startedAt) / 1000);
+    }
+  }, [state.isFinished, startedAt]);
 
   useEffect(() => {
     if (state.isFinished && user && currentCase) {
@@ -94,7 +102,7 @@ export default function Simulation() {
   }
 
   if (state.isFinished) {
-    return <FeedbackReport state={state} onRestart={() => navigate('/')} />;
+    return <FeedbackReport state={state} durationSeconds={durationRef.current} onRestart={() => navigate('/')} />;
   }
 
   const availableExams = Object.keys(currentCase?.labResults || {});
