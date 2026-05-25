@@ -138,6 +138,7 @@ export default function Simulation() {
           examsRequested={state.examsRequested}
           availableExams={availableExams}
           availableUnnecessaryExams={currentCase.unnecessaryExams}
+          clinicalCase={currentCase}
         />
       </motion.div>
     </div>
