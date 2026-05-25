@@ -12,6 +12,7 @@ import {
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
+import ProgressChip from '@/components/gamification/ProgressChip';
 
 export default function AppHeader() {
   const navigate = useNavigate();
@@ -50,6 +51,7 @@ export default function AppHeader() {
 
         {/* Right side */}
         <div className="flex items-center gap-2">
+          <ProgressChip />
           {/* Theme toggle */}
           <Tooltip>
             <TooltipTrigger asChild>
