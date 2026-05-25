@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   CheckCircle2, XCircle, RefreshCcw, Share2, HandHeart, Brain,
@@ -7,11 +8,28 @@ import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { calculateFinalScore } from '@/lib/scoring';
 import type { EmpathyData } from '@/hooks/useSimulation';
+import { useGamification } from '@/hooks/useGamification';
+import { useAuth } from '@/hooks/useAuth';
+import { supabase } from '@/integrations/supabase/client';
+import RewardsSummary from '@/components/gamification/RewardsSummary';
+import type { AwardResult } from '@/lib/gamification';
 
-export default function FeedbackReport({ state, onRestart }: { state: any; onRestart: () => void }) {
+export default function FeedbackReport({
+  state,
+  durationSeconds = 0,
+  onRestart,
+}: {
+  state: any;
+  durationSeconds?: number;
+  onRestart: () => void;
+}) {
   const currentCase = state?.currentCase;
   const correctDx = currentCase?.correctDiagnosis ?? 'Não informado';
   const attempt = state?.diagnosisAttempt?.trim() || 'Não informado';
+  const { awardCase } = useGamification();
+  const { user } = useAuth();
+  const [award, setAward] = useState<AwardResult | null>(null);
+  const awardedRef = useRef(false);
 
   const score = calculateFinalScore({
     diagnosisAttempt: state?.diagnosisAttempt,
@@ -24,6 +42,36 @@ export default function FeedbackReport({ state, onRestart }: { state: any; onRes
 
   const isCorrect = score.diagnosisMatch === 'exact';
   const empathyHistory: EmpathyData[] = state?.empathyHistory ?? [];
+
+  // Award gamification + persist case_history once
+  useEffect(() => {
+    if (awardedRef.current || !currentCase) return;
+    awardedRef.current = true;
+    const result = awardCase({ score, durationSeconds, clinicalCase: currentCase });
+    setAward(result);
+
+    if (user) {
+      supabase.from('case_history').insert({
+        user_id: user.id,
+        case_id: currentCase.id,
+        case_title: currentCase.title,
+        diagnosis_attempt: state?.diagnosisAttempt ?? '',
+        correct_diagnosis: currentCase.correctDiagnosis,
+        reasoning_score: state?.reasoningScore ?? 0,
+        patient_health: state?.patientHealth ?? 0,
+        cost_effectiveness: state?.costEffectiveness ?? 0,
+        is_correct: isCorrect,
+        final_score: score.total,
+        duration_seconds: durationSeconds,
+        specialty: currentCase.specialty,
+        humanitarian_score: score.humanitarian,
+        unnecessary_count: score.unnecessaryRequested.length,
+      }).then(({ error }) => {
+        if (error) console.error('Failed to save case history:', error);
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const totalColor =
     score.total >= 80 ? 'text-success' : score.total >= 50 ? 'text-warning' : 'text-destructive';
