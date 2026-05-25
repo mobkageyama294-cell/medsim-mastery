@@ -8,14 +8,11 @@ import ChatInterface from '@/components/simulation/ChatInterface';
 import ActionPanel from '@/components/simulation/ActionPanel';
 import FeedbackReport from '@/components/simulation/FeedbackReport';
 import { useSimulation } from '@/hooks/useSimulation';
-import { useAuth } from '@/hooks/useAuth';
-import { supabase } from '@/integrations/supabase/client';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 
 export default function Simulation() {
   const { caseId } = useParams<{ caseId: string }>();
   const navigate = useNavigate();
-  const { user } = useAuth();
 
   const {
     state,
