@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Lock, User, LogIn, UserPlus, Stethoscope, Eye, EyeOff, ShieldCheck, ArrowLeft } from 'lucide-react';
+import { Mail, Lock, User, LogIn, UserPlus, Stethoscope, Eye, EyeOff } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { lovable } from '@/integrations/lovable/index';
 import { toast } from 'sonner';
-import { InputOTP, InputOTPGroup, InputOTPSlot } from '@/components/ui/input-otp';
 
-type AuthStep = 'credentials' | '2fa';
 
 export default function Auth() {
   const [isLogin, setIsLogin] = useState(true);
@@ -18,21 +16,7 @@ export default function Auth() {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [step, setStep] = useState<AuthStep>('credentials');
-  const [otpValue, setOtpValue] = useState('');
-  const [otpError, setOtpError] = useState('');
-  const [generatedOtp, setGeneratedOtp] = useState('');
   const navigate = useNavigate();
-
-  const generateOtp = () => {
-    const code = Math.floor(100000 + Math.random() * 900000).toString();
-    setGeneratedOtp(code);
-    toast.info(`Código de verificação enviado para ${email}`, {
-      description: `(Simulação) Seu código é: ${code}`,
-      duration: 10000,
-    });
-    return code;
-  };
 
   const handleCredentialsSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,8 +36,7 @@ export default function Auth() {
       if (isLogin) {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
-        generateOtp();
-        setStep('2fa');
+        navigate('/');
       } else {
         const { error } = await supabase.auth.signUp({
           email,
@@ -73,16 +56,6 @@ export default function Auth() {
     }
   };
 
-  const handleOtpVerify = () => {
-    setOtpError('');
-    if (otpValue === generatedOtp) {
-      toast.success('Verificação concluída com sucesso!');
-      navigate('/');
-    } else {
-      setOtpError('Código inválido. Tente novamente.');
-      setOtpValue('');
-    }
-  };
 
   const handleGoogleLogin = async () => {
     const result = await lovable.auth.signInWithOAuth('google', {
