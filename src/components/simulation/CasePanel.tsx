@@ -1,10 +1,11 @@
-import { Activity, Thermometer, Wind, Heart, Droplets } from 'lucide-react';
+import { Activity, Thermometer, Wind, Heart, Droplets, ClipboardList } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { ClinicalCase } from '@/data/clinicalCases';
 
 interface CasePanelProps {
   clinicalCase: ClinicalCase | null;
   vitalSigns?: ClinicalCase['vitalSigns'] | null;
+  physicalExamDone?: boolean;
 }
 
 function VitalSign({ icon: Icon, label, value, unit, alert }: { icon: any; label: string; value: string | number; unit: string; alert?: boolean }) {
@@ -26,7 +27,7 @@ function VitalSign({ icon: Icon, label, value, unit, alert }: { icon: any; label
   );
 }
 
-export default function CasePanel({ clinicalCase, vitalSigns }: CasePanelProps) {
+export default function CasePanel({ clinicalCase, vitalSigns, physicalExamDone }: CasePanelProps) {
   if (!clinicalCase) {
     return <div className="glass-card p-5 h-full flex items-center justify-center text-sm text-muted-foreground">Carregando caso clínico...</div>;
   }
@@ -74,6 +75,33 @@ export default function CasePanel({ clinicalCase, vitalSigns }: CasePanelProps) 
           <VitalSign icon={Wind} label="FR" value={currentVitalSigns?.fr ?? 16} unit="irpm" alert={(currentVitalSigns?.fr ?? 0) > 20} />
         </div>
       </div>
+
+      {physicalExamDone && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          className="space-y-3"
+        >
+          <div className="flex items-center gap-2">
+            <ClipboardList className="w-4 h-4 text-accent" />
+            <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Exame Físico Realizado</h3>
+          </div>
+          <div className="p-3 rounded-lg bg-accent/5 border border-accent/20 space-y-2">
+            {Object.entries(clinicalCase.physicalExam || {}).map(([exam, result]) => (
+              <div key={exam} className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
+                <p className="text-sm text-foreground">
+                  <span className="font-medium">{exam}:</span>{' '}
+                  <span className="text-muted-foreground">{result}</span>
+                </p>
+              </div>
+            ))}
+            {Object.keys(clinicalCase.physicalExam || {}).length === 0 && (
+              <p className="text-xs text-muted-foreground italic">Nenhum achado específico registrado.</p>
+            )}
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 }
