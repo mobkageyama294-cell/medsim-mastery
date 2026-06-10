@@ -22,14 +22,26 @@ export function formatBRL(value: number): string {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
-export async function createPurchaseRecord(pack: CoinPack) {
+interface CoinPurchaseRecord {
+  id: string;
+  user_id: string;
+  pack_coins: number;
+  amount_paid: number;
+  currency: string;
+  status: string;
+  paddle_order_id?: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export async function createPurchaseRecord(pack: CoinPack): Promise<CoinPurchaseRecord | null> {
   const { data: userData } = await supabase.auth.getUser();
   if (!userData.user) {
     toast.error('Você precisa estar logado para comprar moedas.');
     return null;
   }
 
-  const { data, error } = await supabase
+  const { data, error } = await (supabase as any)
     .from('coin_purchases')
     .insert({
       user_id: userData.user.id,
@@ -47,15 +59,14 @@ export async function createPurchaseRecord(pack: CoinPack) {
     return null;
   }
 
-  return data;
+  return data as CoinPurchaseRecord;
 }
 
-export async function completePurchase(purchaseId: string) {
+export async function completePurchase(purchaseId: string): Promise<boolean> {
   const { data: userData } = await supabase.auth.getUser();
   if (!userData.user) return false;
 
-  // Atualiza status da compra
-  const { error: updateError } = await supabase
+  const { error: updateError } = await (supabase as any)
     .from('coin_purchases')
     .update({ status: 'completed', updated_at: new Date().toISOString() })
     .eq('id', purchaseId)
@@ -66,8 +77,7 @@ export async function completePurchase(purchaseId: string) {
     return false;
   }
 
-  // Busca quantas moedas o pack dá
-  const { data: purchase } = await supabase
+  const { data: purchase } = await (supabase as any)
     .from('coin_purchases')
     .select('pack_coins')
     .eq('id', purchaseId)
@@ -75,7 +85,6 @@ export async function completePurchase(purchaseId: string) {
 
   if (!purchase) return false;
 
-  // Adiciona moedas ao user_progress
   const { data: progress } = await supabase
     .from('user_progress')
     .select('coins')
@@ -83,7 +92,7 @@ export async function completePurchase(purchaseId: string) {
     .single();
 
   const currentCoins = progress?.coins ?? 0;
-  const newCoins = currentCoins + purchase.pack_coins;
+  const newCoins = currentCoins + (purchase.pack_coins as number);
 
   const { error: upsertError } = await supabase
     .from('user_progress')
@@ -103,8 +112,7 @@ export async function completePurchase(purchaseId: string) {
   return true;
 }
 
-// Para modo sandbox/teste sem Paddle configurado
-export async function simulatePurchase(pack: CoinPack) {
+export async function simulatePurchase(pack: CoinPack): Promise<boolean> {
   const record = await createPurchaseRecord(pack);
   if (!record) return false;
 
