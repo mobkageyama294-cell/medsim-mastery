@@ -52,6 +52,7 @@ const App = () => (
             <Route path="/auth" element={<PublicRoute><Auth /></PublicRoute>} />
             <Route path="/" element={<ProtectedRoute><CaseSelection /></ProtectedRoute>} />
             <Route path="/simulation/:caseId" element={<ProtectedRoute><Simulation /></ProtectedRoute>} />
+            <Route path="/loja" element={<ProtectedRoute><CoinStore /></ProtectedRoute>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
