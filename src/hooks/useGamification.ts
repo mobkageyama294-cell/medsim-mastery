@@ -33,14 +33,12 @@ function rowToProgress(row: any): UserProgress {
     currentStreak: row?.current_streak ?? 0,
     bestStreak: row?.best_streak ?? 0,
     recentScores: row?.recent_scores ?? [],
-    // Os campos abaixo ainda vivem só no localStorage (não precisam de coluna dedicada)
     specialtyHits: {},
     caseIds: [],
   };
 }
 
 function mergeProgress(local: UserProgress, remote: UserProgress): UserProgress {
-  // Cloud é fonte de verdade para contadores agregados; mantemos o que só existe localmente.
   return {
     ...local,
     coins: Math.max(local.coins, remote.coins),
@@ -78,7 +76,6 @@ export function useGamification() {
         setProgress(merged);
         saveLocal(merged);
       } else {
-        // primeira vez: cria registro com o local atual
         const local = loadLocal();
         await supabase.from('user_progress').insert({
           user_id: user.id,
@@ -126,5 +123,11 @@ export function useGamification() {
     return true;
   }, [progress, persist]);
 
-  return { progress, awardCase, spendCoins };
+  const addCoins = useCallback((amount: number) => {
+    const next = { ...progress, coins: progress.coins + amount };
+    setProgress(next);
+    persist(next);
+  }, [progress, persist]);
+
+  return { progress, awardCase, spendCoins, addCoins };
 }
