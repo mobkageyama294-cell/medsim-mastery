@@ -97,8 +97,8 @@ export function awardCase(prev: UserProgress, result: CaseResult): AwardResult {
   const isHit = score.total >= SUCCESS_THRESHOLD;
   const isExact = score.diagnosisMatch === 'exact';
 
-  // moedas: 10 por caso + 5 se nota > 80
-  const coinsEarned = 10 + (score.total > 80 ? 5 : 0);
+  // moedas: 2 por diagnóstico exato (100%), +1 se nota > 80
+  const coinsEarned = isExact ? 2 + (score.total > 80 ? 1 : 0) : 0;
 
   const recentScores = [...prev.recentScores, score.total].slice(-50);
   const isNewCase = !prev.caseIds.includes(clinicalCase.id);
