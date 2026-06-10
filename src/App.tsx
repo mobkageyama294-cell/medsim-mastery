@@ -9,6 +9,7 @@ import AppHeader from "@/components/AppHeader";
 import Auth from "./pages/Auth";
 import CaseSelection from "./pages/CaseSelection";
 import Simulation from "./pages/Simulation";
+import CoinStore from "./pages/CoinStore";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
