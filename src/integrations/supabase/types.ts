@@ -71,6 +71,45 @@ export type Database = {
         }
         Relationships: []
       }
+      coin_purchases: {
+        Row: {
+          amount_paid: number
+          created_at: string
+          currency: string
+          id: string
+          pack_coins: number
+          paddle_order_id: string | null
+          provider: string
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          amount_paid: number
+          created_at?: string
+          currency?: string
+          id?: string
+          pack_coins: number
+          paddle_order_id?: string | null
+          provider?: string
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          amount_paid?: number
+          created_at?: string
+          currency?: string
+          id?: string
+          pack_coins?: number
+          paddle_order_id?: string | null
+          provider?: string
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
