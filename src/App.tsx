@@ -9,6 +9,7 @@ import AppHeader from "@/components/AppHeader";
 import Auth from "./pages/Auth";
 import CaseSelection from "./pages/CaseSelection";
 import Simulation from "./pages/Simulation";
+import CoinStore from "./pages/CoinStore";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -51,6 +52,7 @@ const App = () => (
             <Route path="/auth" element={<PublicRoute><Auth /></PublicRoute>} />
             <Route path="/" element={<ProtectedRoute><CaseSelection /></ProtectedRoute>} />
             <Route path="/simulation/:caseId" element={<ProtectedRoute><Simulation /></ProtectedRoute>} />
+            <Route path="/loja" element={<ProtectedRoute><CoinStore /></ProtectedRoute>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
