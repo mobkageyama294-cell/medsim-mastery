@@ -140,16 +140,3 @@ export function awardCase(prev: UserProgress, result: CaseResult): AwardResult {
 
   return { progress, newAchievements: newly };
 }
-
-function describeAbnormalVitals(c: ClinicalCase): string | null {
-  const v = c?.vitalSigns;
-  if (!v) return null;
-  const out: string[] = [];
-  if (typeof v.temp === 'number' && v.temp >= 38) out.push(`febre (${v.temp}°C)`);
-  if (typeof v.fc === 'number' && v.fc > 110) out.push(`taquicardia (FC ${v.fc})`);
-  if (typeof v.fc === 'number' && v.fc < 55) out.push(`bradicardia (FC ${v.fc})`);
-  if (typeof v.sao2 === 'number' && v.sao2 < 93) out.push(`hipoxemia (SatO₂ ${v.sao2}%)`);
-  if (typeof v.fr === 'number' && v.fr > 22) out.push(`taquipneia (FR ${v.fr})`);
-  if (!out.length) return null;
-  return `O paciente apresenta ${out.join(' e ')}.`;
-}
