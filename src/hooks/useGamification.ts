@@ -27,7 +27,6 @@ function saveLocal(p: UserProgress) {
 
 function rowToProgress(row: any): UserProgress {
   return {
-    coins: row?.coins ?? 0,
     achievements: row?.achievements ?? [],
     totalCases: row?.total_cases ?? 0,
     currentStreak: row?.current_streak ?? 0,
@@ -41,7 +40,6 @@ function rowToProgress(row: any): UserProgress {
 function mergeProgress(local: UserProgress, remote: UserProgress): UserProgress {
   return {
     ...local,
-    coins: Math.max(local.coins, remote.coins),
     achievements: Array.from(new Set([...local.achievements, ...remote.achievements])),
     totalCases: Math.max(local.totalCases, remote.totalCases),
     currentStreak: remote.currentStreak,
@@ -79,7 +77,6 @@ export function useGamification() {
         const local = loadLocal();
         await supabase.from('user_progress').insert({
           user_id: user.id,
-          coins: local.coins,
           achievements: local.achievements,
           total_cases: local.totalCases,
           current_streak: local.currentStreak,
@@ -98,7 +95,6 @@ export function useGamification() {
       .from('user_progress')
       .upsert({
         user_id: user.id,
-        coins: next.coins,
         achievements: next.achievements,
         total_cases: next.totalCases,
         current_streak: next.currentStreak,
@@ -115,19 +111,5 @@ export function useGamification() {
     return out;
   }, [progress, persist]);
 
-  const spendCoins = useCallback((amount: number): boolean => {
-    if (progress.coins < amount) return false;
-    const next = { ...progress, coins: progress.coins - amount };
-    setProgress(next);
-    persist(next);
-    return true;
-  }, [progress, persist]);
-
-  const addCoins = useCallback((amount: number) => {
-    const next = { ...progress, coins: progress.coins + amount };
-    setProgress(next);
-    persist(next);
-  }, [progress, persist]);
-
-  return { progress, awardCase, spendCoins, addCoins };
+  return { progress, awardCase };
 }

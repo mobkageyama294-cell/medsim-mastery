@@ -1,9 +1,8 @@
-// Gamificação Fase 1: níveis, conquistas, moedas
+// Gamificação: níveis e conquistas
 import type { ScoreBreakdown } from './scoring';
 import type { ClinicalCase } from '@/data/clinicalCases';
 
 export interface UserProgress {
-  coins: number;
   achievements: string[];
   totalCases: number;
   currentStreak: number;
@@ -14,7 +13,6 @@ export interface UserProgress {
 }
 
 export const DEFAULT_PROGRESS: UserProgress = {
-  coins: 0,
   achievements: [],
   totalCases: 0,
   currentStreak: 0,
@@ -85,7 +83,6 @@ export interface CaseResult {
 
 export interface AwardResult {
   progress: UserProgress;
-  coinsEarned: number;
   newAchievements: Achievement[];
 }
 
@@ -96,9 +93,6 @@ export function awardCase(prev: UserProgress, result: CaseResult): AwardResult {
   const { score, durationSeconds, clinicalCase } = result;
   const isHit = score.total >= SUCCESS_THRESHOLD;
   const isExact = score.diagnosisMatch === 'exact';
-
-  // moedas: 2 por diagnóstico exato (100%), +1 se nota > 80
-  const coinsEarned = isExact ? 2 + (score.total > 80 ? 1 : 0) : 0;
 
   const recentScores = [...prev.recentScores, score.total].slice(-50);
   const isNewCase = !prev.caseIds.includes(clinicalCase.id);
@@ -135,7 +129,6 @@ export function awardCase(prev: UserProgress, result: CaseResult): AwardResult {
   if (totalCases >= 50) tryUnlock('tireless');
 
   const progress: UserProgress = {
-    coins: prev.coins + coinsEarned,
     achievements: Array.from(unlocked),
     totalCases,
     currentStreak,
@@ -145,38 +138,5 @@ export function awardCase(prev: UserProgress, result: CaseResult): AwardResult {
     caseIds,
   };
 
-  return { progress, coinsEarned, newAchievements: newly };
-}
-
-// ---------- Dicas (estáticas, derivadas do JSON do caso) ----------
-export interface Hint {
-  tier: 1 | 2 | 3;
-  cost: number;
-  label: string;
-  content: string;
-}
-
-export function buildHints(c: ClinicalCase): Hint[] {
-  const abnormal = describeAbnormalVitals(c);
-  const tier1 = abnormal || `Atenção aos sinais vitais: PA ${c.vitalSigns?.pa}, FC ${c.vitalSigns?.fc}.`;
-  const tier2 = `O quadro envolve o sistema/área: ${c.organ || c.specialty}.`;
-  const tier3 = `O diagnóstico provável é: ${c.correctDiagnosis}.`;
-  return [
-    { tier: 1, cost: 1, label: 'Dica básica', content: tier1 },
-    { tier: 2, cost: 3, label: 'Dica intermediária', content: tier2 },
-    { tier: 3, cost: 5, label: 'Dica avançada', content: tier3 },
-  ];
-}
-
-function describeAbnormalVitals(c: ClinicalCase): string | null {
-  const v = c?.vitalSigns;
-  if (!v) return null;
-  const out: string[] = [];
-  if (typeof v.temp === 'number' && v.temp >= 38) out.push(`febre (${v.temp}°C)`);
-  if (typeof v.fc === 'number' && v.fc > 110) out.push(`taquicardia (FC ${v.fc})`);
-  if (typeof v.fc === 'number' && v.fc < 55) out.push(`bradicardia (FC ${v.fc})`);
-  if (typeof v.sao2 === 'number' && v.sao2 < 93) out.push(`hipoxemia (SatO₂ ${v.sao2}%)`);
-  if (typeof v.fr === 'number' && v.fr > 22) out.push(`taquipneia (FR ${v.fr})`);
-  if (!out.length) return null;
-  return `O paciente apresenta ${out.join(' e ')}.`;
+  return { progress, newAchievements: newly };
 }

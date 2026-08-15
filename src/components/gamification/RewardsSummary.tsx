@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Coins, Trophy, TrendingUp } from 'lucide-react';
+import { Trophy, TrendingUp } from 'lucide-react';
 import type { AwardResult } from '@/lib/gamification';
 import { computeLevel } from '@/lib/gamification';
 import { useGamification } from '@/hooks/useGamification';
@@ -18,14 +18,7 @@ export default function RewardsSummary({ award }: { award: AwardResult | null })
         <Trophy className="w-4 h-4 text-amber-500" /> Recompensas
       </h3>
 
-      <div className="grid sm:grid-cols-3 gap-3 mb-4">
-        <div className="flex items-center gap-2 p-3 rounded-lg bg-amber-500/10 border border-amber-500/20">
-          <Coins className="w-5 h-5 text-amber-500" />
-          <div>
-            <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Ganhou</p>
-            <p className="text-sm font-bold text-amber-600 dark:text-amber-400">+{award.coinsEarned} moedas</p>
-          </div>
-        </div>
+      <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <div className="flex items-center gap-2 p-3 rounded-lg bg-primary/10 border border-primary/20">
           <TrendingUp className="w-5 h-5 text-primary" />
           <div>

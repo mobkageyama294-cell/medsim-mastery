@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Stethoscope, FlaskConical, Pill, Target, Flag, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import HintButton from '@/components/gamification/HintButton';
 import type { ClinicalCase } from '@/data/clinicalCases';
 
 interface ActionPanelProps {
@@ -79,8 +78,6 @@ export default function ActionPanel({
             <Flag className="w-4 h-4 text-destructive" />
             <span className="text-xs font-medium text-destructive">Finalizar Caso</span>
           </button>
-
-          <HintButton clinicalCase={clinicalCase} />
         </div>
       </div>
 

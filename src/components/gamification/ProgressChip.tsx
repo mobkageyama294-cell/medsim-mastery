@@ -1,4 +1,3 @@
-import { Coins } from 'lucide-react';
 import { useGamification } from '@/hooks/useGamification';
 import { computeLevel } from '@/lib/gamification';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
@@ -29,17 +28,6 @@ export default function ProgressChip() {
         </TooltipContent>
       </Tooltip>
 
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <div className="flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2.5 py-1">
-            <Coins className="h-3.5 w-3.5 text-amber-500" />
-            <span className="text-xs font-semibold tabular-nums text-amber-600 dark:text-amber-400">
-              {progress.coins}
-            </span>
-          </div>
-        </TooltipTrigger>
-        <TooltipContent>Moedas para comprar dicas</TooltipContent>
-      </Tooltip>
     </div>
   );
 }
