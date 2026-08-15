@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Stethoscope, Sun, Moon, User, BarChart3, Settings, LogOut, ChevronDown, Store } from 'lucide-react';
+import { Stethoscope, Sun, Moon, User, BarChart3, Settings, LogOut, ChevronDown } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useTheme } from '@/hooks/useTheme';
 import {
@@ -53,21 +53,6 @@ export default function AppHeader() {
         <div className="flex items-center gap-2">
           <ProgressChip />
 
-          {/* Coin Store */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => navigate('/loja')}
-                className="h-9 w-9 rounded-lg"
-              >
-                <Store className="h-4 w-4 text-amber-500" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>Loja de Moedas</TooltipContent>
-          </Tooltip>
-
           {/* Theme toggle */}
           <Tooltip>
             <TooltipTrigger asChild>
@@ -107,9 +92,6 @@ export default function AppHeader() {
                 <p className="text-xs text-muted-foreground truncate">{user?.email}</p>
               </div>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="gap-2 cursor-pointer" onClick={() => navigate('/loja')}>
-                <Store className="h-4 w-4" /> Loja de Moedas
-              </DropdownMenuItem>
               <DropdownMenuItem className="gap-2 cursor-pointer">
                 <User className="h-4 w-4" /> Meu Perfil
               </DropdownMenuItem>
